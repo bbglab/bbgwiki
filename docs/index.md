@@ -1,6 +1,8 @@
-# Home
+<!-- # Home -->
+# Welcome to the BBG-Wiki! ![bbglab-logo](assets/images/bbglabLOGO_small.png)
 
 Website with info of all the tools and data used in the bbglab.
+
 
 ## Edit BBG-Wiki
 
