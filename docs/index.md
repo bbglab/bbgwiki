@@ -1,8 +1,9 @@
 <!-- # Home -->
 # Welcome to the BBG-Wiki! ![bbglab-logo](assets/images/bbglabLOGO_small.png)
 
-This website is meant to include information of all the **tools** and **data** used by the bbglab team, so that it serves both as a guide to understand them and to have a place where to find anything.
+This website is meant to include information of all the **tools** and **data** used by the **bbglab** team, so that it serves both as a guide to understand them and as a place where to find information about everything.
 
+---
 
 ## Edit BBG-Wiki
 
@@ -11,7 +12,7 @@ The main language of the wiki documentation is **Markdown**.There are several on
 - [StackEdit](https://stackedit.io/app)
 - [Editor.md](https://pandao.github.io/editor.md/en.html)
 
-Each section of the wiki corresponds to a single Markdown file (`*.md`). By editing these files either online or locally, the wiki can be updated by anyone.
+Each section of the wiki corresponds to a single **Markdown file** (`*.md`). By editing these files either online or locally, the wiki can be updated by anyone.
 
 ### Online
 
