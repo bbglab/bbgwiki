@@ -5,3 +5,4 @@ theme:
   palette:
     primary: orange
   logo: assets/images/bbglabLOGO_small.png
+  favicon: assets/images/bbglabLOGO_small.png
