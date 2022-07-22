@@ -1,0 +1,7 @@
+site_name: BBG-Wiki
+
+theme:
+  name: material
+  palette:
+    primary: orange
+  logo: assets/images/bbglabLOGO_small.png
