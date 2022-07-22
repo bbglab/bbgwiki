@@ -6,11 +6,11 @@ Website with info of all the tools and data used in the bbglab.
 
 ## Edit BBG-Wiki
 
-### Option 1
+### Online
 
 Go to the [bbg-wiki repository](https://github.com/bbglab/bbgwiki) and edit any file inside the `docs` folder, which contains all the files of the documentation.
 
-### Option 2
+### Local
 #### Installation
 
 ```bash
