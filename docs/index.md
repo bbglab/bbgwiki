@@ -2,14 +2,14 @@
 
 Website with info of all the tools and data used in the bbglab.
 
-# Edit BBG-Wiki
+## Edit BBG-Wiki
 
-## Option 1
+### Option 1
 
 Go to the [bbg-wiki repository](https://github.com/bbglab/bbgwiki) and edit any file inside the `docs` folder, which contains all the files of the documentation.
 
-## Option 2
-### Installation
+### Option 2
+#### Installation
 
 ```
 git clone https://github.com/bbglab/bbgwiki.git
@@ -17,7 +17,7 @@ pip install -r bbgwiki/requirements.txt
 ```
 
 
-### Requirements
+#### Requirements
 
 ```
 mkdocs >= 1.2.2
@@ -25,7 +25,7 @@ mkdocs-material >= 7.1.11
 mkdocs-static-i18n >= 0.18
 ```
 
-### Commands
+#### Commands
 Running at **localhost** (to try stuff before updating the main web)
 
 ```
