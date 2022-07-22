@@ -14,6 +14,8 @@ The main language of the wiki documentation is **Markdown**.There are several on
 
 Each section of the wiki corresponds to a single **Markdown file** (`*.md`). By editing these files either online or locally, the wiki can be updated by anyone.
 
+- [Markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+
 ### Online
 
 Go to the [bbg-wiki repository](https://github.com/bbglab/bbgwiki) and edit any file inside the `docs` folder, which contains all the files of the documentation.
