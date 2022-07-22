@@ -13,7 +13,7 @@ Go to the [bbg-wiki repository](https://github.com/bbglab/bbgwiki) and edit any 
 ### Option 2
 #### Installation
 
-```
+```bash
 git clone https://github.com/bbglab/bbgwiki.git
 pip install -r bbgwiki/requirements.txt
 ```
@@ -30,13 +30,13 @@ mkdocs-static-i18n >= 0.18
 #### Commands
 Running at **localhost** (to try stuff before updating the main web)
 
-```
+```bash
 mkdocs serve
 ```
 
 Update web:
 
-```
+```bash
 git add <edited file or directory>
 git commit -m "Message"
 git push
