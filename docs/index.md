@@ -7,12 +7,12 @@ This website is meant to include information of all the **tools** and **data** u
 
 ## Edit BBG-Wiki
 
-The main language of the wiki documentation is **Markdown**.There are several online editors which can help writting Markdown text and automatically visualize what is being written.
+The main language of the wiki documentation is **Markdown**. There are several online editors which can help writting Markdown text and automatically visualize what is being written.
 
 - [StackEdit](https://stackedit.io/app)
 - [Editor.md](https://pandao.github.io/editor.md/en.html)
 
-Each section of the wiki corresponds to a single **Markdown file** (`*.md`). By editing these files either online or locally, the wiki can be updated by anyone.
+This wiki is stored in a **Github repository**, where each section of the wiki corresponds to a single **Markdown file** (`*.md`). By editing these files either online or locally, the wiki can be updated by anyone.
 
 - [Markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/)
 

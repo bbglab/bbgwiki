@@ -7,5 +7,5 @@ theme:
   logo: assets/images/bbglabLOGO_small.png
   favicon: assets/images/bbglabLOGO_small.png
 ## === Uncomment for extra color options ===
-# extra_css:
-#   - stylesheets/extra.css
+extra_css:
+  - stylesheets/extra.css
