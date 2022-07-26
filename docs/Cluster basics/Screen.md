@@ -58,4 +58,4 @@ $ exit
 
 ## Cheatsheet
 
-For a more extensive list of commands, check the [screen cheatsheet](https://quickref.me/screen).
+For a more extensive list of commands, check the [screen cheatsheet](https://quickref.me/screen){:target="_blank"}.
