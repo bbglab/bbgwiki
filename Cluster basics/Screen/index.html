@@ -1659,13 +1659,13 @@
                 
 
 
-<h1 id="screen">Screen</h1>
-<h2 id="description">Description</h2>
+<h1 id="screen">Screen<a class="headerlink" href="#screen" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>The <code>screen</code> command opens a session which will be <strong>running even if you disconnect from the cluster</strong>.</p>
 <p>This is especially useful for time-consuming processes, so that you can leave them running in the background without the fear of accidentally disconnecting and losing all the progress.</p>
 <p>You can also open several screens for different processes, which you can detach and attach to them as you like.</p>
-<h2 id="basic-commands">Basic commands</h2>
-<h3 id="new-screen">New screen</h3>
+<h2 id="basic-commands">Basic commands<a class="headerlink" href="#basic-commands" title="Permanent link">&para;</a></h2>
+<h3 id="new-screen">New screen<a class="headerlink" href="#new-screen" title="Permanent link">&para;</a></h3>
 <p>Creates a <strong>new screen</strong> with name "<em>custom_name</em>".</p>
 <pre><code class="language-bash">$ screen -S &lt;custom_name&gt;
 </code></pre>
@@ -1673,15 +1673,15 @@
 <p class="admonition-title">Warning</p>
 <p>When opening a new screen, this should be done from the <code>login01</code> node, since this guarantees that the screen will be <strong>constantly running</strong> and not shut down (which could happen if the screen is opened in one of the other nodes).</p>
 </div>
-<h3 id="list-screens">List screens</h3>
+<h3 id="list-screens">List screens<a class="headerlink" href="#list-screens" title="Permanent link">&para;</a></h3>
 <p>List all the created screens.</p>
 <pre><code class="language-bash">$ screen -ls
 </code></pre>
-<h3 id="detach">Detach</h3>
+<h3 id="detach">Detach<a class="headerlink" href="#detach" title="Permanent link">&para;</a></h3>
 <p>Detaches from a screen</p>
 <pre><code>Ctrl + A -&gt; D
 </code></pre>
-<h3 id="re-attach">Re-attach</h3>
+<h3 id="re-attach">Re-attach<a class="headerlink" href="#re-attach" title="Permanent link">&para;</a></h3>
 <p>Re-attaches to a detached screen.</p>
 <pre><code class="language-bash">$ screen -r [#]
 </code></pre>
@@ -1689,11 +1689,11 @@
 <p class="admonition-title">Note</p>
 <p>If there are multiple screens available, include the <strong>number</strong> of the screen id (or <strong>name</strong>) to identify which screen to re-attach.</p>
 </div>
-<h3 id="exit-and-kill-screen">Exit and kill screen</h3>
+<h3 id="exit-and-kill-screen">Exit and kill screen<a class="headerlink" href="#exit-and-kill-screen" title="Permanent link">&para;</a></h3>
 <pre><code class="language-bash">$ exit
 </code></pre>
-<h2 id="cheatsheet">Cheatsheet</h2>
-<p>For a more extensive list of commands, check the <a href="https://quickref.me/screen">screen cheatsheet</a>.</p>
+<h2 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h2>
+<p>For a more extensive list of commands, check the <a href="https://quickref.me/screen" target="_blank">screen cheatsheet</a>.</p>
 
               
             </article>
