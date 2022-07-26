@@ -9,17 +9,53 @@ This is especially useful for time-consuming processes, so that you can leave th
 
 You can also open several screens for different processes, which you can detach and attach to them as you like.
 
-## Usage
+## Basic commands
 
-The command to open a screen is specifically:
+### New screen
+Creates a **new screen** with name "*custom_name*".
 
 ```bash
-screen -S <custom_name>
+$ screen -S <custom_name>
+```
+
+!!! warning
+
+    When opening a new screen, this should be done from the `login01` node, since this guarantees that the screen will be **constantly running** and not shut down (which could happen if the screen is opened in one of the other nodes).
+
+### List screens
+
+List all the created screens.
+
+```bash
+$ screen -ls
+```
+
+### Detach
+
+Detaches from a screen
+
+```
+Ctrl + A -> D
 ```
 
 
+### Re-attach
+Re-attaches to a detached screen.
+
+```bash
+$ screen -r [#]
+```
 
 !!! note
+    If there are multiple screens available, include the **number** of the screen id (or **name**) to identify which screen to re-attach.
 
-    This command must be executed from the `login01` node, since this guarantees that the screen will be **constantly running** and not shut down (which could happen if the screen is opened in one of the other nodes).
+### Exit and kill screen
 
+```bash
+$ exit
+```
+
+
+## Cheatsheet
+
+For a more extensive list of commands, check the [screen cheatsheet](https://quickref.me/screen).

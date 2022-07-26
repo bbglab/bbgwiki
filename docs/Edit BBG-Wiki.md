@@ -7,7 +7,7 @@ The main language of the wiki documentation is **Markdown**. There are several o
 
 This wiki is stored in a **GitHub repository**, where each section of the wiki corresponds to a single **Markdown file** (`*.md`). By editing these files either online or locally, the wiki can be updated by everyone.
 
-- [Markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+- [Markdown cheatsheet](https://quickref.me/markdown)
 
 ## Online
 
