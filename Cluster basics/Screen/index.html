@@ -324,8 +324,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
+  <a href="#basic-commands" class="md-nav__link">
+    Basic commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-screen" class="md-nav__link">
+    New screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-screens" class="md-nav__link">
+    List screens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detach" class="md-nav__link">
+    Detach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-attach" class="md-nav__link">
+    Re-attach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit-and-kill-screen" class="md-nav__link">
+    Exit and kill screen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheatsheet" class="md-nav__link">
+    Cheatsheet
   </a>
   
 </li>
@@ -1543,8 +1591,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
+  <a href="#basic-commands" class="md-nav__link">
+    Basic commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-screen" class="md-nav__link">
+    New screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-screens" class="md-nav__link">
+    List screens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detach" class="md-nav__link">
+    Detach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-attach" class="md-nav__link">
+    Re-attach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit-and-kill-screen" class="md-nav__link">
+    Exit and kill screen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheatsheet" class="md-nav__link">
+    Cheatsheet
   </a>
   
 </li>
@@ -1568,14 +1664,36 @@
 <p>The <code>screen</code> command opens a session which will be <strong>running even if you disconnect from the cluster</strong>.</p>
 <p>This is especially useful for time-consuming processes, so that you can leave them running in the background without the fear of accidentally disconnecting and losing all the progress.</p>
 <p>You can also open several screens for different processes, which you can detach and attach to them as you like.</p>
-<h2 id="usage">Usage</h2>
-<p>The command to open a screen is specifically:</p>
-<pre><code class="language-bash">screen -S &lt;custom_name&gt;
+<h2 id="basic-commands">Basic commands</h2>
+<h3 id="new-screen">New screen</h3>
+<p>Creates a <strong>new screen</strong> with name "<em>custom_name</em>".</p>
+<pre><code class="language-bash">$ screen -S &lt;custom_name&gt;
+</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When opening a new screen, this should be done from the <code>login01</code> node, since this guarantees that the screen will be <strong>constantly running</strong> and not shut down (which could happen if the screen is opened in one of the other nodes).</p>
+</div>
+<h3 id="list-screens">List screens</h3>
+<p>List all the created screens.</p>
+<pre><code class="language-bash">$ screen -ls
+</code></pre>
+<h3 id="detach">Detach</h3>
+<p>Detaches from a screen</p>
+<pre><code>Ctrl + A -&gt; D
+</code></pre>
+<h3 id="re-attach">Re-attach</h3>
+<p>Re-attaches to a detached screen.</p>
+<pre><code class="language-bash">$ screen -r [#]
 </code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This command must be executed from the <code>login01</code> node, since this guarantees that the screen will be <strong>constantly running</strong> and not shut down (which could happen if the screen is opened in one of the other nodes).</p>
+<p>If there are multiple screens available, include the <strong>number</strong> of the screen id (or <strong>name</strong>) to identify which screen to re-attach.</p>
 </div>
+<h3 id="exit-and-kill-screen">Exit and kill screen</h3>
+<pre><code class="language-bash">$ exit
+</code></pre>
+<h2 id="cheatsheet">Cheatsheet</h2>
+<p>For a more extensive list of commands, check the <a href="https://quickref.me/screen">screen cheatsheet</a>.</p>
 
               
             </article>
