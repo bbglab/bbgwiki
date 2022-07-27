@@ -9,6 +9,8 @@ This is especially useful for time-consuming processes, so that you can leave th
 
 You can also open several screens for different processes, which you can detach and attach to them as you like.
 
+---
+
 ## Basic commands
 
 ### New screen
@@ -54,7 +56,7 @@ $ screen -r [#]
 ```bash
 $ exit
 ```
-
+---
 
 ## Cheatsheet
 
