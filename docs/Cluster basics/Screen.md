@@ -63,3 +63,9 @@ $ exit
 For a more extensive list of commands, check the [screen cheatsheet](https://quickref.me/screen){:target="_blank"}.
 
 You can also check the [full documentation](https://www.gnu.org/software/screen/manual/screen.html){:target="_blank"}.
+
+## Reference
+
+- Carlos López Elorduy
+- Jordi Deu-Pons
+- Miguel Grau
