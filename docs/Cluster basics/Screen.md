@@ -9,6 +9,8 @@ This is especially useful for time-consuming processes, so that you can leave th
 
 You can also open several screens for different processes, which you can detach and attach to them as you like.
 
+---
+
 ## Basic commands
 
 ### New screen
@@ -54,8 +56,10 @@ $ screen -r [#]
 ```bash
 $ exit
 ```
+---
 
-
-## Cheatsheet
+## Documentation
 
 For a more extensive list of commands, check the [screen cheatsheet](https://quickref.me/screen){:target="_blank"}.
+
+You can also check the [full documentation](https://www.gnu.org/software/screen/manual/screen.html){:target="_blank"}.
