@@ -46,3 +46,7 @@ git add <edited file or directory>
 git commit -m "Message"
 git push
 ```
+
+## References
+
+- Carlos López Elorduy
