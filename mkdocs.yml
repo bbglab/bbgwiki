@@ -4,14 +4,16 @@ theme:
   name: material
   palette:
     primary: orange
+    accent: orange
   logo: assets/images/bbglabLOGO_small.png
   favicon: assets/images/bbglabLOGO_small.png
+  features:
+    - navigation.top
+
 markdown_extensions:
   - admonition
   - toc:
       permalink: True
-  # - markdown_include.include:
-  #     base_path: docs
   - attr_list
 extra_css:
   - stylesheets/extra.css
