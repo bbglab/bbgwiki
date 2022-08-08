@@ -102,3 +102,9 @@ DISTRIB_RELEASE=20.04
 DISTRIB_CODENAME=focal
 DISTRIB_DESCRIPTION="Ubuntu 20.04.3 LTS"
 ```
+
+## Reference
+
+- Jordi Deu-Pons
+- Miguel Grau
+- Carlos López Elorduy
