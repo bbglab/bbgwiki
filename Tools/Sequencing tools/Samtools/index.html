@@ -13,7 +13,7 @@
     
     
       
-        <title>Samtools - BBG-Wiki</title>
+        <title>SAMtools - BBG-Wiki</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Samtools
+              SAMtools
             
           </span>
         </div>
@@ -1204,12 +1204,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Samtools
+          SAMtools
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Samtools
+        SAMtools
       </a>
       
         
@@ -1228,8 +1228,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    Conda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual" class="md-nav__link">
+    Manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-job" class="md-nav__link">
+    Example job
+  </a>
+  
+    <nav class="md-nav" aria-label="Example job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-job" class="md-nav__link">
+    Serial job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -1599,8 +1653,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    Conda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual" class="md-nav__link">
+    Manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-job" class="md-nav__link">
+    Example job
+  </a>
+  
+    <nav class="md-nav" aria-label="Example job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-job" class="md-nav__link">
+    Serial job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -1626,9 +1734,54 @@
                 
 
 
-<h1 id="samtools">Samtools<a class="headerlink" href="#samtools" title="Permanent link">&para;</a></h1>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<h1 id="samtools">SAMtools<a class="headerlink" href="#samtools" title="Permanent link">&para;</a></h1>
+<div class="admonition note annotate">
+<p>SAMtools implements various utilities for post-processing alignments in the SAM format, such as indexing, variant caller and alignment viewer, and thus provides universal tools for processing read alignments.</p>
+</div>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">conda install -c bioconda samtools
+</code></pre>
+<h3 id="manual">Manual<a class="headerlink" href="#manual" title="Permanent link">&para;</a></h3>
+<p>For the manual installation, you can find the instructions <a href="http://www.sthda.com/english/wiki/install-samtools-on-unix-system">here</a>.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">samtools view -b -S -o genome_reads_aligned.bam genome_reads_aligned.sam
+</code></pre>
+<div class="admonition note annotate">
+<p class="admonition-title">Core Usage</p>
+<p>To ensure that SAMtools uses the correct number of cores, the <code>-@ ${NSLOTS}</code> option should be used on commands that support it.</p>
+</div>
+<h2 id="example-job">Example job<a class="headerlink" href="#example-job" title="Permanent link">&para;</a></h2>
+<h3 id="serial-job">Serial job<a class="headerlink" href="#serial-job" title="Permanent link">&para;</a></h3>
+<p>Here is an example job running on 4 cores and 8GB of memory:</p>
+<pre><code class="language-bash">#!/bin/bash
+#$ -cwd
+#$ -j y
+#$ -pe smp 4
+#$ -l h_rt=1:0:0
+#$ -l h_vmem=2G
+
+samtools view -@ ${NSLOTS} -b -S -o genome_reads_aligned.bam \
+    genome_reads_aligned.sam
+
+samtools sort -@ ${NSLOTS} genome_reads_aligned.bam \
+    &gt; genome_reads_aligned.sorted.bam
+
+samtools index genome_reads_aligned.sorted.bam
+
+samtools mpileup -g -f ref_genome_1K.fna genome_reads_aligned.sorted.bam \
+    &gt; genome_variants.bcf
+</code></pre>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/samtools/samtools">Samtools GitHub</a></li>
+<li><a href="https://www.htslib.org/">Samtools website</a></li>
+<li><a href="https://www.htslib.org/doc/samtools.html">Samtools documentation</a></li>
+</ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Hania Kranas</li>
+</ul>
 
               
             </article>
