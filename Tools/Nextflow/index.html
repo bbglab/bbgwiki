@@ -985,8 +985,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-processes-as-serial-jobs" class="md-nav__link">
+    Submitting processes as serial jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-jobs" class="md-nav__link">
+    Parallel jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-jobs" class="md-nav__link">
+    Example jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Example jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-job" class="md-nav__link">
+    Serial job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-job" class="md-nav__link">
+    Parallel job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -1536,8 +1590,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-processes-as-serial-jobs" class="md-nav__link">
+    Submitting processes as serial jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-jobs" class="md-nav__link">
+    Parallel jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-jobs" class="md-nav__link">
+    Example jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Example jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-job" class="md-nav__link">
+    Serial job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-job" class="md-nav__link">
+    Parallel job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -1564,8 +1672,87 @@
 
 
 <h1 id="nextflow">Nextflow<a class="headerlink" href="#nextflow" title="Permanent link">&para;</a></h1>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<div class="admonition note annotate">
+<p>Nextflow enables scalable and reproducible scientific workflows using software containers. It allows the adaptation of data-driven, computational pipelines written in the most common scripting languages.</p>
+</div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>To run the default installed version of Nextflow, simply load the <code>nextflow</code> module:</p>
+<pre><code class="language-bash">$ module load nextflow
+$ nextflow help
+
+Usage: nextflow [options] COMMAND [arg...]
+</code></pre>
+<p>For usage documentation, run <code>nextflow help</code>.</p>
+<h3 id="submitting-processes-as-serial-jobs">Submitting processes as serial jobs<a class="headerlink" href="#submitting-processes-as-serial-jobs" title="Permanent link">&para;</a></h3>
+<div class="admonition note annotate">
+<p class="admonition-title">Recommended for serial jobs only</p>
+<p>This section is recommended for serial jobs only. For parallel jobs, please see the Parallel jobs section below.</p>
+</div>
+<p>Nextflow supports the ability to submit pipeline scripts as separate cluster jobs using the SGE executor.</p>
+<p>To enable the SGE executor, simply set to <code>process.executor</code> property to sge in a configuration file named <code>nextflow.config</code> in the job working directory. The amount of resources requested by each job submission is defined in the <a href="https://www.nextflow.io/docs/latest/process.html#clusteroptions">cluster options</a> section, where all Univa scheduler resources are supported.</p>
+<p>For example, to run all pipeline jobs with 2 serial cores and 2GB of memory for 1 hour, create the following configuration file:</p>
+<pre><code>process.executor='sge'
+process.clusterOptions='-pe smp 2 -l h_vmem=1G,h_rt=1:0:0'
+</code></pre>
+<div class="admonition note annotate">
+<p class="admonition-title">Setting the memory limit for serial jobs</p>
+<p>Add the <code>-DXmx</code> option to limit the amount of memory Nextflow can use in serial jobs. For more information regarding the Java VM memory allocation, see here.</p>
+</div>
+<h3 id="parallel-jobs">Parallel jobs<a class="headerlink" href="#parallel-jobs" title="Permanent link">&para;</a></h3>
+<p>Parallel jobs will use the in-built Apache Ignite clustering platform; Execution will be performed on the nodes requested in the submit request over MPI rather than submitting new jobs for each pipeline.</p>
+<div class="admonition warning annotate">
+<p class="admonition-title">Do not use the SGE executor in parallel jobs</p>
+<p>Using the SGE executor for parallel jobs causes the master job to hang until it is killed by the scheduler for exceeding walltime. This is due to Apache Ignite not being able to communicate to other pipeline scripts submitted as separate jobs.</p>
+</div>
+<p>To ensure parallel jobs use Apache Ignite, add the following to the configuration file (or omit the process.executor setting):</p>
+<pre><code>process.executor='ignite'
+</code></pre>
+<h3 id="example-jobs">Example jobs<a class="headerlink" href="#example-jobs" title="Permanent link">&para;</a></h3>
+<h4 id="serial-job">Serial job<a class="headerlink" href="#serial-job" title="Permanent link">&para;</a></h4>
+<p>Here is an example job taken from the Nextflow website to submit each process in the <code>input.nf</code> file as a new cluster job with 1 core and 1GB of memory. Ensure the cumulative runtime across all processes does not exceed the runtime requested in the master job:</p>
+<pre><code class="language-nextflow">#!/bin/bash
+#$ -cwd
+#$ -j y
+#$ -pe smp 1
+#$ -l h_rt=1:0:0
+#$ -l h_vmem=1G
+
+module load nextflow
+
+nextflow -DXmx=1G \
+         -C nextflow.config \
+         run input.nf
+</code></pre>
+<h4 id="parallel-job">Parallel job<a class="headerlink" href="#parallel-job" title="Permanent link">&para;</a></h4>
+<p>Here is an example job taken from the Nextflow website to run each process in the <code>input.nf</code> file using 48 cores across 2 sdv nodes with Apache Ignite:</p>
+<pre><code class="language-nextflow">#!/bin/bash
+#$ -cwd
+#$ -j y
+#$ -pe parallel 48
+#$ -l infiniband=sdv-i
+#$ -l h_rt=240:0:0
+
+module load nextflow openmpi
+
+mpirun --pernode \
+       nextflow run input.nf \
+       -with-mpi
+</code></pre>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.nextflow.io/docs/latest/index.html">Nextflow documentation</a></li>
+<li><a href="https://www.nextflow.io/example1.html">Nextflow basic pipeline example</a></li>
+<li><a href="https://www.nextflow.io/presentations.html">Nextflow presentation videos</a></li>
+<li><a href="https://groups.google.com/forum/#!forum/nextflow">Nextflow community support</a></li>
+<li><a href="https://www.nextflow.io/docs/latest/ignite.html#execution-with-mpi">Nextflow MPI</a></li>
+<li><a href="https://ignite.apache.org/whatisignite.html">Apache Ignite</a></li>
+</ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Jordi Deu-Pons</li>
+<li>Carlos López Elorduy</li>
+<li>Miguel Grau</li>
+</ul>
 
               
             </article>
