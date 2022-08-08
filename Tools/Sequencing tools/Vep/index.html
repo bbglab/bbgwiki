@@ -1689,8 +1689,7 @@
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>In order to install VEP, you can follow the <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html">installation guide</a>.</p>
 <p>Once it is installed, simply load the <code>ensembl-vep</code> module:</p>
-<pre><code>$ module load ensembl-vep
-$ vep
+<pre><code>$ vep
 
 Usage:
 ./vep [--cache|--offline|--database] [arguments]
@@ -1721,8 +1720,6 @@ Basic options
 #$ -pe smp 1
 #$ -l h_rt=1:0:0
 #$ -l h_vmem=1G
-
-module load ensembl-vep
 
 vep -i homo_sapiens_GRCh38.vcf \
     --cache \
