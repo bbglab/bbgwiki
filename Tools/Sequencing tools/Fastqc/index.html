@@ -1214,8 +1214,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apt-get" class="md-nav__link">
+    apt-get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    apt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-job" class="md-nav__link">
+    Example job
+  </a>
+  
+    <nav class="md-nav" aria-label="Example job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-job" class="md-nav__link">
+    Serial job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -1599,8 +1653,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apt-get" class="md-nav__link">
+    apt-get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    apt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-job" class="md-nav__link">
+    Example job
+  </a>
+  
+    <nav class="md-nav" aria-label="Example job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-job" class="md-nav__link">
+    Serial job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -1627,8 +1735,59 @@
 
 
 <h1 id="fastqc">Fastqc<a class="headerlink" href="#fastqc" title="Permanent link">&para;</a></h1>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<div class="admonition note annotate">
+<p>FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines.</p>
+</div>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="apt-get">apt-get<a class="headerlink" href="#apt-get" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get install fastqc
+</code></pre>
+<h3 id="apt">apt<a class="headerlink" href="#apt" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">sudo apt update
+sudo apt install fastqc
+</code></pre>
+<hr />
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<pre><code>$ fastqc --help
+            FastQC - A high throughput sequence QC analysis tool
+
+SYNOPSIS
+
+        fastqc seqfile1 seqfile2 .. seqfileN
+
+    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam]
+           [-c contaminant file] seqfile1 .. seqfileN
+</code></pre>
+<hr />
+<h2 id="example-job">Example job<a class="headerlink" href="#example-job" title="Permanent link">&para;</a></h2>
+<h3 id="serial-job">Serial job<a class="headerlink" href="#serial-job" title="Permanent link">&para;</a></h3>
+<p>Here is an example job running on 1 core and 1GB of memory:</p>
+<pre><code class="language-bash">#!/bin/bash
+#$ -cwd
+#$ -j y
+#$ -pe smp 1
+#$ -l h_rt=1:0:0
+#$ -l h_vmem=1G
+
+fastqc raw_data.fastq.gz raw_data2.fastq.gz
+</code></pre>
+<div class="admonition note annotate">
+<p class="admonition-title">Viewing the Fastqc results</p>
+<p>To view the Fastqc results, you may open the fastqc_report.html file in a web browser or the summary.txt file (located in the zipped output archive) on the command line. For assistance copying files to your local machine, please see the Moving Data page.</p>
+</div>
+<hr />
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC website</a></li>
+<li><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/">FastQC manual</a></li>
+<li><a href="https://www.youtube.com/watch?v=bz93ReOv87Y">FastQC video tutorial</a></li>
+</ul>
+<hr />
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Hania Kranas</li>
+</ul>
 
               
             </article>
