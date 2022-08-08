@@ -11,7 +11,6 @@ In order to install VEP, you can follow the [installation guide](https://www.ens
 Once it is installed, simply load the `ensembl-vep` module:
 
 ```
-$ module load ensembl-vep
 $ vep
 
 Usage:
@@ -49,8 +48,6 @@ Here is an example job running on 1 core and 1GB of memory:
 #$ -pe smp 1
 #$ -l h_rt=1:0:0
 #$ -l h_vmem=1G
-
-module load ensembl-vep
 
 vep -i homo_sapiens_GRCh38.vcf \
     --cache \
