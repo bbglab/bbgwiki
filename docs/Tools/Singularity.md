@@ -1,6 +1,0 @@
-# Singularity
-
-## Description
-
-
-## Reference
