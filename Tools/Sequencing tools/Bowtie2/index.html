@@ -1207,6 +1207,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#manually-on-ubuntulinux" class="md-nav__link">
+    Manually on Ubuntu/Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-installation" class="md-nav__link">
+    Check installation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1674,6 +1688,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#manually-on-ubuntulinux" class="md-nav__link">
+    Manually on Ubuntu/Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-installation" class="md-nav__link">
+    Check installation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1738,7 +1766,9 @@
 <div class="admonition note annotate">
 <p>Bowtie2 is an ultra fast and memory-efficient tool for aligning sequencing reads to long reference sequences.</p>
 </div>
+<hr />
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>You can check the installation documentation <a href="https://www.metagenomics.wiki/tools/bowtie2/install">here</a>.</p>
 <h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
 <pre><code class="language-bash">conda install -c bioconda bowtie2
 </code></pre>
@@ -1746,6 +1776,23 @@
 <pre><code class="language-bash">sudo apt update
 sudo apt install bowtie2
 </code></pre>
+<h3 id="manually-on-ubuntulinux">Manually on Ubuntu/Linux<a class="headerlink" href="#manually-on-ubuntulinux" title="Permanent link">&para;</a></h3>
+<p>Create and go to install directory</p>
+<pre><code class="language-bash">cd $HOME/tools/bowtie2/
+</code></pre>
+<p>Download Ubuntu/Linux version</p>
+<pre><code class="language-bash">wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.2/bowtie2-2.4.2-sra-linux-x86_64.zip/download
+</code></pre>
+<p>Decompress</p>
+<pre><code class="language-bash">unzip download
+</code></pre>
+<p>Add location to system PATH</p>
+<pre><code class="language-bash">export PATH=$HOME/tools/bowtie2/bowtie2-2.4.2-sra-linux-x86_64:$PATH
+</code></pre>
+<h3 id="check-installation">Check installation<a class="headerlink" href="#check-installation" title="Permanent link">&para;</a></h3>
+<pre><code>bowtie2 --help
+</code></pre>
+<hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <pre><code>$ bowtie2 -h
 
@@ -1768,11 +1815,13 @@ Usage:   bowtie2 [options]* -x &lt;bt2-idx&gt; {-1 &lt;m1&gt; -2 &lt;m2&gt; | -U
 bowtie2-build &lt;inputDir&gt; &lt;outputDir&gt;
 bowtie2-inspect &lt;outputDir&gt;
 </code></pre>
+<hr />
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/BenLangmead/bowtie2">Bowtie2 GitHub</a></li>
 <li><a href="https://github.com/BenLangmead/bowtie2/blob/master/MANUAL.markdown#getting-started-with-bowtie-2-lambda-phage-example">Bowtie2 example</a></li>
 </ul>
+<hr />
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Hania Kranas</li>
