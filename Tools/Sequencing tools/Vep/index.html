@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vep" class="md-skip">
+        <a href="#ensembl-vep" class="md-skip">
           Skip to content
         </a>
       
@@ -1256,8 +1256,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-job" class="md-nav__link">
+    Example job
+  </a>
+  
+    <nav class="md-nav" aria-label="Example job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-job" class="md-nav__link">
+    Serial job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -1599,8 +1626,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-job" class="md-nav__link">
+    Example job
+  </a>
+  
+    <nav class="md-nav" aria-label="Example job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serial-job" class="md-nav__link">
+    Serial job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
   </a>
   
 </li>
@@ -1626,9 +1680,66 @@
                 
 
 
-<h1 id="vep">Vep<a class="headerlink" href="#vep" title="Permanent link">&para;</a></h1>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<!-- Vep -->
+
+<h1 id="ensembl-vep">Ensembl-VEP<a class="headerlink" href="#ensembl-vep" title="Permanent link">&para;</a></h1>
+<div class="admonition note annotate">
+<p>VEP determines the effect of your variants (insertions, deletions and structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions.</p>
+</div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>In order to install VEP, you can follow the <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html">installation guide</a>.</p>
+<p>Once it is installed, simply load the <code>ensembl-vep</code> module:</p>
+<pre><code>$ module load ensembl-vep
+$ vep
+
+Usage:
+./vep [--cache|--offline|--database] [arguments]
+
+Basic options
+=============
+
+--help                 Display this message and quit
+
+-i | --input_file      Input file
+-o | --output_file     Output file
+--force_overwrite      Force overwriting of output file
+--species [species]    Species to use [default: &quot;human&quot;]
+
+--everything           Shortcut switch to turn on commonly used options. See web
+                       documentation for details [default: off]
+--fork [num_forks]     Use forking to improve script runtime
+</code></pre>
+<p>For full option documentation see <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_options.html">here</a>.</p>
+<p>Instructions on how to download and use cached files can be found <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_cache.html">here</a>.</p>
+<p>To enable offline mode and use of the cache, pass the <code>--offline</code> and <code>--cache</code> flags.</p>
+<h2 id="example-job">Example job<a class="headerlink" href="#example-job" title="Permanent link">&para;</a></h2>
+<h3 id="serial-job">Serial job<a class="headerlink" href="#serial-job" title="Permanent link">&para;</a></h3>
+<p>Here is an example job running on 1 core and 1GB of memory:</p>
+<pre><code class="language-bash">#!/bin/bash
+#$ -cwd
+#$ -j y
+#$ -pe smp 1
+#$ -l h_rt=1:0:0
+#$ -l h_vmem=1G
+
+module load ensembl-vep
+
+vep -i homo_sapiens_GRCh38.vcf \
+    --cache \
+    --offline \
+    --output_file results
+</code></pre>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.ensembl.org/info/docs/tools/vep/script/VEP_script_documentation.pdf">Ensembl-VEP documentation</a></li>
+<li><a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_tutorial.html">Ensembl-VEP tutorial</a></li>
+<li><a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_example.html">Ensembl-VEP examples</a></li>
+<li><a href="https://www.ensembl.org/Tools/VEP">Ensembl-VEP web application</a></li>
+</ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><em>To be added</em></li>
+</ul>
 
               
             </article>
