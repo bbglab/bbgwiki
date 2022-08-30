@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
+      <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
-        <title>Trimmomatic - BBG-Wiki</title>
+        <title>Running notebooks in the cluster - BBG-Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#trimmomatic" class="md-skip">
+        <a href="#running-notebooks-in-the-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -80,9 +80,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="BBG-Wiki" class="md-header__button md-logo" aria-label="BBG-Wiki" data-md-component="logo">
+    <a href="../.." title="BBG-Wiki" class="md-header__button md-logo" aria-label="BBG-Wiki" data-md-component="logo">
       
-  <img src="../../../assets/images/bbglabLOGO_small.png" alt="logo">
+  <img src="../../assets/images/bbglabLOGO_small.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Trimmomatic
+              Running notebooks in the cluster
             
           </span>
         </div>
@@ -165,9 +165,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="BBG-Wiki" class="md-nav__button md-logo" aria-label="BBG-Wiki" data-md-component="logo">
+    <a href="../.." title="BBG-Wiki" class="md-nav__button md-logo" aria-label="BBG-Wiki" data-md-component="logo">
       
-  <img src="../../../assets/images/bbglabLOGO_small.png" alt="logo">
+  <img src="../../assets/images/bbglabLOGO_small.png" alt="logo">
 
     </a>
     BBG-Wiki
@@ -183,7 +183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -198,7 +198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Edit%20BBG-Wiki/" class="md-nav__link">
+      <a href="../../Edit%20BBG-Wiki/" class="md-nav__link">
         Edit BBG-Wiki
       </a>
     </li>
@@ -211,12 +211,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -239,7 +241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cluster%20basics/Backups/" class="md-nav__link">
+      <a href="../Backups/" class="md-nav__link">
         Backups
       </a>
     </li>
@@ -253,7 +255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cluster%20basics/Headers/" class="md-nav__link">
+      <a href="../Headers/" class="md-nav__link">
         Headers
       </a>
     </li>
@@ -267,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cluster%20basics/Interactive/" class="md-nav__link">
+      <a href="../Interactive/" class="md-nav__link">
         Interactive
       </a>
     </li>
@@ -279,11 +281,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../Cluster%20basics/Notebooks_in_cluster/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Running notebooks in the cluster
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Running notebooks in the cluster
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -295,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cluster%20basics/Screen/" class="md-nav__link">
+      <a href="../Screen/" class="md-nav__link">
         Screen
       </a>
     </li>
@@ -309,7 +366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cluster%20basics/Structure/" class="md-nav__link">
+      <a href="../Structure/" class="md-nav__link">
         Structure
       </a>
     </li>
@@ -349,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cluster%20basics/Submitting%20jobs/Qmap/" class="md-nav__link">
+      <a href="../Submitting%20jobs/Qmap/" class="md-nav__link">
         Qmap
       </a>
     </li>
@@ -363,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cluster%20basics/Submitting%20jobs/SLURM/" class="md-nav__link">
+      <a href="../Submitting%20jobs/SLURM/" class="md-nav__link">
         SLURM
       </a>
     </li>
@@ -444,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/BeastAML/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/BeastAML/" class="md-nav__link">
         BeastAML
       </a>
     </li>
@@ -458,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/CGCI/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/CGCI/" class="md-nav__link">
         CGCI
       </a>
     </li>
@@ -472,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/CPTAC/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/CPTAC/" class="md-nav__link">
         CPTAC
       </a>
     </li>
@@ -486,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/GENIE/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/GENIE/" class="md-nav__link">
         GENIE
       </a>
     </li>
@@ -500,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/Hartwig/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/Hartwig/" class="md-nav__link">
         Hartwig
       </a>
     </li>
@@ -514,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/ICGC/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/ICGC/" class="md-nav__link">
         ICGC
       </a>
     </li>
@@ -528,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/PCAWG/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/PCAWG/" class="md-nav__link">
         PCAWG
       </a>
     </li>
@@ -542,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/PedcBioPortal/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/PedcBioPortal/" class="md-nav__link">
         PedcBioPortal
       </a>
     </li>
@@ -556,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/StJude/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/StJude/" class="md-nav__link">
         StJude
       </a>
     </li>
@@ -570,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/StJudeLife/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/StJudeLife/" class="md-nav__link">
         StJudeLife
       </a>
     </li>
@@ -584,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/TARGET/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/TARGET/" class="md-nav__link">
         TARGET
       </a>
     </li>
@@ -598,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/TCGA/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/TCGA/" class="md-nav__link">
         TCGA
       </a>
     </li>
@@ -612,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/UK%20Biobank/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/UK%20Biobank/" class="md-nav__link">
         UK Biobank
       </a>
     </li>
@@ -626,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/General%20datasets/cBioPortal/" class="md-nav__link">
+      <a href="../../Datasets/General%20datasets/cBioPortal/" class="md-nav__link">
         cBioPortal
       </a>
     </li>
@@ -673,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Inhouse%20datasets/ALL%20cohort/" class="md-nav__link">
+      <a href="../../Datasets/Inhouse%20datasets/ALL%20cohort/" class="md-nav__link">
         ALL cohort
       </a>
     </li>
@@ -687,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Inhouse%20datasets/Damage%20maps/" class="md-nav__link">
+      <a href="../../Datasets/Inhouse%20datasets/Damage%20maps/" class="md-nav__link">
         Damage maps
       </a>
     </li>
@@ -701,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Inhouse%20datasets/Nanopore%20data/" class="md-nav__link">
+      <a href="../../Datasets/Inhouse%20datasets/Nanopore%20data/" class="md-nav__link">
         Nanopore data
       </a>
     </li>
@@ -715,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Inhouse%20datasets/Pediatric%20Rhabdoid%20cohort/" class="md-nav__link">
+      <a href="../../Datasets/Inhouse%20datasets/Pediatric%20Rhabdoid%20cohort/" class="md-nav__link">
         Pediatric Rhabdoid cohort
       </a>
     </li>
@@ -729,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Inhouse%20datasets/Pediatric%20Secondary%20neoplasms/" class="md-nav__link">
+      <a href="../../Datasets/Inhouse%20datasets/Pediatric%20Secondary%20neoplasms/" class="md-nav__link">
         Pediatric Secondary neoplasms
       </a>
     </li>
@@ -776,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Other%20data/Canonical%20transcripts/" class="md-nav__link">
+      <a href="../../Datasets/Other%20data/Canonical%20transcripts/" class="md-nav__link">
         Canonical transcripts
       </a>
     </li>
@@ -790,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Other%20data/Genomic%20regions/" class="md-nav__link">
+      <a href="../../Datasets/Other%20data/Genomic%20regions/" class="md-nav__link">
         Genomic regions
       </a>
     </li>
@@ -804,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Other%20data/Nmdetective/" class="md-nav__link">
+      <a href="../../Datasets/Other%20data/Nmdetective/" class="md-nav__link">
         Nmdetective
       </a>
     </li>
@@ -818,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Datasets/Other%20data/Reference%20genomes/" class="md-nav__link">
+      <a href="../../Datasets/Other%20data/Reference%20genomes/" class="md-nav__link">
         Reference genomes
       </a>
     </li>
@@ -873,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Plots%20and%20scripts/Intogen-BoostDM%20plots/" class="md-nav__link">
+      <a href="../../Plots%20and%20scripts/Intogen-BoostDM%20plots/" class="md-nav__link">
         Intogen-BoostDM plots
       </a>
     </li>
@@ -887,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Plots%20and%20scripts/Mutational%20profile/" class="md-nav__link">
+      <a href="../../Plots%20and%20scripts/Mutational%20profile/" class="md-nav__link">
         Mutational profile
       </a>
     </li>
@@ -901,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Plots%20and%20scripts/Needle%20plot/" class="md-nav__link">
+      <a href="../../Plots%20and%20scripts/Needle%20plot/" class="md-nav__link">
         Needle plot
       </a>
     </li>
@@ -921,14 +978,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -951,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/" class="md-nav__link">
+      <a href="../../Tools/Docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -965,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Nextflow/" class="md-nav__link">
+      <a href="../../Tools/Nextflow/" class="md-nav__link">
         Nextflow
       </a>
     </li>
@@ -1005,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BBG-tools/BGconfig/" class="md-nav__link">
+      <a href="../../Tools/BBG-tools/BGconfig/" class="md-nav__link">
         BGconfig
       </a>
     </li>
@@ -1019,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BBG-tools/BGdata/" class="md-nav__link">
+      <a href="../../Tools/BBG-tools/BGdata/" class="md-nav__link">
         BGdata
       </a>
     </li>
@@ -1033,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BBG-tools/BGlogs/" class="md-nav__link">
+      <a href="../../Tools/BBG-tools/BGlogs/" class="md-nav__link">
         BGlogs
       </a>
     </li>
@@ -1047,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BBG-tools/BGpack/" class="md-nav__link">
+      <a href="../../Tools/BBG-tools/BGpack/" class="md-nav__link">
         BGpack
       </a>
     </li>
@@ -1061,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BBG-tools/BGreference/" class="md-nav__link">
+      <a href="../../Tools/BBG-tools/BGreference/" class="md-nav__link">
         BGreference
       </a>
     </li>
@@ -1075,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BBG-tools/BGsignature/" class="md-nav__link">
+      <a href="../../Tools/BBG-tools/BGsignature/" class="md-nav__link">
         BGsignature
       </a>
     </li>
@@ -1089,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BBG-tools/BGvep/" class="md-nav__link">
+      <a href="../../Tools/BBG-tools/BGvep/" class="md-nav__link">
         BGvep
       </a>
     </li>
@@ -1103,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BBG-tools/OpenVariant/" class="md-nav__link">
+      <a href="../../Tools/BBG-tools/OpenVariant/" class="md-nav__link">
         OpenVariant
       </a>
     </li>
@@ -1122,14 +1177,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
       
       
       
@@ -1152,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Bedtools/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Bedtools/" class="md-nav__link">
         Bedtools
       </a>
     </li>
@@ -1166,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Bowtie2/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Bowtie2/" class="md-nav__link">
         Bowtie2
       </a>
     </li>
@@ -1180,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Cutadapt/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Cutadapt/" class="md-nav__link">
         Cutadapt
       </a>
     </li>
@@ -1194,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Fastqc/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Fastqc/" class="md-nav__link">
         Fastqc
       </a>
     </li>
@@ -1208,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Samtools/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Samtools/" class="md-nav__link">
         SAMtools
       </a>
     </li>
@@ -1220,59 +1273,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Trimmomatic
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Tools/Sequencing%20tools/Trimmomatic/" class="md-nav__link">
         Trimmomatic
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1284,7 +1289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vep/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Vep/" class="md-nav__link">
         Vep
       </a>
     </li>
@@ -1298,7 +1303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pysam/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/pysam/" class="md-nav__link">
         pysam
       </a>
     </li>
@@ -1338,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Variant%20callers/MosaicForecast/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Variant%20callers/MosaicForecast/" class="md-nav__link">
         MosaicForecast
       </a>
     </li>
@@ -1352,7 +1357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Variant%20callers/Mutect2/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Variant%20callers/Mutect2/" class="md-nav__link">
         Mutect2
       </a>
     </li>
@@ -1366,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Variant%20callers/Platinum/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Variant%20callers/Platinum/" class="md-nav__link">
         Platinum
       </a>
     </li>
@@ -1380,7 +1385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Variant%20callers/Sarek/" class="md-nav__link">
+      <a href="../../Tools/Sequencing%20tools/Variant%20callers/Sarek/" class="md-nav__link">
         Sarek
       </a>
     </li>
@@ -1434,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signature%20tools/DeconstructSigs/" class="md-nav__link">
+      <a href="../../Tools/Signature%20tools/DeconstructSigs/" class="md-nav__link">
         DeconstructSigs
       </a>
     </li>
@@ -1448,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signature%20tools/SigProfiler/" class="md-nav__link">
+      <a href="../../Tools/Signature%20tools/SigProfiler/" class="md-nav__link">
         SigProfiler
       </a>
     </li>
@@ -1462,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signature%20tools/SigProfilerJulia/" class="md-nav__link">
+      <a href="../../Tools/Signature%20tools/SigProfilerJulia/" class="md-nav__link">
         SigProfilerJulia
       </a>
     </li>
@@ -1476,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signature%20tools/mSigHDP/" class="md-nav__link">
+      <a href="../../Tools/Signature%20tools/mSigHDP/" class="md-nav__link">
         mSigHDP
       </a>
     </li>
@@ -1490,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signature%20tools/mSignAct/" class="md-nav__link">
+      <a href="../../Tools/Signature%20tools/mSignAct/" class="md-nav__link">
         mSignAct
       </a>
     </li>
@@ -1537,7 +1542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Singularity/Building%20containers/" class="md-nav__link">
+      <a href="../../Tools/Singularity/Building%20containers/" class="md-nav__link">
         Building containers
       </a>
     </li>
@@ -1551,7 +1556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Singularity/Overview/" class="md-nav__link">
+      <a href="../../Tools/Singularity/Overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1565,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Singularity/Using%20containers/" class="md-nav__link">
+      <a href="../../Tools/Singularity/Using%20containers/" class="md-nav__link">
         Using containers
       </a>
     </li>
@@ -1620,6 +1625,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     Reference
   </a>
@@ -1640,9 +1652,57 @@
                 
 
 
-<h1 id="trimmomatic">Trimmomatic<a class="headerlink" href="#trimmomatic" title="Permanent link">&para;</a></h1>
+<h1 id="running-notebooks-in-the-cluster">Running notebooks in the cluster<a class="headerlink" href="#running-notebooks-in-the-cluster" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Running a jupyter notebook in the cluster allows you to work with a notebook which will be <strong>running even if you disconnect from the cluster</strong>.</p>
+<p>This is especially useful for time-consuming/memory-consuming processes or notebooks with a high number of variables/packages needed, so that you  have more computational power than your local computer, you can leave them running in the background without the fear of accidentally disconnecting and losing all the progress and you can come back to a notebook without the need of loading all the variables/packages again.</p>
+<p>To run a notebook in the cluster, a <a href="https://bbglab.github.io/bbgwiki/Cluster%20basics/Screen/">screen</a> and an <a href="https://bbglab.github.io/bbgwiki/Cluster%20basics/Interactive/" target="_self">interactive</a> will be used.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>You will need to follow the next steps:</p>
+<p>Connect to the cluster:</p>
+<pre><code class="language-bash">$ ssh -p 22022 &lt;username&gt;@bbgcluster
+</code></pre>
+<p>Open a screen:</p>
+<pre><code class="language-bash">&lt;username&gt;@login01:~$ screen -S &lt;screen_name&gt;
+</code></pre>
+<p>Run an interactive job:</p>
+<pre><code class="language-bash">[screen_name] &lt;username&gt;@login01:~$ interactive
+</code></pre>
+<p>(If your notebook needs more than 8G and 2 cores, you can specify it here -- see <a href="https://bbglab.github.io/bbgwiki/Cluster%20basics/Interactive/" target="_blank">interactive</a> section).</p>
+<p>Activate conda base or the conda environment that you need in your notebook:</p>
+<pre><code class="language-bash">[screen_name] &lt;username&gt;@bbgn005:~$ conda activate
+</code></pre>
+<p>Go to the folder that you wish to run the notebook:</p>
+<pre><code class="language-bash">(base)[screen_name] &lt;username&gt;@bbgn005:~$ cd /workspace/folder
+</code></pre>
+<p>Run the jupyter notebook:</p>
+<pre><code class="language-bash">(base)[screen_name] &lt;username&gt;@bbgn005:~/workspace/folder$ unset XDG_RUNTIME_DIR &amp;&amp; jupyter notebook --ip=0.0.0.0
+</code></pre>
+<p>Keep the URL with the token and the node in which the interactive is running:</p>
+<pre><code class="language-bash">[I 10:37:20.371 NotebookApp] The Jupyter Notebook is running at: http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
+</code></pre>
+<p>Now, your notebook is running and you can dettach from the screen:</p>
+<pre><code>Ctrl + A -&gt; D
+</code></pre>
+<p>Open a new terminal and create an ssh tunnel to be able to access the port <strong>8888</strong> in the node -- following the example, this is node <strong>bbgn005</strong>:</p>
+<pre><code>$ ssh -L 8888:bbgn005:8888 -p 22022 &lt;username&gt;@bbgcluster
+</code></pre>
+<p>Now use the URL,  replacing <strong>127.0.0.1</strong> with <strong>localhost</strong> and open the URL in your browser:</p>
+<pre><code>http://localhost:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
+</code></pre>
+<p>Using the tunnel (ssh -L  terminal) and the URL in the browser, you can enter the notebook as many times as you need. 
+When you don't need the notebook to continue running in the cluster, reconnect to the screen:</p>
+<pre><code class="language-bash">$ screen -r &lt;screen_name&gt;
+</code></pre>
+<p>And kill jupyter and exit the interactive session.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Jordi Deu-Pons</li>
+<li>Miguel Grau</li>
+<li>Carlos López</li>
+<li>Ferran Muiños</li>
+<li>Paula Gomis</li>
+</ul>
 
 
 
@@ -1666,7 +1726,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../Samtools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SAMtools" rel="prev">
+        <a href="../Interactive/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interactive" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1675,20 +1735,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              SAMtools
+              Interactive
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Vep/" class="md-footer__link md-footer__link--next" aria-label="Next: Vep" rel="next">
+        <a href="../Screen/" class="md-footer__link md-footer__link--next" aria-label="Next: Screen" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Vep
+              Screen
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1719,10 +1779,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
     
   </body>
