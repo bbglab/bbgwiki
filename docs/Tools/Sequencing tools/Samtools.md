@@ -6,6 +6,7 @@
 ## Installation
 
 ### Conda
+
 ```bash
 conda install -c bioconda samtools
 ```
@@ -14,7 +15,6 @@ conda install -c bioconda samtools
 
 For the manual installation, you can find the instructions [here](http://www.sthda.com/english/wiki/install-samtools-on-unix-system).
 
-
 ## Usage
 
 ```bash
@@ -22,11 +22,12 @@ samtools view -b -S -o genome_reads_aligned.bam genome_reads_aligned.sam
 ```
 
 !!! note annotate "Core Usage"
-
     To ensure that SAMtools uses the correct number of cores, the `-@ ${NSLOTS}` option should be used on commands that support it.
 
 ## Example job
+
 ### Serial job
+
 Here is an example job running on 4 cores and 8GB of memory:
 
 ```bash
@@ -50,6 +51,7 @@ samtools mpileup -g -f ref_genome_1K.fna genome_reads_aligned.sorted.bam \
 ```
 
 ## Links
+
 - [Samtools GitHub](https://github.com/samtools/samtools)
 - [Samtools website](https://www.htslib.org/)
 - [Samtools documentation](https://www.htslib.org/doc/samtools.html)

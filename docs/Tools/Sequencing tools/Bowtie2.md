@@ -50,7 +50,7 @@ export PATH=$HOME/tools/bowtie2/bowtie2-2.4.2-sra-linux-x86_64:$PATH
 
 ### Check installation
 
-```
+```bash
 bowtie2 --help
 ```
 
@@ -58,7 +58,7 @@ bowtie2 --help
 
 ## Usage
 
-```
+```bash
 $ bowtie2 -h
 
 Usage:   bowtie2 [options]* -x <bt2-idx> {-1 <m1> -2 <m2> | -U <r> |
@@ -68,7 +68,9 @@ Usage:   bowtie2 [options]* -x <bt2-idx> {-1 <m1> -2 <m2> | -U <r> |
 For full usage documentation, run `bowtie2 -h`.
 
 ## Example job
+
 ### Serial job
+
 Here is an example job running on 1 core and 1GB of memory:
 
 ```bash

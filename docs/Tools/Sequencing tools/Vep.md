@@ -1,11 +1,12 @@
 <!-- Vep -->
 
 # Ensembl-VEP
+
 !!! note annotate ""
     VEP determines the effect of your variants (insertions, deletions and structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions.
 
-
 ## Usage
+
 In order to install VEP, you can follow the [installation guide](https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html).
 
 Once it is installed, simply load the `ensembl-vep` module:
@@ -38,7 +39,9 @@ Instructions on how to download and use cached files can be found [here](https:/
 To enable offline mode and use of the cache, pass the `--offline` and `--cache` flags.
 
 ## Example job
+
 ### Serial job
+
 Here is an example job running on 1 core and 1GB of memory:
 
 ```bash

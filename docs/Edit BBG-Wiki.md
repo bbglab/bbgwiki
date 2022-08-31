@@ -16,6 +16,7 @@ Go to the [bbg-wiki repository](https://github.com/bbglab/bbgwiki){:target="_bla
 ![BBGWiki edit online tutorial](assets/images/bbgwiki_edit_online.jpg)
 
 ## Local
+
 ### Installation
 
 ```bash
@@ -23,16 +24,16 @@ git clone https://github.com/bbglab/bbgwiki.git
 pip install -r bbgwiki/requirements.txt
 ```
 
-
 ### Requirements
 
-```
+```text
 mkdocs >= 1.2.2
 mkdocs-material >= 7.1.11
 mkdocs-static-i18n >= 0.18
 ```
 
 ### Commands
+
 Running at **localhost** (to try stuff before updating the main web)
 
 ```bash

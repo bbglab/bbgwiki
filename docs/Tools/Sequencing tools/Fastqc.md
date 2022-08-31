@@ -23,7 +23,7 @@ sudo apt install fastqc
 
 ## Usage
 
-```
+```bash
 $ fastqc --help
             FastQC - A high throughput sequence QC analysis tool
 
@@ -38,7 +38,9 @@ SYNOPSIS
 ---
 
 ## Example job
+
 ### Serial job
+
 Here is an example job running on 1 core and 1GB of memory:
 
 ```bash
@@ -53,7 +55,6 @@ fastqc raw_data.fastq.gz raw_data2.fastq.gz
 ```
 
 !!! note annotate "Viewing the Fastqc results"
-
     To view the Fastqc results, you may open the fastqc_report.html file in a web browser or the summary.txt file (located in the zipped output archive) on the command line. For assistance copying files to your local machine, please see the Moving Data page.
 
 ---

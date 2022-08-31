@@ -1,6 +1,5 @@
 # Screen
 
-
 ## Description
 
 The `screen` command opens a session which will be **running even if you disconnect from the cluster**.
@@ -14,14 +13,14 @@ You can also open several screens for different processes, which you can detach 
 ## Basic commands
 
 ### New screen
+
 Creates a **new screen** with name "*custom_name*".
 
 ```bash
-$ screen -S <custom_name>
+screen -S <custom_name>
 ```
 
 !!! warning
-
     When opening a new screen, this should be done from the `login01` node, since this guarantees that the screen will be **constantly running** and not shut down (which could happen if the screen is opened in one of the other nodes).
 
 ### List screens
@@ -29,23 +28,23 @@ $ screen -S <custom_name>
 List all the created screens.
 
 ```bash
-$ screen -ls
+screen -ls
 ```
 
 ### Detach
 
 Detaches from a screen
 
-```
+```text
 Ctrl + A -> D
 ```
 
-
 ### Re-attach
+
 Re-attaches to a detached screen.
 
 ```bash
-$ screen -r [#]
+screen -r [#]
 ```
 
 !!! note
@@ -54,8 +53,9 @@ $ screen -r [#]
 ### Exit and kill screen
 
 ```bash
-$ exit
+exit
 ```
+
 ---
 
 ## Documentation

@@ -8,9 +8,10 @@
 You can check the installation guide [here](https://bedtools.readthedocs.io/en/latest/content/installation.html).
 
 ## Usage
+
 To run the default installed version of Bedtools, simply load the bedtools module:
 
-```
+```bash
 $ bedtools -h
 
 Usage:   bedtools <subcommand> [options]
@@ -18,7 +19,9 @@ For full usage documentation, run bedtools -h.
 ```
 
 ## Example job
+
 ### Serial job
+
 Here is an example job running on 1 core and 1GB of memory:
 
 ```bash
