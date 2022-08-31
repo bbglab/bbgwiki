@@ -1,15 +1,17 @@
 # Mutational profile
 
-The function `plot_signature`  will allow you to plot the mutational profile of a sample given the vector of 96 channels (see y axis in the example figure) with the frequencies of each nucleotide change. 
+The function `plot_signature`  will allow you to plot the mutational profile of a sample given the vector of 96 channels (see y axis in the example figure) with the frequencies of each nucleotide change.
 It takes as input the the vector with the mutations frequency  (`profile`) and the title of the plot (`title`).
 
 The function `minor_tick_labels`  is needed to generate the labels of the plot.
-### Example
+
+## Example
+
 ![Plot mutational profile](../assets/images/plot_mutational_profile.png)
 
-### Function 
+## Function
 
-```bash
+``` py
 import seaborn as sns
 import numpy as np
 
@@ -70,23 +72,19 @@ def plot_signature(profile, title=None):
     plt.show()
 ```
 
-
-!!! note annotate ""
-    Note: 
-    
+!!! note
     - The function normalizes the vector so that the sum of all the frequencies is equal to 1.
     - If you want to normalize the frequencies so that the trinucleotide composition of the genomic regions from which the mutations have been obtained, you need to normalize the vector taking into account the trinucleotide composition before using the function plot_signature.
 
-### Normalization of the vector      
+## Normalization of the vector
 
 In order to normalize the vector you will need to import from [bgreference](https://bbglab.github.io/bbgwiki/Tools/BBG-tools/BGreference/){:target="_blank"} the reference genome in which the data has been sequenced.
 
 You will also need the vector with the mutations frequency (`profile`) and the directory of a file with the genomic regions from which the mutations have been obtained (`regions_file_dir`), with at least the columns: `CHROMOSOME`, `START`, `END`.
 
+### Needed functions
 
-
-#### Needed functions
-```bash
+```py
 from itertools import product
 import pandas as pd
 import numpy as np
@@ -149,13 +147,14 @@ def get_triplet_counts_region(regions_file_dir,reference_genome=hg38):
     return sbs_format(list(map(int, counts)))
 ```
 
-#### Normalization
-```bash
+### Normalization
+
+```python
 region_triplet_abundance=get_triplet_counts_region(regions_file_dir)
 normalized_profile = np.array(profile)/np.array(region_triplet_abundance)
 ```
 
-     
 ## Reference
+
 - Paula Gomis
 - Ferran Muiños
