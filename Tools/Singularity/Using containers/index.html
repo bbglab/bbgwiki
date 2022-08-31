@@ -1797,9 +1797,9 @@
 <p>It is possible to launch a shell within the container using the <code>shell</code> command. Interacting directly with a shell inside the container can be useful for code debugging and running multiple commands in a single interactive session, as an alternative to writing a single script. Below demonstrates how to invoke python3 from inside the <code>/data/containers/public/python3_helloworld.simg</code> container using an interactive shell:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ singularity shell /data/containers/public/python3_helloworld.simg
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Singularity&gt; python3
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Python 3.8.10 (default, Sep 28 2021, 16:10:42)
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>[GCC 9.3.0] on linux
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Python <span class="m">3</span>.8.10 <span class="o">(</span>default, Sep <span class="m">28</span> <span class="m">2021</span>, <span class="m">16</span>:10:42<span class="o">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="o">[</span>GCC <span class="m">9</span>.3.0<span class="o">]</span> on linux
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>&gt;&gt;&gt;
 </code></pre></div>
 <p>Documentation is available on the <a href="https://github.com/singularityhub/singularityhub.github.io/wiki">Singularity Hub Wiki</a></p>
@@ -1810,11 +1810,11 @@
 </div>
 <p>Containers created elsewhere can be copied or imported, and run on the cluster. The following example demonstrates how to import and run the latest Ubuntu official image stored in the <a href="https://hub.docker.com/_/ubuntu/">Docker Hub</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ singularity pull ubuntu.simg docker://ubuntu:latest
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$ singularity exec ubuntu.simg cat /etc/lsb-release
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>DISTRIB_ID=Ubuntu
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>DISTRIB_RELEASE=20.04
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>DISTRIB_CODENAME=focal
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>DISTRIB_DESCRIPTION=&quot;Ubuntu 20.04.3 LTS&quot;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$ singularity <span class="nb">exec</span> ubuntu.simg cat /etc/lsb-release
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nv">DISTRIB_ID</span><span class="o">=</span>Ubuntu
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">DISTRIB_RELEASE</span><span class="o">=</span><span class="m">20</span>.04
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">DISTRIB_CODENAME</span><span class="o">=</span>focal
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">DISTRIB_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;Ubuntu 20.04.3 LTS&quot;</span>
 </code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>

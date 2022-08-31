@@ -1659,45 +1659,45 @@
 <p>To run a notebook in the cluster, a <a href="/Cluster%20basics/Screen">screen</a> and an <a href="/Cluster%20basics/Interactive">interactive</a> will be used.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>You will need to follow the next steps:</p>
-<p>Connect to the cluster:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ ssh -p <span class="m">22022</span> &lt;username&gt;@bbgcluster
+<p>Connect to the cluster:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh -p <span class="m">22022</span> &lt;username&gt;@bbgcluster
 </code></pre></div>
-Open a screen:
+<p>Open a screen:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;username&gt;@login01:~$ screen -S &lt;screen_name&gt;
 </code></pre></div>
-Run an interactive job:</p>
+<p>Run an interactive job:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">[</span>screen_name<span class="o">]</span> &lt;username&gt;@login01:~$ interactive
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If your notebook needs more than 8G and 2 cores, you can specify it here -- see <a href="/Cluster%20basics/Interactive">interactive</a> section.</p>
 </div>
-<p>Activate conda base or the conda environment that you need in your notebook:
+<p>Activate conda base or the conda environment that you need in your notebook:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">[</span>screen_name<span class="o">]</span> &lt;username&gt;@bbgn005:~$ conda activate
 </code></pre></div>
-Go to the folder that you wish to run the notebook:
+<p>Go to the folder that you wish to run the notebook:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">(</span>base<span class="o">)[</span>screen_name<span class="o">]</span> &lt;username&gt;@bbgn005:~$ <span class="nb">cd</span> /workspace/folder
 </code></pre></div>
- Run the jupyter notebook:
+<p>Run the jupyter notebook:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">(</span>base<span class="o">)[</span>screen_name<span class="o">]</span> &lt;username&gt;@bbgn005:~/workspace/folder$ <span class="nb">unset</span> XDG_RUNTIME_DIR <span class="o">&amp;&amp;</span> jupyter notebook --ip<span class="o">=</span><span class="m">0</span>.0.0.0
 </code></pre></div>
-Keep the URL with the token and the node in which the interactive is running:
+<p>Keep the URL with the token and the node in which the interactive is running:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span>I <span class="m">10</span>:37:20.371 NotebookApp<span class="o">]</span> The Jupyter Notebook is running at: http://127.0.0.1:8888/?token<span class="o">=</span>730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
 </code></pre></div>
-Now, your notebook is running and you can dettach from the screen:
+<p>Now, your notebook is running and you can dettach from the screen:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Ctrl + A -&gt; D
 </code></pre></div>
-Open a new terminal and create an ssh tunnel to be able to access the port <strong>8888</strong> in the node -- following the example, this is node <strong>bbgn005</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ ssh -L 8888:bbgn005:8888 -p 22022 &lt;username&gt;@bbgcluster
+<p>Open a new terminal and create an ssh tunnel to be able to access the port <strong>8888</strong> in the node -- following the example, this is node <strong>bbgn005</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh -L <span class="m">8888</span>:bbgn005:8888 -p <span class="m">22022</span> &lt;username&gt;@bbgcluster
 </code></pre></div>
-Now use the URL,  replacing <strong>127.0.0.1</strong> with <strong>localhost</strong> and open the URL in your browser:
+<p>Now use the URL,  replacing <strong>127.0.0.1</strong> with <strong>localhost</strong> and open the URL in your browser:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>http://localhost:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
 </code></pre></div>
-Using the tunnel (ssh -L  terminal) and the URL in the browser, you can enter the notebook as many times as you need. 
-When you don't need the notebook to continue running in the cluster, reconnect to the screen:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ screen -r &lt;screen_name&gt;
+<p>Using the tunnel (ssh -L  terminal) and the URL in the browser, you can enter the notebook as many times as you need.
+When you don't need the notebook to continue running in the cluster, reconnect to the screen:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>screen -r &lt;screen_name&gt;
 </code></pre></div>
-And kill jupyter and exit the interactive session.</p>
+<p>And kill jupyter and exit the interactive session.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Jordi Deu-Pons</li>

@@ -1942,7 +1942,7 @@
 <h3 id="help-section">Help section<a class="headerlink" href="#help-section" title="Permanent link">&para;</a></h3>
 <p>The <code>%help</code> section is designed to provide information about the container when singularity run-help is run on the container, for example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ singularity run-help /data/containers/public/python3_helloworld.simg
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Purpose: Test container to print &quot;Hello, World!&quot; in Python3.
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Purpose: Test container to print <span class="s2">&quot;Hello, World!&quot;</span> <span class="k">in</span> Python3.
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Author:  ITS Research / QMUL.
 </code></pre></div>
 <h3 id="post-section">Post section<a class="headerlink" href="#post-section" title="Permanent link">&para;</a></h3>
@@ -1974,21 +1974,21 @@
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>From: ubuntu:20.04
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>%help
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  Purpose: Test container to print &quot;Hello, World!&quot; in Python3.
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  Purpose: Test container to print <span class="s2">&quot;Hello, World!&quot;</span> <span class="k">in</span> Python3.
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>  Author:  ITS Research / QMUL.
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>%post
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>  apt-get update
 <a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>  apt-get install --yes python3
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>  apt-get clean &amp;&amp; \
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>  apt-get clean <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>   rm -rf /var/lib/apt/lists/*
 <a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
 <a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>%test
 <a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>  which python3
 <a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
 <a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>%runscript
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>  python3 -c &#39;print(&quot;Hello, World!&quot;)&#39;
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>  python3 -c <span class="s1">&#39;print(&quot;Hello, World!&quot;)&#39;</span>
 </code></pre></div>
 <p>The <code>singularity help inspect</code> command provides additional options for inspecting the container.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
