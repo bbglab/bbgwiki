@@ -7,7 +7,7 @@ The function `minor_tick_labels`  is needed to generate the labels of the plot.
 ### Example
 ![Plot mutational profile](../assets/images/plot_mutational_profile.png)
 
-###Function 
+### Function 
 
 ```bash
 import seaborn as sns
@@ -85,7 +85,7 @@ You will also need the vector with the mutations frequency (`profile`) and the d
 
 
 
-####Needed functions
+#### Needed functions
 ```bash
 from itertools import product
 import pandas as pd
@@ -149,18 +149,11 @@ def get_triplet_counts_region(regions_file_dir,reference_genome=hg38):
     return sbs_format(list(map(int, counts)))
 ```
 
-####Normalization
+#### Normalization
 ```bash
 region_triplet_abundance=get_triplet_counts_region(regions_file_dir)
 normalized_profile = np.array(profile)/np.array(region_triplet_abundance)
 ```
-
-
-
-
-
-
-
 
      
 ## Reference
