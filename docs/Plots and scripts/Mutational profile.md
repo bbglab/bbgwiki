@@ -5,7 +5,7 @@ It takes as input the the vector with the mutations frequency  (`profile`) and t
 
 The function `minor_tick_labels`  is needed to generate the labels of the plot.
 ### Example
-![Plot mutational profile](/assets/images/plot_mutational_profile.png)
+![Plot mutational profile](.../assets/images/plot_mutational_profile.png)
 
 ###Function 
 ```bash
