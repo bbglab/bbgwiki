@@ -9,11 +9,17 @@ theme:
   favicon: assets/images/bbglabLOGO_small.png
   features:
     - navigation.top
+    - content.code.annotate
 
 markdown_extensions:
   - admonition
   - toc:
       permalink: True
   - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 extra_css:
   - stylesheets/extra.css
