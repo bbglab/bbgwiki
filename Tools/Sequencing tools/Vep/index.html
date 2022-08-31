@@ -1703,43 +1703,43 @@
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>In order to install VEP, you can follow the <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html">installation guide</a>.</p>
 <p>Once it is installed, simply load the <code>ensembl-vep</code> module:</p>
-<pre><code>$ vep
-
-Usage:
-./vep [--cache|--offline|--database] [arguments]
-
-Basic options
-=============
-
---help                 Display this message and quit
-
--i | --input_file      Input file
--o | --output_file     Output file
---force_overwrite      Force overwriting of output file
---species [species]    Species to use [default: &quot;human&quot;]
-
---everything           Shortcut switch to turn on commonly used options. See web
-                       documentation for details [default: off]
---fork [num_forks]     Use forking to improve script runtime
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ vep
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Usage:
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>./vep [--cache|--offline|--database] [arguments]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Basic options
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>=============
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>--help                 Display this message and quit
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>-i | --input_file      Input file
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>-o | --output_file     Output file
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>--force_overwrite      Force overwriting of output file
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>--species [species]    Species to use [default: &quot;human&quot;]
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>--everything           Shortcut switch to turn on commonly used options. See web
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                       documentation for details [default: off]
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>--fork [num_forks]     Use forking to improve script runtime
+</code></pre></div>
 <p>For full option documentation see <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_options.html">here</a>.</p>
 <p>Instructions on how to download and use cached files can be found <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_cache.html">here</a>.</p>
 <p>To enable offline mode and use of the cache, pass the <code>--offline</code> and <code>--cache</code> flags.</p>
 <h2 id="example-job">Example job<a class="headerlink" href="#example-job" title="Permanent link">&para;</a></h2>
 <h3 id="serial-job">Serial job<a class="headerlink" href="#serial-job" title="Permanent link">&para;</a></h3>
 <p>Here is an example job running on 1 core and 1GB of memory:</p>
-<pre><code class="language-bash">#!/bin/bash
-#$ -cwd
-#$ -j y
-#$ -pe smp 1
-#$ -l h_rt=1:0:0
-#$ -l h_vmem=1G
-
-vep -i homo_sapiens_GRCh38.vcf \
-    --cache \
-    --offline \
-    --output_file results
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#$ -cwd</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#$ -j y</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">#$ -pe smp 1</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">#$ -l h_rt=1:0:0</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">#$ -l h_vmem=1G</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>vep -i homo_sapiens_GRCh38.vcf <span class="se">\</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    --cache <span class="se">\</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    --offline <span class="se">\</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    --output_file results
+</code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.ensembl.org/info/docs/tools/vep/script/VEP_script_documentation.pdf">Ensembl-VEP documentation</a></li>
@@ -1827,7 +1827,7 @@ vep -i homo_sapiens_GRCh38.vcf \
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

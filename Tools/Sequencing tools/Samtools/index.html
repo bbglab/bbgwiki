@@ -1754,13 +1754,13 @@
 </div>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">conda install -c bioconda samtools
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda install -c bioconda samtools
+</code></pre></div>
 <h3 id="manual">Manual<a class="headerlink" href="#manual" title="Permanent link">&para;</a></h3>
 <p>For the manual installation, you can find the instructions <a href="http://www.sthda.com/english/wiki/install-samtools-on-unix-system">here</a>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">samtools view -b -S -o genome_reads_aligned.bam genome_reads_aligned.sam
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>samtools view -b -S -o genome_reads_aligned.bam genome_reads_aligned.sam
+</code></pre></div>
 <div class="admonition note annotate">
 <p class="admonition-title">Core Usage</p>
 <p>To ensure that SAMtools uses the correct number of cores, the <code>-@ ${NSLOTS}</code> option should be used on commands that support it.</p>
@@ -1768,24 +1768,24 @@
 <h2 id="example-job">Example job<a class="headerlink" href="#example-job" title="Permanent link">&para;</a></h2>
 <h3 id="serial-job">Serial job<a class="headerlink" href="#serial-job" title="Permanent link">&para;</a></h3>
 <p>Here is an example job running on 4 cores and 8GB of memory:</p>
-<pre><code class="language-bash">#!/bin/bash
-#$ -cwd
-#$ -j y
-#$ -pe smp 4
-#$ -l h_rt=1:0:0
-#$ -l h_vmem=2G
-
-samtools view -@ ${NSLOTS} -b -S -o genome_reads_aligned.bam \
-    genome_reads_aligned.sam
-
-samtools sort -@ ${NSLOTS} genome_reads_aligned.bam \
-    &gt; genome_reads_aligned.sorted.bam
-
-samtools index genome_reads_aligned.sorted.bam
-
-samtools mpileup -g -f ref_genome_1K.fna genome_reads_aligned.sorted.bam \
-    &gt; genome_variants.bcf
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">#$ -cwd</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#$ -j y</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">#$ -pe smp 4</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">#$ -l h_rt=1:0:0</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">#$ -l h_vmem=2G</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>samtools view -@ <span class="si">${</span><span class="nv">NSLOTS</span><span class="si">}</span> -b -S -o genome_reads_aligned.bam <span class="se">\</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    genome_reads_aligned.sam
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>samtools sort -@ <span class="si">${</span><span class="nv">NSLOTS</span><span class="si">}</span> genome_reads_aligned.bam <span class="se">\</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    &gt; genome_reads_aligned.sorted.bam
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>samtools index genome_reads_aligned.sorted.bam
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>samtools mpileup -g -f ref_genome_1K.fna genome_reads_aligned.sorted.bam <span class="se">\</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    &gt; genome_variants.bcf
+</code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/samtools/samtools">Samtools GitHub</a></li>
@@ -1872,7 +1872,7 @@ samtools mpileup -g -f ref_genome_1K.fna genome_reads_aligned.sorted.bam \
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

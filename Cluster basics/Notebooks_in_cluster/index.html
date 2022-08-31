@@ -1659,45 +1659,45 @@
 <p>To run a notebook in the cluster, a <a href="/Cluster%20basics/Screen">screen</a> and an <a href="/Cluster%20basics/Interactive">interactive</a> will be used.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>You will need to follow the next steps:</p>
-<p>Connect to the cluster:</p>
-<pre><code class="language-bash">$ ssh -p 22022 &lt;username&gt;@bbgcluster
-</code></pre>
-<p>Open a screen:</p>
-<pre><code class="language-bash">&lt;username&gt;@login01:~$ screen -S &lt;screen_name&gt;
-</code></pre>
-<p>Run an interactive job:</p>
-<pre><code class="language-bash">[screen_name] &lt;username&gt;@login01:~$ interactive
-</code></pre>
+<p>Connect to the cluster:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ ssh -p <span class="m">22022</span> &lt;username&gt;@bbgcluster
+</code></pre></div>
+Open a screen:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;username&gt;@login01:~$ screen -S &lt;screen_name&gt;
+</code></pre></div>
+Run an interactive job:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">[</span>screen_name<span class="o">]</span> &lt;username&gt;@login01:~$ interactive
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If your notebook needs more than 8G and 2 cores, you can specify it here -- see <a href="/Cluster%20basics/Interactive">interactive</a> section.</p>
 </div>
-<p>Activate conda base or the conda environment that you need in your notebook:</p>
-<pre><code class="language-bash">[screen_name] &lt;username&gt;@bbgn005:~$ conda activate
-</code></pre>
-<p>Go to the folder that you wish to run the notebook:</p>
-<pre><code class="language-bash">(base)[screen_name] &lt;username&gt;@bbgn005:~$ cd /workspace/folder
-</code></pre>
-<p>Run the jupyter notebook:</p>
-<pre><code class="language-bash">(base)[screen_name] &lt;username&gt;@bbgn005:~/workspace/folder$ unset XDG_RUNTIME_DIR &amp;&amp; jupyter notebook --ip=0.0.0.0
-</code></pre>
-<p>Keep the URL with the token and the node in which the interactive is running:</p>
-<pre><code class="language-bash">[I 10:37:20.371 NotebookApp] The Jupyter Notebook is running at: http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
-</code></pre>
-<p>Now, your notebook is running and you can dettach from the screen:</p>
-<pre><code>Ctrl + A -&gt; D
-</code></pre>
-<p>Open a new terminal and create an ssh tunnel to be able to access the port <strong>8888</strong> in the node -- following the example, this is node <strong>bbgn005</strong>:</p>
-<pre><code>$ ssh -L 8888:bbgn005:8888 -p 22022 &lt;username&gt;@bbgcluster
-</code></pre>
-<p>Now use the URL,  replacing <strong>127.0.0.1</strong> with <strong>localhost</strong> and open the URL in your browser:</p>
-<pre><code>http://localhost:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
-</code></pre>
-<p>Using the tunnel (ssh -L  terminal) and the URL in the browser, you can enter the notebook as many times as you need. 
-When you don't need the notebook to continue running in the cluster, reconnect to the screen:</p>
-<pre><code class="language-bash">$ screen -r &lt;screen_name&gt;
-</code></pre>
-<p>And kill jupyter and exit the interactive session.</p>
+<p>Activate conda base or the conda environment that you need in your notebook:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">[</span>screen_name<span class="o">]</span> &lt;username&gt;@bbgn005:~$ conda activate
+</code></pre></div>
+Go to the folder that you wish to run the notebook:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">(</span>base<span class="o">)[</span>screen_name<span class="o">]</span> &lt;username&gt;@bbgn005:~$ <span class="nb">cd</span> /workspace/folder
+</code></pre></div>
+ Run the jupyter notebook:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">(</span>base<span class="o">)[</span>screen_name<span class="o">]</span> &lt;username&gt;@bbgn005:~/workspace/folder$ <span class="nb">unset</span> XDG_RUNTIME_DIR <span class="o">&amp;&amp;</span> jupyter notebook --ip<span class="o">=</span><span class="m">0</span>.0.0.0
+</code></pre></div>
+Keep the URL with the token and the node in which the interactive is running:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span>I <span class="m">10</span>:37:20.371 NotebookApp<span class="o">]</span> The Jupyter Notebook is running at: http://127.0.0.1:8888/?token<span class="o">=</span>730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
+</code></pre></div>
+Now, your notebook is running and you can dettach from the screen:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Ctrl + A -&gt; D
+</code></pre></div>
+Open a new terminal and create an ssh tunnel to be able to access the port <strong>8888</strong> in the node -- following the example, this is node <strong>bbgn005</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ ssh -L 8888:bbgn005:8888 -p 22022 &lt;username&gt;@bbgcluster
+</code></pre></div>
+Now use the URL,  replacing <strong>127.0.0.1</strong> with <strong>localhost</strong> and open the URL in your browser:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>http://localhost:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
+</code></pre></div>
+Using the tunnel (ssh -L  terminal) and the URL in the browser, you can enter the notebook as many times as you need. 
+When you don't need the notebook to continue running in the cluster, reconnect to the screen:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ screen -r &lt;screen_name&gt;
+</code></pre></div>
+And kill jupyter and exit the interactive session.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Jordi Deu-Pons</li>
@@ -1782,7 +1782,7 @@ When you don't need the notebook to continue running in the cluster, reconnect t
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

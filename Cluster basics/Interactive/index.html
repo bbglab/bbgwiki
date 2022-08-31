@@ -1642,13 +1642,13 @@
 <p>The <code>interactive</code> command gives to the user an <strong>interactive shell</strong> in the cluster with slurm allocation. In other words, it allocates the user to a specific node of the cluster so that the jobs can be executed there without disturbing the rest of the users.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Once you enter the bbgcluster, you will see in the terminal <code>&lt;username&gt;@login01</code>. It is here where, if you want to be allocated to your own node, you can just run the command:</p>
-<pre><code class="language-bash">$ interactive
-salloc: Granted job allocation *******
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ interactive
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>salloc: Granted job allocation *******
+</code></pre></div>
 <p>If the <code>login01</code> has changed to <code>bbgn###</code> where <code>###</code> is the number identifying the current node.</p>
 <p>Apart from the basic use, there are optional arguments/flags for extra features:</p>
-<pre><code class="language-bash">interactive [-c] [-m] [-w] [-J] [-x]
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>interactive <span class="o">[</span>-c<span class="o">]</span> <span class="o">[</span>-m<span class="o">]</span> <span class="o">[</span>-w<span class="o">]</span> <span class="o">[</span>-J<span class="o">]</span> <span class="o">[</span>-x<span class="o">]</span>
+</code></pre></div>
 <ul>
 <li><code>-c</code>: Number of CPU cores (default: 1)</li>
 <li><code>-m</code>: Total amount of memory (GB) (default: 8 [GB])</li>
@@ -1738,7 +1738,7 @@ salloc: Granted job allocation *******
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

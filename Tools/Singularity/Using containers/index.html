@@ -1740,30 +1740,30 @@
 <h2 id="running-commands-inside-a-container">Running commands inside a container<a class="headerlink" href="#running-commands-inside-a-container" title="Permanent link">&para;</a></h2>
 <p>The <code>singularity exec</code> command will allow you to execute any program within a given container. The <code>singularity run</code> command performs the action defined by the <code>%runscript</code> section, which is the primary task of the container. Using the <code>singularity run</code> command is the simpler approach for job submissions.</p>
 <p>You can even "execute" a container, which performs the same action as the <code>singularity run</code> command. For example, the following demonstrates how to inspect the runscript and execute the <code>/data/containers/public/python3_helloworld.simg</code> container:</p>
-<pre><code class="language-bash">$ singularity inspect -r /data/containers/public/python3_helloworld.simg
-#!/bin/sh
-  python3 -c 'print(&quot;Hello, World!&quot;)'
-
-$ /data/containers/public/python3_helloworld.simg
-Hello, World!
-
-$ singularity run /data/containers/public/python3_helloworld.simg
-Hello, World!
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ singularity inspect -r /data/containers/public/python3_helloworld.simg
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#!/bin/sh</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  python3 -c <span class="s1">&#39;print(&quot;Hello, World!&quot;)&#39;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$ /data/containers/public/python3_helloworld.simg
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Hello, World!
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>$ singularity run /data/containers/public/python3_helloworld.simg
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Hello, World!
+</code></pre></div>
 <h2 id="execute-a-script-from-outside-the-container">Execute a script from outside the container<a class="headerlink" href="#execute-a-script-from-outside-the-container" title="Permanent link">&para;</a></h2>
 <div class="admonition note annotate">
 <p class="admonition-title">Using on the cluster</p>
 <p>For typical use, you want to use the singularity run or singularity exec commands, especially when submitting the work via the scheduler.</p>
 </div>
 <p>The following example runs a python script <code>hello_world2.py</code> from the current directory using the <code>/data/containers/public/python3_helloworld.simg</code> container:</p>
-<pre><code class="language-bash">$ singularity exec /data/containers/public/python3_helloworld.simg python3 ./hello_world2.py
-Hello, World!
-Hello, World (again)!
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ singularity <span class="nb">exec</span> /data/containers/public/python3_helloworld.simg python3 ./hello_world2.py
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Hello, World!
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Hello, World <span class="o">(</span>again<span class="o">)</span>!
+</code></pre></div>
 <p>The file hello_world2.py contains the following code:</p>
-<pre><code class="language-python">print(&quot;Hello, World!&quot;)
-print(&quot;Hello, World (again)!&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World (again)!&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>If command <code>singularity exec</code> was replaced by <code>singularity run</code>, the runscript would be called, ignoring any parameters after the container name.</p>
 <div class="admonition warning annotate">
 <p class="admonition-title">Customised Environments</p>
@@ -1772,36 +1772,36 @@ print(&quot;Hello, World (again)!&quot;)
 <h2 id="using-containers-with-grid-engine">Using containers with Grid Engine<a class="headerlink" href="#using-containers-with-grid-engine" title="Permanent link">&para;</a></h2>
 <p>One of the major benefits of Singularity is the simplicity with which it can be used in an HPC environment. Your Grid Engine submission script may not require any modules loading to run your container. The resource requirements should be very similar to native code.</p>
 <h3 id="simple-example">Simple example<a class="headerlink" href="#simple-example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">#!/bin/bash
-#$ -cwd
-#$ -j y
-#$ -pe smp 1
-#$ -l h_rt=1:0:0
-#$ -l h_vmem=1G
-
-singularity run /data/containers/public/python3_helloworld.simg
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">#$ -cwd</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">#$ -j y</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">#$ -pe smp 1</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">#$ -l h_rt=1:0:0</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">#$ -l h_vmem=1G</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>singularity run /data/containers/public/python3_helloworld.simg
+</code></pre></div>
 <h3 id="modules-example">Modules example<a class="headerlink" href="#modules-example" title="Permanent link">&para;</a></h3>
 <p>Applications installed within Singularity containers may also be provided as a module to abstract the container invocation commands (<code>singularity run</code> and <code>singularity exec</code>). In these cases, the container name will match the runscript command. For example, to use Pandoc as a module, simply load the <code>pandoc</code> module to use the application.</p>
-<pre><code class="language-bash">#!/bin/bash
-#$ -cwd
-#$ -j y
-#$ -pe smp 1
-#$ -l h_rt=1:0:0
-#$ -l h_vmem=1G
-
-module load pandoc
-pandoc --help
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">#$ -cwd</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#$ -j y</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">#$ -pe smp 1</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#$ -l h_rt=1:0:0</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">#$ -l h_vmem=1G</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>module load pandoc
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>pandoc --help
+</code></pre></div>
 <h3 id="shell-access-to-the-container">Shell access to the container<a class="headerlink" href="#shell-access-to-the-container" title="Permanent link">&para;</a></h3>
 <p>It is possible to launch a shell within the container using the <code>shell</code> command. Interacting directly with a shell inside the container can be useful for code debugging and running multiple commands in a single interactive session, as an alternative to writing a single script. Below demonstrates how to invoke python3 from inside the <code>/data/containers/public/python3_helloworld.simg</code> container using an interactive shell:</p>
-<pre><code>$ singularity shell /data/containers/public/python3_helloworld.simg
-Singularity&gt; python3
-Python 3.8.10 (default, Sep 28 2021, 16:10:42)
-[GCC 9.3.0] on linux
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ singularity shell /data/containers/public/python3_helloworld.simg
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Singularity&gt; python3
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Python 3.8.10 (default, Sep 28 2021, 16:10:42)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>[GCC 9.3.0] on linux
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>&gt;&gt;&gt;
+</code></pre></div>
 <p>Documentation is available on the <a href="https://github.com/singularityhub/singularityhub.github.io/wiki">Singularity Hub Wiki</a></p>
 <h2 id="running-containers-from-external-sources">Running containers from external sources<a class="headerlink" href="#running-containers-from-external-sources" title="Permanent link">&para;</a></h2>
 <div class="admonition note annotate">
@@ -1809,13 +1809,13 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 <p>For long term reproducibility of containers, we recommend that you build your own native Singularity containers from definition files instead of relying on 3rd party containers for your research. Using containers from external sources may produce undesirable results if the container is rebuilt after upstream changes such as updated or obsoleted packages.</p>
 </div>
 <p>Containers created elsewhere can be copied or imported, and run on the cluster. The following example demonstrates how to import and run the latest Ubuntu official image stored in the <a href="https://hub.docker.com/_/ubuntu/">Docker Hub</a>:</p>
-<pre><code>$ singularity pull ubuntu.simg docker://ubuntu:latest
-$ singularity exec ubuntu.simg cat /etc/lsb-release
-DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=20.04
-DISTRIB_CODENAME=focal
-DISTRIB_DESCRIPTION=&quot;Ubuntu 20.04.3 LTS&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ singularity pull ubuntu.simg docker://ubuntu:latest
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$ singularity exec ubuntu.simg cat /etc/lsb-release
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>DISTRIB_ID=Ubuntu
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>DISTRIB_RELEASE=20.04
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>DISTRIB_CODENAME=focal
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>DISTRIB_DESCRIPTION=&quot;Ubuntu 20.04.3 LTS&quot;
+</code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Jordi Deu-Pons</li>
@@ -1883,7 +1883,7 @@ DISTRIB_DESCRIPTION=&quot;Ubuntu 20.04.3 LTS&quot;
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

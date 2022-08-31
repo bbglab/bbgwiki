@@ -1713,65 +1713,65 @@ It takes as input the the vector with the mutations frequency  (<code>profile</c
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p><img alt="Plot mutational profile" src="../../assets/images/plot_mutational_profile.png" /></p>
 <h3 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">import seaborn as sns
-import numpy as np
-
-def minor_tick_labels():
-    major_labels = ['C&gt;A', 'C&gt;G', 'C&gt;T', 'T&gt;A', 'T&gt;C', 'T&gt;G']
-    flanks = ['AA', 'AC', 'AG', 'AT', 'CA', 'CC', 'CG', 'CT',
-              'GA', 'GC', 'GG', 'GT', 'TA', 'TC', 'TG', 'TT']
-    minor_labels = []
-    for subs in major_labels:
-        for flank in flanks:
-            minor_labels.append(flank[0] + subs[0] + flank[1])
-    return minor_labels
-
-def plot_signature(profile, title=None):
-    &quot;&quot;&quot;
-    Args:
-        profile: 96-array in lexicographic order
-        title: string
-
-    Returns:
-        produces the signature bar plot
-    &quot;&quot;&quot;
-
-    fig, ax = plt.subplots(figsize=(15, 2))
-    total = np.sum(profile)
-    if abs(total - 1) &gt; 0.01:
-        profile = profile / total
-    sns.set(font_scale=1.5)
-    sns.set_style('white')
-
-    # bar plot
-    barlist = ax.bar(range(96), profile)
-    color_list = ['#72bcd4', 'k', 'r', '#7e7e7e', 'g', '#e6add8']
-    for category in range(6):
-        for i in range(16):
-            barlist[category * 16 + i].set_color(color_list[category])
-    ax.set_xlim([-0.5, 96])
-    ymax = np.max(profile) * 1.2
-    ax.set_ylim(0, ymax)
-
-    # ax.set_ylabel('subs rel freq')
-    labels = ['C&gt;A', 'C&gt;G', 'C&gt;T', 'T&gt;A', 'T&gt;C', 'T&gt;G']
-    major_ticks = np.arange(8, 8 + 16 * 5 + 1, 16)
-    minor_ticks = np.arange(0.2, 96.2, 1)
-    ax.tick_params(length=0, which='major', pad=30, labelsize=12)
-    ax.tick_params(length=0, which='minor', pad=5, labelsize=10)
-    ax.set_xticks(major_ticks, minor=False)
-    ax.set_xticklabels(labels, minor=False)
-    ax.set_xticks(minor_ticks, minor=True)
-    ax.set_xticklabels(minor_tick_labels(), minor=True, rotation=90)
-
-    ax.spines['top'].set_visible(False)
-    ax.spines['bottom'].set_visible(False)
-    ax.spines['left'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-
-    ax.set_title(title, fontsize=24)
-    plt.show()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>import seaborn as sns
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>import numpy as np
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>def minor_tick_labels<span class="o">()</span>:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="nv">major_labels</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;C&gt;A&#39;</span>, <span class="s1">&#39;C&gt;G&#39;</span>, <span class="s1">&#39;C&gt;T&#39;</span>, <span class="s1">&#39;T&gt;A&#39;</span>, <span class="s1">&#39;T&gt;C&#39;</span>, <span class="s1">&#39;T&gt;G&#39;</span><span class="o">]</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="nv">flanks</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;AA&#39;</span>, <span class="s1">&#39;AC&#39;</span>, <span class="s1">&#39;AG&#39;</span>, <span class="s1">&#39;AT&#39;</span>, <span class="s1">&#39;CA&#39;</span>, <span class="s1">&#39;CC&#39;</span>, <span class="s1">&#39;CG&#39;</span>, <span class="s1">&#39;CT&#39;</span>,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>              <span class="s1">&#39;GA&#39;</span>, <span class="s1">&#39;GC&#39;</span>, <span class="s1">&#39;GG&#39;</span>, <span class="s1">&#39;GT&#39;</span>, <span class="s1">&#39;TA&#39;</span>, <span class="s1">&#39;TC&#39;</span>, <span class="s1">&#39;TG&#39;</span>, <span class="s1">&#39;TT&#39;</span><span class="o">]</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="nv">minor_labels</span> <span class="o">=</span> <span class="o">[]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">for</span> subs <span class="k">in</span> major_labels:
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">for</span> flank <span class="k">in</span> flanks:
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            minor_labels.append<span class="o">(</span>flank<span class="o">[</span><span class="m">0</span><span class="o">]</span> + subs<span class="o">[</span><span class="m">0</span><span class="o">]</span> + flank<span class="o">[</span><span class="m">1</span><span class="o">])</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">return</span> minor_labels
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>def plot_signature<span class="o">(</span>profile, <span class="nv">title</span><span class="o">=</span>None<span class="o">)</span>:
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="s2">    Args:</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="s2">        profile: 96-array in lexicographic order</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="s2">        title: string</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="s2">    Returns:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="s2">        produces the signature bar plot</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="s2">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    fig, <span class="nv">ax</span> <span class="o">=</span> plt.subplots<span class="o">(</span><span class="nv">figsize</span><span class="o">=(</span><span class="m">15</span>, <span class="m">2</span><span class="o">))</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="nv">total</span> <span class="o">=</span> np.sum<span class="o">(</span>profile<span class="o">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    <span class="k">if</span> abs<span class="o">(</span>total - <span class="m">1</span><span class="o">)</span> &gt; <span class="m">0</span>.01:
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        <span class="nv">profile</span> <span class="o">=</span> profile / total
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    sns.set<span class="o">(</span><span class="nv">font_scale</span><span class="o">=</span><span class="m">1</span>.5<span class="o">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    sns.set_style<span class="o">(</span><span class="s1">&#39;white&#39;</span><span class="o">)</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="c1"># bar plot</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    <span class="nv">barlist</span> <span class="o">=</span> ax.bar<span class="o">(</span>range<span class="o">(</span><span class="m">96</span><span class="o">)</span>, profile<span class="o">)</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="nv">color_list</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;#72bcd4&#39;</span>, <span class="s1">&#39;k&#39;</span>, <span class="s1">&#39;r&#39;</span>, <span class="s1">&#39;#7e7e7e&#39;</span>, <span class="s1">&#39;g&#39;</span>, <span class="s1">&#39;#e6add8&#39;</span><span class="o">]</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="k">for</span> category <span class="k">in</span> range<span class="o">(</span><span class="m">6</span><span class="o">)</span>:
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="k">for</span> i <span class="k">in</span> range<span class="o">(</span><span class="m">16</span><span class="o">)</span>:
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>            barlist<span class="o">[</span>category * <span class="m">16</span> + i<span class="o">]</span>.set_color<span class="o">(</span>color_list<span class="o">[</span>category<span class="o">])</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    ax.set_xlim<span class="o">([</span>-0.5, <span class="m">96</span><span class="o">])</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="nv">ymax</span> <span class="o">=</span> np.max<span class="o">(</span>profile<span class="o">)</span> * <span class="m">1</span>.2
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    ax.set_ylim<span class="o">(</span><span class="m">0</span>, ymax<span class="o">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    <span class="c1"># ax.set_ylabel(&#39;subs rel freq&#39;)</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    <span class="nv">labels</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;C&gt;A&#39;</span>, <span class="s1">&#39;C&gt;G&#39;</span>, <span class="s1">&#39;C&gt;T&#39;</span>, <span class="s1">&#39;T&gt;A&#39;</span>, <span class="s1">&#39;T&gt;C&#39;</span>, <span class="s1">&#39;T&gt;G&#39;</span><span class="o">]</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    <span class="nv">major_ticks</span> <span class="o">=</span> np.arange<span class="o">(</span><span class="m">8</span>, <span class="m">8</span> + <span class="m">16</span> * <span class="m">5</span> + <span class="m">1</span>, <span class="m">16</span><span class="o">)</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    <span class="nv">minor_ticks</span> <span class="o">=</span> np.arange<span class="o">(</span><span class="m">0</span>.2, <span class="m">96</span>.2, <span class="m">1</span><span class="o">)</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    ax.tick_params<span class="o">(</span><span class="nv">length</span><span class="o">=</span><span class="m">0</span>, <span class="nv">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span>, <span class="nv">pad</span><span class="o">=</span><span class="m">30</span>, <span class="nv">labelsize</span><span class="o">=</span><span class="m">12</span><span class="o">)</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    ax.tick_params<span class="o">(</span><span class="nv">length</span><span class="o">=</span><span class="m">0</span>, <span class="nv">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span>, <span class="nv">pad</span><span class="o">=</span><span class="m">5</span>, <span class="nv">labelsize</span><span class="o">=</span><span class="m">10</span><span class="o">)</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    ax.set_xticks<span class="o">(</span>major_ticks, <span class="nv">minor</span><span class="o">=</span>False<span class="o">)</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    ax.set_xticklabels<span class="o">(</span>labels, <span class="nv">minor</span><span class="o">=</span>False<span class="o">)</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>    ax.set_xticks<span class="o">(</span>minor_ticks, <span class="nv">minor</span><span class="o">=</span>True<span class="o">)</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>    ax.set_xticklabels<span class="o">(</span>minor_tick_labels<span class="o">()</span>, <span class="nv">minor</span><span class="o">=</span>True, <span class="nv">rotation</span><span class="o">=</span><span class="m">90</span><span class="o">)</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>    ax.spines<span class="o">[</span><span class="s1">&#39;top&#39;</span><span class="o">]</span>.set_visible<span class="o">(</span>False<span class="o">)</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>    ax.spines<span class="o">[</span><span class="s1">&#39;bottom&#39;</span><span class="o">]</span>.set_visible<span class="o">(</span>False<span class="o">)</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>    ax.spines<span class="o">[</span><span class="s1">&#39;left&#39;</span><span class="o">]</span>.set_visible<span class="o">(</span>False<span class="o">)</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    ax.spines<span class="o">[</span><span class="s1">&#39;right&#39;</span><span class="o">]</span>.set_visible<span class="o">(</span>False<span class="o">)</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>    ax.set_title<span class="o">(</span>title, <span class="nv">fontsize</span><span class="o">=</span><span class="m">24</span><span class="o">)</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>    plt.show<span class="o">()</span>
+</code></pre></div>
 <div class="admonition note annotate">
 <p>Note: </p>
 <ul>
@@ -1783,71 +1783,71 @@ def plot_signature(profile, title=None):
 <p>In order to normalize the vector you will need to import from <a href="https://bbglab.github.io/bbgwiki/Tools/BBG-tools/BGreference/" target="_blank">bgreference</a> the reference genome in which the data has been sequenced.</p>
 <p>You will also need the vector with the mutations frequency (<code>profile</code>) and the directory of a file with the genomic regions from which the mutations have been obtained (<code>regions_file_dir</code>), with at least the columns: <code>CHROMOSOME</code>, <code>START</code>, <code>END</code>.</p>
 <h4 id="needed-functions">Needed functions<a class="headerlink" href="#needed-functions" title="Permanent link">&para;</a></h4>
-<pre><code class="language-bash">from itertools import product
-import pandas as pd
-import numpy as np
-
-cb = dict(zip('ACGT','TGCA'))
-
-def triplet_index(triplet):
-
-    a, ref, b = tuple(list(triplet))
-    s = 16 * (ref == 'T')
-    t = 4 * ((a == 'C') + 2 * (a == 'G') + 3 * (a == 'T'))
-    u = (b == 'C') + 2 * (b == 'G') + 3 * (b == 'T')
-    return s + t + u
-
-
-def sbs_format(triplet_count):
-    &quot;&quot;&quot;Maps ref triplets to 96 SBS channel&quot;&quot;&quot;
-
-    vector = []
-    for ref in 'CT':
-        for alt in 'ACGT':
-            if alt != ref:
-                for a, b in product(cb, repeat=2):
-                    vector.append(triplet_count[triplet_index(a + ref + b)])
-    return vector
-
-
-def triplets():
-
-    for ref in 'CT':
-        for a, b in product(cb, repeat=2):
-            yield a + ref + b
-
-
-def count_triplets(seq):
-
-    return [seq.count(t) + seq.count(rev(t)) for t in triplets()]
-
-def rev(seq):
-    &quot;&quot;&quot;reverse complement of seq&quot;&quot;&quot;
-
-    return ''.join(list(map(lambda s: cb[s], seq[::-1]))) 
-
-def get_triplet_counts_region(regions_file_dir,reference_genome=hg38):
-    &quot;&quot;&quot;
-    Function to obtain the vector with 96 triplet counts given the regions file.
-    &quot;&quot;&quot;
-    regions=pd.read_csv(regions_file_dir,sep='\t',dtype={'CHROMOSOME':'string'})
-    assert(np.all(regions.apply(lambda r: r['END'] - r['START'] + 1 &gt; 0, axis=1)))
-    regions['interval'] = regions.apply(lambda r: (r['CHROMOSOME'], r['START'], r['END']), axis=1)
-
-    counts = np.zeros(32)
-    for chrom, start, end in list(regions['interval']):
-        try:
-            seq = reference_genome(chrom, start-1, size=end-start+3)  # sequence +1 nt 5' and 3' flanking nucleotides
-            c = np.array(count_triplets(seq))
-            counts += c
-        except Exception as e:
-            print(e)
-    return sbs_format(list(map(int, counts)))
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>from itertools import product
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>import pandas as pd
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>import numpy as np
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">cb</span> <span class="o">=</span> dict<span class="o">(</span>zip<span class="o">(</span><span class="s1">&#39;ACGT&#39;</span>,<span class="s1">&#39;TGCA&#39;</span><span class="o">))</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>def triplet_index<span class="o">(</span>triplet<span class="o">)</span>:
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    a, ref, <span class="nv">b</span> <span class="o">=</span> tuple<span class="o">(</span>list<span class="o">(</span>triplet<span class="o">))</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="nv">s</span> <span class="o">=</span> <span class="m">16</span> * <span class="o">(</span><span class="nv">ref</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="o">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="nv">t</span> <span class="o">=</span> <span class="m">4</span> * <span class="o">((</span><span class="nv">a</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="o">)</span> + <span class="m">2</span> * <span class="o">(</span><span class="nv">a</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="o">)</span> + <span class="m">3</span> * <span class="o">(</span><span class="nv">a</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="o">))</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="nv">u</span> <span class="o">=</span> <span class="o">(</span><span class="nv">b</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="o">)</span> + <span class="m">2</span> * <span class="o">(</span><span class="nv">b</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="o">)</span> + <span class="m">3</span> * <span class="o">(</span><span class="nv">b</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="o">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">return</span> s + t + u
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>def sbs_format<span class="o">(</span>triplet_count<span class="o">)</span>:
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="s2">&quot;&quot;&quot;Maps ref triplets to 96 SBS channel&quot;&quot;&quot;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="nv">vector</span> <span class="o">=</span> <span class="o">[]</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="k">for</span> ref <span class="k">in</span> <span class="s1">&#39;CT&#39;</span>:
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="k">for</span> alt <span class="k">in</span> <span class="s1">&#39;ACGT&#39;</span>:
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="k">if</span> alt !<span class="o">=</span> ref:
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                <span class="k">for</span> a, b <span class="k">in</span> product<span class="o">(</span>cb, <span class="nv">repeat</span><span class="o">=</span><span class="m">2</span><span class="o">)</span>:
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                    vector.append<span class="o">(</span>triplet_count<span class="o">[</span>triplet_index<span class="o">(</span>a + ref + b<span class="o">)])</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="k">return</span> vector
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>def triplets<span class="o">()</span>:
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="k">for</span> ref <span class="k">in</span> <span class="s1">&#39;CT&#39;</span>:
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>        <span class="k">for</span> a, b <span class="k">in</span> product<span class="o">(</span>cb, <span class="nv">repeat</span><span class="o">=</span><span class="m">2</span><span class="o">)</span>:
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>            yield a + ref + b
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>def count_triplets<span class="o">(</span>seq<span class="o">)</span>:
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="k">return</span> <span class="o">[</span>seq.count<span class="o">(</span>t<span class="o">)</span> + seq.count<span class="o">(</span>rev<span class="o">(</span>t<span class="o">))</span> <span class="k">for</span> t <span class="k">in</span> triplets<span class="o">()]</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>def rev<span class="o">(</span>seq<span class="o">)</span>:
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    <span class="s2">&quot;&quot;&quot;reverse complement of seq&quot;&quot;&quot;</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    <span class="k">return</span> <span class="s1">&#39;&#39;</span>.join<span class="o">(</span>list<span class="o">(</span>map<span class="o">(</span>lambda s: cb<span class="o">[</span>s<span class="o">]</span>, seq<span class="o">[</span>::-1<span class="o">])))</span> 
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>def get_triplet_counts_region<span class="o">(</span>regions_file_dir,reference_genome<span class="o">=</span>hg38<span class="o">)</span>:
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="s2">    Function to obtain the vector with 96 triplet counts given the regions file.</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="s2">    &quot;&quot;&quot;</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>    <span class="nv">regions</span><span class="o">=</span>pd.read_csv<span class="o">(</span>regions_file_dir,sep<span class="o">=</span><span class="s1">&#39;\t&#39;</span>,dtype<span class="o">={</span><span class="s1">&#39;CHROMOSOME&#39;</span>:<span class="s1">&#39;string&#39;</span><span class="o">})</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    assert<span class="o">(</span>np.all<span class="o">(</span>regions.apply<span class="o">(</span>lambda r: r<span class="o">[</span><span class="s1">&#39;END&#39;</span><span class="o">]</span> - r<span class="o">[</span><span class="s1">&#39;START&#39;</span><span class="o">]</span> + <span class="m">1</span> &gt; <span class="m">0</span>, <span class="nv">axis</span><span class="o">=</span><span class="m">1</span><span class="o">)))</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>    regions<span class="o">[</span><span class="s1">&#39;interval&#39;</span><span class="o">]</span> <span class="o">=</span> regions.apply<span class="o">(</span>lambda r: <span class="o">(</span>r<span class="o">[</span><span class="s1">&#39;CHROMOSOME&#39;</span><span class="o">]</span>, r<span class="o">[</span><span class="s1">&#39;START&#39;</span><span class="o">]</span>, r<span class="o">[</span><span class="s1">&#39;END&#39;</span><span class="o">])</span>, <span class="nv">axis</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>    <span class="nv">counts</span> <span class="o">=</span> np.zeros<span class="o">(</span><span class="m">32</span><span class="o">)</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>    <span class="k">for</span> chrom, start, end <span class="k">in</span> list<span class="o">(</span>regions<span class="o">[</span><span class="s1">&#39;interval&#39;</span><span class="o">])</span>:
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>        try:
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>            <span class="nv">seq</span> <span class="o">=</span> reference_genome<span class="o">(</span>chrom, start-1, <span class="nv">size</span><span class="o">=</span>end-start+3<span class="o">)</span>  <span class="c1"># sequence +1 nt 5&#39; and 3&#39; flanking nucleotides</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>            <span class="nv">c</span> <span class="o">=</span> np.array<span class="o">(</span>count_triplets<span class="o">(</span>seq<span class="o">))</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>            <span class="nv">counts</span> <span class="o">+=</span> c
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>        except Exception as e:
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>            print<span class="o">(</span>e<span class="o">)</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>    <span class="k">return</span> sbs_format<span class="o">(</span>list<span class="o">(</span>map<span class="o">(</span>int, counts<span class="o">)))</span>
+</code></pre></div>
 <h4 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h4>
-<pre><code class="language-bash">region_triplet_abundance=get_triplet_counts_region(regions_file_dir)
-normalized_profile = np.array(profile)/np.array(region_triplet_abundance)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">region_triplet_abundance</span><span class="o">=</span>get_triplet_counts_region<span class="o">(</span>regions_file_dir<span class="o">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">normalized_profile</span> <span class="o">=</span> np.array<span class="o">(</span>profile<span class="o">)</span>/np.array<span class="o">(</span>region_triplet_abundance<span class="o">)</span>
+</code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Paula Gomis</li>
@@ -1929,7 +1929,7 @@ normalized_profile = np.array(profile)/np.array(region_triplet_abundance)
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

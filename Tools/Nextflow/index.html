@@ -1752,11 +1752,11 @@
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>To run the default installed version of Nextflow, simply load the <code>nextflow</code> module:</p>
-<pre><code class="language-bash">$ module load nextflow
-$ nextflow help
-
-Usage: nextflow [options] COMMAND [arg...]
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ module load nextflow
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$ nextflow <span class="nb">help</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Usage: nextflow <span class="o">[</span>options<span class="o">]</span> COMMAND <span class="o">[</span>arg...<span class="o">]</span>
+</code></pre></div>
 <p>For usage documentation, run <code>nextflow help</code>.</p>
 <h3 id="submitting-processes-as-serial-jobs">Submitting processes as serial jobs<a class="headerlink" href="#submitting-processes-as-serial-jobs" title="Permanent link">&para;</a></h3>
 <div class="admonition note annotate">
@@ -1766,9 +1766,9 @@ Usage: nextflow [options] COMMAND [arg...]
 <p>Nextflow supports the ability to submit pipeline scripts as separate cluster jobs using the SGE executor.</p>
 <p>To enable the SGE executor, simply set to <code>process.executor</code> property to sge in a configuration file named <code>nextflow.config</code> in the job working directory. The amount of resources requested by each job submission is defined in the <a href="https://www.nextflow.io/docs/latest/process.html#clusteroptions">cluster options</a> section, where all Univa scheduler resources are supported.</p>
 <p>For example, to run all pipeline jobs with 2 serial cores and 2GB of memory for 1 hour, create the following configuration file:</p>
-<pre><code>process.executor='sge'
-process.clusterOptions='-pe smp 2 -l h_vmem=1G,h_rt=1:0:0'
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>process.executor=&#39;sge&#39;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>process.clusterOptions=&#39;-pe smp 2 -l h_vmem=1G,h_rt=1:0:0&#39;
+</code></pre></div>
 <div class="admonition note annotate">
 <p class="admonition-title">Setting the memory limit for serial jobs</p>
 <p>Add the <code>-DXmx</code> option to limit the amount of memory Nextflow can use in serial jobs. For more information regarding the Java VM memory allocation, see here.</p>
@@ -1780,39 +1780,39 @@ process.clusterOptions='-pe smp 2 -l h_vmem=1G,h_rt=1:0:0'
 <p>Using the SGE executor for parallel jobs causes the master job to hang until it is killed by the scheduler for exceeding walltime. This is due to Apache Ignite not being able to communicate to other pipeline scripts submitted as separate jobs.</p>
 </div>
 <p>To ensure parallel jobs use Apache Ignite, add the following to the configuration file (or omit the process.executor setting):</p>
-<pre><code>process.executor='ignite'
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>process.executor=&#39;ignite&#39;
+</code></pre></div>
 <h3 id="example-jobs">Example jobs<a class="headerlink" href="#example-jobs" title="Permanent link">&para;</a></h3>
 <h4 id="serial-job">Serial job<a class="headerlink" href="#serial-job" title="Permanent link">&para;</a></h4>
 <p>Here is an example job taken from the Nextflow website to submit each process in the <code>input.nf</code> file as a new cluster job with 1 core and 1GB of memory. Ensure the cumulative runtime across all processes does not exceed the runtime requested in the master job:</p>
-<pre><code class="language-nextflow">#!/bin/bash
-#$ -cwd
-#$ -j y
-#$ -pe smp 1
-#$ -l h_rt=1:0:0
-#$ -l h_vmem=1G
-
-module load nextflow
-
-nextflow -DXmx=1G \
-         -C nextflow.config \
-         run input.nf
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>#!/bin/bash
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>#$ -cwd
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>#$ -j y
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>#$ -pe smp 1
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>#$ -l h_rt=1:0:0
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>#$ -l h_vmem=1G
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>module load nextflow
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>nextflow -DXmx=1G \
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>         -C nextflow.config \
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>         run input.nf
+</code></pre></div>
 <h4 id="parallel-job">Parallel job<a class="headerlink" href="#parallel-job" title="Permanent link">&para;</a></h4>
 <p>Here is an example job taken from the Nextflow website to run each process in the <code>input.nf</code> file using 48 cores across 2 sdv nodes with Apache Ignite:</p>
-<pre><code class="language-nextflow">#!/bin/bash
-#$ -cwd
-#$ -j y
-#$ -pe parallel 48
-#$ -l infiniband=sdv-i
-#$ -l h_rt=240:0:0
-
-module load nextflow openmpi
-
-mpirun --pernode \
-       nextflow run input.nf \
-       -with-mpi
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>#!/bin/bash
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>#$ -cwd
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>#$ -j y
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>#$ -pe parallel 48
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>#$ -l infiniband=sdv-i
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>#$ -l h_rt=240:0:0
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>module load nextflow openmpi
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>mpirun --pernode \
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>       nextflow run input.nf \
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>       -with-mpi
+</code></pre></div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.nextflow.io/docs/latest/index.html">Nextflow documentation</a></li>
@@ -1904,7 +1904,7 @@ mpirun --pernode \
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
