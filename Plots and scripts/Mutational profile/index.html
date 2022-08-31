@@ -923,9 +923,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization-of-the-vector" class="md-nav__link">
+    Normalization of the vector
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization of the vector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#needed-functions" class="md-nav__link">
+    Needed functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    Normalization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1611,9 +1645,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization-of-the-vector" class="md-nav__link">
+    Normalization of the vector
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization of the vector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#needed-functions" class="md-nav__link">
+    Needed functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    Normalization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1639,8 +1707,152 @@
 
 
 <h1 id="mutational-profile">Mutational profile<a class="headerlink" href="#mutational-profile" title="Permanent link">&para;</a></h1>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>The function <code>plot_signature</code>  will allow you to plot the mutational profile of a sample given the vector of 96 channels (see y axis in the example figure) with the frequencies of each nucleotide change. 
+It takes as input the the vector with the mutations frequency  (<code>profile</code>) and the title of the plot (<code>title</code>).</p>
+<p>The function <code>minor_tick_labels</code>  is needed to generate the labels of the plot.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p><img alt="Plot mutational profile" src="/assets/images/plot_mutational_profile.png" /></p>
+<h3 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">import seaborn as sns
+import numpy as np
+
+def minor_tick_labels():
+    major_labels = ['C&gt;A', 'C&gt;G', 'C&gt;T', 'T&gt;A', 'T&gt;C', 'T&gt;G']
+    flanks = ['AA', 'AC', 'AG', 'AT', 'CA', 'CC', 'CG', 'CT',
+              'GA', 'GC', 'GG', 'GT', 'TA', 'TC', 'TG', 'TT']
+    minor_labels = []
+    for subs in major_labels:
+        for flank in flanks:
+            minor_labels.append(flank[0] + subs[0] + flank[1])
+    return minor_labels
+
+def plot_signature(profile, title=None):
+    &quot;&quot;&quot;
+    Args:
+        profile: 96-array in lexicographic order
+        title: string
+
+    Returns:
+        produces the signature bar plot
+    &quot;&quot;&quot;
+
+    fig, ax = plt.subplots(figsize=(15, 2))
+    total = np.sum(profile)
+    if abs(total - 1) &gt; 0.01:
+        profile = profile / total
+    sns.set(font_scale=1.5)
+    sns.set_style('white')
+
+    # bar plot
+    barlist = ax.bar(range(96), profile)
+    color_list = ['#72bcd4', 'k', 'r', '#7e7e7e', 'g', '#e6add8']
+    for category in range(6):
+        for i in range(16):
+            barlist[category * 16 + i].set_color(color_list[category])
+    ax.set_xlim([-0.5, 96])
+    ymax = np.max(profile) * 1.2
+    ax.set_ylim(0, ymax)
+
+    # ax.set_ylabel('subs rel freq')
+    labels = ['C&gt;A', 'C&gt;G', 'C&gt;T', 'T&gt;A', 'T&gt;C', 'T&gt;G']
+    major_ticks = np.arange(8, 8 + 16 * 5 + 1, 16)
+    minor_ticks = np.arange(0.2, 96.2, 1)
+    ax.tick_params(length=0, which='major', pad=30, labelsize=12)
+    ax.tick_params(length=0, which='minor', pad=5, labelsize=10)
+    ax.set_xticks(major_ticks, minor=False)
+    ax.set_xticklabels(labels, minor=False)
+    ax.set_xticks(minor_ticks, minor=True)
+    ax.set_xticklabels(minor_tick_labels(), minor=True, rotation=90)
+
+    ax.spines['top'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+
+    ax.set_title(title, fontsize=24)
+    plt.show()
+</code></pre>
+<div class="admonition note annotate">
+<p>Note: </p>
+<ul>
+<li>The function normalizes the vector so that the sum of all the frequencies is equal to 1.</li>
+<li>If you want to normalize the frequencies so that the trinucleotide composition of the genomic regions from which the mutations have been obtained, you need to normalize the vector taking into account the trinucleotide composition before using the function plot_signature.</li>
+</ul>
+</div>
+<h3 id="normalization-of-the-vector">Normalization of the vector<a class="headerlink" href="#normalization-of-the-vector" title="Permanent link">&para;</a></h3>
+<p>In order to normalize the vector you will need to import from <a href="https://bbglab.github.io/bbgwiki/Tools/BBG-tools/BGreference/" target="_blank">bgreference</a> the reference genome in which the data has been sequenced.</p>
+<p>You will also need the vector with the mutations frequency (<code>profile</code>) and the directory of a file with the genomic regions from which the mutations have been obtained (<code>regions_file_dir</code>), with at least the columns: <code>CHROMOSOME</code>, <code>START</code>, <code>END</code>.</p>
+<h4 id="needed-functions">Needed functions<a class="headerlink" href="#needed-functions" title="Permanent link">&para;</a></h4>
+<pre><code class="language-bash">from itertools import product
+import pandas as pd
+import numpy as np
+
+cb = dict(zip('ACGT','TGCA'))
+
+def triplet_index(triplet):
+
+    a, ref, b = tuple(list(triplet))
+    s = 16 * (ref == 'T')
+    t = 4 * ((a == 'C') + 2 * (a == 'G') + 3 * (a == 'T'))
+    u = (b == 'C') + 2 * (b == 'G') + 3 * (b == 'T')
+    return s + t + u
+
+
+def sbs_format(triplet_count):
+    &quot;&quot;&quot;Maps ref triplets to 96 SBS channel&quot;&quot;&quot;
+
+    vector = []
+    for ref in 'CT':
+        for alt in 'ACGT':
+            if alt != ref:
+                for a, b in product(cb, repeat=2):
+                    vector.append(triplet_count[triplet_index(a + ref + b)])
+    return vector
+
+
+def triplets():
+
+    for ref in 'CT':
+        for a, b in product(cb, repeat=2):
+            yield a + ref + b
+
+
+def count_triplets(seq):
+
+    return [seq.count(t) + seq.count(rev(t)) for t in triplets()]
+
+def rev(seq):
+    &quot;&quot;&quot;reverse complement of seq&quot;&quot;&quot;
+
+    return ''.join(list(map(lambda s: cb[s], seq[::-1]))) 
+
+def get_triplet_counts_region(regions_file_dir,reference_genome=hg38):
+    &quot;&quot;&quot;
+    Function to obtain the vector with 96 triplet counts given the regions file.
+    &quot;&quot;&quot;
+    regions=pd.read_csv(regions_file_dir,sep='\t',dtype={'CHROMOSOME':'string'})
+    assert(np.all(regions.apply(lambda r: r['END'] - r['START'] + 1 &gt; 0, axis=1)))
+    regions['interval'] = regions.apply(lambda r: (r['CHROMOSOME'], r['START'], r['END']), axis=1)
+
+    counts = np.zeros(32)
+    for chrom, start, end in list(regions['interval']):
+        try:
+            seq = reference_genome(chrom, start-1, size=end-start+3)  # sequence +1 nt 5' and 3' flanking nucleotides
+            c = np.array(count_triplets(seq))
+            counts += c
+        except Exception as e:
+            print(e)
+    return sbs_format(list(map(int, counts)))
+</code></pre>
+<h4 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h4>
+<pre><code class="language-bash">region_triplet_abundance=get_triplet_counts_region(regions_file_dir)
+normalized_profile = np.array(profile)/np.array(region_triplet_abundance)
+</code></pre>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Paula Gomis</li>
+<li>Ferran Muiños</li>
+</ul>
 
 
 
