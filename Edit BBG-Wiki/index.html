@@ -1722,19 +1722,54 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone git@github.com:bbglab/bbgwiki.git
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip install -r bbgwiki/requirements.txt
 </code></pre></div>
+<div class="admonition note annotate">
+<p class="admonition-title">Error: My Github password seems to be wrong somehow...</p>
+<p>It might be the case that at some point of this process, it asks for the Github user and password. However, although you should introduce your Github user, the password that it asks <strong>is not your Github password</strong>. In order to know what to introduce here, you need to generate a <code>ssh key</code> following one of these two options:</p>
+<ul>
+<li>
+<p>From the <strong>Github web</strong>:</p>
+<ul>
+<li>Go to Github and login</li>
+<li>Click on your profile on the top right</li>
+<li>Settings &gt; Developer settings (bottom option of the left bar) &gt; Personal access tokens &gt; Generate new token</li>
+<li>Introduce your Github password</li>
+<li>Check all the boxes of the checklist</li>
+<li>Click "Generate token".</li>
+<li>Copy the generated key (looks like a bunch of random letters) and paste it in your terminal where it previously asked for the password.</li>
+</ul>
+</li>
+<li>
+<p>From the <strong>terminal</strong>:</p>
+<ul>
+<li>Execute the command:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen -o -t rsa -C “ssh@github.com”
+</code></pre></div>
+<ul>
+<li>Click "Enter" on all the options (unless you want to save the key in a specific file, but it is not mandatory)</li>
+<li>Execute the next command to see the generated key (if you selected a specific file, change the <code>id_rsa</code> in the command by the name you inputed).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cat id_rsa.pub
+</code></pre></div>
+<ul>
+<li>Copy the output and paste it in your terminal where it previously asked for the password.</li>
+</ul>
+</li>
+</ul>
+</div>
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdocs &gt;= 1.2.2
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mkdocs-material &gt;= 7.1.11
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>mkdocs-static-i18n &gt;= 0.18
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdocs &gt;= 1.2.2
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mkdocs-material &gt;= 7.1.11
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>mkdocs-static-i18n &gt;= 0.18
 </code></pre></div>
 <h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
 <p>Running at <strong>localhost</strong> (to try stuff before updating the main web)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdocs serve
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdocs serve
 </code></pre></div>
 <p>Update web:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git add &lt;edited file or directory&gt;
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git commit -m <span class="s2">&quot;Message&quot;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>git push
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git add &lt;edited file or directory&gt;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git commit -m <span class="s2">&quot;Message&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git push
 </code></pre></div>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
