@@ -13,7 +13,7 @@
     
     
       
-        <title>BGreference - BBG-Wiki</title>
+        <title>BgReference - BBG-Wiki</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              BGreference
+              BgReference
             
           </span>
         </div>
@@ -1073,12 +1073,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          BGreference
+          BgReference
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        BGreference
+        BgReference
       </a>
       
         
@@ -1099,6 +1099,27 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalation" class="md-nav__link">
+    Instalation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository" class="md-nav__link">
+    Repository
   </a>
   
 </li>
@@ -1620,6 +1641,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instalation" class="md-nav__link">
+    Instalation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository" class="md-nav__link">
+    Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     Reference
   </a>
@@ -1640,9 +1682,41 @@
                 
 
 
-<h1 id="bgreference">BGreference<a class="headerlink" href="#bgreference" title="Permanent link">&para;</a></h1>
+<h1 id="bgreference">BgReference<a class="headerlink" href="#bgreference" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>BgReference is a library to fast retrive Genome Reference partial sequences.</p>
+<h2 id="instalation">Instalation<a class="headerlink" href="#instalation" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda install -c conda-forge -c bbglab bgreference
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip install bgreference
+</code></pre></div></p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>from bgreference import hg19, hg38
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Get 10 bases from chromosome one build hg19</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>hg19<span class="o">(</span><span class="s1">&#39;1&#39;</span>, <span class="m">12345</span>, <span class="nv">size</span><span class="o">=</span><span class="m">10</span><span class="o">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Get the sequence of the whole chromosome</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>hg19<span class="o">(</span><span class="s1">&#39;1&#39;</span>,<span class="o">(</span><span class="m">1</span><span class="o">)</span>, <span class="nv">size</span><span class="o">=</span>None<span class="o">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># You can use synonymous sequence names</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>hg19<span class="o">(</span><span class="m">2</span>, <span class="m">23456</span><span class="o">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>hg19<span class="o">(</span><span class="s1">&#39;2&#39;</span>, <span class="m">23456</span><span class="o">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>hg19<span class="o">(</span><span class="s1">&#39;chr2&#39;</span>, <span class="m">23456</span><span class="o">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>hg19<span class="o">(</span><span class="s1">&#39;MT&#39;</span>, <span class="m">234</span>, <span class="nv">size</span><span class="o">=</span><span class="m">3</span><span class="o">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>hg19<span class="o">(</span><span class="s1">&#39;chrM&#39;</span>, <span class="m">234</span>, <span class="nv">size</span><span class="o">=</span><span class="m">3</span><span class="o">)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>hg19<span class="o">(</span><span class="s1">&#39;chrMT&#39;</span>, <span class="m">234</span>, <span class="nv">size</span><span class="o">=</span><span class="m">3</span><span class="o">)</span>
+</code></pre></div>
+<h2 id="repository">Repository<a class="headerlink" href="#repository" title="Permanent link">&para;</a></h2>
+<p>Click here to see the <a href="https://bitbucket.org/bgframework/bgreference/src/master/" target="_blank">repository of BgReference</a>.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Jordi Deu-Pons</li>
+<li>Miguel Grau</li>
+<li>Carlos López Elorduy</li>
+<li>Paula Gomis </li>
+</ul>
 
 
 
