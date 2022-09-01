@@ -1,6 +1,6 @@
 # OpenVariant
 
-![logo_open_variant](../assets/images/logo_open_variant.png)
+![logo_open_variant](../../assets/images/logo_open_variant.png){ width=50% }
 
 ## Description
 
