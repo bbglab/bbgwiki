@@ -20,7 +20,7 @@ Go to the [bbg-wiki repository](https://github.com/bbglab/bbgwiki){:target="_bla
 ### Installation
 
 ```bash
-git clone https://github.com/bbglab/bbgwiki.git
+git clone git@github.com:bbglab/bbgwiki.git
 pip install -r bbgwiki/requirements.txt
 ```
 
