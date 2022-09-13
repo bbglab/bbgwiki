@@ -6,7 +6,7 @@ Running a jupyter notebook in the cluster allows you to work with a notebook whi
 
 This is especially useful for time-consuming/memory-consuming processes or notebooks with a high number of variables/packages needed, so that you have more computational power than your local computer, you can leave them running in the background without the fear of accidentally disconnecting and losing all the progress and you can come back to a notebook without the need of loading all the variables/packages again.
 
-To run a notebook in the cluster, a [screen](/Cluster%20basics/Screen/) and an [interactive](/Cluster%20basics/Interactive/) will be used.
+To run a notebook in the cluster, a [screen](../Screen/) and an [interactive](../Interactive/) will be used.
 
 ## Usage
 
@@ -31,7 +31,7 @@ Run an interactive job:
 ```
 
 !!! note
-If your notebook needs more than 8G and 2 cores, you can specify it here -- see [interactive](/Cluster%20basics/Interactive/) section.
+If your notebook needs more than 8G and 2 cores, you can specify it here -- see [interactive](../Interactive/) section.
 
 Activate conda base or the conda environment that you need in your notebook:
 
