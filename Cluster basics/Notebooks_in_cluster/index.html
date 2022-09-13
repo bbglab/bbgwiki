@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2e8b5541.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -28,6 +28,7 @@
         
       
       
+
     
     
     
@@ -46,6 +47,7 @@
     
       
 
+    
     
     
   </head>
@@ -121,7 +123,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -1646,17 +1648,18 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="running-notebooks-in-the-cluster">Running notebooks in the cluster<a class="headerlink" href="#running-notebooks-in-the-cluster" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Running a jupyter notebook in the cluster allows you to work with a notebook which will be <strong>running even if you disconnect from the cluster</strong>.</p>
-<p>This is especially useful for time-consuming/memory-consuming processes or notebooks with a high number of variables/packages needed, so that you  have more computational power than your local computer, you can leave them running in the background without the fear of accidentally disconnecting and losing all the progress and you can come back to a notebook without the need of loading all the variables/packages again.</p>
-<p>To run a notebook in the cluster, a <a href="/Cluster%20basics/Screen">screen</a> and an <a href="/Cluster%20basics/Interactive">interactive</a> will be used.</p>
+<p>This is especially useful for time-consuming/memory-consuming processes or notebooks with a high number of variables/packages needed, so that you have more computational power than your local computer, you can leave them running in the background without the fear of accidentally disconnecting and losing all the progress and you can come back to a notebook without the need of loading all the variables/packages again.</p>
+<p>To run a notebook in the cluster, a <a href="/Cluster%20basics/Screen/">screen</a> and an <a href="/Cluster%20basics/Interactive/">interactive</a> will be used.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>You will need to follow the next steps:</p>
 <p>Connect to the cluster:</p>
@@ -1670,8 +1673,8 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If your notebook needs more than 8G and 2 cores, you can specify it here -- see <a href="/Cluster%20basics/Interactive">interactive</a> section.</p>
 </div>
+<p>If your notebook needs more than 8G and 2 cores, you can specify it here -- see <a href="/Cluster%20basics/Interactive/">interactive</a> section.</p>
 <p>Activate conda base or the conda environment that you need in your notebook:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">[</span>screen_name<span class="o">]</span> &lt;username&gt;@bbgn005:~$ conda activate
 </code></pre></div>
@@ -1690,10 +1693,10 @@
 <p>Open a new terminal and create an ssh tunnel to be able to access the port <strong>8888</strong> in the node -- following the example, this is node <strong>bbgn005</strong>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh -L <span class="m">8888</span>:bbgn005:8888 -p <span class="m">22022</span> &lt;username&gt;@bbgcluster
 </code></pre></div>
-<p>Now use the URL,  replacing <strong>127.0.0.1</strong> with <strong>localhost</strong> and open the URL in your browser:</p>
+<p>Now use the URL, replacing <strong>127.0.0.1</strong> with <strong>localhost</strong> and open the URL in your browser:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>http://localhost:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
 </code></pre></div>
-<p>Using the tunnel (ssh -L  terminal) and the URL in the browser, you can enter the notebook as many times as you need.
+<p>Using the tunnel (ssh -L terminal) and the URL in the browser, you can enter the notebook as many times as you need.
 When you don't need the notebook to continue running in the cluster, reconnect to the screen:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>screen -r &lt;screen_name&gt;
 </code></pre></div>
@@ -1710,10 +1713,12 @@ When you don't need the notebook to continue running in the cluster, reconnect t
 
 
 
-              
-            </article>
-            
-          </div>
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -1785,7 +1790,7 @@ When you don't need the notebook to continue running in the cluster, reconnect t
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.48f2be22.min.js"></script>
       
     
   </body>
