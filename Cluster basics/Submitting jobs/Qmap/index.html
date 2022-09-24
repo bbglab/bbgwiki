@@ -9,15 +9,15 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
     
     
       
-        <title>Qmap - BBG-Wiki</title>
+        <title>Qmap Submit - BBG-Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2e8b5541.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a952b86.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#qmap" class="md-skip">
+        <a href="#qmap-submit" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Qmap
+              Qmap Submit
             
           </span>
         </div>
@@ -365,12 +365,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Qmap
+          Qmap Submit
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Qmap
+        Qmap Submit
       </a>
       
         
@@ -392,6 +392,33 @@
   <a href="#description" class="md-nav__link">
     Description
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#howto" class="md-nav__link">
+    Howto
+  </a>
+  
+    <nav class="md-nav" aria-label="Howto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare-qmap-file-example" class="md-nav__link">
+    1. Prepare .qmap file (example)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-run-qmap-submit-from-the-login-node" class="md-nav__link">
+    2. Run "qmap submit" from the login node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1622,6 +1649,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#howto" class="md-nav__link">
+    Howto
+  </a>
+  
+    <nav class="md-nav" aria-label="Howto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare-qmap-file-example" class="md-nav__link">
+    1. Prepare .qmap file (example)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-run-qmap-submit-from-the-login-node" class="md-nav__link">
+    2. Run "qmap submit" from the login node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     Reference
   </a>
@@ -1643,9 +1697,32 @@
                   
 
 
-<h1 id="qmap">Qmap<a class="headerlink" href="#qmap" title="Permanent link">&para;</a></h1>
+<h1 id="qmap-submit">Qmap Submit<a class="headerlink" href="#qmap-submit" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>How to submit jobs to the Cluster using <strong>Qmap</strong>.</p>
+<p><strong>Qmap</strong> documentation: https://qmap.readthedocs.io</p>
+<h2 id="howto">Howto<a class="headerlink" href="#howto" title="Permanent link">&para;</a></h2>
+<h3 id="1-prepare-qmap-file-example">1. Prepare .qmap file (example)<a class="headerlink" href="#1-prepare-qmap-file-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">[</span>params<span class="o">]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">memory</span><span class="o">=</span>50G
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="o">[</span>pre<span class="o">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a> . <span class="s2">&quot;/home/</span><span class="nv">$USER</span><span class="s2">/miniconda3/etc/profile.d/conda.sh&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>conda activate sciclone-env
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="o">[</span>jobs<span class="o">]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Rscript run.R ../data/vafs.dat bmm <span class="m">3</span> ./results.beta.3
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Rscript run.R ../data/vafs.dat gaussian.bmm <span class="m">3</span> ./results.gaussian.3
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Rscript run.R ../data/vafs.dat binomial.bmm <span class="m">3</span> ./results.binomial.3
+</code></pre></div>
+<h3 id="2-run-qmap-submit-from-the-login-node">2. Run "qmap submit" from the login node<a class="headerlink" href="#2-run-qmap-submit-from-the-login-node" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ qmap submit filename.qmap
+</code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Jordi Deu-Pons</li>
+<li>Miguel Grau</li>
+</ul>
 
 
 
@@ -1724,10 +1801,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.48f2be22.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.37e9125f.min.js"></script>
       
     
   </body>
