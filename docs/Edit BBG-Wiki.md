@@ -16,7 +16,7 @@ Go to the [bbg-wiki repository](https://github.com/bbglab/bbgwiki){:target="_bla
 ![BBGWiki edit online tutorial](assets/images/bbgwiki_edit_online.jpg)
 
 ## Local
- hola
+
 ### Installation
 
 ```bash
