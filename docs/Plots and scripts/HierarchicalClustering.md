@@ -18,3 +18,7 @@ dn = hierarchy.dendrogram(Z)
 ```
 
 ![BBGWiki edit online tutorial](assets/images/hierarchical_clustering.jpg)
+
+## Reference
+
+- Ferran Muiños
