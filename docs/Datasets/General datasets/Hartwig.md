@@ -12,11 +12,13 @@ You can find the data from Hartwig Medical Foundation Database in the folder:
 ```bash 
 /workspace/datasets/hartwig
 ```
+
 You can find clinical data from the patients in Hartwig in the following file:
 ```bash 
 /workspace/datasets/hartwig/20220809/biomarkers/tmp/clinical_ready.csv
 ```
-You can find clinical data from samples from Hartwig in the file:
+
+A more complete version of the previous table can be found in:
 
 ```bash
 /workspace/datasets/hartwig/20220809/biomarkers/clean/biomarkers_AdjTPM.csv
