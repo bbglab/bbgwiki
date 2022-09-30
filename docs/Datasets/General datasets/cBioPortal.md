@@ -18,7 +18,7 @@ Click [here](https://www.cbioportal.org/datasets){:target="_blank"} to visualize
 When using data from cBioPortal, please cite the following portal papers:
 
 > - Cerami et al. The cBio Cancer Genomics Portal: An Open Platform for Exploring Multidimensional Cancer Genomics Data. Cancer Discovery. May 2012 2; 401. PubMed.
-	- Gao et al. Integrative analysis of complex cancer genomics and clinical profiles using the cBioPortal. Sci. Signal. 6, pl1 (2013). PubMed.
+  - Gao et al. Integrative analysis of complex cancer genomics and clinical profiles using the cBioPortal. Sci. Signal. 6, pl1 (2013). PubMed.
 
 Remember to also cite the source of the data if you are using a publicly available dataset.
 
