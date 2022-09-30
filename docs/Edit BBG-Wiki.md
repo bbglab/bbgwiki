@@ -52,13 +52,7 @@ pip install -r bbgwiki/requirements.txt
 
         - Copy the output and paste it in your terminal where it previously asked for the password.
 
-### Requirements
 
-```text
-mkdocs >= 1.2.2
-mkdocs-material >= 7.1.11
-mkdocs-static-i18n >= 0.18
-```
 
 ### Commands
 
