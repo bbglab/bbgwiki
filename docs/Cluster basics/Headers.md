@@ -10,14 +10,16 @@ headers name_file.tsv
 This will return you the name of the columns with the number of the column, for example:
 
 ```bash
-1	tumor type
+1	tumor_type
 2	gene
 3	chr
 4	pos
 5	ref
-6   alt
-
+6	alt
 ```
 
 
 ## Reference
+
+- Jordi Deu-Pons
+- Paula Gomis 
