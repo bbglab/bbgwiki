@@ -37,5 +37,4 @@ Click here to see the [repository of BgReference](https://bitbucket.org/bgframew
 ## Reference
 - Jordi Deu-Pons
 - Miguel Grau
-- Carlos López Elorduy
 - Paula Gomis 
