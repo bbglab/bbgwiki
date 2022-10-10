@@ -17,7 +17,7 @@ Z = hierarchy.linkage(ydist, 'single')
 dn = hierarchy.dendrogram(Z)
 ```
 
-![BBGWiki edit online tutorial](/assets/images/hierarchical_clustering.jpg)
+![BBGWiki edit online tutorial](../assets/images/hierarchical_clustering.jpg)
 
 ## Reference
 

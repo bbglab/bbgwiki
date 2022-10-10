@@ -5,8 +5,8 @@ theme:
   palette:
     primary: orange
     accent: orange
-  logo: /assets/images/bbglabLOGO_small.png
-  favicon: /assets/images/bbglabLOGO_small.png
+  logo: assets/images/bbglabLOGO_small.png
+  favicon: assets/images/bbglabLOGO_small.png
   features:
     - navigation.top
     - content.code.annotate
