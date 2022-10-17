@@ -31,7 +31,7 @@ Run an interactive job:
 ```
 
 !!! note
-If your notebook needs more than 8G and 2 cores, you can specify it here -- see [interactive](../Interactive/) section.
+    If your notebook needs more than 8G and 2 cores, you can specify it here -- see [interactive](../Interactive/) section.
 
 Activate conda base or the conda environment that you need in your notebook:
 
