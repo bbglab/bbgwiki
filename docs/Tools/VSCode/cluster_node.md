@@ -11,10 +11,17 @@ These are the instructions to use Visual Studio Code to run and debug scripts/no
 
 ## Create a conda environment
 
+The conda environment must include the packages `code-server`, `pyngrok` and `screen`
+
 ```bash
-interactive
 conda create -n vsc_node -c conda-forge code-server screen pyngrok -y
 conda activate vsc_node
+```
+
+From now on, an interactive session must be opened and the rest of the commands will be executed within this session.
+
+```bash
+interactive
 ```
 
 ## Run code server in a screen (inside the interactive session)
