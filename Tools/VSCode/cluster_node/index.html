@@ -1901,14 +1901,17 @@
 <li>Have an account on <a href="https://ngrok.com">ngrok</a></li>
 </ul>
 <h2 id="create-a-conda-environment">Create a conda environment<a class="headerlink" href="#create-a-conda-environment" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>interactive
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda create -n vsc_node -c conda-forge code-server screen pyngrok -y
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>conda activate vsc_node
+<p>The conda environment must include the packages <code>code-server</code>, <code>pyngrok</code> and <code>screen</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda create -n vsc_node -c conda-forge code-server screen pyngrok -y
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda activate vsc_node
+</code></pre></div>
+<p>From now on, an interactive session must be opened and the rest of the commands will be executed within this session.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>interactive
 </code></pre></div>
 <h2 id="run-code-server-in-a-screen-inside-the-interactive-session">Run code server in a screen (inside the interactive session)<a class="headerlink" href="#run-code-server-in-a-screen-inside-the-interactive-session" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>screen -S vscode
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="o">[</span>vscode screen<span class="o">]</span> conda activate vsc_node
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">[</span>vscode screen<span class="o">]</span> code-server
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>screen -S vscode
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="o">[</span>vscode screen<span class="o">]</span> conda activate vsc_node
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">[</span>vscode screen<span class="o">]</span> code-server
 </code></pre></div>
 <p>Exit the screen with <code>Ctrl + A + D</code></p>
 <h2 id="run-a-ngrok-tunnel-in-a-screen-inside-the-interactive-session">Run a Ngrok tunnel in a screen (inside the interactive session)<a class="headerlink" href="#run-a-ngrok-tunnel-in-a-screen-inside-the-interactive-session" title="Permanent link">&para;</a></h2>
@@ -1926,13 +1929,13 @@
 </ol>
 <p>This setup only has to be done once.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>screen -S pyngrok
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="o">[</span>pyngrok screen<span class="o">]</span> conda activate vsc_node
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">[</span>pyngrok screen<span class="o">]</span> pyngrok http <span class="m">8080</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>screen -S pyngrok
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">[</span>pyngrok screen<span class="o">]</span> conda activate vsc_node
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="o">[</span>pyngrok screen<span class="o">]</span> pyngrok http <span class="m">8080</span>
 </code></pre></div>
 <p>Copy the URL to your browser and exit the session <code>Ctrl + A + D</code></p>
 <h2 id="check-your-vscode-password">Check your VSCode password<a class="headerlink" href="#check-your-vscode-password" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cat ~/.config/code-server/config.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cat ~/.config/code-server/config.yaml
 </code></pre></div>
 <h2 id="browse-your-vscode-remotely">Browse your VSCode remotely<a class="headerlink" href="#browse-your-vscode-remotely" title="Permanent link">&para;</a></h2>
 <p>When entering the URL in your browser, click <code>Visit site</code> and introduce the password you obtained in the previous step in order to be able to use VSCode.</p>
