@@ -56,6 +56,18 @@ screen -r [#]
 exit
 ```
 
+### Kill a detached screen
+
+```bash
+screen -X -S [screen number ID or name] quit
+```
+
+### Kill all screens
+
+```bash
+pkill screen
+```
+
 ---
 
 ## Documentation
