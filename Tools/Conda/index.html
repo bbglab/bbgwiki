@@ -1944,77 +1944,83 @@
 <p><strong>Export</strong> active environment to a file</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>conda env <span class="nb">export</span> &gt; environment.yml
 </code></pre></div>
+<p><strong>Export all environments</strong> to its own file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span> env <span class="k">in</span> <span class="k">$(</span>conda env list <span class="p">|</span> cut -d<span class="s2">&quot; &quot;</span> -f1<span class="k">)</span><span class="p">;</span> <span class="k">do</span> 
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="k">if</span> <span class="o">[[</span> <span class="si">${</span><span class="nv">env</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span> <span class="o">==</span> <span class="s2">&quot;#&quot;</span> <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span> <span class="k">continue</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>   conda env <span class="nb">export</span> -n <span class="nv">$env</span> &gt; <span class="si">${</span><span class="nv">env</span><span class="si">}</span>.yml
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">done</span>
+</code></pre></div>
 <p>Create environment <strong>from file</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda env create -f environment.yml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda env create -f environment.yml
 </code></pre></div>
 <p><strong>Clone</strong> an environment</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda create --name &lt;environment name&gt; --clone &lt;original environment&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>conda create --name &lt;environment name&gt; --clone &lt;original environment&gt;
 </code></pre></div>
 <p><strong>Remove</strong> an environment</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>conda env remove --name &lt;environment name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>conda env remove --name &lt;environment name&gt;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>conda remove --name &lt;environment name&gt; --all
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>conda remove --name &lt;environment name&gt; --all
 </code></pre></div>
 <p><strong>List all packages</strong> installed (in current environment)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>conda list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>conda list
 </code></pre></div>
 <p>List all packages installed <strong>with path</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>conda list --explicit
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>conda list --explicit
 </code></pre></div>
 <p>Show <strong>history of changes</strong> in packages</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>conda list --revisions
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>conda list --revisions
 </code></pre></div>
 <hr />
 <h3 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h3>
 <p><strong>Install</strong> a package (<em>use <code>-f</code> to force the installation</em>)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>conda install &lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>conda install &lt;package&gt;
 </code></pre></div>
 <p>Install package(s) specified in a <strong>file</strong> (like a Python <strong>requirements</strong> file)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>conda install --file &lt;file&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>conda install --file &lt;file&gt;
 </code></pre></div>
 <p><strong>Uninstall</strong> a package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>conda remove &lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>conda remove &lt;package&gt;
 </code></pre></div>
 <p><strong>Search</strong> for a package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>conda search &lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>conda search &lt;package&gt;
 </code></pre></div>
 <hr />
 <h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <p><strong>Show</strong> configuration</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>conda config --show
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>conda config --show
 </code></pre></div>
 <p><strong>Add channels</strong> (use <code>add</code> instead of <code>append</code> to put the channel on the top of the list)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>conda config --append channels &lt;channel name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>conda config --append channels &lt;channel name&gt;
 </code></pre></div>
 <hr />
 <h3 id="building-packages">Building Packages<a class="headerlink" href="#building-packages" title="Permanent link">&para;</a></h3>
 <p><strong>Install</strong> conda build</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>conda install conda-build
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>conda install conda-build
 </code></pre></div>
 <p><strong>Build</strong> package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>conda build &lt;directory with the files&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>conda build &lt;directory with the files&gt;
 </code></pre></div>
 <p>Build for <strong>other platforms</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>conda convert --platform all &lt;path to package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>conda convert --platform all &lt;path to package&gt;
 </code></pre></div>
 <p><strong>Install built</strong> package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>conda install --use-local &lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>conda install --use-local &lt;package&gt;
 </code></pre></div>
 <hr />
 <h3 id="from-pypi">From Pypi<a class="headerlink" href="#from-pypi" title="Permanent link">&para;</a></h3>
 <p><strong>Create</strong> files</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>conda skeleton pypi &lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>conda skeleton pypi &lt;package&gt;
 </code></pre></div>
 <p>Build for <strong>different Python version</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>conda build --python &lt;version&gt; &lt;directory with the files&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>conda build --python &lt;version&gt; &lt;directory with the files&gt;
 </code></pre></div>
 <hr />
 <h3 id="custom-channel">Custom Channel<a class="headerlink" href="#custom-channel" title="Permanent link">&para;</a></h3>
 <p><strong>Add</strong> channel</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>conda config --append channels file://&lt;path to folder&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>conda config --append channels file://&lt;path to folder&gt;
 </code></pre></div>
 <p><strong>(re)build</strong> the index</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>conda index &lt;channel folder&gt;/&lt;platform&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>conda index &lt;channel folder&gt;/&lt;platform&gt;
 </code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
