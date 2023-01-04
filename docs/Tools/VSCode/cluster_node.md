@@ -18,23 +18,23 @@ conda create -n vsc_node -c conda-forge code-server screen pyngrok -y
 conda activate vsc_node
 ```
 
-From now on, an interactive session must be opened and the rest of the commands will be executed within this session.
-
-```bash
-interactive
-```
-
-## Run code server in a screen (inside the interactive session)
+## Run code server in a screen (inside `login01`)
 
 ```bash
 screen -S vscode
-[vscode screen] conda activate vsc_node
-[vscode screen] code-server
+```
+
+Right after creating the screen, create an interactive session and remember on which node you are allocated.
+
+```bash
+interactive
+conda activate vsc_node
+code-server
 ```
 
 Exit the screen with `Ctrl + A + D`
 
-## Run a Ngrok tunnel in a screen (inside the interactive session)
+## Run a Ngrok tunnel in a screen (inside `login01`)
 
 !!! note
 
@@ -51,8 +51,12 @@ Exit the screen with `Ctrl + A + D`
 
 ```bash
 screen -S pyngrok
-[pyngrok screen] conda activate vsc_node
-[pyngrok screen] pyngrok http 8080
+```
+
+```bash
+interactive -w <bbgnXXX> # Node of previous step
+conda activate vsc_node
+pyngrok http 8080
 ```
 
 Copy the URL to your browser and exit the session `Ctrl + A + D`
@@ -68,12 +72,6 @@ cat ~/.config/code-server/config.yaml
 When entering the URL in your browser, click `Visit site` and introduce the password you obtained in the previous step in order to be able to use VSCode.
 
 ![Screenshot from 2022-11-21 09-06-25](https://user-images.githubusercontent.com/1315429/202997070-fe8d28cb-97f5-4981-bf84-2909056e8fbd.png)
-
-## Notes
-
-!!! warning
-
-    With this process, within your interactive session, you will see with `screen -ls` that you have two screens working (`vscode` and `pyngrok`). Because of this, keep in mind that if the interactive session is closed at any point, **the two screens will be killed as well**, crashing any ongoing process.
 
 ## Reference
 
