@@ -8,8 +8,14 @@
       
       
       
+      
+        <link rel="prev" href="../Overview/">
+      
+      
+        <link rel="next" href="../../VSCode/cluster_node/">
+      
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -17,15 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#ffa724">
-        
       
       
 
@@ -1890,19 +1891,20 @@
                   
 
 
+
 <h1 id="using-containers">Using containers<a class="headerlink" href="#using-containers" title="Permanent link">&para;</a></h1>
 <h2 id="running-commands-inside-a-container">Running commands inside a container<a class="headerlink" href="#running-commands-inside-a-container" title="Permanent link">&para;</a></h2>
 <p>The <code>singularity exec</code> command will allow you to execute any program within a given container. The <code>singularity run</code> command performs the action defined by the <code>%runscript</code> section, which is the primary task of the container. Using the <code>singularity run</code> command is the simpler approach for job submissions.</p>
 <p>You can even "execute" a container, which performs the same action as the <code>singularity run</code> command. For example, the following demonstrates how to inspect the runscript and execute the <code>/data/containers/public/python3_helloworld.simg</code> container:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ singularity inspect -r /data/containers/public/python3_helloworld.simg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>inspect<span class="w"> </span>-r<span class="w"> </span>/data/containers/public/python3_helloworld.simg
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#!/bin/sh</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  python3 -c <span class="s1">&#39;print(&quot;Hello, World!&quot;)&#39;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print(&quot;Hello, World!&quot;)&#39;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$ /data/containers/public/python3_helloworld.simg
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Hello, World!
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$<span class="w"> </span>/data/containers/public/python3_helloworld.simg
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Hello,<span class="w"> </span>World!
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>$ singularity run /data/containers/public/python3_helloworld.simg
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Hello, World!
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>$<span class="w"> </span>singularity<span class="w"> </span>run<span class="w"> </span>/data/containers/public/python3_helloworld.simg
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Hello,<span class="w"> </span>World!
 </code></pre></div>
 <h2 id="execute-a-script-from-outside-the-container">Execute a script from outside the container<a class="headerlink" href="#execute-a-script-from-outside-the-container" title="Permanent link">&para;</a></h2>
 <div class="admonition note annotate">
@@ -1910,9 +1912,9 @@
 <p>For typical use, you want to use the singularity run or singularity exec commands, especially when submitting the work via the scheduler.</p>
 </div>
 <p>The following example runs a python script <code>hello_world2.py</code> from the current directory using the <code>/data/containers/public/python3_helloworld.simg</code> container:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ singularity <span class="nb">exec</span> /data/containers/public/python3_helloworld.simg python3 ./hello_world2.py
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Hello, World!
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Hello, World <span class="o">(</span>again<span class="o">)</span>!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>/data/containers/public/python3_helloworld.simg<span class="w"> </span>python3<span class="w"> </span>./hello_world2.py
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Hello,<span class="w"> </span>World!
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Hello,<span class="w"> </span>World<span class="w"> </span><span class="o">(</span>again<span class="o">)</span>!
 </code></pre></div>
 <p>The file hello_world2.py contains the following code:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
@@ -1933,7 +1935,7 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">#$ -l h_rt=1:0:0</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">#$ -l h_vmem=1G</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>singularity run /data/containers/public/python3_helloworld.simg
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>singularity<span class="w"> </span>run<span class="w"> </span>/data/containers/public/python3_helloworld.simg
 </code></pre></div>
 <h3 id="modules-example">Modules example<a class="headerlink" href="#modules-example" title="Permanent link">&para;</a></h3>
 <p>Applications installed within Singularity containers may also be provided as a module to abstract the container invocation commands (<code>singularity run</code> and <code>singularity exec</code>). In these cases, the container name will match the runscript command. For example, to use Pandoc as a module, simply load the <code>pandoc</code> module to use the application.</p>
@@ -1944,16 +1946,16 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#$ -l h_rt=1:0:0</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">#$ -l h_vmem=1G</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>module load pandoc
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>pandoc --help
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>module<span class="w"> </span>load<span class="w"> </span>pandoc
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>pandoc<span class="w"> </span>--help
 </code></pre></div>
 <h3 id="shell-access-to-the-container">Shell access to the container<a class="headerlink" href="#shell-access-to-the-container" title="Permanent link">&para;</a></h3>
 <p>It is possible to launch a shell within the container using the <code>shell</code> command. Interacting directly with a shell inside the container can be useful for code debugging and running multiple commands in a single interactive session, as an alternative to writing a single script. Below demonstrates how to invoke python3 from inside the <code>/data/containers/public/python3_helloworld.simg</code> container using an interactive shell:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ singularity shell /data/containers/public/python3_helloworld.simg
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Singularity&gt; python3
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Python <span class="m">3</span>.8.10 <span class="o">(</span>default, Sep <span class="m">28</span> <span class="m">2021</span>, <span class="m">16</span>:10:42<span class="o">)</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="o">[</span>GCC <span class="m">9</span>.3.0<span class="o">]</span> on linux
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>shell<span class="w"> </span>/data/containers/public/python3_helloworld.simg
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Singularity&gt;<span class="w"> </span>python3
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Python<span class="w"> </span><span class="m">3</span>.8.10<span class="w"> </span><span class="o">(</span>default,<span class="w"> </span>Sep<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">2021</span>,<span class="w"> </span><span class="m">16</span>:10:42<span class="o">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="o">[</span>GCC<span class="w"> </span><span class="m">9</span>.3.0<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>linux
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class="w"> </span><span class="s2">&quot;copyright&quot;</span>,<span class="w"> </span><span class="s2">&quot;credits&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;license&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>&gt;&gt;&gt;
 </code></pre></div>
 <p>Documentation is available on the <a href="https://github.com/singularityhub/singularityhub.github.io/wiki">Singularity Hub Wiki</a></p>
@@ -1963,8 +1965,8 @@
 <p>For long term reproducibility of containers, we recommend that you build your own native Singularity containers from definition files instead of relying on 3rd party containers for your research. Using containers from external sources may produce undesirable results if the container is rebuilt after upstream changes such as updated or obsoleted packages.</p>
 </div>
 <p>Containers created elsewhere can be copied or imported, and run on the cluster. The following example demonstrates how to import and run the latest Ubuntu official image stored in the <a href="https://hub.docker.com/_/ubuntu/">Docker Hub</a>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ singularity pull ubuntu.simg docker://ubuntu:latest
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$ singularity <span class="nb">exec</span> ubuntu.simg cat /etc/lsb-release
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>pull<span class="w"> </span>ubuntu.simg<span class="w"> </span>docker://ubuntu:latest
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu.simg<span class="w"> </span>cat<span class="w"> </span>/etc/lsb-release
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nv">DISTRIB_ID</span><span class="o">=</span>Ubuntu
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">DISTRIB_RELEASE</span><span class="o">=</span><span class="m">20</span>.04
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">DISTRIB_CODENAME</span><span class="o">=</span>focal
@@ -1997,42 +1999,6 @@
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../Overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Overview
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../VSCode/cluster_node/" class="md-footer__link md-footer__link--next" aria-label="Next: VSCode in interactive node" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              VSCode in interactive node
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2054,12 +2020,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>

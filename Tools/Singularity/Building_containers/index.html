@@ -8,8 +8,14 @@
       
       
       
+      
+        <link rel="prev" href="../../Signature_tools/mSignAct/">
+      
+      
+        <link rel="next" href="../Overview/">
+      
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -17,15 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#ffa724">
-        
       
       
 
@@ -1998,6 +1999,7 @@
                   
 
 
+
 <h1 id="building-containers">Building containers<a class="headerlink" href="#building-containers" title="Permanent link">&para;</a></h1>
 <p>Singularity containers are built from a definition file which allows the container to be built identically by anyone possessing the file.</p>
 <div class="admonition note annotate">
@@ -2023,7 +2025,7 @@
 </code></pre></div>
 <p>The build process is unattended, and will not succeed if any operations require interactive input. Be sure to use <code>-y</code> or <code>--yes</code> options when installing packages.</p>
 <p>Create the image (this step requires root privileges):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo singularity build ubuntu20_helloworld.simg ubuntu20_helloworld.def
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>ubuntu20_helloworld.simg<span class="w"> </span>ubuntu20_helloworld.def
 </code></pre></div>
 <p>This will result in a usable image in the current working directory. Be aware that if you want a very specific version of package from a repository, that package may not be available in future, so where possible, try to future-proof your containers.</p>
 <h3 id="building-containers-for-other-linux-distributions">Building containers for other Linux distributions<a class="headerlink" href="#building-containers-for-other-linux-distributions" title="Permanent link">&para;</a></h3>
@@ -2041,7 +2043,7 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 </code></pre></div>
 <p>Create the base image:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo singularity build ubuntu20_base.simg ubuntu20_base.def
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>ubuntu20_base.simg<span class="w"> </span>ubuntu20_base.def
 </code></pre></div>
 <p>The non-base image container (i.e. <code>python3</code> in this example) can be built using definition file <code>ubuntu20_python3.def</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Bootstrap: localimage
@@ -2054,7 +2056,7 @@
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  python3 &quot;${@}&quot;
 </code></pre></div>
 <p>The result will be a container almost identical to the one created from scratch.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo singularity build ubuntu20_python3.simg ubuntu20_python3.def
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>ubuntu20_python3.simg<span class="w"> </span>ubuntu20_python3.def
 </code></pre></div>
 <h3 id="docker-images">Docker images<a class="headerlink" href="#docker-images" title="Permanent link">&para;</a></h3>
 <p>You can also bootstrap from Docker containers, although if supplied by a third party, you have less visibility or control over these images, so use with caution, as this may impact the future reproducibility of results.</p>
@@ -2070,7 +2072,7 @@
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  python3 &quot;${@}&quot;
 </code></pre></div>
 <p>Build the container. This will produce a container similar to the previous examples, but may vary slightly in overall size depending on packages installed in the base docker image:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo singularity build ubuntu20_docker_python3.simg ubuntu20_docker_python3.def
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>ubuntu20_docker_python3.simg<span class="w"> </span>ubuntu20_docker_python3.def
 </code></pre></div>
 <h2 id="future-proofing-your-containers">Future-proofing your containers<a class="headerlink" href="#future-proofing-your-containers" title="Permanent link">&para;</a></h2>
 <p>When building your own containers, be sure to make them portable and future-proof.</p>
@@ -2095,9 +2097,9 @@
 </ul>
 <h3 id="help-section">Help section<a class="headerlink" href="#help-section" title="Permanent link">&para;</a></h3>
 <p>The <code>%help</code> section is designed to provide information about the container when singularity run-help is run on the container, for example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ singularity run-help /data/containers/public/python3_helloworld.simg
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Purpose: Test container to print <span class="s2">&quot;Hello, World!&quot;</span> <span class="k">in</span> Python3.
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Author:  ITS Research / QMUL.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>run-help<span class="w"> </span>/data/containers/public/python3_helloworld.simg
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Purpose:<span class="w"> </span>Test<span class="w"> </span>container<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Python3.
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Author:<span class="w">  </span>ITS<span class="w"> </span>Research<span class="w"> </span>/<span class="w"> </span>QMUL.
 </code></pre></div>
 <h3 id="post-section">Post section<a class="headerlink" href="#post-section" title="Permanent link">&para;</a></h3>
 <p>The <code>%post</code> section contains the commands used to build the container, such as package installs, file downloads, compilation and software configuration.</p>
@@ -2123,26 +2125,26 @@
 </div>
 <h3 id="inspecting-a-container">Inspecting a container<a class="headerlink" href="#inspecting-a-container" title="Permanent link">&para;</a></h3>
 <p>To display information about how a container was build, use the <code>singularity inspect</code> command. The <code>-d</code> option to this command will print the definition file used to built the container and the <code>-r</code> option will print the runscript (if added during build-time). For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ singularity inspect -d /data/containers/public/python3_helloworld.simg
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Bootstrap: docker
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>From: ubuntu:20.04
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>inspect<span class="w"> </span>-d<span class="w"> </span>/data/containers/public/python3_helloworld.simg
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Bootstrap:<span class="w"> </span>docker
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>From:<span class="w"> </span>ubuntu:20.04
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>%help
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  Purpose: Test container to print <span class="s2">&quot;Hello, World!&quot;</span> <span class="k">in</span> Python3.
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>  Author:  ITS Research / QMUL.
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span>Purpose:<span class="w"> </span>Test<span class="w"> </span>container<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Python3.
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span>Author:<span class="w">  </span>ITS<span class="w"> </span>Research<span class="w"> </span>/<span class="w"> </span>QMUL.
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>%post
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>  apt-get update
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>  apt-get install --yes python3
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span>apt-get<span class="w"> </span>update
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span>apt-get<span class="w"> </span>install<span class="w"> </span>--yes<span class="w"> </span>python3
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>  apt-get clean <span class="o">&amp;&amp;</span> <span class="se">\</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>   rm -rf /var/lib/apt/lists/*
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span>apt-get<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">   </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
 <a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
 <a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>%test
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>  which python3
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span>which<span class="w"> </span>python3
 <a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
 <a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>%runscript
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>  python3 -c <span class="s1">&#39;print(&quot;Hello, World!&quot;)&#39;</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">  </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print(&quot;Hello, World!&quot;)&#39;</span>
 </code></pre></div>
 <p>The <code>singularity help inspect</code> command provides additional options for inspecting the container.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
@@ -2172,42 +2174,6 @@
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../Signature_tools/mSignAct/" class="md-footer__link md-footer__link--prev" aria-label="Previous: mSignAct" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              mSignAct
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../Overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Overview
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2229,12 +2195,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>
