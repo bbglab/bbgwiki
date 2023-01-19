@@ -3,7 +3,7 @@
 In this section we are going to show the basic commands to navigate and manage files with the terminal.
 
 !!! note
-Whatever is in between `< >` means that it is something you get to name (**without including the `< >`**)
+    Whatever is in between `< >` means that it is something you get to name (**without including the `< >`**)
 
 ## Creating folders and files
 
