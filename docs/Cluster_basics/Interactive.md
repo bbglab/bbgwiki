@@ -8,7 +8,6 @@ Once you enter the bbgcluster, you will see in the terminal `<username>@login01`
 
 ```bash
 $ interactive
-salloc: Granted job allocation *******
 ```
 
 If the `login01` has changed to `bbgn###` where `###` is the number identifying the current node.
