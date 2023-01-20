@@ -26,7 +26,7 @@ There are three different options that requires different files:
 - **Reference Genome**. Custom reference file must be in `.fa.zip` format. As of now, there are h19 and mouse reference genomes on Tapestri portal.
 - **Panels**. Both DNA and Protein can be either customed or taken from their [Designer catalog](https://designer.missionbio.com/catalog-panels). Custom Panels files must be in `zip` format.
 - **FASTQ files**. They must be in `.fastq`, `.fastq.gz`, `.fq` or `.fq.gz` format. The number of files must be even.
-- **.h5 files** . Tapestri Pipeline output file of one run. *i.e.* If we have multiple runs of the sample patients but with different stage of the disease we can merge the runs to produce an .h5 file with
+- **.h5 files** . Tapestri Pipeline output file of one run. *i.e.* If we have multiple runs of the sample patients but with different stage of the disease we can merge the runs to produce an .h5 file with both samples.
 
 ### Output
 
