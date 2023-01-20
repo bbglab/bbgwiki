@@ -24,7 +24,7 @@ git clone git@github.com:bbglab/bbgwiki.git
 pip install -r bbgwiki/requirements.txt
 ```
 
-!!! note annotate "Error: My Github password seems to be wrong somehow..."
+!!! failure annotate "Error: My Github password seems to be wrong somehow..."
     It might be the case that at some point of this process, it asks for the Github user and password. However, although you should introduce your Github user, the password that it asks **is not your Github password**. In order to know what to introduce here, you need to generate a `ssh key` following one of these two options:
     
     - From the **Github web**:
