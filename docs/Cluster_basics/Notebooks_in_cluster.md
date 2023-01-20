@@ -30,7 +30,7 @@ Run an interactive job:
 [screen_name] <username>@login01:~$ interactive
 ```
 
-!!! note
+!!! info
     If your notebook needs more than 8G and 2 cores, you can specify it here -- see [interactive](../Interactive/) section.
 
 Activate conda base or the conda environment that you need in your notebook:

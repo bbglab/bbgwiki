@@ -18,7 +18,7 @@ For usage documentation, run `nextflow help`.
 
 ### Submitting processes as serial jobs
 
-!!! note annotate "Recommended for serial jobs only"
+!!! info annotate "Recommended for serial jobs only"
     This section is recommended for serial jobs only. For parallel jobs, please see the Parallel jobs section below.
 
 Nextflow supports the ability to submit pipeline scripts as separate cluster jobs using the SGE executor.
