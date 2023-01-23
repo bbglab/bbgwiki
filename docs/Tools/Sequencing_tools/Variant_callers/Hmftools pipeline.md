@@ -1,3 +1,7 @@
+---
+hide:
+    - toc
+---
 # HMFtools
 
 ## Description
@@ -581,7 +585,7 @@ It can be run with a `.bam` file or a `.fastq` file.
             ```  
             !!! note "WGS without reference"
 
-                as this example, is it possible to use WGS without a non-tumoral reference. the output is the following: 
+                as this example, it is possible to use WGS without a non-tumoral reference. the output is the following: 
 
                 ??? example output without reference
 
