@@ -20,15 +20,16 @@ Move to the hmftools pipeline folder:
 cd /workspace/projects/hartwig/hmftools/pipeline/
 ```
 
-create a conda envirnoment with the `ENV.txt` file.
+create a conda envirnoment with the `environment.yml` file.
 
 ```sh
-conda create --name hwpipe --file ENV.txt
+conda env create --file environment.yml
 ```
-activate the environment 
+
+activate the environment
 
 ```sh
-conda activate hwpipe
+conda activate hmftpipe
 ```
 
 !!! warning Data Access
