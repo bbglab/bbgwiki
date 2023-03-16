@@ -1,6 +1,8 @@
 # Clustermap plot
 
-Example of how to generate clustermaps with multiple annotation rows or columns using seaborn.
+Example of how to generate clustermaps with multiple annotations (rows or columns) using seaborn.
+Clustermaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial. If this is your objective, here you could find a couple of useful tips.
+If you didn't do so, please check [seaborn]([https://duckduckgo.com](https://seaborn.pydata.org)) documentation.
 
 ## Import packages and load toy data
 
