@@ -13,7 +13,8 @@ Find below references to the publicly available repo as well as to example scrip
 ### Precision-Recall Curves
 
 #### Public repo
-<!--- Example image embedded: #TODO --->
+![BBGWiki edit online tutorial](../assets/images/PRC_example.png)
+
 [Figure 1 code](https://github.com/bbglab/boostdm-analyses/tree/master/Figure1), [Manuscript Figure 1 PDF](https://github.com/bbglab/boostdm-analyses/blob/master/figures_paper/Figure1.pdf)
 
 #### BBG Workspace
@@ -22,7 +23,8 @@ Notebook: ``/workspace/projects/boostdm_ch/notebooks/benchmarks-precision-recall
 ### Radar plots
 
 #### Public repo
-<!--- Example image embedded: #TODO --->
+![BBGWiki edit online tutorial](../assets/images/radar_plot_example.png)
+
 [Figure 2 code](https://github.com/bbglab/boostdm-analyses/tree/master/Figure2), [Manuscript Figure 2 PDF](https://github.com/bbglab/boostdm-analyses/blob/master/figures_paper/Figure2.pdf)
 
 #### BBG Workspace
@@ -31,7 +33,8 @@ Notebook: ``/workspace/projects/boostdm_ch/notebooks/run8_20220705_feature-lands
 ### Blueprints
 
 #### Public repo
-<!--- Example image embedded: #TODO) --->
+![BBGWiki edit online tutorial](../assets/images/blueprint_example.png)
+
 [Figure 3 code](https://github.com/bbglab/boostdm-analyses/tree/master/Figure3), [Manuscript Figure 3 PDF](https://github.com/bbglab/boostdm-analyses/blob/master/figures_paper/Figure3.pdf)
 
 #### BBG Workspace
