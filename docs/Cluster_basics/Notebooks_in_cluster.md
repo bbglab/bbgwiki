@@ -8,23 +8,23 @@ This is especially useful for time-consuming/memory-consuming processes or noteb
 
 To run a notebook in the cluster, a [screen](../Screen/) and an [interactive](../Interactive/) will be used.
 
-## Usage
+## Create a notebook
 
 You will need to follow the next steps:
 
-Connect to the cluster:
+1. Connect to the cluster:
 
 ```bash
 ssh -p 22022 <username>@bbgcluster
 ```
 
-Open a screen:
+2. Open a screen:
 
 ```bash
 <username>@login01:~$ screen -S <screen_name>
 ```
 
-Run an interactive job:
+3. Run an interactive job and remember the node you are assigned to (_e.g. bbgn005_) 
 
 ```bash
 [screen_name] <username>@login01:~$ interactive
@@ -33,25 +33,34 @@ Run an interactive job:
 !!! info
     If your notebook needs more than 8G and 2 cores, you can specify it here -- see [interactive](../Interactive/) section.
 
-Activate conda base or the conda environment that you need in your notebook:
+4. Activate conda base or the conda environment that you need in your notebook:
 
 ```bash
-[screen_name] <username>@bbgn005:~$ conda activate
+[screen_name] <username>@bbgn005:~$ conda activate <your environment>
 ```
 
-Go to the folder that you wish to run the notebook:
+5. Go to the folder that you wish to run the notebook:
 
 ```bash
 (base)[screen_name] <username>@bbgn005:~$ cd /workspace/folder
 ```
 
-Run the jupyter notebook:
+6. Run the jupyter notebook:
+
+===+ "Notebook"
 
 ```bash
 (base)[screen_name] <username>@bbgn005:~/workspace/folder$ unset XDG_RUNTIME_DIR && jupyter notebook --ip=0.0.0.0
 ```
 
-Keep the URL with the token and the node in which the interactive is running:
+=== "Lab"
+
+```bash
+(base)[screen_name] <username>@bbgn005:~/workspace/folder$ unset XDG_RUNTIME_DIR && jupyter lab --ip=0.0.0.0
+```
+
+
+7. Keep the URL with the token and the port (_e.g.8888_) in which the interactive is running:
 
 ```bash
 [I 10:37:20.371 NotebookApp] The Jupyter Notebook is running at: http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
@@ -63,26 +72,63 @@ Now, your notebook is running and you can dettach from the screen:
 Ctrl + A -> D
 ```
 
-Open a new terminal and create an ssh tunnel to be able to access the port **8888** in the node -- following the example, this is node **bbgn005**:
+## Open a notebook
+
+In order to open an already existing notebook, you'll need to know the **port** (_e.g 8888_) and the **node** of the cluster (_e.g bbgn005_) where you created it in the previous step.
 
 ```bash
-ssh -L 8888:bbgn005:8888 -p 22022 <username>@bbgcluster
+ssh -L <port>:<node>:<port> -p 22022 <username>@bbgcluster
+# For example: ssh -L 8888:bbgn005:8888 -p 22022 clopeze@bbgcluster
+```
+!!! note 
+    If you don't want to remember these commands, you can create an alias (like a shortcut). 
+
+Open the URL you obtain when creating the notebook in the cluster (step 7).
+
+```bash
+# For example: http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
 ```
 
-Now use the URL, replacing **127.0.0.1** with **localhost** and open the URL in your browser:
+## Close a notebook
 
-```link
-http://localhost:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
-```
-
-Using the tunnel (ssh -L terminal) and the URL in the browser, you can enter the notebook as many times as you need.
 When you don't need the notebook to continue running in the cluster, reconnect to the screen:
 
 ```bash
 screen -r <screen_name>
 ```
 
-And kill jupyter and exit the interactive session.
+And kill jupyter (Ctrl + C) and exit the screen (write `exit` in the terminal and press enter)
+
+
+## Errors and solutions
+
+### I forgot the URL of the notebook
+
+1. Enter to the cluster and check your screens: 
+
+```bash
+screen -ls
+```
+2. Enter the screen where you have your notebook: 
+
+```bash
+screen -r <screen name>
+```
+
+3. Scroll up until you find the URL, which should look like:
+
+```bash
+http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
+```
+
+### My notebook doesn't open
+
+One possibility is that the running notebook in the cluster has crashed. You can check this by going to the cluster, entering the screen where you have the notebook and check if it is still running. 
+If not, you should create a notebook following the steps at the beginning of this page (_Create a new notebook_).
+
+### 
+
+
 
 ## Reference
 
