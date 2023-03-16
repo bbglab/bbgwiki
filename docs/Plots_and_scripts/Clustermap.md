@@ -41,6 +41,13 @@ plt.show()
 ## Clustermap with individual annotations
 
 ``` py
+def get_annotation_colors(series, cmap):
+    
+    lut = dict(zip(series.unique(), sns.color_palette(cmap)))
+    colors = series.map(lut)
+    
+    return lut, colors
+
 ## Annotations
 
 # Annotation row
