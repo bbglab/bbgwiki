@@ -24,6 +24,13 @@ Originally, the data was downloadable, so we have in our cluster a lot of clinic
 
 More recently, the UK Biobank Research Analysis Platform ([UKB RAP](https://www.ukbiobank.ac.uk/enable-your-research/research-analysis-platform)) was created, so the data can not be downloaded anymore. The UKB RAP is a platform in the cloud based on DNA Nexus. The WES data from the full cohort and the WGS data are only accessible through this platform.
 
+## Citing in Publications and Presentations
+All publications should include the acknowledgement, “This research has been conducted using
+data from UK Biobank, a major biomedical database” and where appropriate, include a link to the
+UK Biobank website: www.ukbiobank.ac.uk
+
+More information [here](https://www.ukbiobank.ac.uk/media/c4yefr4t/210527-uk-biobank-communications-guidelines.pdf).
+
 ## Reference
 - Santi Demajo
 - Joan Enric Ramis
