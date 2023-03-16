@@ -37,7 +37,7 @@ sns.clustermap(df.drop(columns=["species", "genus", "family"]),
 plt.show()
 ```
 <p align="center">
-  <img src="../assets/images/clustermap_00.png" alt="Clustermap_00" width="50%">
+  <img src="../assets/images/clustermap_00.png" alt="Clustermap_00" width="70%">
 </p>
 
 ## Clustermap with individual annotations
@@ -97,7 +97,7 @@ plt.show()
 ```
 
 <p align="center">
-  <img src="../assets/images/clustermap_01.png" alt="Clustermap_01" width="50%">
+  <img src="../assets/images/clustermap_01.png" alt="Clustermap_01" width="70%">
 </p>
 
 ## Clustermap with multiple annotations
@@ -177,5 +177,5 @@ add_extra_legend(g, annotation_row3, lut_row3, "Family", bbox_to_anchor=(.01, .5
 plt.show()
 ```
 <p align="center">
-  <img src="../assets/images/clustermap_02.png" alt="Clustermap_02" width="50%">
+  <img src="../assets/images/clustermap_02.png" alt="Clustermap_02" width="70%">
 </p>
