@@ -104,7 +104,7 @@ plt.show()
 As shown in the following example, any extra annotation other than the first two can be added using the following function.
 
 ``` py
-def add_extra_legends(g, series, lut, title, bbox_to_anchor=(.01, 0.5)):
+def add_extra_legend(g, series, lut, title, bbox_to_anchor=(.01, 0.5)):
     
     xx = []
     for label in list(series.unique()):
@@ -168,10 +168,10 @@ g.ax_row_dendrogram.legend(handles, lut_row1,
                             bbox_transform=plt.gcf().transFigure)
 
 # Annotation row 2
-add_extra_legends(g, annotation_row2, lut_row2, "Genus", bbox_to_anchor=(.01, .65))
+add_extra_legend(g, annotation_row2, lut_row2, "Genus", bbox_to_anchor=(.01, .65))
 
 # Annotation row 3
-add_extra_legends(g, annotation_row3, lut_row3, "Family", bbox_to_anchor=(.01, .58))
+add_extra_legend(g, annotation_row3, lut_row3, "Family", bbox_to_anchor=(.01, .58))
 
 plt.show()
 ```
