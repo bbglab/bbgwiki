@@ -47,7 +47,9 @@ def get_annotation_colors(series, cmap):
     colors = series.map(lut)
     
     return lut, colors
+``` 
 
+``` py
 ## Annotations
 
 # Annotation row
