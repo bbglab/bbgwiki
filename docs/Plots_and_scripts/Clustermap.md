@@ -36,8 +36,7 @@ sns.clustermap(df.drop(columns=["species", "genus", "family"]),
                cmap = "RdBu_r")
 plt.show()
 ```
-
-![clustermap_1](../assets/images/clustermap_1.png)
+<img src="file://../assets/images/clustermap_1.png" alt="Clustermap_1" width="50%">
 
 
 ## Clustermap with individual annotations
