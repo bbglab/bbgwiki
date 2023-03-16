@@ -93,3 +93,80 @@ plt.show()
 ```
 
 ![clustermap_2](../assets/images/clustermap_2.png)
+
+
+``` py
+def add_extra_legends(g, series, lut, title, bbox_to_anchor=(.01, 0.5)):
+    
+    xx = []
+    for label in list(series.unique()):
+        x = g.ax_row_dendrogram.bar(0, 0, color=lut[label], label=label, linewidth=0)
+        xx.append(x)
+    legend = plt.legend(xx, 
+                        series.unique(), 
+                        title = title, 
+                        bbox_to_anchor = bbox_to_anchor, 
+                        bbox_transform = plt.gcf().transFigure)
+    plt.gca().add_artist(legend)
+```
+
+``` py
+## Annotations
+
+# Annotation row_1
+annotation_row1 = df.pop("species")
+lut_row1, row_colors1 = get_annotation_colors(annotation_row1, "tab10")
+
+# Annotation row_2
+annotation_row2 = df.pop("genus")
+lut_row2, row_colors2 = get_annotation_colors(annotation_row2, "pastel")
+
+# Annotation row_3
+annotation_row3 = df.pop("family")
+lut_row3, row_colors3 = get_annotation_colors(annotation_row3, "Set2")
+
+# Annotation row df
+row_colors = pd.DataFrame({"Species" : row_colors1,
+                           "Genus" : row_colors2,
+                           "Family" : row_colors3}) 
+
+# Annotation col
+annotation_col = pd.Series([col.split(" ")[0] for col in df.columns])
+lut_col, col_colors = get_annotation_colors(annotation_col, "Paired")
+
+
+## Clustermap
+g = sns.clustermap(df,
+                   yticklabels=False,
+                   xticklabels=True,
+                   cmap = "RdBu_r",
+                   row_colors = row_colors,
+                   col_colors = [col_colors])
+
+## Legends
+
+# Annotation col
+handles = [Patch(facecolor=lut_col[name]) for name in lut_col]
+g.ax_col_dendrogram.legend(handles, lut_col, 
+                           title="Feature type", 
+                           bbox_to_anchor=(1.13, .8), 
+                           bbox_transform=plt.gcf().transFigure)
+
+# Annotation row 1
+handles = [Patch(facecolor=lut_row1[name]) for name in lut_row1]
+g.ax_row_dendrogram.legend(handles, lut_row1, 
+                            title="Species", 
+                            bbox_to_anchor=(.01, .76), 
+                            bbox_transform=plt.gcf().transFigure)
+
+# Annotation row 2
+add_extra_legends(g, annotation_row2, lut_row2, "Genus", bbox_to_anchor=(.01, .65))
+
+# Annotation row 3
+add_extra_legends(g, annotation_row3, lut_row3, "Family", bbox_to_anchor=(.01, .58))
+
+plt.show()
+```
+
+![clustermap_3](../assets/images/clustermap_3.png)
+
