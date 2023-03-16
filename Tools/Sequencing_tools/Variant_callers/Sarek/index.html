@@ -2072,34 +2072,42 @@
 
 <h1 id="sarek">Sarek<a class="headerlink" href="#sarek" title="Permanent link">&para;</a></h1>
 <div class="admonition note annotate">
-<p>sarek is a pipeline built using Nextflow designed to detect variants in whole or targeted sequencing data. It works on any species with a
+<p>Sarek is a pipeline built using Nextflow designed to detect variants in whole or targeted sequencing data. It works on any species with a
 reference genome and allows for germline, tumor only and tumor-normal pair variant calling</p>
 </div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Sarek workflow consists of the following steps:
-- Preprocessing (based on GATK4 Best Practices): includes sequencing quality control, reads alignment (BWA), mark duplicates and base recalibration. 
-- Variant calling. You can choose any caller, but here are some recommendations: 
-    - HaplotypeCaller for germline SNVs and indels.
-    - Mutect2 and Strelka for somatic SNVs and indels.
-    - Manta for structural variants (SVs).
-    - ASCAT for copy number variants (CNVs)
-- Annotation: you can choose snpEff, VEP or merge both.</p>
+<p>Sarek workflow consists of the following steps:</p>
+<ul>
+<li><strong>Preprocessing</strong> (based on GATK4 Best Practices): includes sequencing quality control, reads alignment (BWA), mark duplicates and base recalibration.</li>
+<li><strong>Variant calling</strong>. You can choose any caller, but here are some recommendations:<ul>
+<li><em>HaplotypeCaller</em> for germline SNVs and indels.</li>
+<li><em><a href="../Mutect2/">Mutect2</a></em> and <em>Strelka</em> for somatic SNVs and indels.</li>
+<li><em>Manta</em> for structural variants (SVs).</li>
+<li><em>ASCAT</em> for copy number variants (CNVs)</li>
+</ul>
+</li>
+<li><strong>Annotation</strong>: you can choose snpEff, VEP or merge both.</li>
+</ul>
 <p>Note sarek allows to run the pipeline starting from any step.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>You can follow the instructions in <a href="https://nf-co.re/sarek#quick-start">sarek's webpage</a>. Take this into account if you plan to use sarek in the cluster:
-1. Create a conda environment to install the latest java version (<a href="https://anaconda.org/conda-forge/openjdk">openjdk</a> specifically).
-2. Preferably, use Singularity as container. It is not necessary to install it as it is already installed in the cluster. 
-3. Better download and run the pipeline test specifying the version, entering the <code>-r</code> argument:
+<p>You can follow the instructions in <a href="https://nf-co.re/sarek#quick-start">Sarek's webpage</a>. Take this into account if you plan to use sarek in the cluster:</p>
+<ol>
+<li>Create a conda environment to install the latest java version (<a href="https://anaconda.org/conda-forge/openjdk">openjdk</a> specifically).</li>
+<li>Preferably, use Singularity as container. It is not necessary to install it as it is already installed in the cluster.</li>
+<li>
+<p>Better download and run the pipeline test specifying the version, entering the <code>-r</code> argument:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>nf-core/sarek<span class="w"> </span>-r<span class="w"> </span><span class="m">3</span>.1.2<span class="w"> </span>-profile<span class="w"> </span>test,singularity
 </code></pre></div>
-4. Create a config file (you can name it <code>sarek.conf</code>) to specify the executor and Singularity cache directory. In this file you can also add any changes in the configuration specification of the pipeline steps (<em>e.g.</em>: memory limit). Example: 
+</li>
+<li>
+<p>Create a config file (you can name it <code>sarek.conf</code>) to specify the executor and Singularity cache directory. In this file you can also add any changes in the configuration specification of the pipeline steps (<em>e.g.</em>: memory limit). Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>executor<span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nv">queueSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="o">}</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>singularity<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nv">cacheDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/home/rblanco/singcache&#39;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nv">cacheDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/home/$USER/singcache&#39;</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="o">}</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>process<span class="w"> </span><span class="o">{</span>
@@ -2108,27 +2116,31 @@ reference genome and allows for germline, tumor only and tumor-normal pair varia
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="nv">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>.GB
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="o">}</span>
-</code></pre></div></p>
+</code></pre></div>
+</li>
+</ol>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>To run the pipeline you can follow the instruction in <a href="https://nf-co.re/sarek/3.1.2/usage#running-the-pipeline">sarek's webpage</a>, first activating the conda environment with java installed. Here is an example of a command to run the analysis from alignment generation to variant annotation, calling germline and somatic SNVs, SVs and CNVs:
+<p>To run the pipeline you can follow the instruction in <a href="https://nf-co.re/sarek/3.1.2/usage#running-the-pipeline">sarek's webpage</a>, first activating the conda environment with java installed. Here is an example of a command to run the analysis from alignment generation to variant annotation, calling germline and somatic SNVs, SVs and CNVs:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>java
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>nextflow<span class="w"> </span>run<span class="w"> </span>nf-core/sarek<span class="w"> </span>-r<span class="w"> </span><span class="m">3</span>.1.2<span class="w"> </span>-profile<span class="w"> </span>singularity<span class="w"> </span>-c<span class="w"> </span>/path/to/sarek.conf<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>--input<span class="w"> </span>input.csv<span class="w"> </span>--genome<span class="w"> </span>GATK.GRCh38<span class="w"> </span>--igenomes_base<span class="w"> </span>/path/to/igenomes/<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>--tools<span class="w"> </span><span class="s1">&#39;haplotypecaller,strelka,ascat,manta,mutect2,vep&#39;</span><span class="w"> </span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>--input<span class="w"> </span>input.csv<span class="w"> </span>--genome<span class="w"> </span>GATK.GRCh38<span class="w"> </span>--igenomes_base<span class="w"> </span>/path/to/igenomes/<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>--tools<span class="w"> </span><span class="s1">&#39;haplotypecaller,strelka,ascat,manta,mutect2,vep&#39;</span><span class="w"> </span>
 </code></pre></div>
-To start the pipeline from a different step you will have to include the <code>--step</code> flag in the command. If you only want to generate the alignments, omit the <code>--tools</code> flag. 
+<p>To start the pipeline from a different step you will have to include the <code>--step</code> flag in the command. If you only want to generate the alignments, omit the <code>--tools</code> flag.
 To avoid pipeline freezing, it is highly recommended to use a local version of iGenomes instead of pulling it from AWS during pipeline execution.</p>
 <h3 id="create-inputcsv">Create <code>input.csv</code><a class="headerlink" href="#create-inputcsv" title="Permanent link">&para;</a></h3>
-<p>Sarek uses a comma-separated samplesheet with information about the samples to run the pipeline. Here you specify information as the patient-id, sex, status (normal/tumor), etc. In <a href="https://nf-co.re/sarek/3.1.2/usage#running-the-pipeline">sarek's webpage</a> you can find examples of the mandatory fields required in the samplesheet depending on the pipeline step from which you start the analysis. </p>
+<p>Sarek uses a comma-separated samplesheet with information about the samples to run the pipeline. Here you specify information as the patient-id, sex, status (normal/tumor), etc. In <a href="https://nf-co.re/sarek/3.1.2/usage#running-the-pipeline">sarek's webpage</a> you can find examples of the mandatory fields required in the samplesheet depending on the pipeline step from which you start the analysis.</p>
 <h3 id="main-outputs">Main outputs<a class="headerlink" href="#main-outputs" title="Permanent link">&para;</a></h3>
-<p>If you run the entire pipeline, you will end with many files. From those, we will highlight:
-- In  <code>results/preprocessing/recalibrated/</code> the final alignments in CRAM format per sample. 
-- In <code>results/variant_calling/</code> the VCFs per caller and sample.
-- In <code>results/annotation/</code> the annotated VCFs per caller and sample.</p>
+<p>If you run the entire pipeline, you will end with many files. From those, we will highlight:</p>
+<ul>
+<li>In  <code>results/preprocessing/recalibrated/</code> the final alignments in CRAM format per sample.</li>
+<li>In <code>results/variant_calling/</code> the VCFs per caller and sample.</li>
+<li>In <code>results/annotation/</code> the annotated VCFs per caller and sample.</li>
+</ul>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://nf-co.re/sarek/3.1.2">Sarek official webpage</a></li>
-<li>As an output example, the data in <code>/workspace/datasets/all_aecc_pediatric</code> was generated using sarek version 3.1.1. Feel free to give it a look if needed. </li>
+<li>As an output example, the data in <code>/workspace/datasets/all_aecc_pediatric</code> was generated using sarek version 3.1.1. Feel free to give it a look if needed.</li>
 </ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
