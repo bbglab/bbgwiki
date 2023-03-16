@@ -10,13 +10,13 @@ This wiki is stored in a **GitHub repository**, where each section of the wiki c
 - [Markdown cheatsheet](https://quickref.me/markdown){:target="_blank"}
 - [Mkdocs documentation](https://squidfunk.github.io/mkdocs-material/reference/admonitions/){:target="_blank"}
 
-=== "Online"
+===+ "Online"
 
     Go to the [bbg-wiki repository](https://github.com/bbglab/bbgwiki){:target="_blank"} and edit any file inside the `docs/` folder, which contains all the files of the documentation.
 
     ![BBGWiki edit online tutorial](assets/images/bbgwiki_edit_online.jpg)
 
-===+ "Local"
+=== "Local"
 
     ### Installation
 
