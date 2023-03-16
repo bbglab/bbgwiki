@@ -12,14 +12,20 @@ It is accessible to approved researchers undertaking vital research into the mos
 
 ### Genomic data
 
-UKB includes **Whole Exome Sequencing** data obtained from blood samples from nearly the whole cohort (about 470,000 individuals). Moreover, UKB also has **Whole Genome Sequencing** data obtained from blood samples from about 200,000 individuals and, by the end of 2023, it is expected to be extended to the whole cohort (500,000 individuals). More [info here](https://www.ukbiobank.ac.uk/enable-your-research/about-our-data/genetic-data).
+UKB includes **Whole Exome Sequencing** data obtained from blood samples from nearly the whole cohort (about 470,000 individuals). Moreover, it also has **Whole Genome Sequencing** data obtained also from blood from about 200,000 individuals, and, by the end of 2023, it is expected to be extended to the whole cohort (500,000 individuals). More info [here](https://www.ukbiobank.ac.uk/enable-your-research/about-our-data/genetic-data).
 
 ## Data access
-Access to UKB data is restricted to authorized users that have to submit a research proposal to UKB. As BBGLab we can use the data on the study of the genetic basis of clonal hematopoiesis.
+Access to UKB data is restricted to authorized users that have to submit a research proposal to UKB. As BBGLab we can use the data on the study of the genetic basis of clonal hematopoiesis. Only some people in the lab have access to the data, you can ask Martina or Paula for more information.
 
-Originally, the 
+Originally, the data was downloadable, so we have in our cluster a lot of clinical data from the entire cohort and also the WES from 200,000 individuals in the folder:
+```bash 
+/workspace/datasets/ukbiobank_ch/
+```
+
+More recently, the UK Biobank Research Analysis Platform ([UKB RAP](https://www.ukbiobank.ac.uk/enable-your-research/research-analysis-platform)) was created, so the data can not be downloaded anymore. The UKB RAP is a platform in the cloud based on DNA Nexus. The WES data from the full cohort and the WGS data are only accessible through this platform.
 
 ## Reference
 - Santi Demajo
 - Joan Enric Ramis
+- Miguel Grau
 - Paula Gomis
