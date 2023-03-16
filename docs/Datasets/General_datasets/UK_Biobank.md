@@ -12,7 +12,7 @@ It is accessible to approved researchers undertaking vital research into the mos
 
 ### Genomic data
 
-UKB includes **Whole Exome Sequencing** data obtained from blood samples from nearly the whole cohort (about 470,000 individuals). Moreover, UKB also has **Whole Genome Sequencing** data obtained from blood samples from about 200,000 individuals and, by the end of 2023, it is expected to be extended to the whole cohort (500,000 individuals). More info here [link]([http://google.com](https://www.ukbiobank.ac.uk/enable-your-research/about-our-data/genetic-data)
+UKB includes **Whole Exome Sequencing** data obtained from blood samples from nearly the whole cohort (about 470,000 individuals). Moreover, UKB also has **Whole Genome Sequencing** data obtained from blood samples from about 200,000 individuals and, by the end of 2023, it is expected to be extended to the whole cohort (500,000 individuals). More [info here](https://www.ukbiobank.ac.uk/enable-your-research/about-our-data/genetic-data).
 
 ## Data access
 Access to UKB data is restricted to authorized users that have to submit a research proposal to UKB. As BBGLab we can use the data on the study of the genetic basis of clonal hematopoiesis.
