@@ -2084,24 +2084,22 @@
 </code></pre></div>
 </li>
 </ol>
-<p>Now, your notebook is running and you can dettach from the screen:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Ctrl + A -&gt; D
-</code></pre></div>
+<p>Now, your notebook is running and you can dettach from the screen by pressing <code>Ctrl + A + D</code>. You can now close the terminal and the notebook will continue running in the cluster.</p>
 <h2 id="open-a-notebook">Open a notebook<a class="headerlink" href="#open-a-notebook" title="Permanent link">&para;</a></h2>
 <p>In order to open an already existing notebook, you'll need to know the <strong>port</strong> (<em>e.g 8888</em>) and the <strong>node</strong> of the cluster (<em>e.g bbgn005</em>) where you created it in the previous step.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span>&lt;port&gt;:&lt;node&gt;:&lt;port&gt;<span class="w"> </span>-p<span class="w"> </span><span class="m">22022</span><span class="w"> </span>&lt;username&gt;@bbgcluster
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># For example: ssh -L 8888:bbgn005:8888 -p 22022 clopeze@bbgcluster</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span>&lt;port&gt;:&lt;node&gt;:&lt;port&gt;<span class="w"> </span>-p<span class="w"> </span><span class="m">22022</span><span class="w"> </span>&lt;username&gt;@bbgcluster
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># For example: ssh -L 8888:bbgn005:8888 -p 22022 clopeze@bbgcluster</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you don't want to remember these commands, you can create an alias (like a shortcut).</p>
 </div>
 <p>Open the URL you obtain when creating the notebook in the cluster (step 7).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># For example: http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># For example: http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c</span>
 </code></pre></div>
 <h2 id="close-a-notebook">Close a notebook<a class="headerlink" href="#close-a-notebook" title="Permanent link">&para;</a></h2>
 <p>When you don't need the notebook to continue running in the cluster, reconnect to the screen:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>screen<span class="w"> </span>-r<span class="w"> </span>&lt;screen_name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>screen<span class="w"> </span>-r<span class="w"> </span>&lt;screen_name&gt;
 </code></pre></div>
 <p>And kill jupyter (Ctrl + C) and exit the screen (write <code>exit</code> in the terminal and press enter)</p>
 <h2 id="errors-and-solutions">Errors and solutions<a class="headerlink" href="#errors-and-solutions" title="Permanent link">&para;</a></h2>
@@ -2109,30 +2107,30 @@
 <ol>
 <li>
 <p>Enter to the cluster and check your screens:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>screen<span class="w"> </span>-ls
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>screen<span class="w"> </span>-ls
 </code></pre></div>
 </li>
 <li>
 <p>Enter the screen where you have your notebook:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>screen<span class="w"> </span>-r<span class="w"> </span>&lt;screen<span class="w"> </span>name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>screen<span class="w"> </span>-r<span class="w"> </span>&lt;screen<span class="w"> </span>name&gt;
 </code></pre></div>
 </li>
 <li>
 <p>Scroll up until you find the URL, which should look like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>http://127.0.0.1:8888/?token<span class="o">=</span>730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>http://127.0.0.1:8888/?token<span class="o">=</span>730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
 </code></pre></div>
 </li>
 </ol>
 <h3 id="my-notebook-doesnt-open">My notebook doesn't open<a class="headerlink" href="#my-notebook-doesnt-open" title="Permanent link">&para;</a></h3>
-<p>One possibility is that the running notebook in the cluster has crashed. You can check this by going to the cluster, entering the screen where you have the notebook and check if it is still running.
-If not, you should create a notebook following the steps at the beginning of this page (<em>Create a new notebook</em>).</p>
+<p>One possibility is that the running notebook in the cluster has <strong>crashed</strong>. You can check this by going to the cluster, entering the screen where you have the notebook and check if it is still running.</p>
+<p>If not, you should <strong>create a notebook</strong> following the steps at the beginning of this page (<em>Create a new notebook</em>).</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Jordi Deu-Pons</li>
 <li>Miguel Grau</li>
 <li>Carlos López</li>
-<li>Ferran Muiños</li>
 <li>Paula Gomis</li>
+<li>Federica Brando</li>
 </ul>
 
 
