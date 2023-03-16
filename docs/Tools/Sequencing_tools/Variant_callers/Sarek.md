@@ -2,7 +2,9 @@
 # Sarek
 
 !!! note annotate ""
-	sarek is a pipeline built using Nextflow designed to detect variants in whole or targeted sequencing data. It works on any species with a reference genome and allows for germline, tumor only and tumor-normal pair variant calling
+	sarek is a pipeline built using Nextflow designed to detect variants in whole or targeted sequencing data. It works on any species with a
+	reference genome and allows for germline, tumor only and tumor-normal pair variant calling
+	
 ## Description
 Sarek workflow consists of the following steps:
 - Preprocessing (based on GATK4 Best Practices): includes sequencing quality control, reads alignment (BWA), mark duplicates and base recalibration. 
