@@ -24,7 +24,7 @@ You will need to follow the next steps:
     <username>@login01:~$ screen -S <screen_name>
     ```
 
-3. Run an interactive job and remember the node you are assigned to (_e.g. bbgn005_) 
+3. Run an interactive job and remember the node you are assigned to (_e.g. bbgn005_)
 
     ```bash
     [screen_name] <username>@login01:~$ interactive
@@ -48,17 +48,17 @@ You will need to follow the next steps:
 6. Run the jupyter notebook:
 
     === "Notebook"
+        Copy the following command:
 
         ```bash
         unset XDG_RUNTIME_DIR && jupyter notebook --ip=0.0.0.0
         ```
-
     === "Lab"
+        Copy the following command:
 
         ```bash
         unset XDG_RUNTIME_DIR && jupyter lab --ip=0.0.0.0
         ```
-
 
 7. Keep the URL with the token and the port (_e.g.8888_) in which the interactive is running:
 
@@ -76,8 +76,9 @@ In order to open an already existing notebook, you'll need to know the **port** 
 ssh -L <port>:<node>:<port> -p 22022 <username>@bbgcluster
 # For example: ssh -L 8888:bbgn005:8888 -p 22022 clopeze@bbgcluster
 ```
-!!! note 
-    If you don't want to remember these commands, you can create an alias (like a shortcut). 
+
+!!! note
+    If you don't want to remember these commands, you can create an alias (like a shortcut).
 
 Open the URL you obtain when creating the notebook in the cluster (step 7).
 
@@ -95,18 +96,17 @@ screen -r <screen_name>
 
 And kill jupyter (Ctrl + C) and exit the screen (write `exit` in the terminal and press enter)
 
-
 ## Errors and solutions
 
 ### I forgot the URL of the notebook
 
-1. Enter to the cluster and check your screens: 
+1. Enter to the cluster and check your screens:
 
     ```bash
     screen -ls
     ```
 
-2. Enter the screen where you have your notebook: 
+2. Enter the screen where you have your notebook:
 
     ```bash
     screen -r <screen name>
