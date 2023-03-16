@@ -589,6 +589,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#processed-data" class="md-nav__link">
+    Processed data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exhaustive-study" class="md-nav__link">
+    Exhaustive Study
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#citing-in-publications-and-presentations" class="md-nav__link">
     Citing in Publications and Presentations
   </a>
@@ -1916,6 +1930,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#processed-data" class="md-nav__link">
+    Processed data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exhaustive-study" class="md-nav__link">
+    Exhaustive Study
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#citing-in-publications-and-presentations" class="md-nav__link">
     Citing in Publications and Presentations
   </a>
@@ -1946,26 +1974,22 @@
 
 <h1 id="hartwig">Hartwig<a class="headerlink" href="#hartwig" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Hartwig Medical Database stores the genetic and clinical data of thousands of patients in the Netherlands with metastatic cancer. The genetic data are generated using OncoAct. </p>
-<p>It is the largest database of metastatic tumor data obtained with WGS in the world, including WGS data of over 5000 patients. It combines genetic data with treatment and treatment outcome data.  </p>
+<p>The Hartwig Medical Foundation (HMF) is aiming to make whole genome sequencing WGS) the future standard of care in the Netherlands ( https://www.hartwigmedicalfoundation.nl/en/). The HMF maintains and develops a growing database with &gt;5,000 metastatic cancer patients with rich clincial and genomic data (https://www.hartwigmedicalfoundation.nl/en/data/database/) - the largest such database in the entire world. The only way to truly to understand the HMF data is to look through the very detailed provided github repos. Most of the bioinformatics pipeline in HMF is made with their own in-house tools. </p>
 <h2 id="data-access">Data access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
-<p>You can find the data from Hartwig Medical Foundation Database in the folder:
+<p>To use data from Hartwig Medical Foundation Database you need special permission. Contact Martina or Paula if you need to use this data. </p>
+<p>Once you obtains permissions, you can find the data from Hartwig Medical Foundation Database on bbgcluster here:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/workspace/datasets/hartwig
 </code></pre></div></p>
-<p>You can find clinical data from the patients in Hartwig in the following file:
+<h2 id="processed-data">Processed data<a class="headerlink" href="#processed-data" title="Permanent link">&para;</a></h2>
+<p>In our lab several projects have used HMF data. From these projects the HMF data was pre-processed in away that could be re-used for other projects.  </p>
+<p>For one such project (immunobiomarkers) a pipeline to extract and format HMF biomarkers was created (https://bitbucket.org/bbglab/hartwig_biomarkers/src/master/). This pipeline creates pre-processed data files of different data types. The HMF processed clinical data is output on our cluster here:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/workspace/datasets/hartwig/20220809/biomarkers/tmp/clinical_ready.csv
-</code></pre></div></p>
-<p>A more complete version of the previous table can be found in:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/workspace/datasets/hartwig/20220809/biomarkers/clean/biomarkers_AdjTPM.csv
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Permission</p>
-<p>To use data from Hartwig Medical Foundation Database you need special permission. Contact Martina or Paula if you need to use this data. </p>
-</div>
-<div class="admonition note annotate">
-<p class="admonition-title">Website</p>
-<p><a href="https://www.hartwigmedicalfoundation.nl/en/data/database/" target="_blank">https://www.hartwigmedicalfoundation.nl/en/data/database/</a></p>
-</div>
+The full output from the biomarkers pipline collects more than 60,000 curated columns of biomarkers into a table ready for analysis (located in folder below):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/workspace/datasets/hartwig/20220809/biomarkers/clean/biomarkers_AdjTPM.csv
+</code></pre></div></p>
+<h2 id="exhaustive-study">Exhaustive Study<a class="headerlink" href="#exhaustive-study" title="Permanent link">&para;</a></h2>
+<p>For the immunobiomarkers project an exhaustive study of biomarkers was run. The exhaustive analysis is found within this repo - https://bitbucket.org/bbglab/immune_biomarkers/src/main/ - and the code could be re-purposed in the future to study other classes of treatmetns (e.g. Chemo, Targeted, Hormonal therapies).</p>
 <h2 id="citing-in-publications-and-presentations">Citing in Publications and Presentations<a class="headerlink" href="#citing-in-publications-and-presentations" title="Permanent link">&para;</a></h2>
 <p>Researchers making use of data provided by Hartwig Medical Foundation must acknowledge this in every publication, by using at least the text below:</p>
 <blockquote>
@@ -1976,7 +2000,7 @@
 <ul>
 <li>Paula Gomis</li>
 <li>Monica Sanchez</li>
-<li>Joseph USSET</li>
+<li>Joseph Usset</li>
 </ul>
 
 
