@@ -42,7 +42,7 @@ plt.show()
 
 ## Clustermap with individual annotations
 
-We can use `g.ax_col_dendrogram` and `g.ax_row_dendrogram` to add legends for the first two annotations.
+We can add the first two annotation legends using customized handles (custom artist objects that can be added to a legend in a Seaborn plot), `g.ax_col_dendrogram` and `g.ax_row_dendrogram`.
 
 ``` py
 def get_annotation_colors(series, cmap):
