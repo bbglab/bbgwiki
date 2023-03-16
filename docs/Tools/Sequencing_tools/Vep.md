@@ -9,7 +9,16 @@
 
 In order to install VEP, you can follow the [installation guide](https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html).
 
-Once it is installed, simply load the `ensembl-vep` module:
+### Where to install it?
+There is a shared folder in datasets where there are several vep cache versions. If you are planning to download one, make sure to store it in this location.
+
+`/workspace/datasets/vep`
+
+More information will come in order to document the best way of downloading the vep cache.
+
+### After installing
+
+Simply load the `ensembl-vep` module:
 
 ```
 $ vep
@@ -57,6 +66,11 @@ vep -i homo_sapiens_GRCh38.vcf \
     --offline \
     --output_file results
 ```
+
+## Additional comments
+
+Be careful when running VEP with the TAB output and then merging again the variants from a VCF file, some indels are reformated in VEP and you cannot pair them with the original mutations.
+
 
 ## Links
 
