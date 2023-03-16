@@ -95,7 +95,7 @@ g.ax_row_dendrogram.legend(handles, lut_row,
 plt.show()
 ```
 
-![clustermap_2](../assets/images/clustermap_2.png)
+<img src="../assets/images/clustermap_2.png" alt="Clustermap_2" width="50%">
 
 
 ## Clustermap with multiple annotations
@@ -175,5 +175,5 @@ add_extra_legend(g, annotation_row3, lut_row3, "Family", bbox_to_anchor=(.01, .5
 plt.show()
 ```
 
-![clustermap_3](../assets/images/clustermap_3.png)
+<img src="../assets/images/clustermap_3.png" alt="Clustermap_3" width="50%">
 
