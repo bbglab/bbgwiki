@@ -36,9 +36,8 @@ sns.clustermap(df.drop(columns=["species", "genus", "family"]),
                cmap = "RdBu_r")
 plt.show()
 ```
-<p align="center">
-  <img src="../assets/images/clustermap_00.png" alt="Clustermap_00" width="55%">
-</p>
+
+![Clustermap_00](../assets/images/clustermap_00.png)
 
 ## Clustermap with individual annotations
 
@@ -51,7 +50,7 @@ def get_annotation_colors(series, cmap):
     colors = series.map(lut)
     
     return lut, colors
-``` 
+```
 
 ``` py
 ## Annotations
@@ -96,9 +95,7 @@ g.ax_row_dendrogram.legend(handles, lut_row,
 plt.show()
 ```
 
-<p align="center">
-  <img src="../assets/images/clustermap_01.png" alt="Clustermap_01" width="70%">
-</p>
+![Clustermap01](../assets/images/clustermap_01.png)
 
 ## Clustermap with multiple annotations
 
@@ -176,6 +173,5 @@ add_extra_legend(g, annotation_row3, lut_row3, "Family", bbox_to_anchor=(.01, .5
 
 plt.show()
 ```
-<p align="center">
-  <img src="../assets/images/clustermap_02.png" alt="Clustermap_02" width="70%">
-</p>
+
+![Clustermap02](../assets/images/clustermap_02.png)
