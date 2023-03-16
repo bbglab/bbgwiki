@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../VPN/">
+        <link rel="prev" href="../../IRB/eduroam/">
       
       
-        <link rel="next" href="../../Plots_and_scripts/Clustermap/">
+        <link rel="next" href="../HierarchicalClustering/">
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>Eduroam - BBG-Wiki</title>
+        <title>Clustermap plot - BBG-Wiki</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#eduroam" class="md-skip">
+        <a href="#clustermap-plot" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Eduroam
+              Clustermap plot
             
           </span>
         </div>
@@ -898,16 +898,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
@@ -916,7 +914,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           IRB
@@ -929,13 +927,64 @@
   
   
     <li class="md-nav__item">
-      <a href="../VPN/" class="md-nav__link">
+      <a href="../../IRB/VPN/" class="md-nav__link">
         VPN
       </a>
     </li>
   
 
             
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRB/eduroam/" class="md-nav__link">
+        Eduroam
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Plots and scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Plots and scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -953,12 +1002,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Eduroam
+          Clustermap plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Eduroam
+        Clustermap plot
       </a>
       
         
@@ -977,22 +1026,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
+  <a href="#import-packages-and-load-toy-data" class="md-nav__link">
+    Import packages and load toy data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#simple-clustermap" class="md-nav__link">
+    Simple clustermap
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#clustermap-with-individual-annotations" class="md-nav__link">
+    Clustermap with individual annotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustermap-with-multiple-annotations" class="md-nav__link">
+    Clustermap with multiple annotations
   </a>
   
 </li>
@@ -1006,62 +1062,13 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-          Plots and scripts
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          Plots and scripts
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../../Plots_and_scripts/Clustermap/" class="md-nav__link">
-        Clustermap plot
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Plots_and_scripts/HierarchicalClustering/" class="md-nav__link">
+      <a href="../HierarchicalClustering/" class="md-nav__link">
         Hierarchical Clustering
       </a>
     </li>
@@ -1075,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Plots_and_scripts/Intogen-BoostDM%20plots/" class="md-nav__link">
+      <a href="../Intogen-BoostDM%20plots/" class="md-nav__link">
         IntOGen - boostDM plots
       </a>
     </li>
@@ -1089,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Plots_and_scripts/Mutational_profile/" class="md-nav__link">
+      <a href="../Mutational_profile/" class="md-nav__link">
         Mutational profile
       </a>
     </li>
@@ -1103,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Plots_and_scripts/Needle_plot/" class="md-nav__link">
+      <a href="../Needle_plot/" class="md-nav__link">
         Needle plot
       </a>
     </li>
@@ -1977,22 +1984,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
+  <a href="#import-packages-and-load-toy-data" class="md-nav__link">
+    Import packages and load toy data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#simple-clustermap" class="md-nav__link">
+    Simple clustermap
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#clustermap-with-individual-annotations" class="md-nav__link">
+    Clustermap with individual annotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustermap-with-multiple-annotations" class="md-nav__link">
+    Clustermap with multiple annotations
   </a>
   
 </li>
@@ -2012,26 +2026,168 @@
                   
 
 
-<h1 id="eduroam">Eduroam<a class="headerlink" href="#eduroam" title="Permanent link">&para;</a></h1>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Security:</strong> WPA &amp; WPA2 Enterprise</li>
-<li><strong>Authentication:</strong> Protected EAP (PEAP)</li>
-<li><strong>Anonymous identity:</strong> <em>Empty</em></li>
-<li>Check the checkbox "<em>No CA certificate is required</em>"</li>
-<li><strong>PEAP version:</strong> Automatic</li>
-<li><strong>Inner authentication:</strong> MSCHAPv2</li>
-<li><strong>Username:</strong> clusteruser@irbbarcelona.org</li>
-<li><strong>Password:</strong> <em>IRB password</em></li>
-</ul>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p><img alt="eduroam_example" src="../../assets/images/eduroam_example.png" /></p>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Martina Gasull</li>
-<li>Carlos López Elorduy</li>
-<li>Miguel Grau</li>
-</ul>
+<h1 id="clustermap-plot">Clustermap plot<a class="headerlink" href="#clustermap-plot" title="Permanent link">&para;</a></h1>
+<p>Example of how to generate clustermaps with multiple annotations (rows or columns) using Seaborn.  </p>
+<p>Clustermaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial. If this is your objective, here you could find a couple of useful tips. Please check <a href="https://seaborn.pydata.org">Seaborn</a> documentation if you didn't do so.</p>
+<h2 id="import-packages-and-load-toy-data">Import packages and load toy data<a class="headerlink" href="#import-packages-and-load-toy-data" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Patch</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Load the dataset</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># Add some categorical features</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">target_map</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="s2">&quot;Iris Setosa&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>              <span class="mi">1</span> <span class="p">:</span> <span class="s2">&quot;Iris Versicolor&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>              <span class="mi">2</span> <span class="p">:</span> <span class="s2">&quot;Iris Virginica&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">species</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">target_map</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;genus&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Iris&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;family&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Iridaceae&quot;</span>
+</code></pre></div>
+<h2 id="simple-clustermap">Simple clustermap<a class="headerlink" href="#simple-clustermap" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;genus&quot;</span><span class="p">,</span> <span class="s2">&quot;family&quot;</span><span class="p">]),</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>               <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>               <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>               <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;RdBu_r&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p align="center">
+  <img src="../assets/images/clustermap_00.png" alt="Clustermap_00" width="55%">
+</p>
+
+<h2 id="clustermap-with-individual-annotations">Clustermap with individual annotations<a class="headerlink" href="#clustermap-with-individual-annotations" title="Permanent link">&para;</a></h2>
+<p>We can add the first two annotation legends using customized handles (custom artist objects that can be added to a legend in a Seaborn plot), <code>g.ax_col_dendrogram</code> and <code>g.ax_row_dendrogram</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">get_annotation_colors</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">lut</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">cmap</span><span class="p">)))</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">colors</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">lut</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">return</span> <span class="n">lut</span><span class="p">,</span> <span class="n">colors</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">## Annotations</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Annotation row</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">annotation_row</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">lut_row</span><span class="p">,</span> <span class="n">row_colors</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_row</span><span class="p">,</span> <span class="s2">&quot;tab10&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Annotation col</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">annotation_col</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Feature&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">lut_col</span><span class="p">,</span> <span class="n">col_colors</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_col</span><span class="p">,</span> <span class="s2">&quot;Paired&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">## Clustermap</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                   <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                   <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                   <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;RdBu_r&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                   <span class="n">row_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">row_colors</span><span class="p">],</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                   <span class="n">col_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_colors</span><span class="p">])</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1">## Legends</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c1"># Annotation col</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">lut_col</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lut_col</span><span class="p">]</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="n">g</span><span class="o">.</span><span class="n">ax_col_dendrogram</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">lut_col</span><span class="p">,</span> 
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>                           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Feature type&quot;</span><span class="p">,</span> 
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>                           <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                           <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                           <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.13</span><span class="p">,</span> <span class="mf">.8</span><span class="p">),</span> 
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>                           <span class="n">bbox_transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="c1"># Annotation row</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">lut_row</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lut_row</span><span class="p">]</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="n">g</span><span class="o">.</span><span class="n">ax_row_dendrogram</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">lut_row</span><span class="p">,</span> 
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>                           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Species&quot;</span><span class="p">,</span> 
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                           <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>                           <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>                           <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">.76</span><span class="p">),</span> 
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>                           <span class="n">bbox_transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p align="center">
+  <img src="../assets/images/clustermap_01.png" alt="Clustermap_01" width="70%">
+</p>
+
+<h2 id="clustermap-with-multiple-annotations">Clustermap with multiple annotations<a class="headerlink" href="#clustermap-with-multiple-annotations" title="Permanent link">&para;</a></h2>
+<p>As shown in the following example, any extra annotation other than the first two can be added using the following function.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">add_extra_legend</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">series</span><span class="p">,</span> <span class="n">lut</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">xx</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">ax_row_dendrogram</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">lut</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="n">xx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">legend</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> 
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                        <span class="n">series</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> 
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>                        <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">,</span> 
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                        <span class="n">bbox_to_anchor</span> <span class="o">=</span> <span class="n">bbox_to_anchor</span><span class="p">,</span> 
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>                        <span class="n">bbox_transform</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">## Annotations</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Annotation row_1</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">annotation_row1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">lut_row1</span><span class="p">,</span> <span class="n">row_colors1</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_row1</span><span class="p">,</span> <span class="s2">&quot;tab10&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Annotation row_2</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">annotation_row2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;genus&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">lut_row2</span><span class="p">,</span> <span class="n">row_colors2</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_row2</span><span class="p">,</span> <span class="s2">&quot;pastel&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># Annotation row_3</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">annotation_row3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;family&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">lut_row3</span><span class="p">,</span> <span class="n">row_colors3</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_row3</span><span class="p">,</span> <span class="s2">&quot;Set2&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1"># Annotation row df</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">row_colors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Species&quot;</span> <span class="p">:</span> <span class="n">row_colors1</span><span class="p">,</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>                           <span class="s2">&quot;Genus&quot;</span> <span class="p">:</span> <span class="n">row_colors2</span><span class="p">,</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>                           <span class="s2">&quot;Family&quot;</span> <span class="p">:</span> <span class="n">row_colors3</span><span class="p">})</span> 
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1"># Annotation col</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="n">annotation_col</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">])</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">lut_col</span><span class="p">,</span> <span class="n">col_colors</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_col</span><span class="p">,</span> <span class="s2">&quot;Paired&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="c1">## Clustermap</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>                   <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>                   <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>                   <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;RdBu_r&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>                   <span class="n">row_colors</span> <span class="o">=</span> <span class="n">row_colors</span><span class="p">,</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>                   <span class="n">col_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_colors</span><span class="p">])</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="c1">## Legends</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="c1"># Annotation col</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">lut_col</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lut_col</span><span class="p">]</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="n">g</span><span class="o">.</span><span class="n">ax_col_dendrogram</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">lut_col</span><span class="p">,</span> 
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>                           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Feature type&quot;</span><span class="p">,</span> 
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>                           <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.13</span><span class="p">,</span> <span class="mf">.8</span><span class="p">),</span> 
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>                           <span class="n">bbox_transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="c1"># Annotation row 1</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">lut_row1</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lut_row1</span><span class="p">]</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="n">g</span><span class="o">.</span><span class="n">ax_row_dendrogram</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">lut_row1</span><span class="p">,</span> 
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>                            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Species&quot;</span><span class="p">,</span> 
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>                            <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">.76</span><span class="p">),</span> 
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>                            <span class="n">bbox_transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="c1"># Annotation row 2</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="n">add_extra_legend</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">annotation_row2</span><span class="p">,</span> <span class="n">lut_row2</span><span class="p">,</span> <span class="s2">&quot;Genus&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">.65</span><span class="p">))</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="c1"># Annotation row 3</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="n">add_extra_legend</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">annotation_row3</span><span class="p">,</span> <span class="n">lut_row3</span><span class="p">,</span> <span class="s2">&quot;Family&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">.58</span><span class="p">))</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p align="center">
+  <img src="../assets/images/clustermap_02.png" alt="Clustermap_02" width="70%">
+</p>
 
 
 
