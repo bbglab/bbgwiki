@@ -1,5 +1,8 @@
 # Encode Epigenetic data
 
+Cluster location: 
+`/workspace/datasets/encode/`
+
 ## Description
 Encode genomic data downloaded from https://www.encodeproject.org/
 
