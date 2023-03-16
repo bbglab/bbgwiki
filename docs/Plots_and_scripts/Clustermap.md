@@ -2,7 +2,7 @@
 
 Example of how to generate clustermaps with multiple annotations (rows or columns) using Seaborn.  
 
-Clustermaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial. If this is your objective, here you could find a couple of useful tips. Please check [Seaborn]([https://duckduckgo.com](https://seaborn.pydata.org)) documentation if you didn't do so.
+Clustermaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial. If this is your objective, here you could find a couple of useful tips. Please check [Seaborn](https://seaborn.pydata.org) documentation if you didn't do so.
 
 ## Import packages and load toy data
 
@@ -101,7 +101,7 @@ plt.show()
 
 ## Clustermap with multiple annotations
 
-The function below can be very handy if we are interested in adding 3 or more annotations.
+As shown in the following example, any extra annotation other than the first two can be added using the following function.
 
 ``` py
 def add_extra_legends(g, series, lut, title, bbox_to_anchor=(.01, 0.5)):
