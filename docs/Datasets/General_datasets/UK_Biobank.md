@@ -13,5 +13,6 @@ It is accessible to approved researchers undertaking vital research into the mos
 	[https://www.ukbiobank.ac.uk/](https://www.ukbiobank.ac.uk/){:target="_blank"}
 
 ## Reference
-- Paula Gomis 
 - Santi Demajo
+- Joan Enric Ramis
+- Paula Gomis
