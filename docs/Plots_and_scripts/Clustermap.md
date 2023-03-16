@@ -42,6 +42,8 @@ plt.show()
 
 ## Clustermap with individual annotations
 
+We can use `g.ax_col_dendrogram` and `g.ax_row_dendrogram` to add legends for the first two annotations.
+
 ``` py
 def get_annotation_colors(series, cmap):
     
@@ -96,6 +98,10 @@ plt.show()
 
 ![clustermap_2](../assets/images/clustermap_2.png)
 
+
+## Clustermap with multiple annotations
+
+The function below can be very handy if we are interested in adding 3 or more annotations.
 
 ``` py
 def add_extra_legends(g, series, lut, title, bbox_to_anchor=(.01, 0.5)):
