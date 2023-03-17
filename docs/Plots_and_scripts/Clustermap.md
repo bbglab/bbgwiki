@@ -1,8 +1,8 @@
-# Clustermap plot
+# Heatmap plot
 
-Example of how to generate clustermaps with multiple annotations (rows and/or columns) using Seaborn.  
+Example of how to generate heatmaps (or clustermaps) with multiple annotations (rows or columns) using Seaborn.  
 
-Clustermaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial. If this is your objective, here you could find a couple of useful tips. Please check [Seaborn](https://seaborn.pydata.org) documentation if you didn't do so.
+Heatmaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial. If this is your objective, here you could find a couple of useful tips. Please check [Seaborn](https://seaborn.pydata.org) documentation if you didn't do so.
 
 ## Import packages and load toy data
 
@@ -27,7 +27,7 @@ df["genus"] = "Iris"
 df["family"] = "Iridaceae"
 ```
 
-## Simple clustermap
+## Simple heatmap
 
 ``` py
 sns.clustermap(df.drop(columns=["species", "genus", "family"]),
@@ -39,7 +39,7 @@ plt.show()
 
 ![Clustermap_00](../assets/images/clustermap_00.png)
 
-## Clustermap with individual annotations
+## Heatmap with individual annotations
 
 We can add the first two annotation legends using customized handles (custom artist objects that can be added to a legend in a Seaborn plot), `g.ax_col_dendrogram` and `g.ax_row_dendrogram`.
 
@@ -97,7 +97,7 @@ plt.show()
 
 ![Clustermap01](../assets/images/clustermap_01.png)
 
-## Clustermap with multiple annotations
+## Heatmap with multiple annotations
 
 As shown in the following example, any extra annotation other than the first two can be added using the following function.
 
@@ -174,4 +174,9 @@ add_extra_legend(g, annotation_row3, lut_row3, "Family", bbox_to_anchor=(.01, .5
 plt.show()
 ```
 
-![Clustermap02](../assets/images/clustermap_02.png)
+<p align="center">
+  <img src="../assets/images/clustermap_02.png" alt="Clustermap_02" width="70%">
+</p>
+
+# Reference
+* Stefano Pellegrini
