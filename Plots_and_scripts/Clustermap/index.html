@@ -19,7 +19,7 @@
     
     
       
-        <title>Clustermap plot - BBG-Wiki</title>
+        <title>Heatmap plot - BBG-Wiki</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#clustermap-plot" class="md-skip">
+        <a href="#heatmap-plot" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Clustermap plot
+              Heatmap plot
             
           </span>
         </div>
@@ -1002,12 +1002,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Clustermap plot
+          Heatmap plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Clustermap plot
+        Heatmap plot
       </a>
       
         
@@ -1033,22 +1033,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-clustermap" class="md-nav__link">
-    Simple clustermap
+  <a href="#simple-heatmap" class="md-nav__link">
+    Simple heatmap
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clustermap-with-individual-annotations" class="md-nav__link">
-    Clustermap with individual annotations
+  <a href="#heatmap-with-individual-annotations" class="md-nav__link">
+    Heatmap with individual annotations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clustermap-with-multiple-annotations" class="md-nav__link">
-    Clustermap with multiple annotations
+  <a href="#heatmap-with-multiple-annotations" class="md-nav__link">
+    Heatmap with multiple annotations
   </a>
   
 </li>
@@ -2005,22 +2005,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-clustermap" class="md-nav__link">
-    Simple clustermap
+  <a href="#simple-heatmap" class="md-nav__link">
+    Simple heatmap
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clustermap-with-individual-annotations" class="md-nav__link">
-    Clustermap with individual annotations
+  <a href="#heatmap-with-individual-annotations" class="md-nav__link">
+    Heatmap with individual annotations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clustermap-with-multiple-annotations" class="md-nav__link">
-    Clustermap with multiple annotations
+  <a href="#heatmap-with-multiple-annotations" class="md-nav__link">
+    Heatmap with multiple annotations
   </a>
   
 </li>
@@ -2040,9 +2040,9 @@
                   
 
 
-<h1 id="clustermap-plot">Clustermap plot<a class="headerlink" href="#clustermap-plot" title="Permanent link">&para;</a></h1>
-<p>Example of how to generate clustermaps with multiple annotations (rows and/or columns) using Seaborn.  </p>
-<p>Clustermaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial. If this is your objective, here you could find a couple of useful tips. Please check <a href="https://seaborn.pydata.org">Seaborn</a> documentation if you didn't do so.</p>
+<h1 id="heatmap-plot">Heatmap plot<a class="headerlink" href="#heatmap-plot" title="Permanent link">&para;</a></h1>
+<p>Example of how to generate heatmaps (or clustermaps) with multiple annotations (rows or columns) using Seaborn.  </p>
+<p>Heatmaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial. If this is your objective, here you could find a couple of useful tips. Please check <a href="https://seaborn.pydata.org">Seaborn</a> documentation if you didn't do so.</p>
 <h2 id="import-packages-and-load-toy-data">Import packages and load toy data<a class="headerlink" href="#import-packages-and-load-toy-data" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -2063,7 +2063,7 @@
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;genus&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Iris&quot;</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;family&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Iridaceae&quot;</span>
 </code></pre></div>
-<h2 id="simple-clustermap">Simple clustermap<a class="headerlink" href="#simple-clustermap" title="Permanent link">&para;</a></h2>
+<h2 id="simple-heatmap">Simple heatmap<a class="headerlink" href="#simple-heatmap" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;genus&quot;</span><span class="p">,</span> <span class="s2">&quot;family&quot;</span><span class="p">]),</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>               <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>               <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -2071,7 +2071,7 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p><img alt="Clustermap_00" src="../../assets/images/clustermap_00.png" /></p>
-<h2 id="clustermap-with-individual-annotations">Clustermap with individual annotations<a class="headerlink" href="#clustermap-with-individual-annotations" title="Permanent link">&para;</a></h2>
+<h2 id="heatmap-with-individual-annotations">Heatmap with individual annotations<a class="headerlink" href="#heatmap-with-individual-annotations" title="Permanent link">&para;</a></h2>
 <p>We can add the first two annotation legends using customized handles (custom artist objects that can be added to a legend in a Seaborn plot), <code>g.ax_col_dendrogram</code> and <code>g.ax_row_dendrogram</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">get_annotation_colors</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -2122,7 +2122,7 @@
 <a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p><img alt="Clustermap01" src="../../assets/images/clustermap_01.png" /></p>
-<h2 id="clustermap-with-multiple-annotations">Clustermap with multiple annotations<a class="headerlink" href="#clustermap-with-multiple-annotations" title="Permanent link">&para;</a></h2>
+<h2 id="heatmap-with-multiple-annotations">Heatmap with multiple annotations<a class="headerlink" href="#heatmap-with-multiple-annotations" title="Permanent link">&para;</a></h2>
 <p>As shown in the following example, any extra annotation other than the first two can be added using the following function.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">add_extra_legend</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">series</span><span class="p">,</span> <span class="n">lut</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)):</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -2193,7 +2193,14 @@
 <a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
 <a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Clustermap02" src="../../assets/images/clustermap_02.png" /></p>
+<p align="center">
+  <img src="../assets/images/clustermap_02.png" alt="Clustermap_02" width="70%">
+</p>
+
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Stefano Pellegrini</li>
+</ul>
 
 
 
