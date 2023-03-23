@@ -99,7 +99,7 @@ plt.show()
 
 ## Heatmap with multiple annotations
 
-As shown in the following example, it is possible to assign to `row_colors` or `col_colors` a dataframe including all annotations we want. Furthremore, the legend of any extra annotation other than the first two can be added using the following function.
+As shown in the following example, it is possible to assign to `row_colors` or `col_colors` (parameters of `sns.clustermap`) a dataframe including all annotations we want. Furthremore, the legend of any extra annotation other than the first two can be added using the following function.
 
 ``` py
 def add_extra_legend(g, series, lut, title, bbox_to_anchor=(.01, 0.5)):
