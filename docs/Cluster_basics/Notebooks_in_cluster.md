@@ -78,7 +78,21 @@ ssh -L <port>:<node>:<port> -p 22022 <username>@bbgcluster
 ```
 
 !!! note
-    If you don't want to remember these commands, you can create an alias (like a shortcut).
+    If you don't want to remember these commands, you can create an alias.
+    You can do this by adding the following lines to your `~/.bashrc` file or `~/.bash_aliases` file:
+
+    ```bash
+        notebook(){
+        # Ask for node
+        echo "Enter node name: "
+        read node
+        # Ask for port
+        echo "Enter port: "
+        read port
+        # Connect to ssh cluster
+        ssh -L $port:$node:$port -p 22022 odove@bbgcluster
+        }
+    ```
 
 Open the URL you obtain when creating the notebook in the cluster (step 7).
 
