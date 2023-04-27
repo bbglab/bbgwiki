@@ -15,7 +15,7 @@
         <link rel="next" href="../Screen/">
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -109,6 +109,8 @@
         </div>
       </div>
     </div>
+    
+      
     
     
     
@@ -2272,14 +2274,26 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you don't want to remember these commands, you can create an alias (like a shortcut).</p>
+<p>If you don't want to remember these commands, you can create an alias.
+You can do this by adding the following lines to your <code>~/.bashrc</code> file or <code>~/.bash_aliases</code> file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span>notebook<span class="o">(){</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="c1"># Ask for node</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Enter node name: &quot;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nb">read</span><span class="w"> </span>node
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="c1"># Ask for port</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Enter port: &quot;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nb">read</span><span class="w"> </span>port
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="c1"># Connect to ssh cluster</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span>ssh<span class="w"> </span>-L<span class="w"> </span><span class="nv">$port</span>:<span class="nv">$node</span>:<span class="nv">$port</span><span class="w"> </span>-p<span class="w"> </span><span class="m">22022</span><span class="w"> </span>odove@bbgcluster
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="o">}</span>
+</code></pre></div>
 </div>
 <p>Open the URL you obtain when creating the notebook in the cluster (step 7).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># For example: http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># For example: http://127.0.0.1:8888/?token=730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c</span>
 </code></pre></div>
 <h2 id="close-a-notebook">Close a notebook<a class="headerlink" href="#close-a-notebook" title="Permanent link">&para;</a></h2>
 <p>When you don't need the notebook to continue running in the cluster, reconnect to the screen:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>screen<span class="w"> </span>-r<span class="w"> </span>&lt;screen_name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>screen<span class="w"> </span>-r<span class="w"> </span>&lt;screen_name&gt;
 </code></pre></div>
 <p>And kill jupyter (Ctrl + C) and exit the screen (write <code>exit</code> in the terminal and press enter)</p>
 <h2 id="errors-and-solutions">Errors and solutions<a class="headerlink" href="#errors-and-solutions" title="Permanent link">&para;</a></h2>
@@ -2287,17 +2301,17 @@
 <ol>
 <li>
 <p>Enter to the cluster and check your screens:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>screen<span class="w"> </span>-ls
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>screen<span class="w"> </span>-ls
 </code></pre></div>
 </li>
 <li>
 <p>Enter the screen where you have your notebook:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>screen<span class="w"> </span>-r<span class="w"> </span>&lt;screen<span class="w"> </span>name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>screen<span class="w"> </span>-r<span class="w"> </span>&lt;screen<span class="w"> </span>name&gt;
 </code></pre></div>
 </li>
 <li>
 <p>Scroll up until you find the URL, which should look like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>http://127.0.0.1:8888/?token<span class="o">=</span>730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>http://127.0.0.1:8888/?token<span class="o">=</span>730ea7a95c02207c9fb7cbd434c2de81e03168845d42c23c
 </code></pre></div>
 </li>
 </ol>
@@ -2357,7 +2371,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
