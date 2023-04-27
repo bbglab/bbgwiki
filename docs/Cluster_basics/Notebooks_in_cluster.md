@@ -82,7 +82,10 @@ ssh -L <port>:<node>:<port> -p 22022 <username>@bbgcluster
     You can do this by adding the following lines to your `~/.bashrc` file or `~/.bash_aliases` file:
 
     ```bash
-        notebook(){
+    notebook(){
+        # Ask for cluster user
+        echo "Enter cluster user: "
+        read user
         # Ask for node
         echo "Enter node name: "
         read node
@@ -90,8 +93,9 @@ ssh -L <port>:<node>:<port> -p 22022 <username>@bbgcluster
         echo "Enter port: "
         read port
         # Connect to ssh cluster
-        ssh -L $port:$node:$port -p 22022 odove@bbgcluster
-        }
+        ssh -L $port:$node:$port -p 22022 ${user}@bbgcluster
+    }
+
     ```
 
 Open the URL you obtain when creating the notebook in the cluster (step 7).
