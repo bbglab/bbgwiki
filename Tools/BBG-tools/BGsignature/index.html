@@ -1413,8 +1413,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#instalation" class="md-nav__link">
+    Instalation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
   </a>
   
 </li>
@@ -2209,8 +2216,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#instalation" class="md-nav__link">
+    Instalation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
   </a>
   
 </li>
@@ -2232,7 +2246,32 @@
 
 <h1 id="bgsignature">BGsignature<a class="headerlink" href="#bgsignature" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>BGsignature is a package used to compute mutational profiles. A mutational profile corresponds to the count or the normalized frequencies of mutations in every possible k-nucleotide (e.g., trinucleotide or pentanucleotide) contexts. </p>
+<p>BGsignature package includes three tools:</p>
+<ul>
+<li><strong>count</strong>: get the number of mutations in the k-nucleotide contexts</li>
+<li><strong>frequency</strong>: get the frequency of mutations (count divided by total mutations) in the k-nucleotide contexts</li>
+<li><strong>normalize</strong>: get the normalized frequency of mutations taking into account the k-nucleotide contexts</li>
+</ul>
+<p>The count and the frequency of mutations can be computed for a set of regions or for a set of mutations that fall within certain regions.</p>
+<h2 id="instalation">Instalation<a class="headerlink" href="#instalation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>bgsignature
+</code></pre></div>
+<h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h2>
+<p>BGsignature requires two input files:</p>
+<ul>
+<li><strong>mutation file</strong>: a compressed tab separated file (tsv) including an header and at least the following columns: CHROMOSOME, POSITION, REF, ALT. Other useful but not necessary columns to include in the mutation file are SAMPLE, CANCER_TYPE and SIGNATURE.</li>
+<li><strong>regions file</strong>: </li>
+</ul>
+<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;examples<span class="w"> </span>on<span class="w"> </span>how<span class="w"> </span>to<span class="w"> </span>compute<span class="w"> </span>the<span class="w"> </span>mutational<span class="w"> </span>profiles<span class="w"> </span>of<span class="w"> </span><span class="m">192</span><span class="w"> </span>channels<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>methods<span class="w"> </span><span class="k">in</span><span class="w"> </span>intogen&gt;
+</code></pre></div>
+<h2 id="repository">Repository<a class="headerlink" href="#repository" title="Permanent link">&para;</a></h2>
+<p>Click here to see the <a href="https://bitbucket.org/bgframework/bgsignature/src/master/" target="_blank">repository of BgReference</a>.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Stefano Pellegrini</li>
+</ul>
 
 
 
