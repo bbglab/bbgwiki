@@ -6,9 +6,9 @@ BGsignature is a package used to compute mutational profiles. A mutational profi
 
 BGsignature package includes three tools:
 
-* __count__: count the number of mutations in the k-nucleotide contexts
-* __frequency__: count the frequency of mutations (count divided by total mutations) in the k-nucleotide contexts
-* __normalize__: normalize the frequency of mutations taking into account the k-nucleotide contexts
+* __count__: get the number of mutations in the k-nucleotide contexts
+* __frequency__: get the frequency of mutations (count divided by total mutations) in the k-nucleotide contexts
+* __normalize__: get the normalized frequency of mutations taking into account the k-nucleotide contexts
 
 The count and the frequency of mutations can be computed for a set of regions or for a set of mutations that fall within certain regions.
 
@@ -28,7 +28,7 @@ BGsignature requires two input files:
 # Examples
 
 ```bash
-<examples on how to compute the mutational profiles of 192 channels used from the method in intogen>
+<examples on how to compute the mutational profiles of 192 channels used by the methods in intogen>
 ```
 
 
