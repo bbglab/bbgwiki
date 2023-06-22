@@ -3,10 +3,6 @@
 
 This website is meant to include information of all the **tools** and **data** used by the **bbglab** team, so that it serves both as a guide to understand them and as a place where to find information about everything.
 
-<br/>
-
 ---
 
-<br/>
-
-![bbglab team](assets/images/bbglab_garden.jpg)
+![bbglab team](assets/images/bbglab_retreat_2023.jpg)
