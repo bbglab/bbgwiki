@@ -111,7 +111,7 @@ saveRDS(mSigAct, file = paste(outpath, name_outfile, sep ="\t"))
 ```
 ## Reference
 
-Alvin W. T. Ng et al. ,Aristolochic acids and their derivatives are widely implicated in liver cancers in Taiwan and throughout Asia.Sci. Transl. Med.9,eaan6446(2017).DOI:10.1126/scitranslmed.aan6446\
+Alvin W. T. Ng et al. ,Aristolochic acids and their derivatives are widely implicated in liver cancers in Taiwan and throughout Asia.Sci. Transl. Med.9,eaan6446(2017).DOI:10.1126/scitranslmed.aan6446
 
 BBglab membes to ask to:
 - Monica
