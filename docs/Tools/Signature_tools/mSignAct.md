@@ -14,16 +14,16 @@ library(pbmcapply)
 ```
 Load mSigTools and mSigAct:
 ```
-setwd("/workspace/projects/sjd_pediatric_tumors/code/run_msigact/mSigAct")
-source("/workspace/projects/sjd_pediatric_tumors/code/run_msigact/mSigAct/mSigAct.v0.10.R")
-source("/workspace/projects/sjd_pediatric_tumors/code/run_msigact/mSigAct/mSigTools.v0.13.R")
+setwd("/path/to/mSigAct")
+source("/path/to/mSigAct/mSigAct.v0.10.R")
+source("/path/to/mSigAct/mSigTools.v0.13.R")
 ```
 
 ### Input
 
 You need to prepare several input files:
 - signature_file: A matrix table with the probabilities of the signatures (from COSMIC) that you want to test. The last column is the test signature. (96 channels)
-- mutation_file: A matrix table with the counts from the samples that you want to analize (96channels)
+- mutation_file: A matrix table with the counts from the samples that you want to analize (96 channels)
 
 Format for the signature_file:
 ```
@@ -48,7 +48,7 @@ CCAA	3	1	1	0
 CCCA	0	1	1	0
 ```
 
-Important!! The order of the rows shows be this one:
+Important!! The order of the rows should be this one:
 
 ```
 ['ACAA', 'ACCA', 'ACGA', 'ACTA', 'CCAA', 'CCCA', 'CCGA', 'CCTA', 'GCAA', 'GCCA', 'GCGA', 'GCTA', 'TCAA', 'TCCA', 'TCGA', 'TCTA', 'ACAG', 'ACCG', 'ACGG', 'ACTG', 'CCAG', 'CCCG', 'CCGG', 'CCTG', 'GCAG', 'GCCG', 'GCGG', 'GCTG', 'TCAG', 'TCCG', 'TCGG', 'TCTG', 'ACAT', 'ACCT', 'ACGT', 'ACTT', 'CCAT', 'CCCT', 'CCGT', 'CCTT', 'GCAT', 'GCCT', 'GCGT', 'GCTT', 'TCAT', 'TCCT', 'TCGT', 'TCTT', 'ATAA', 'ATCA', 'ATGA', 'ATTA', 'CTAA', 'CTCA', 'CTGA', 'CTTA', 'GTAA', 'GTCA', 'GTGA', 'GTTA', 'TTAA', 'TTCA', 'TTGA', 'TTTA', 'ATAC', 'ATCC', 'ATGC', 'ATTC', 'CTAC', 'CTCC', 'CTGC', 'CTTC', 'GTAC', 'GTCC', 'GTGC', 'GTTC', 'TTAC', 'TTCC', 'TTGC', 'TTTC', 'ATAG', 'ATCG', 'ATGG', 'ATTG', 'CTAG', 'CTCG', 'CTGG', 'CTTG', 'GTAG', 'GTCG', 'GTGG', 'GTTG', 'TTAG', 'TTCG', 'TTGG', 'TTTG']
@@ -62,8 +62,8 @@ muts <- as.matrix(read.table(mutation_file, sep = '\t', header = T, row.names = 
 
 Prepare some variables:
 ```
-outpath = '/path/to/output/folder/'
-cores = cores_to_use
+outpath <- '/path/to/output/folder/'
+cores <- 'cores_to_use'
 
 name_file <- basename(mutation_file)
 
@@ -90,7 +90,9 @@ mSigAct <- process.one.group(muts, sigs,
 
 ### Output
 
-Prepare the output table:
+Extract p-values and exposures and calculate a bonferroni adjusted p-pvalue.\
+Build the output table.\
+Save the output.
 
 ```
 pval<-mSigAct$pval
@@ -111,6 +113,6 @@ saveRDS(mSigAct, file = paste(outpath, name_outfile, sep ="\t"))
 
 Alvin W. T. Ng et al. ,Aristolochic acids and their derivatives are widely implicated in liver cancers in Taiwan and throughout Asia.Sci. Transl. Med.9,eaan6446(2017).DOI:10.1126/scitranslmed.aan6446\
 
-BBglab memebrs to ask to:
+BBglab membes to ask to:
 - Monica
 - Ferran
