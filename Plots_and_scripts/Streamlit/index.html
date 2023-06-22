@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../IRB/fifteenWIFI/">
+        <link rel="prev" href="../Needle_plot/">
       
       
-        <link rel="next" href="../HierarchicalClustering/">
+        <link rel="next" href="../../Tools/Conda/">
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
-        <title>Heatmap plot - BBG-Wiki</title>
+        <title>Streamlit data visualization - BBG-Wiki</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#heatmap-plot" class="md-skip">
+        <a href="#streamlit-data-visualization" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Heatmap plot
+              Streamlit data visualization
             
           </span>
         </div>
@@ -1096,73 +1096,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Heatmap plot
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Heatmap/" class="md-nav__link">
         Heatmap plot
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#import-packages-and-load-toy-data" class="md-nav__link">
-    Import packages and load toy data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#simple-heatmap" class="md-nav__link">
-    Simple heatmap
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#heatmap-with-individual-annotations" class="md-nav__link">
-    Heatmap with individual annotations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#heatmap-with-multiple-annotations" class="md-nav__link">
-    Heatmap with multiple annotations
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1228,11 +1166,126 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Streamlit/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Streamlit data visualization
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Streamlit data visualization
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    Key concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Key concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-the-app" class="md-nav__link">
+    Running the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-the-app" class="md-nav__link">
+    Writing the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2228,30 +2281,83 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#import-packages-and-load-toy-data" class="md-nav__link">
-    Import packages and load toy data
+  <a href="#description" class="md-nav__link">
+    Description
   </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-heatmap" class="md-nav__link">
-    Simple heatmap
+  <a href="#key-concepts" class="md-nav__link">
+    Key concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Key concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-the-app" class="md-nav__link">
+    Running the app
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#heatmap-with-individual-annotations" class="md-nav__link">
-    Heatmap with individual annotations
+        
+          <li class="md-nav__item">
+  <a href="#writing-the-app" class="md-nav__link">
+    Writing the app
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#heatmap-with-multiple-annotations" class="md-nav__link">
-    Heatmap with multiple annotations
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2270,163 +2376,201 @@
                   
 
 
-<h1 id="heatmap-plot">Heatmap plot<a class="headerlink" href="#heatmap-plot" title="Permanent link">&para;</a></h1>
-<p>Example of how to generate heatmaps (or clustermaps) with multiple annotations (rows and/or columns) using Seaborn.  </p>
-<p>Heatmaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial (especially to add the legends). If this is your objective, here you could find a couple of useful tips. Please check <a href="https://seaborn.pydata.org">Seaborn</a> documentation if you didn't do so.</p>
-<h2 id="import-packages-and-load-toy-data">Import packages and load toy data<a class="headerlink" href="#import-packages-and-load-toy-data" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Patch</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Load the dataset</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># Add some categorical features</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">target_map</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="s2">&quot;Iris Setosa&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>              <span class="mi">1</span> <span class="p">:</span> <span class="s2">&quot;Iris Versicolor&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>              <span class="mi">2</span> <span class="p">:</span> <span class="s2">&quot;Iris Virginica&quot;</span><span class="p">}</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">species</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">target_map</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;genus&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Iris&quot;</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;family&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Iridaceae&quot;</span>
+<h1 id="streamlit-data-visualization">Streamlit data visualization<a class="headerlink" href="#streamlit-data-visualization" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Streamlit is an open-source Python library that makes it easy to create and share beautiful, custom web apps for machine learning and data science. In just a few minutes you can build and deploy powerful data apps.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>Streamlit can be installed with <code>conda</code> (or <code>[micro]mamba</code>) and <code>pip</code>, as follows:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Conda</label><label for="__tabbed_1_2">Mamba</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Create environment and activate:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Create ENV</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>streamlit_app<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.5<span class="w"> </span>pip
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Activate env</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>conda<span class="w"> </span>activate<span class="w"> </span>strealit_app
 </code></pre></div>
-<h2 id="simple-heatmap">Simple heatmap<a class="headerlink" href="#simple-heatmap" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;genus&quot;</span><span class="p">,</span> <span class="s2">&quot;family&quot;</span><span class="p">]),</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>               <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>               <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>               <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;RdBu_r&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</div>
+<div class="tabbed-block">
+<p>Create environment and activate:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Create ENV</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>streamlit_app<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.5<span class="w"> </span>pip
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Activate env</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>mamba<span class="w"> </span>activate<span class="w"> </span>strealit_app
 </code></pre></div>
-<p><img alt="Clustermap_00" src="../../assets/images/clustermap_00.png" /></p>
-<h2 id="heatmap-with-individual-annotations">Heatmap with individual annotations<a class="headerlink" href="#heatmap-with-individual-annotations" title="Permanent link">&para;</a></h2>
-<p>We can add the first two annotation legends (rows and/or cols) using customized handles (custom artist objects that can be added to a legend in a Seaborn plot), <code>g.ax_col_dendrogram</code> and <code>g.ax_row_dendrogram</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">get_annotation_colors</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">lut</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">cmap</span><span class="p">)))</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">colors</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">lut</span><span class="p">)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">return</span> <span class="n">lut</span><span class="p">,</span> <span class="n">colors</span>
+</div>
+</div>
+</div>
+<p>Download package:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>streamlit
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">## Annotations</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Annotation row</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">annotation_row</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">lut_row</span><span class="p">,</span> <span class="n">row_colors</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_row</span><span class="p">,</span> <span class="s2">&quot;tab10&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Annotation col</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">annotation_col</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Feature&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">lut_col</span><span class="p">,</span> <span class="n">col_colors</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_col</span><span class="p">,</span> <span class="s2">&quot;Paired&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">## Clustermap</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                   <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                   <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                   <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;RdBu_r&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                   <span class="n">row_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">row_colors</span><span class="p">],</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                   <span class="n">col_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_colors</span><span class="p">])</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1">## Legends</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c1"># Annotation col</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">lut_col</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lut_col</span><span class="p">]</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="n">g</span><span class="o">.</span><span class="n">ax_col_dendrogram</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">lut_col</span><span class="p">,</span> 
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>                           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Feature type&quot;</span><span class="p">,</span> 
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>                           <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                           <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                           <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.13</span><span class="p">,</span> <span class="mf">.8</span><span class="p">),</span> 
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>                           <span class="n">bbox_transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="c1"># Annotation row</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">lut_row</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lut_row</span><span class="p">]</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="n">g</span><span class="o">.</span><span class="n">ax_row_dendrogram</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">lut_row</span><span class="p">,</span> 
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>                           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Species&quot;</span><span class="p">,</span> 
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                           <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>                           <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>                           <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">.76</span><span class="p">),</span> 
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>                           <span class="n">bbox_transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<h4 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>streamlit<span class="w"> </span>hello
 </code></pre></div>
-<p><img alt="Clustermap01" src="../../assets/images/clustermap_01.png" /></p>
-<h2 id="heatmap-with-multiple-annotations">Heatmap with multiple annotations<a class="headerlink" href="#heatmap-with-multiple-annotations" title="Permanent link">&para;</a></h2>
-<p>As shown in the following example, it is possible to assign to <code>row_colors</code> or <code>col_colors</code> (parameters of <code>sns.clustermap</code>) a dataframe including all annotations we want. Furthremore, the legend of any extra annotation other than the first two can be added using the following function.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">add_extra_legend</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">series</span><span class="p">,</span> <span class="n">lut</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)):</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">xx</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">ax_row_dendrogram</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">lut</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="n">xx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">legend</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> 
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                        <span class="n">series</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> 
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>                        <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">,</span> 
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                        <span class="n">bbox_to_anchor</span> <span class="o">=</span> <span class="n">bbox_to_anchor</span><span class="p">,</span> 
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>                        <span class="n">bbox_transform</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span>
+<iframe loading="lazy" src="https://doc-mpa-hello.streamlit.app/?embed=true" height="500" width=100% class="cloud_Iframe__xSBvF" allow="camera;clipboard-read;clipboard-write;"></iframe>
+
+<h2 id="key-concepts">Key concepts<a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="running-the-app">Running the app<a class="headerlink" href="#running-the-app" title="Permanent link">&para;</a></h3>
+<p>Streamlit creates a local server as soon as you run the script with the following command: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>streamlit<span class="w"> </span>run<span class="w"> </span>your_script.py<span class="w"> </span><span class="o">[</span>--<span class="w"> </span>script<span class="w"> </span>args<span class="o">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">## Annotations</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Annotation row_1</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">annotation_row1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">lut_row1</span><span class="p">,</span> <span class="n">row_colors1</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_row1</span><span class="p">,</span> <span class="s2">&quot;tab10&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Annotation row_2</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">annotation_row2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;genus&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">lut_row2</span><span class="p">,</span> <span class="n">row_colors2</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_row2</span><span class="p">,</span> <span class="s2">&quot;pastel&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># Annotation row_3</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">annotation_row3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;family&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">lut_row3</span><span class="p">,</span> <span class="n">row_colors3</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_row3</span><span class="p">,</span> <span class="s2">&quot;Set2&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1"># Annotation row df</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">row_colors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Species&quot;</span> <span class="p">:</span> <span class="n">row_colors1</span><span class="p">,</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>                           <span class="s2">&quot;Genus&quot;</span> <span class="p">:</span> <span class="n">row_colors2</span><span class="p">,</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>                           <span class="s2">&quot;Family&quot;</span> <span class="p">:</span> <span class="n">row_colors3</span><span class="p">})</span> 
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1"># Annotation col</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="n">annotation_col</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">])</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">lut_col</span><span class="p">,</span> <span class="n">col_colors</span> <span class="o">=</span> <span class="n">get_annotation_colors</span><span class="p">(</span><span class="n">annotation_col</span><span class="p">,</span> <span class="s2">&quot;Paired&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="c1">## Clustermap</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>                   <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>                   <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>                   <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;RdBu_r&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>                   <span class="n">row_colors</span> <span class="o">=</span> <span class="n">row_colors</span><span class="p">,</span>
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>                   <span class="n">col_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_colors</span><span class="p">])</span>
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="c1">## Legends</span>
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="c1"># Annotation col</span>
-<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">lut_col</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lut_col</span><span class="p">]</span>
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="n">g</span><span class="o">.</span><span class="n">ax_col_dendrogram</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">lut_col</span><span class="p">,</span> 
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>                           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Feature type&quot;</span><span class="p">,</span> 
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>                           <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.13</span><span class="p">,</span> <span class="mf">.8</span><span class="p">),</span> 
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>                           <span class="n">bbox_transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
-<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="c1"># Annotation row 1</span>
-<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Patch</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">lut_row1</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">lut_row1</span><span class="p">]</span>
-<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="n">g</span><span class="o">.</span><span class="n">ax_row_dendrogram</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">lut_row1</span><span class="p">,</span> 
-<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>                            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Species&quot;</span><span class="p">,</span> 
-<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>                            <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">.76</span><span class="p">),</span> 
-<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>                            <span class="n">bbox_transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
-<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
-<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="c1"># Annotation row 2</span>
-<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="n">add_extra_legend</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">annotation_row2</span><span class="p">,</span> <span class="n">lut_row2</span><span class="p">,</span> <span class="s2">&quot;Genus&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">.65</span><span class="p">))</span>
-<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
-<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="c1"># Annotation row 3</span>
-<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="n">add_extra_legend</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">annotation_row3</span><span class="p">,</span> <span class="n">lut_row3</span><span class="p">,</span> <span class="s2">&quot;Family&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.01</span><span class="p">,</span> <span class="mf">.58</span><span class="p">))</span>
-<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
-<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
-<p><img alt="Clustermap_02" src="../../assets/images/clustermap_02.png" /></p>
-<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h1>
+<p>This command will open a new tab in your default web browser. </p>
+<h3 id="writing-the-app">Writing the app<a class="headerlink" href="#writing-the-app" title="Permanent link">&para;</a></h3>
+<p>Let's imagine that your_script.py is like a canvas. In this canvas you can build the components as you prefer. </p>
+<details class="example">
+<summary>Components</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Layout</label><label for="__tabbed_2_2">Text</label><label for="__tabbed_2_3">Data and Charts</label><label for="__tabbed_2_4">Input</label><label for="__tabbed_2_5">Message status</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>These components are necessary to structure the app. We have 5 layout components:</p>
 <ul>
-<li>Stefano Pellegrini</li>
+<li>
+<p><code>st.container</code>: It divides the canvas in containers</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">cont1</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">container</span><span class="p">()</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">with</span> <span class="n">cont1</span><span class="p">:</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is a text on container 1&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1">## is equivalent to: </span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">cont1</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is another text on container 1&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>st.sidebar</code> : It allows to add object to the sidebar.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s1">&#39;url/to/image.png&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">## is equivalent to:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&quot;url/to/image.png&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>st.columns</code> : It divides the container or the canvas in columns.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">steamlit</span> <span class="n">st</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">## or you can specify the ratio and the gap</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">],</span> <span class="n">gap</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">with</span> <span class="n">col1</span><span class="p">:</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;this is column 1&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="n">col2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;this is column 2&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>st.expander</code> : it adds an expander in the canva</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="s2">&quot;This is the title of the expander&quot;</span><span class="p">,</span> <span class="n">expanded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;this is the content of the expander&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>In Streamlit there are several ways of writing text in the app:</p>
+<ul>
+<li><code>st.text</code> : Write fixed-width and preformatted text.</li>
+<li>
+<p><code>st.markdown</code> :  string formatted as Markdown, it can also read html string (although it is considered unsafe)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="sd">            &lt;h2&gt;This is heading 2&lt;/h2&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="sd">            &lt;p&gt; </span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="sd">            This is paragraph 1 </span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="sd">            &lt;/p&gt;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="sd">        &quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="n">allow_unsafe_html</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>st.code</code> : renders code as text</p>
+</li>
+<li><code>st.latex</code> : reads latex syntax, useful for math expressions.</li>
+<li><code>st.divider</code> : adds a horizontal line that divides the area of the container/column etc</li>
+<li><code>st.title</code>, <code>st.header</code>, <code>st.caption</code>, <code>st.subheader</code> : self-explanatory. </li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Streamlit is optimize for visualize Data quickly, interactively, and from multiple different angles. You can use several functions:</p>
+<ul>
+<li><em>Data</em><ul>
+<li><code>st.dataframe</code> : it reads and renders a Pandas dataframe</li>
+<li><code>st.metric</code> : it returns a KPI specified by the user</li>
+<li><code>st.table</code> : it returns a table</li>
+<li><code>st.json</code> : it returns a box with a json that can be copied by the user at certain level.</li>
+</ul>
+</li>
+</ul>
+<p>Streamlite has also built in wrapper for several package used to plot dynamically the data, some of them are: </p>
+<ul>
+<li><em>Charts</em><ul>
+<li><code>st.line_chart</code>, <code>st.area_chart</code>, <code>st.bar_chart</code></li>
+<li><code>st.pyplot</code> :</li>
+<li><code>st.plotly</code> :</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Streamlit let you go through your data dynamically. This can be done through the use of button, selectors, several types of inputs or via file uploader. </p>
+<ul>
+<li><code>st.button</code>: </li>
+<li><code>st.selectbox</code>: </li>
+<li><code>st.slider</code> :</li>
+<li><code>st.checkbox</code> : </li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Streamlit allows to return messages to the user in some specific cases. i.e. if the user needs to produce a plot by selecting some data, the message should appear only if the selection is not made.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">selection</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">&quot;This is the title of the selectbox&quot;</span><span class="p">,</span>  <span class="p">(</span><span class="s2">&quot;Select Option&quot;</span><span class="p">,</span> <span class="s2">&quot;Option0&quot;</span><span class="p">,</span> <span class="s2">&quot;option1&quot;</span><span class="p">,</span> <span class="s2">&quot;option2&quot;</span><span class="p">))</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">if</span> <span class="n">selection</span> <span class="o">==</span> <span class="s2">&quot;Select Option&quot;</span><span class="p">:</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;please select an option&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="sd">        You selected {option}</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="sd">        &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="n">selection</span><span class="p">)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        <span class="p">)</span>
+</code></pre></div>
+<p>Types of message statuses:
+- <code>st.info</code> : 
+- <code>st.error</code> :
+- 'st.warning<code>:
+-</code>st.success`:  </p>
+</div>
+</div>
+</div>
+</details>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://streamlit.io/gallery">Gallery</a></li>
+</ul>
+<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://docs.streamlit.io/library/get-started">Streamlit Documentation</a></li>
+</ul>
+<h3 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Federica Brando</li>
 </ul>
 
 
