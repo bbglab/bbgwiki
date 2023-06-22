@@ -1754,6 +1754,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practises" class="md-nav__link">
+    Best Practises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     Reference
   </a>
@@ -2211,6 +2232,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practises" class="md-nav__link">
+    Best Practises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     Reference
   </a>
@@ -2234,7 +2276,48 @@
 
 <h1 id="mutect2">Mutect2<a class="headerlink" href="#mutect2" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Mutect2 is a variant caller that calls somatic SNVs and indels via local assembly of haplotypes.
+It is included into <a href="https://gatk.broadinstitute.org/hc/en-us/">Genome Analysis Toolkit</a> a collection of command-line tools for analyzing high-throughput sequencing data with a primary focus on variant discovery.</p>
+<p>It can be used with two modes:
+1. tumor-normal mode where a tumor sample is matched with a normal sample in analysis.
+1. tumor-only mode where a single sample's alignment data undergoes analysis</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>To run Mutect2, the program required the following files:</p>
+<p>-Tumor bam file.
+-Normal bam file. (Only required in the tumor-normal mode)
+-reference file in fasta format.</p>
+<p>Mutect2 does not require a germline resource nor a panel of normals (PoN) to run, although both are recommended.
+-germline resource: 
+-panel of normals vcf file. To create a PoN, call on each normal sample in this mode, then use <a href="https://gatk.broadinstitute.org/hc/en-us/articles/360037227652-CreateSomaticPanelOfNormals-BETA-">CreateSomaticPanelOfNormals</a> to generate the PoN.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>(i) Tumor with matched normal</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>     gatk Mutect2 \
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>     -R reference.fa \
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>     -I tumor.bam \
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>     -I normal.bam \
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>     -normal normal_sample_name \
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>     --germline-resource af-only-gnomad.vcf.gz \
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>     --panel-of-normals pon.vcf.gz \
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>     -O somatic.vcf.gz
+</code></pre></div>
+<p>(ii) Tumor-only mode</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    gatk Mutect2 \
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    -R reference.fa \
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    -I sample.bam \
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    --germline-resource af-only-gnomad.vcf.gz \
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    --panel-of-normals pon.vcf.gz \
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    -O single_sample.vcf.gz
+</code></pre></div>
+<h2 id="best-practises">Best Practises<a class="headerlink" href="#best-practises" title="Permanent link">&para;</a></h2>
+<p>Mutect2 can be also used together with other GATK tools for complete workflows. 
+Check for <a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035894731-Somatic-short-variant-discovery-SNVs-Indels-">Best Practices Workflows</a></p>
+<p>Somatic short variant discovery workflow includes the following steps:
+* Call candidate variants: Mutect2
+* Calculate Contamination: 
+* Learn Orientation Bias Artifacts
+* Filter Variants</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2">Mutect2</a> official webpage</p>
 
 
 
