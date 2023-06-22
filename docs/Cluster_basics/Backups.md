@@ -1,8 +1,8 @@
 # Backups
 
-As explained in the [Structure section](https://bbglab.github.io/bbgwiki/Cluster_basics/Structure/), there are different partitions with different levels of backups. Basically, there are two options of backup:
-- Snapshots. It is the state of the system at a particular point in time. It is usefull for human mistakes, ie. if you delete or edit the wrong file. For HW errors or big catastrophes (e.g. a fire) (unlikely) is not useful, because the backup data is stored in the same disk/location. We can recover the data by ourselves. 
-- Standard backup. Useful for human mistakes and HW/catastrophes. To recover the data from a backup, we need to contact IT and it could take a few days for recovering.
+As explained in the [Structure section](https://bbglab.github.io/bbgwiki/Cluster_basics/Structure/), there are different partitions with different levels of backups. Basically, there are two options of backup:  
+- **Snapshots** : It is the state of the system at a particular point in time. It is usefull for human mistakes, ie. if you delete or edit the wrong file. For HW errors or big catastrophes (e.g. a fire) (unlikely) is not useful, because the backup data is stored in the same disk/location. We can recover the data by ourselves.
+- **Standard backup** : Useful for human mistakes and HW/catastrophes. To recover the data from a backup, we need to contact IT and it could take a few days for recovering.
 
 Depending the partition, the safety level is different:  
 - **`home/`** : Snapshots: 3 per day last 1.5 days, one for each of the last 5 days and one for each of the last 4 weeks. **medium-high** safe.
