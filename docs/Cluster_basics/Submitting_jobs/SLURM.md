@@ -109,6 +109,21 @@ This will send to the cluster a job with 8 cores and 16GB of RAM named _my_job_n
   
     Do you need to run parallel jobs in the cluster? You can use an in-house package called `qmap`, that allows you to let SLURM decide where and which node to use to run the commands with basic template file.
     More info [here](./Qmap.md)
+    Another method to submit more jobs to the cluster is to use **SLURM array jobs**. The setup of these jobs is virtually similar to a regular SLURM job, but with the difference that a `SLURM_JOB_
+
+```
+#!/bin/bash
+#SBATCH --job-name=example_jobname
+#SBATCH --cpus-per-task=1
+#SBATCH --array=1-1425%30
+#SBATCH --time=01:00:00
+#SBATCH --mem=8gb
+#SBATCH --output output/outfile-%j.out
+
+sh example_job.sh ${SLURM_ARRAY_TASK_ID}
+
+```
+    
 
 ### MANAGE
 
