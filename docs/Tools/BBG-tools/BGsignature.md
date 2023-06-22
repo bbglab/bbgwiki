@@ -33,7 +33,7 @@ BGsignature requires two input files:
 
 
 ## Repository
-Click here to see the [repository of BgReference](https://bitbucket.org/bgframework/bgsignature/src/master/){:target="_blank"}.
+Click here to see the [repository of BGsignature](https://bitbucket.org/bgframework/bgsignature/src/master/){:target="_blank"}.
 
 ## Reference
 - Stefano Pellegrini
