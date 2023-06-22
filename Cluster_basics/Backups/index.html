@@ -283,8 +283,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#example-of-recovering-data" class="md-nav__link">
+    Example of recovering data
   </a>
   
 </li>
@@ -2200,8 +2200,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#example-of-recovering-data" class="md-nav__link">
+    Example of recovering data
   </a>
   
 </li>
@@ -2229,8 +2229,54 @@
 
 
 <h1 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h1>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>As explained in the <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/Structure/">Structure section</a>, there are different partitions with different levels of backups. Basically, there are two options of backup:
+- Snapshots. It is the state of the system at a particular point in time. It is usefull for human mistakes, ie. if you delete or edit the wrong file. For HW errors or big catastrophes (e.g. a fire) (unlikely) is not useful, because the backup data is stored in the same disk/location. We can recover the data by ourselves. 
+- Standard backup. Useful for human mistakes and HW/catastrophes. To recover the data from a backup, we need to contact IT and it could take a few days for recovering.</p>
+<p>Depending the partition, the safety level is different:<br />
+- <strong><code>home/</code></strong> : Snapshots: 3 per day last 1.5 days, one for each of the last 5 days and one for each of the last 4 weeks. <strong>medium-high</strong> safe.
+- <strong><code>projects/</code></strong> : Standard backups and snapshots. Backup: every day during the last 15 days and every week during the last 12 weeks. Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. <strong>high</strong> safe.
+- <strong><code>datasets/</code></strong> : Standard backups. Backup: every Sunday, replaced every week. <strong>medium</strong> safe.
+- <strong><code>datasafe/</code></strong> : Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. <strong>medium-high</strong> safe.
+- <strong><code>nobackup/</code></strong> : No backup at all...</p>
+<h2 id="example-of-recovering-data">Example of recovering data<a class="headerlink" href="#example-of-recovering-data" title="Permanent link">&para;</a></h2>
+<p>Let's say we have deleted or edited by mistake a file in a partition with snapshots (e.g. <code>/workspace/projects/</code>). If we check the content of the <code>.snapshot/</code> folder:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mgrau@login01:/workspace/projects$ ls /workspace/projects/.snapshot/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>daily_at_23_noSun.2023-06-05_2300  daily_at_23_noSun.2023-06-15_2300        hourly_mon2fri_11_15_19.2023-06-16_1900  hourly_mon2fri_11_15_19.2023-06-21_1900  Sun_at_23.2023-05-14_2300
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>daily_at_23_noSun.2023-06-06_2300  daily_at_23_noSun.2023-06-16_2300        hourly_mon2fri_11_15_19.2023-06-19_1100  hourly_mon2fri_11_15_19.2023-06-22_1100  Sun_at_23.2023-05-21_2300
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>daily_at_23_noSun.2023-06-07_2300  daily_at_23_noSun.2023-06-17_2300        hourly_mon2fri_11_15_19.2023-06-19_1500  hourly_mon2fri_11_15_19.2023-06-22_1500  Sun_at_23.2023-05-28_2300
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>daily_at_23_noSun.2023-06-08_2300  daily_at_23_noSun.2023-06-19_2300        hourly_mon2fri_11_15_19.2023-06-19_1900  Sun_at_23.2023-04-02_2300                Sun_at_23.2023-06-04_2300
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>daily_at_23_noSun.2023-06-09_2300  daily_at_23_noSun.2023-06-20_2300        hourly_mon2fri_11_15_19.2023-06-20_1100  Sun_at_23.2023-04-09_2300                Sun_at_23.2023-06-11_2300
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>daily_at_23_noSun.2023-06-10_2300  daily_at_23_noSun.2023-06-21_2300        hourly_mon2fri_11_15_19.2023-06-20_1500  Sun_at_23.2023-04-16_2300                Sun_at_23.2023-06-18_2300
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>daily_at_23_noSun.2023-06-12_2300  hourly_mon2fri_11_15_19.2023-06-15_1900  hourly_mon2fri_11_15_19.2023-06-20_1900  Sun_at_23.2023-04-23_2300
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>daily_at_23_noSun.2023-06-13_2300  hourly_mon2fri_11_15_19.2023-06-16_1100  hourly_mon2fri_11_15_19.2023-06-21_1100  Sun_at_23.2023-04-30_2300
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>daily_at_23_noSun.2023-06-14_2300  hourly_mon2fri_11_15_19.2023-06-16_1500  hourly_mon2fri_11_15_19.2023-06-21_1500  Sun_at_23.2023-05-07_2300
+</code></pre></div>
+<p>We can see a daily snapshot at 23.00h during the last 15 days (<code>daily_at_23_noSun.2023-06-XX_2300</code>). Then we have 3 snapshots per day (at 11h,15h and 19h) during the last 5 working-days (<code>hourly_mon2fri_11_15_19.2023-06-XX_XX00</code>) and then we have one snapshot weekly (sunday at 23h) during the last 12 weeks (<code>Sun_at_23.2023-0X-XX_2300</code>).</p>
+<p>Inside every snapshot, we can see the same file structure of <code>projects</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mgrau@login01:/workspace/projects$ ls /workspace/projects/.snapshot/daily_at_23_noSun.2023-06-05_2300
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>all_aecc                      clustering_3d          diskusage20200511.txt   healthy_chemo              nanopore              regulatory_regions        small_collaborations_ines
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>all_aecc_pediatric            cndrivers              diskusage20200619.txt   hotmaps_signatures         neoantigen            repair_states             stjude
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>alphafold_features            colorectal_apoe        diskusage20200725.txt   immune_biomarkers          new_oncodrivemut      replication_timing        st_jude_life
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>bgframework                   courses                diskusage20200926.txt   immune_pheno_hartwig       noncoding_regions     reverse_calling           stockholm_ai
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>bladder_ts                    cptac_analysis         diskusage20201011.txt   intogen                    nonsense_cptac        rhabdoid_tumors           structural_variants
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>blca_eduardporta              damage_maps            diskusage_20211119.txt  intogen_2017               olivia                sample_specific_features  test_folder_delete
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>boostdm                       dde                    diskusage.txt           intogen_plus               oncodrive             sample_specific_profiles  tf_mutations
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>boostdm_ch                    degrons                driver_potential        Liver_Mouse                oncodrive3d           samuels_hmf               translation_fidelity
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>boostdm_germline_sensitivity  diskusage20200104.txt  exemple_test            meso_exomes                oncodriveclustl       sars_cov_2                ubiquitins
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>breakpoints                   diskusage20200115.txt  expression_signatures   methyl_predictors          oriol_aml_intogen     scell_tall                worms
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>build_table.py                diskusage20200201.txt  genomewide_mmr          miguel_nanopore            pagerank_combination  service                   zfp36l1
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>cgi                           diskusage20200215.txt  genomewide_MMR          mutfootprints              pancreas_meritxell    sherlock
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>cgi_clinics                   diskusage20200319.txt  genomic_regions         mutfootprints_code_review  pepe_clustering       signature_sensitivity
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>chemogenomics                 diskusage20200330.txt  hairpins                mutograph                  periodicity           signet
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>chemotrans                    diskusage20200421.txt  hartwig                 mut_region_profile         pileup_mappability    simuclones
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>clonalhemato_ukb              diskusage20200427.txt  hartwig_signatures_id   mut_risk                   prominent             sjd_pediatric_tumors
+</code></pre></div>
+<p>We can then copy back the file deleted to the original location. </p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Miguel Grau</li>
+<li>Jordi Deu-Pons</li>
+</ul>
 
 
 
