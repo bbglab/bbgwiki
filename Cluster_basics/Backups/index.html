@@ -2246,14 +2246,14 @@
 <p>As explained in the <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/Structure/">Structure section</a>, there are different partitions with different levels of backups. Basically, there are two options of backup:  </p>
 <ul>
 <li><strong>Snapshots</strong> : It is the state of the system at a particular point in time. It is usefull for human mistakes, ie. if you delete or edit the wrong file. For HW errors or big catastrophes (e.g. a fire) (unlikely) is not useful, because the backup data is stored in the same disk/location. We can recover the data by ourselves.    </li>
-<li><strong>Standard backup</strong> : Useful for human mistakes and HW/catastrophes. To recover the data from a backup, we need to contact IT and it could take a few days for recovering.</li>
+<li><strong>Standard backup</strong> : Useful for human mistakes and HW/catastrophes. To recover the data from a backup, we need to contact IT and it could take a few days for recovering.    </li>
 </ul>
-<p>Depending the partition, the safety level is different:<br />
-- <strong><code>home/</code></strong> : Snapshots: 3 per day last 1.5 days, one for each of the last 5 days and one for each of the last 4 weeks. <strong>medium-high</strong> safe.
-- <strong><code>projects/</code></strong> : Standard backups and snapshots. Backup: every day during the last 15 days and every week during the last 12 weeks. Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. <strong>high</strong> safe.
-- <strong><code>datasets/</code></strong> : Standard backups. Backup: every Sunday, replaced every week. <strong>medium</strong> safe.
-- <strong><code>datasafe/</code></strong> : Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. <strong>medium-high</strong> safe.
-- <strong><code>nobackup/</code></strong> : No backup at all...</p>
+<p>Depending the partition, the safety level is different:    <br />
+- <strong><code>home/</code></strong> : Snapshots: 3 per day last 1.5 days, one for each of the last 5 days and one for each of the last 4 weeks. <strong>medium-high</strong> safe.  <br />
+- <strong><code>projects/</code></strong> : Standard backups and snapshots. Backup: every day during the last 15 days and every week during the last 12 weeks. Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. <strong>high</strong> safe.  <br />
+- <strong><code>datasets/</code></strong> : Standard backups. Backup: every Sunday, replaced every week. <strong>medium</strong> safe.  <br />
+- <strong><code>datasafe/</code></strong> : Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. <strong>medium-high</strong> safe.  <br />
+- <strong><code>nobackup/</code></strong> : No backup at all...    </p>
 <h2 id="example-of-recovering-data">Example of recovering data<a class="headerlink" href="#example-of-recovering-data" title="Permanent link">&para;</a></h2>
 <p>Let's say we have deleted or edited by mistake a file in a partition with snapshots (e.g. <code>/workspace/projects/</code>). If we check the content of the <code>.snapshot/</code> folder:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mgrau@login01:/workspace/projects$ ls /workspace/projects/.snapshot/
