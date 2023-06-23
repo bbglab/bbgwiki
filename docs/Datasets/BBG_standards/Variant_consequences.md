@@ -1,8 +1,10 @@
 # Variant consequences
 
 ## Problem
+
 The problem is here, when having multiple annotations for a given variant, how to summarize that.
-```
+
+```sh
 chr10:103590136_A>T     chr10:103590136 T       ENSG00000107954 ENST00000369780 Transcript      missense_variant,splice_region_variant  2172    1489    497
 chr10:113850156_C>G     chr10:113850156 G       ENSG00000288933 ENST00000692647 Transcript      intron_variant,non_coding_transcript_variant    -       -
 chr10:132808904_T>C     chr10:132808904 C       ENSG00000171811 ENST00000368586 Transcript      splice_region_variant,synonymous_variant        7751    7665
@@ -12,13 +14,13 @@ We could also define a way of grouping consequences into: Nonsense, Missense, Sp
 Since some times we might not be interested in having very detailed consequence types but more broader categories.
 
 ## Description
+
 This document contains information on how to handle this situation to get a single consequence per variant if this is the goal of the users in some project.
 
 The first section covers how to rank the variants according to the deleteriousness, and the second section covers how to group variants into broader consequence types.
 
-So far we have been using the following ranking of Sequence Ontology terms associated with consequence types of variants: https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html
+So far we have been using the following ranking of Sequence Ontology terms associated with consequence types of variants: <https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html>
 For the grouping of variants we have been using ad-hoc collections on a case by case basis -- see e.g. boostDM. I agree that it would be good to establish once and for all a consensus grouping of SO consequence types for general variant analyses.
-
 
 ## Ranking consequence types
 
@@ -28,7 +30,7 @@ Consequence list taken from: [https://www.ensembl.org/info/genome/variation/pred
 
 List of consequences updated on the 2023-06-22. Ensembl 109
 
-```
+```py
 CONSEQUENCES_LIST = [
     'transcript_ablation',
     'splice_acceptor_variant',
@@ -84,14 +86,14 @@ for x in list_of_annotations:
     list_of_single_annotations.append(rank_consequence_dict[min(all_consequences_ranks)])
 
 ```
-`list_of_single_annotations` will be a list with a single annotation per row that can be added as a new column in the dataframe that you will have.
 
+`list_of_single_annotations` will be a list with a single annotation per row that can be added as a new column in the dataframe that you will have.
 
 ## Grouping of variants
 
 Going from the previous list into a more broader terms.
 
-```
+```py
 GROUPING_DICT = {
         
     'transcript_ablation': 'nonsense',
@@ -164,14 +166,14 @@ for x in list_of_annotations:
     list_of_broad_annotations.append(GROUPING_DICT[single_consequence])
 
 ```
+
 `list_of_single_annotations` will be a list with a single annotation per row that can be added as a new column in the dataframe that you will have.
 `list_of_broad_annotations` will be a list with a single broad annotation per row that can be added as a new column in the dataframe that you will have.
 
-
 ## Reference
-For the list of variant consequences:
-http://www.ensembl.org/info/genome/variation/prediction/predicted_data.html
 
+For the list of variant consequences:
+<http://www.ensembl.org/info/genome/variation/prediction/predicted_data.html>
 
 For the dictionary, we should agree on the definitions, but this was done by me on the 2023-06-22.
 

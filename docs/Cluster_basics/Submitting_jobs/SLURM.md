@@ -39,10 +39,10 @@ Allows you to allocate the resources that you need on the cluster.
 salloc [OPTIONS]
 ```
 
-The options are plenty and can be inspected by typing `salloc --help` command. 
+The options are plenty and can be inspected by typing `salloc --help` command.
 
 ??? example "Example"
-    
+
     ```bash 
     salloc -w bbgn004 -J my_cool_job --mem-per-cpu=4GB
     ``` 
@@ -50,9 +50,10 @@ The options are plenty and can be inspected by typing `salloc --help` command.
 
 #### 2. `srun`
 
-Submits an application for immediate execution. The command is interactive, it will output on the terminal that runs it and it is blocking, this means that you cannot use the terminal where you `srun` command. 
+Submits an application for immediate execution. The command is interactive, it will output on the terminal that runs it and it is blocking, this means that you cannot use the terminal where you `srun` command.
 
 ><my_applicayion.sh\>
+
 ```sh
 #!/bin/bash
 
@@ -110,10 +111,9 @@ This will send to the cluster a job with 8 cores and 16GB of RAM named _my_job_n
     Do you need to run parallel jobs in the cluster? You can use an in-house package called `qmap`, that allows you to let SLURM decide where and which node to use to run the commands with basic template file.
     More info [here](./Qmap.md)
 
-    
-    Another method to submit more jobs to the cluster is to use **SLURM array jobs**. The setup of these jobs is virtually similar to a regular SLURM job, but with the difference that a `SLURM_JOB_
+Another method to submit more jobs to the cluster is to use **SLURM array jobs**. The setup of these jobs is virtually similar to a regular SLURM job, but with the difference that a `SLURM_JOB_
 
-```
+```sh
 #!/bin/bash
 #SBATCH --job-name=example_jobname
 #SBATCH --cpus-per-task=1
@@ -125,7 +125,6 @@ This will send to the cluster a job with 8 cores and 16GB of RAM named _my_job_n
 sh example_job.sh ${SLURM_ARRAY_TASK_ID}
 
 ```
-    
 
 ### MANAGE
 
@@ -175,7 +174,6 @@ Full list of parameters can be seen with `scancel --help` command.
     ```
 
     In this case also job_id2 will be deleted
-
 
 ## Reference
 

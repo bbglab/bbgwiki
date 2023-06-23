@@ -11,17 +11,17 @@ There is a shared folder in datasets where there are several vep cache versions 
 
 `/workspace/datasets/vep`
 
-The easiest way to use a new version of vep is downloading the [docker container](https://hub.docker.com/r/ensemblorg/ensembl-vep/tags?page=1). Most popular versions are already downloaded in `/workspace/datasets/vep/homo_sapiens` (or `/workspace/datasets/vep/mus_musculus` for mice). 
+The easiest way to use a new version of vep is downloading the [docker container](https://hub.docker.com/r/ensemblorg/ensembl-vep/tags?page=1). Most popular versions are already downloaded in `/workspace/datasets/vep/homo_sapiens` (or `/workspace/datasets/vep/mus_musculus` for mice).
 
 An example for downloading a new version:
 
-```
+```sh
 singularity pull docker://ensemblorg/ensembl-vep:release_109.0
 ```
 
 Once the container is ready, we can download the vep-cache required:
 
-```
+```sh
 singularity exec ensembl-vep_109.sif INSTALL.pl -c 109_GRCh38/ -a cf -s homo_sapiens --ASSEMBLY GRCh38
 ```
 
@@ -29,12 +29,11 @@ singularity exec ensembl-vep_109.sif INSTALL.pl -c 109_GRCh38/ -a cf -s homo_sap
 
 For more details, you can follow the [installation guide](https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html).
 
-
 ## How to use
 
 Once you are in a working node:
 
-```
+```sh
 mgrau@bbgn009:/workspace/datasets/vep/homo_sapiens$ singularity exec ensembl-vep_109.sif vep
 
 #----------------------------------#
@@ -77,9 +76,9 @@ http://www.ensembl.org/info/docs/tools/vep/script/vep_options.html
 
 ## Example job
 
-A real example command could be: 
+A real example command could be:
 
-```
+```sh
 mgrau@bbgn009:/workspace/datasets/vep/homo_sapiens$ singularity exec vep109.sif vep --dir /workspace/datasets/vep/ -i variants_ref38.vcf.gz --offline --format vcf --vcf --cache -o exampleout.vcf --species homo_sapiens --assembly GRCh38 --fork 8
 ```
 
@@ -92,7 +91,6 @@ Full instructions on how to download and use cached files can be found [here](ht
 ## Additional comments
 
 Be careful when running VEP with the TAB output and then merging again the variants from a VCF file, some indels are reformated in VEP and you cannot pair them with the original mutations.
-
 
 ## Links
 
