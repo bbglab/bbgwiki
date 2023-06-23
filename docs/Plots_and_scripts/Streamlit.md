@@ -189,9 +189,10 @@ Let's imagine that your_script.py is like a canvas. In this canvas you can build
         ```
 
         Types of message statuses:
+
         - `st.info` : Returns a blue box with some info.
         - `st.error` : Returns a red box with error info.
-        - 'st.warning` : Returns a yellow box.
+        - `st.warning` : Returns a yellow box.
         - `st.success`: Returns a green box.
 
 ### Examples
