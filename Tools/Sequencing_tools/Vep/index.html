@@ -2309,58 +2309,58 @@
 <h2 id="how-and-where-to-install-a-new-version">How and where to install a new version?<a class="headerlink" href="#how-and-where-to-install-a-new-version" title="Permanent link">&para;</a></h2>
 <p>There is a shared folder in datasets where there are several vep cache versions and docker containers. If you are planning to download one, make sure to store it in this location.</p>
 <p><code>/workspace/datasets/vep</code></p>
-<p>The easiest way to use a new version of vep is downloading the <a href="https://hub.docker.com/r/ensemblorg/ensembl-vep/tags?page=1">docker container</a>. Most popular versions are already downloaded in <code>/workspace/datasets/vep/homo_sapiens</code> (or <code>/workspace/datasets/vep/mus_musculus</code> for mice). </p>
+<p>The easiest way to use a new version of vep is downloading the <a href="https://hub.docker.com/r/ensemblorg/ensembl-vep/tags?page=1">docker container</a>. Most popular versions are already downloaded in <code>/workspace/datasets/vep/homo_sapiens</code> (or <code>/workspace/datasets/vep/mus_musculus</code> for mice).</p>
 <p>An example for downloading a new version:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>singularity pull docker://ensemblorg/ensembl-vep:release_109.0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>singularity<span class="w"> </span>pull<span class="w"> </span>docker://ensemblorg/ensembl-vep:release_109.0
 </code></pre></div>
 <p>Once the container is ready, we can download the vep-cache required:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>singularity exec ensembl-vep_109.sif INSTALL.pl -c 109_GRCh38/ -a cf -s homo_sapiens --ASSEMBLY GRCh38
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ensembl-vep_109.sif<span class="w"> </span>INSTALL.pl<span class="w"> </span>-c<span class="w"> </span>109_GRCh38/<span class="w"> </span>-a<span class="w"> </span>cf<span class="w"> </span>-s<span class="w"> </span>homo_sapiens<span class="w"> </span>--ASSEMBLY<span class="w"> </span>GRCh38
 </code></pre></div>
 <p><em>IMPORTANT</em>. Each database only works with the specific ensembl-vep version used to download the database. In the previous example, the <code>109_GRCh38/</code> will work only with the ensembl-vep_109 version.</p>
 <p>For more details, you can follow the <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html">installation guide</a>.</p>
 <h2 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <p>Once you are in a working node:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mgrau@bbgn009:/workspace/datasets/vep/homo_sapiens$ singularity exec ensembl-vep_109.sif vep
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mgrau@bbgn009:/workspace/datasets/vep/homo_sapiens$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ensembl-vep_109.sif<span class="w"> </span>vep
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>#----------------------------------#
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a># ENSEMBL VARIANT EFFECT PREDICTOR #
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>#----------------------------------#
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#----------------------------------#</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># ENSEMBL VARIANT EFFECT PREDICTOR #</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">#----------------------------------#</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Versions:
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  ensembl              : 109.10baaec
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  ensembl-funcgen      : 109.cba2db8
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  ensembl-io           : 109.4946a86
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  ensembl-variation    : 109.18a12b6
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  ensembl-vep          : 109.3
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span>ensembl<span class="w">              </span>:<span class="w"> </span><span class="m">109</span>.10baaec
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span>ensembl-funcgen<span class="w">      </span>:<span class="w"> </span><span class="m">109</span>.cba2db8
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span>ensembl-io<span class="w">           </span>:<span class="w"> </span><span class="m">109</span>.4946a86
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span>ensembl-variation<span class="w">    </span>:<span class="w"> </span><span class="m">109</span>.18a12b6
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span>ensembl-vep<span class="w">          </span>:<span class="w"> </span><span class="m">109</span>.3
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Help: dev@ensembl.org , helpdesk@ensembl.org
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>Twitter: @ensembl
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Help:<span class="w"> </span>dev@ensembl.org<span class="w"> </span>,<span class="w"> </span>helpdesk@ensembl.org
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>Twitter:<span class="w"> </span>@ensembl
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>http://www.ensembl.org/info/docs/tools/vep/script/index.html
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
 <a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>Usage:
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>./vep [--cache|--offline|--database] [arguments]
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>./vep<span class="w"> </span><span class="o">[</span>--cache<span class="p">|</span>--offline<span class="p">|</span>--database<span class="o">]</span><span class="w"> </span><span class="o">[</span>arguments<span class="o">]</span>
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>Basic options
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>=============
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>Basic<span class="w"> </span><span class="nv">options</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="o">=============</span>
 <a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>--help                 Display this message and quit
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>--help<span class="w">                 </span>Display<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>quit
 <a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>-i | --input_file      Input file
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>-o | --output_file     Output file
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>--force_overwrite      Force overwriting of output file
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>--species [species]    Species to use [default: &quot;human&quot;]
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>-i<span class="w"> </span><span class="p">|</span><span class="w"> </span>--input_file<span class="w">      </span>Input<span class="w"> </span>file
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>-o<span class="w"> </span><span class="p">|</span><span class="w"> </span>--output_file<span class="w">     </span>Output<span class="w"> </span>file
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>--force_overwrite<span class="w">      </span>Force<span class="w"> </span>overwriting<span class="w"> </span>of<span class="w"> </span>output<span class="w"> </span>file
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>--species<span class="w"> </span><span class="o">[</span>species<span class="o">]</span><span class="w">    </span>Species<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="s2">&quot;human&quot;</span><span class="o">]</span>
 <a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>--everything           Shortcut switch to turn on commonly used options. See web
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>                       documentation for details [default: off]
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>--fork [num_forks]     Use forking to improve script runtime
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>--everything<span class="w">           </span>Shortcut<span class="w"> </span>switch<span class="w"> </span>to<span class="w"> </span>turn<span class="w"> </span>on<span class="w"> </span>commonly<span class="w"> </span>used<span class="w"> </span>options.<span class="w"> </span>See<span class="w"> </span>web
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">                       </span>documentation<span class="w"> </span><span class="k">for</span><span class="w"> </span>details<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>off<span class="o">]</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>--fork<span class="w"> </span><span class="o">[</span>num_forks<span class="o">]</span><span class="w">     </span>Use<span class="w"> </span>forking<span class="w"> </span>to<span class="w"> </span>improve<span class="w"> </span>script<span class="w"> </span>runtime
 <a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>For full option documentation see:
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>For<span class="w"> </span>full<span class="w"> </span>option<span class="w"> </span>documentation<span class="w"> </span>see:
 <a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>http://www.ensembl.org/info/docs/tools/vep/script/vep_options.html
 </code></pre></div>
 <h2 id="example-job">Example job<a class="headerlink" href="#example-job" title="Permanent link">&para;</a></h2>
-<p>A real example command could be: </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mgrau@bbgn009:/workspace/datasets/vep/homo_sapiens$ singularity exec vep109.sif vep --dir /workspace/datasets/vep/ -i variants_ref38.vcf.gz --offline --format vcf --vcf --cache -o exampleout.vcf --species homo_sapiens --assembly GRCh38 --fork 8
+<p>A real example command could be:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mgrau@bbgn009:/workspace/datasets/vep/homo_sapiens$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>vep109.sif<span class="w"> </span>vep<span class="w"> </span>--dir<span class="w"> </span>/workspace/datasets/vep/<span class="w"> </span>-i<span class="w"> </span>variants_ref38.vcf.gz<span class="w"> </span>--offline<span class="w"> </span>--format<span class="w"> </span>vcf<span class="w"> </span>--vcf<span class="w"> </span>--cache<span class="w"> </span>-o<span class="w"> </span>exampleout.vcf<span class="w"> </span>--species<span class="w"> </span>homo_sapiens<span class="w"> </span>--assembly<span class="w"> </span>GRCh38<span class="w"> </span>--fork<span class="w"> </span><span class="m">8</span>
 </code></pre></div>
 <p>To speed up the process, it is recommended to use the downloaded vep-cache files specifying the directory (<code>--dir</code>) and the <code>--offline</code> and <code>--cache</code> options. VEP allows multithreating using the <code>--fork</code> option.</p>
 <p>For full option documentation see <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_options.html">here</a>.</p>

@@ -2408,7 +2408,7 @@ More reference <a href="../../Interactive/">here</a></p>
 <p>Allows you to allocate the resources that you need on the cluster.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>salloc<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
-<p>The options are plenty and can be inspected by typing <code>salloc --help</code> command. </p>
+<p>The options are plenty and can be inspected by typing <code>salloc --help</code> command.</p>
 <details class="example">
 <summary>Example</summary>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>salloc<span class="w"> </span>-w<span class="w"> </span>bbgn004<span class="w"> </span>-J<span class="w"> </span>my_cool_job<span class="w"> </span>--mem-per-cpu<span class="o">=</span>4GB
@@ -2416,16 +2416,16 @@ More reference <a href="../../Interactive/">here</a></p>
 It's asking to allocate 4GB of memory on node bbgn004 for a job named "my_cool_job"</p>
 </details>
 <h4 id="2-srun">2. <code>srun</code><a class="headerlink" href="#2-srun" title="Permanent link">&para;</a></h4>
-<p>Submits an application for immediate execution. The command is interactive, it will output on the terminal that runs it and it is blocking, this means that you cannot use the terminal where you <code>srun</code> command. </p>
+<p>Submits an application for immediate execution. The command is interactive, it will output on the terminal that runs it and it is blocking, this means that you cannot use the terminal where you <code>srun</code> command.</p>
 <blockquote>
-<p>&lt;my_applicayion.sh>
+<p>&lt;my_applicayion.sh></p>
+</blockquote>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s1">&#39;%r&#39;</span><span class="k">)</span><span class="s2"> This is a dummy script&quot;</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>sleep<span class="w"> </span>5s
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s1">&#39;%r&#39;</span><span class="k">)</span><span class="s2"> Bye&quot;</span>
-</code></pre></div></p>
-</blockquote>
+</code></pre></div>
 <p>Then you can run the application with the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>srun<span class="w"> </span>my_dummy_script.sh<span class="w"> </span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>srun:<span class="w"> </span>job<span class="w"> </span><span class="m">8725263</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
@@ -2462,17 +2462,17 @@ There are a fair amount of parameters that can be inspected with the following c
 <p class="admonition-title">Use <code>qmap</code>!</p>
 <p>Do you need to run parallel jobs in the cluster? You can use an in-house package called <code>qmap</code>, that allows you to let SLURM decide where and which node to use to run the commands with basic template file.
 More info <a href="../Qmap/">here</a></p>
-<p>Another method to submit more jobs to the cluster is to use <strong>SLURM array jobs</strong>. The setup of these jobs is virtually similar to a regular SLURM job, but with the difference that a `SLURM_JOB_</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>#!/bin/bash
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>#SBATCH --job-name=example_jobname
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>#SBATCH --cpus-per-task=1
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>#SBATCH --array=1-1425%30
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>#SBATCH --time=01:00:00
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>#SBATCH --mem=8gb
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>#SBATCH --output output/outfile-%j.out
+<p>Another method to submit more jobs to the cluster is to use <strong>SLURM array jobs</strong>. The setup of these jobs is virtually similar to a regular SLURM job, but with the difference that a `SLURM_JOB_</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">#SBATCH --job-name=example_jobname</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">#SBATCH --array=1-1425%30</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">#SBATCH --time=01:00:00</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">#SBATCH --mem=8gb</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">#SBATCH --output output/outfile-%j.out</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>sh example_job.sh ${SLURM_ARRAY_TASK_ID}
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>sh<span class="w"> </span>example_job.sh<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>
 </code></pre></div>
 <h3 id="manage">MANAGE<a class="headerlink" href="#manage" title="Permanent link">&para;</a></h3>
 <h4 id="1-squeue">1. <code>squeue</code><a class="headerlink" href="#1-squeue" title="Permanent link">&para;</a></h4>
