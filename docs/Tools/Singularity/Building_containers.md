@@ -207,4 +207,4 @@ The `singularity help inspect` command provides additional options for inspectin
 
 - Jordi Deu-Pons
 - Miguel Grau
-- Carlos López Elorduy
+- Carlos López-Elorduy

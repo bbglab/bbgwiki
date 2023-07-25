@@ -103,4 +103,4 @@ Be careful when running VEP with the TAB output and then merging again the varia
 
 - Miguel Grau
 - Federica Brando
-- Carlos López
+- Carlos López-Elorduy

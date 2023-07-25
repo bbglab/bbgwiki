@@ -34,6 +34,6 @@ If after clicking the "OK" button an ERROR message is displayed:
 
 ## Reference
 
-- Carlos López Elorduy
+- Carlos López-Elorduy
 - Miguel Grau
 - Jordi Deu-Pons

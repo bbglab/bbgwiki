@@ -76,5 +76,5 @@ When entering the URL in your browser, click `Visit site` and introduce the pass
 ## Reference
 
 -   Jordi Deu Pons
--   Carlos López Elorduy
+-   Carlos López-Elorduy
 -   Federica Brando

@@ -27,4 +27,4 @@ You can disconnect by just pressing `Ctrl+C`
 ## References
 
 - Miguel Grau
-- Carlos López Elorduy
+- Carlos López-Elorduy

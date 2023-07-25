@@ -18,5 +18,5 @@
 ## Reference
 
 - Martina Gasull
-- Carlos López Elorduy
+- Carlos López-Elorduy
 - Miguel Grau

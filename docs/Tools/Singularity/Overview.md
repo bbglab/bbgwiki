@@ -33,4 +33,4 @@ Containers built by ITS Research are stored in `/data/containers` and are suppor
 
 - Jordi Deu-Pons
 - Miguel Grau
-- Carlos López Elorduy
+- Carlos López-Elorduy

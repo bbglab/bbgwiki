@@ -111,4 +111,4 @@ DISTRIB_DESCRIPTION="Ubuntu 20.04.3 LTS"
 
 - Jordi Deu-Pons
 - Miguel Grau
-- Carlos López Elorduy
+- Carlos López-Elorduy

@@ -100,5 +100,5 @@ mpirun --pernode \
 ## Reference
 
 - Jordi Deu-Pons
-- Carlos López Elorduy
+- Carlos López-Elorduy
 - Miguel Grau

@@ -78,6 +78,6 @@ You can also check the [full documentation](https://www.gnu.org/software/screen/
 
 ## Reference
 
-- Carlos López Elorduy
+- Carlos López-Elorduy
 - Jordi Deu-Pons
 - Miguel Grau
