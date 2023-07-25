@@ -71,5 +71,5 @@ This wiki is stored in a **GitHub repository**, where each section of the wiki c
 
 ## References
 
-- Carlos López Elorduy
+- Carlos López-Elorduy
 - Federica Brando

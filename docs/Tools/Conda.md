@@ -210,4 +210,4 @@ conda index <channel folder>/<platform>
 - Jordi Deu Pons
 - Miguel Grau
 - Federica Brando
-- Carlos López
+- Carlos López-Elorduy

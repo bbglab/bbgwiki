@@ -146,6 +146,6 @@ If not, you should **create a notebook** following the steps at the beginning of
 
 -   Jordi Deu-Pons
 -   Miguel Grau
--   Carlos López
+-   Carlos López-Elorduy
 -   Paula Gomis
 -   Federica Brando

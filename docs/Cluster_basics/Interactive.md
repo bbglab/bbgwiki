@@ -28,4 +28,4 @@ interactive [-c] [-m] [-w] [-J] [-x]
 
 - Jordi Deu-Pons
 - Miguel Grau
-- Carlos López Elorduy
+- Carlos López-Elorduy
