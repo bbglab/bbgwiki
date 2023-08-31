@@ -20,17 +20,22 @@
 
 ## How to clean the coffee machine
 1. Turn off the coffee machine and unsamble all the parts shown in the pictures below, in that order:
-   
+   **1**
    ![coffee1](../assets/images/coffee1.jpg)
+   **2**
+   ![coffee2](../assets/images/coffee2.jpg)
+   **3**
+   ![coffee3](../assets/images/coffee3.jpg)
+   **4**
+   ![coffee4](../assets/images/coffee4.jpg)
+   **5**
+   ![coffee2](../assets/images/coffee5.jpg)   
    
-  **1** 
-  
-  <img src="../assets/images/coffee1.jpg" alt= “coffee1” width="30%" height="30%">
-  
-  **2** <img src="../assets/images/coffee2.jpg" alt= “coffee2” width="30%" height="30%">
-  **3** <img src="../assets/images/coffee3.jpg" alt= “coffee3” width="30%" height="30%">\
-  **4** <img src="../assets/images/coffee4.jpg" alt= “coffee4” width="30%" height="30%">
-  **5**  <img src="../assets/images/coffee5.jpg" alt= “coffee5” width="30%" height="30%">\
+<>  **1** <img src="../assets/images/coffee1.jpg" alt= “coffee1” width="30%" height="30%">
+<>  **2** <img src="../assets/images/coffee2.jpg" alt= “coffee2” width="30%" height="30%">
+<>  **3** <img src="../assets/images/coffee3.jpg" alt= “coffee3” width="30%" height="30%">\
+<>  **4** <img src="../assets/images/coffee4.jpg" alt= “coffee4” width="30%" height="30%">
+<>  **5**  <img src="../assets/images/coffee5.jpg" alt= “coffee5” width="30%" height="30%">\
   To extract this inner part (coffee grinder),  press the red buttons and pull out.  
    
 3. Wash with soap all the parts **EXCEPT** the grinder. You can use the sink in the EBL, ask any member of the wet lab. The grinder is cleaned just by running water (**NO SOAP**).
