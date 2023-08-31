@@ -19,7 +19,7 @@
 - Feel free to add or remove yourself from the list whenever you change your coffee consumption routine. Just tell Monica and she will modify the list in the spreadsheet.
 
 ## How to clean the coffee machine
-1. Turn off the coffee machine and unsamble all the parts shown in the pictures below, in that order:   
+1. Turn off the coffee machine and unsamble all the parts shown in the pictures below, in that order:\
    **1**
    ![coffee1](../assets/images/coffee1.jpg)
    **2**
