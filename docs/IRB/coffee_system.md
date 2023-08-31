@@ -20,7 +20,9 @@
 
 ## How to clean the coffee machine
 1. Turn off the coffee machine and unsamble all the parts shown in the pictures below, in that order:
+   
    ![coffee1](../assets/images/coffee1.jpg)
+   
   **1** <img src="../assets/images/coffee1.jpg" alt= “coffee1” width="30%" height="30%">
   **2** <img src="../assets/images/coffee2.jpg" alt= “coffee2” width="30%" height="30%">
   **3** <img src="../assets/images/coffee3.jpg" alt= “coffee3” width="30%" height="30%">\
