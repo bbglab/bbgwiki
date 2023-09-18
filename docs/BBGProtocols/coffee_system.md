@@ -15,9 +15,9 @@
 - If you can't clean the coffee machine that week, you can exchange your turn with another person.
 - Only Monica, Erika and Martina have permissions to edit the spreadsheet. But you can put comments on the cells.
 - Some brands that are OK:
-  * [Nestle Bonka](https://www.amazon.es/Bonka-428221-Caf%C3%A9-grano-Natural/dp/B00XA1QNAM/ref=asc_df_B00XA1QNAM/?tag=googshopes-21&linkCode=df0&hvadid=366311326534&hvpos=&hvnetw=g&hvrand=6258043893641885346&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1005424&hvtargid=pla-790606492934&th=1). 
-  * [Bon preu](https://www.compraonline.bonpreuesclat.cat/products/83654/details)
-  * [Bellarom](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.quechoisir.org%2Fcomparatif-cafes-en-grains-n103032%2Fbellarom-lidl-expresso-p257916%2F&psig=AOvVaw3PJqZc0VrGHnIFomvvv-pi&ust=1695113372634000&source=images&cd=vfe&opi=89978449&ved=0CBIQjhxqFwoTCIC_qs7js4EDFQAAAAAdAAAAABAD) (the brand from LidL)
+    * [Nestle Bonka](https://www.amazon.es/Bonka-428221-Caf%C3%A9-grano-Natural/dp/B00XA1QNAM/ref=asc_df_B00XA1QNAM/?tag=googshopes-21&linkCode=df0&hvadid=366311326534&hvpos=&hvnetw=g&hvrand=6258043893641885346&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1005424&hvtargid=pla-790606492934&th=1). 
+    * [Bon preu](https://www.compraonline.bonpreuesclat.cat/products/83654/details)
+    * [Bellarom](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.quechoisir.org%2Fcomparatif-cafes-en-grains-n103032%2Fbellarom-lidl-expresso-p257916%2F&psig=AOvVaw3PJqZc0VrGHnIFomvvv-pi&ust=1695113372634000&source=images&cd=vfe&opi=89978449&ved=0CBIQjhxqFwoTCIC_qs7js4EDFQAAAAAdAAAAABAD) (the brand from LidL)
 - With this system we would buy like once a year, enough time to find where to buy these brands 
 - If you drink coffee very rarely, you don't need to enter the system, we can invite you :) 
 - Feel free to add or remove yourself from the list whenever you change your coffee consumption routine. Just tell Monica and she will modify the list in the spreadsheet.
