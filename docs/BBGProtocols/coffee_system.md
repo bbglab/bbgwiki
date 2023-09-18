@@ -13,7 +13,7 @@
 - It is **a shared responsibility to know if we are using the last coffee package**. I recommend telling the next person in the list whenever we are opening the last package.
 - It is **a shared responsibility to clean the coffee machine every week**. I recommend you to annotate in your calendar your turn to clean the coffee machine. The list is repeated several times, so you can annotate it for any time.
 - If you can't clean the coffee machine that week, you can exchange your turn with another person.
-- Not everyone has permissions to edit the spreadsheet. Just tell Monica, Erika or Martina.
+- Only Monica, Erika and Martina have permissions to edit the spreadsheet. But you can put comments on the cells.
 - Some brands that are OK:
   * [Nestle Bonka](https://www.amazon.es/Bonka-428221-Caf%C3%A9-grano-Natural/dp/B00XA1QNAM/ref=asc_df_B00XA1QNAM/?tag=googshopes-21&linkCode=df0&hvadid=366311326534&hvpos=&hvnetw=g&hvrand=6258043893641885346&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1005424&hvtargid=pla-790606492934&th=1). 
   * [Bon preu](https://www.compraonline.bonpreuesclat.cat/products/83654/details)
