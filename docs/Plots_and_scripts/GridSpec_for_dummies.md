@@ -11,8 +11,10 @@ It can be difficult to generate the desired grid and trying to allocate each of 
 	
 	#Initialise figure
 	fig = plt.figure(layout = "constrained")
+ 
 	#Initialise Gridspec (number of rows, number of columns, figure)
 	gs = GridSpec (4, 2, figure = fig)
+ 
 	#Add grids to add the plots later
 	#Plot A spans row 0 and column 0
 	ax_a = fig.add_subplot(gs[0, 0]) 
@@ -24,4 +26,6 @@ It can be difficult to generate the desired grid and trying to allocate each of 
 	#Plot D spans row 3 and all the columns
 	ax_f = fig.add_subplot(gs[3, 0:])
 
-image2
+![Output_gridspec](../assets/images/gridspec_2.png)
+
+Author: Olivia Dove Estrella
