@@ -3,7 +3,8 @@ When we want to create a figure that includes more than one plot, while having t
 
 It can be difficult to generate the desired grid and trying to allocate each of the plot to its correct coordinates, specially, when the plot spans multiple rows or columns. I recommend to first draw a draft of the desired plot layout. And then divide the figure in rows (red lines) and columns (blue lines) as the example. Like this, you know the particular coordinates for a plot. Then, the coding is really easy. 
 
-image1
+![Draft_gridspec](../assets/images/gridspec1.png)
+
     #Import necessary libraries
 	import matplotlib.pyplot as plt
     from matplotlib.gridspec import GridSpec
