@@ -47,6 +47,11 @@ Re-attaches to a detached screen.
 screen -r [#]
 ```
 
+Naming a screen session which is already open: 
+1. <kbd>Ctrl</kbd> +<kbd>A</kbd>
+2. type `:sessionname mySessionName` (the semicolon is needed, replace mySessionName by the name of your preference)
+
+
 !!! note
     If there are multiple screens available, include the **number** of the screen id (or **name**) to identify which screen to re-attach.
 
@@ -81,3 +86,4 @@ You can also check the [full documentation](https://www.gnu.org/software/screen/
 - Carlos López-Elorduy
 - Jordi Deu-Pons
 - Miguel Grau
+  
