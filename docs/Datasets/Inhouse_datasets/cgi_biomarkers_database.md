@@ -15,7 +15,7 @@ The CGI Biomarkers database was last updated in October 2022.
 Click to access the dataset:
 
 !!! note annotate "Website"
- [https://www.cancergenomeinterpreter.org/biomarkers/](https://www.cancergenomeinterpreter.org/biomarkers/){:target="_blank"}
+    [https://www.cancergenomeinterpreter.org/biomarkers/](https://www.cancergenomeinterpreter.org/biomarkers){:target="_blank"}
 
 ## Citing in Publications and Presentations
 
