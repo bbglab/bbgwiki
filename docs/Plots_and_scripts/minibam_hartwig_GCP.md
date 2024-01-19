@@ -5,7 +5,7 @@
 
 First, from [Google Cloud Platform website](https://console.cloud.google.com/), you create a VM (_Compute Engine -> VM instances. Create Instance_). In this case we choose an __e2-highmem8 (8vCPU, 4 core, 64GB RAM__). Region: _europe-west3 (Frankfurt)_ . In _Availability policies - VM_,  _Provisioning model_: SPOT. Attach a disk of 250GB, persistent (_Advanced options - Disks - Add new disk - Edit Name and Size_). Then, we can connect using a ssh web terminal or a local one. 
 
-    !!! important
+    !!! info
         It's important to create the VM in the same region where the data is, so we avoid charges for moving data between regions, if any. 
 
 
@@ -35,7 +35,7 @@ sudo mount -o discard,defaults /dev/disk/by-id/google-disk-1 /ext/ssd/
 sudo chmod a+w /ext/ssd/
 ```
 
-Create a bucket where the results will be copied during the minibam generation (_Cloud Storage - Buckets_). _Location type: Region, europe-west4 (Netherlands)_
+Next, create a bucket where the results will be copied during the minibam generation (_Cloud Storage - Buckets_). _Location type: Region, europe-west4 (Netherlands)_
 
 
 ## 2. Prepare the input file
@@ -47,10 +47,12 @@ CPCT02010702    14:101303564-101303964
 CPCT02010702    19:18451144-18451544
 CPCT02010728    2:176568493-176568893
 ```
-    !!! important
+
+    !!! info
         The regions file must be sort by sampleID.
 
-We need to extract the CRAM URLs from the _manifest.json_ of the hartwig release of interest, in this case 20230914v:
+
+We need to extract the CRAM URLs from the _manifest.json_ of the hartwig release of interest, in this case _20230914v_:
 
 ```
 #/workspace/datasets/hartwig/20230914/scripts/minibam/extract_urls.py
@@ -101,7 +103,7 @@ CPCT02010702T   19:18451144-18451544    gs://example_url/CPCT02010702T/cram/CPCT
 ```
 ## 3. Create minibams
 
-For each line, it extracts the regions in a minibam. If the next region is from the same sample, it keeps the cram. If not, it deletes de cram and download the next one.
+For each line, it extracts the regions in a minibam. If the next region is from the same sample, it keeps the cram. If not, it deletes the cram and downloads the next one.
 
 ```
 #/workspace/datasets/hartwig/20230914/scripts/minibam/dwnRunMiniBam_multi.py
