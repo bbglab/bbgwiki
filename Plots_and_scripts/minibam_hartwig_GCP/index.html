@@ -3322,7 +3322,7 @@
 <h2 id="1-create-the-vm-and-the-storage-bucket">1. Create the VM and the storage bucket.<a class="headerlink" href="#1-create-the-vm-and-the-storage-bucket" title="Permanent link">&para;</a></h2>
 <p>(This tutorial assumes that you already have the credentials to access the data and use the GCP)</p>
 <p>First, from <a href="https://console.cloud.google.com/">Google Cloud Platform website</a>, you create a VM (<em>Compute Engine -&gt; VM instances. Create Instance</em>). In this case we choose an <strong>e2-highmem8 (8vCPU, 4 core, 64GB RAM</strong>). Region: <em>europe-west3 (Frankfurt)</em> . In <em>Availability policies - VM</em>,  <em>Provisioning model</em>: SPOT. Attach a disk of 250GB, persistent (<em>Advanced options - Disks - Add new disk - Edit Name and Size</em>). Then, we can connect using a ssh web terminal or a local one. </p>
-<div class="highlight"><pre><span></span><code>!!! important
+<div class="highlight"><pre><span></span><code>!!! info
     It&#39;s important to create the VM in the same region where the data is, so we avoid charges for moving data between regions, if any.
 </code></pre></div>
 <p>Next, prepare the VM:</p>
@@ -3348,17 +3348,18 @@
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>sudo<span class="w"> </span>mount<span class="w"> </span>-o<span class="w"> </span>discard,defaults<span class="w"> </span>/dev/disk/by-id/google-disk-1<span class="w"> </span>/ext/ssd/
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>a+w<span class="w"> </span>/ext/ssd/
 </code></pre></div>
-<p>Create a bucket where the results will be copied during the minibam generation (<em>Cloud Storage - Buckets</em>). <em>Location type: Region, europe-west4 (Netherlands)</em></p>
+<p>Next, create a bucket where the results will be copied during the minibam generation (<em>Cloud Storage - Buckets</em>). <em>Location type: Region, europe-west4 (Netherlands)</em></p>
 <h2 id="2-prepare-the-input-file">2. Prepare the input file<a class="headerlink" href="#2-prepare-the-input-file" title="Permanent link">&para;</a></h2>
 <p>Our input file is a ~bed file with samples IDs and regions (IDs_regions.csv), e.g.:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>CPCT02010702    3:43228348-43228748
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>CPCT02010702    14:101303564-101303964
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>CPCT02010702    19:18451144-18451544
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>CPCT02010728    2:176568493-176568893
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>!!! info
+    The regions file must be sort by sampleID.
 </code></pre></div>
-    !!! important
-        The regions file must be sort by sampleID.</p>
-<p>We need to extract the CRAM URLs from the <em>manifest.json</em> of the hartwig release of interest, in this case 20230914v:</p>
+<p>We need to extract the CRAM URLs from the <em>manifest.json</em> of the hartwig release of interest, in this case <em>20230914v</em>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>#/workspace/datasets/hartwig/20230914/scripts/minibam/extract_urls.py
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>import json
@@ -3403,7 +3404,7 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>CPCT02010702T   19:18451144-18451544    gs://example_url/CPCT02010702T/cram/CPCT02010702T_dedup.realigned.cram
 </code></pre></div></p>
 <h2 id="3-create-minibams">3. Create minibams<a class="headerlink" href="#3-create-minibams" title="Permanent link">&para;</a></h2>
-<p>For each line, it extracts the regions in a minibam. If the next region is from the same sample, it keeps the cram. If not, it deletes de cram and download the next one.</p>
+<p>For each line, it extracts the regions in a minibam. If the next region is from the same sample, it keeps the cram. If not, it deletes the cram and downloads the next one.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>#/workspace/datasets/hartwig/20230914/scripts/minibam/dwnRunMiniBam_multi.py
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>import subprocess
