@@ -11,7 +11,7 @@ Depending the partition, the safety level is different:
 - **`projects/`** : Standard backups and snapshots. Backup: every day during the last 15 days and every week during the last 12 weeks. Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. **high** safe.
 - **`datasets/`** : Standard backups. Backup: every Sunday, replaced every week. **medium** safe.
 - **`datasafe/`** : Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. **medium-high** safe.
-- **`nobackup/`** : No backup at all...
+- **`nobackup/`**/ **`nobackup2/`** : No backup at all...
 
 ## Example of recovering data
 
