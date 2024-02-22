@@ -20,7 +20,7 @@
     
     
       
-        <title>ArchR scATAC seq - BBG-Wiki</title>
+        <title>ArchR: Processing scATAC sequencing data - BBG-Wiki</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#archr-processing-scatac-sequencing-data" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ArchR scATAC seq
+              ArchR: Processing scATAC sequencing data
             
           </span>
         </div>
@@ -1953,16 +1958,75 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ArchR: Processing scATAC sequencing data
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    ArchR scATAC seq
+    ArchR: Processing scATAC sequencing data
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3170,6 +3234,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3184,9 +3285,33 @@
                   
 
 
-  <h1>ArchR scATAC seq</h1>
-
-
+<h1 id="archr-processing-scatac-sequencing-data">ArchR: Processing scATAC sequencing data<a class="headerlink" href="#archr-processing-scatac-sequencing-data" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.archrproject.com/">ArchR</a> is a R package used for the analysis of scATAC sequencing data. After processing raw scRNAseq FASTQ files using <a href="https://bbglab.github.io/bbgwiki/Methods/Sequencing/singleCell/CellRanger/">CellRanger</a>. </p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>Installation requires the packages: devtools, and Bioconductor packages. </p>
+<ol>
+<li>Install devtools</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>if (!requireNamespace(&quot;devtools&quot;, quietly = TRUE)) install.packages(&quot;devtools&quot;)
+</code></pre></div>
+2. Install Bioconductor</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE)) install.packages(&quot;BiocManager&quot;)
+</code></pre></div>
+<ol>
+<li>Install ArchR
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>devtools::install_github(&quot;GreenleafLab/ArchR&quot;, ref=&quot;master&quot;, repos = BiocManager::repositories())
+</code></pre></div></li>
+</ol>
+<p>Alternatively, <a href="https://bbglab.github.io/bbgwiki/Methods/Sequencing/singleCell/Seurat_scRNA_seq/">Seurat</a> is a frequently used R package to analyze both scRNA and scATAC sequencing data. </p>
+<h3 id="references">References:<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Article: https://www.nature.com/articles/s41588-021-00790-6</li>
+<li>Github page: https://github.com/GreenleafLab/ArchR</li>
+</ul>
+<h3 id="reference">Reference:<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Axel Rosendahl Huber</li>
+</ul>
 
 
 
