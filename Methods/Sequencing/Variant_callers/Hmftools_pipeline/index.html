@@ -1,0 +1,4282 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../pysam/">
+      
+      
+        <link rel="next" href="../MosaicForecast/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/bbglabLOGO_small.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>HMFtools - BBG-Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hmftools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="BBG-Wiki" class="md-header__button md-logo" aria-label="BBG-Wiki" data-md-component="logo">
+      
+  <img src="../../../../assets/images/bbglabLOGO_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BBG-Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HMFtools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="BBG-Wiki" class="md-nav__button md-logo" aria-label="BBG-Wiki" data-md-component="logo">
+      
+  <img src="../../../../assets/images/bbglabLOGO_small.png" alt="logo">
+
+    </a>
+    BBG-Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Edit_BBG-Wiki/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edit BBG-Wiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BBGProtocols
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            BBGProtocols
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BBGProtocols/coffee_system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Info for bbg-coffee drinkers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cluster basics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/Backups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/Headers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Headers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/Interactive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interactive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/NewFolders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New folder in workspace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/Notebooks_in_cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running notebooks in the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/Screen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/Structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Submitting jobs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Submitting jobs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/Submitting_jobs/Qmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qmap Submit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cluster_basics/Submitting_jobs/SLURM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SLURM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Datasets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BBG standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            BBG standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/BBG_standards/Variant_consequences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variant consequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General datasets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            General datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/BeatAML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BeatAML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/CGCI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CGCI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/CPTAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPTAC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/GENIE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GENIE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/Hartwig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hartwig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/ICGC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICGC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/Oncotree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oncotree Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/PCAWG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCAWG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/PedcBioPortal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PedcBioPortal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/StJude/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    St. Jude
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/StJudeLife/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    St. Jude LIFE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/TARGET/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TARGET
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/TCGA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCGA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/UK_Biobank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UK Biobank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/General_datasets/cBioPortal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cBioPortal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Inhouse datasets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Inhouse datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Inhouse_datasets/ALL_cohort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ALL cohort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Inhouse_datasets/Damage_maps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Damage maps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Inhouse_datasets/Nanopore_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nanopore data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Inhouse_datasets/Pediatric%20Secondary%20neoplasms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pediatric Secondary neoplasms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Inhouse_datasets/Pediatric_Rhabdoid_cohort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pediatric Rhabdoid cohort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Inhouse_datasets/cgi_biomarkers_database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CGI Biomarkers database
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other data
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Other data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Other_data/Canonical_transcripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Canonical transcripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Other_data/ENCODE_epigenetic_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encode Epigenetic data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Other_data/Genomic_regions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Genomic regions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Other_data/Nmdetective/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nmdetective
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Other_data/ReferenceMutationalSignatures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Mutational Signatures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Other_data/Reference_genomes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference genomes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Datasets/Other_data/Repli-Seq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repli-Seq data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IRB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IRB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../IRB/VPN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../IRB/eduroam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eduroam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../IRB/fifteenWIFI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifteen wifi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Methods
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Methods
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sequencing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sequencing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bedtools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bedtools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bowtie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bowtie2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cutadapt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cutadapt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fastqc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fastqc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Samtools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SAMtools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trimmomatic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trimmomatic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vep
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pysam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pysam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_9" id="__nav_7_1_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Variant callers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1_9">
+            <span class="md-nav__icon md-icon"></span>
+            Variant callers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    HMFtools
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    HMFtools
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-conda-env-with-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      create conda env with requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-data-directory-output-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample data directory = output directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gen_version-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      gen_version parameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads-and-memory-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      threads and memory parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-data-directory-output-directory_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample data directory = output directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gen_version-parameter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      gen_version parameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads-and-memory-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      threads and memory parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-data-directory-output-directory_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample data directory = output directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gen_version-parameter_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      gen_version parameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads-and-memory-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      threads and memory parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MosaicForecast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MosaicForecast
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mutect2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mutect2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Platinum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Platinum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sarek/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sarek
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_10" id="__nav_7_1_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    singleCell
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_10">
+            <span class="md-nav__icon md-icon"></span>
+            singleCell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleCell/ArchR_scATAC-seq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArchR scATAC seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleCell/CellRanger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CellRanger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleCell/Mosaic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mosaic - python package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleCell/Seurat_scRNA_seq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seurat scRNA seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleCell/Tapestri_insight/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tapestri insights
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singleCell/Tapestri_pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tapestri pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Signature
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Signature
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signature/DeconstructSigs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DeconstructSigs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signature/SigProfiler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SigProfiler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signature/SigProfilerJulia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SigProfilerJulia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signature/TrinucleotideOrdering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trinucleotide context ordering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signature/mSigHDP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mSigHDP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signature/mSignAct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mSigAct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Plots and scripts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Plots and scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/GridSpec_for_dummies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GridSpec for dummies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/Heatmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heatmap plot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/HierarchicalClustering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hierarchical Clustering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/Intogen-BoostDM%20plots/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IntOGen - boostDM plots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/Mutational_profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mutational profile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/Needle_plot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Needle plot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Streamlit data visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/compute_type_variant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute type of variant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Plots_and_scripts/minibam_hartwig_GCP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extract minibams from Hartwig data in googleCloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/McGyver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    McGyver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Nextflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nextflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Snakemake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snakemake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_6" id="__nav_9_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    BBG tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6">
+            <span class="md-nav__icon md-icon"></span>
+            BBG tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/BBG-tools/BGconfig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BGconfig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/BBG-tools/BGdata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BGdata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/BBG-tools/BGlogs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BGlogs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/BBG-tools/BGpack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BGpack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/BBG-tools/BGreference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BgReference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/BBG-tools/BGsignature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BGsignature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/BBG-tools/BGvep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BGvep
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/BBG-tools/OpenVariant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVariant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_7" id="__nav_9_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_7">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Programming/cluster_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode in interactive node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Programming/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_7_3" id="__nav_9_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Programming/python/Updating_pypi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Updating package on pypi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_8" id="__nav_9_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Singularity
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_8">
+            <span class="md-nav__icon md-icon"></span>
+            Singularity
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Singularity/Building_containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Singularity/Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/Singularity/Using_containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_9" id="__nav_9_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VSCode
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_9">
+            <span class="md-nav__icon md-icon"></span>
+            VSCode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/VSCode/cluster_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode in interactive node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-conda-env-with-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      create conda env with requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-data-directory-output-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample data directory = output directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gen_version-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      gen_version parameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads-and-memory-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      threads and memory parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-data-directory-output-directory_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample data directory = output directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gen_version-parameter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      gen_version parameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads-and-memory-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      threads and memory parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-data-directory-output-directory_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample data directory = output directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gen_version-parameter_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      gen_version parameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads-and-memory-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      threads and memory parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="hmftools">HMFtools<a class="headerlink" href="#hmftools" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>HMFtools is a pipeline that can be run on the BBGlab cluster to perform variant calling and analysis. It resembles the exact pipeline that it is used in Google Cloud Platform (see <a href="../Platinum/">Platinum</a>) but it <strong>does not</strong> run in parallel and it is not optimized for HPC computing.</p>
+<p>The scripts, the tools and the reference data are provided by HMF on their <a href="https://github.com/hartwigmedical/hmftools/tree/master/pipeline">GitHub</a> and Google Cloud.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="create-conda-env-with-requirements">create conda env with requirements<a class="headerlink" href="#create-conda-env-with-requirements" title="Permanent link">&para;</a></h3>
+<p>Move to the hmftools pipeline folder:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>/workspace/projects/hartwig/hmftools/pipeline/
+</code></pre></div>
+<p>create a conda envirnoment with the <code>environment.yml</code> file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--file<span class="w"> </span>environment.yml
+</code></pre></div>
+<p>activate the environment</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>hmftpipe
+</code></pre></div>
+<div class="admonition warning data access">
+<p class="admonition-title">Warning</p>
+<p>You need specific permission to access the <code>/workspace/projects/hartwig/</code> following folder. Please contact Martina or Paula if you need to use this data. More info <a href="../../../../Datasets/General_datasets/Hartwig/">here</a>.</p>
+</div>
+<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
+<p>It can be run with a <code>.bam</code> file or a <code>.fastq</code> file.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input checked="checked" id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">BAM</label><label for="__tabbed_1_2">FASTQ.gz</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition info">
+<p class="admonition-title">Run mode</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">WGS mode</label><label for="__tabbed_2_2">Panel mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>to run the pipeline the command is the following: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./scripts/run_pipeline<span class="w"> </span>&lt;sample_data&gt;<span class="w"> </span><span class="s2">&quot;tumorID,referenceID&quot;</span><span class="w"> </span>&lt;gen_version&gt;<span class="w"> </span>&lt;run_mode&gt;<span class="w"> </span>&lt;threads&gt;<span class="w"> </span>&lt;memory&gt;
+</code></pre></div>
+<h3 id="sample-data-directory-output-directory"><code>sample data</code> directory = output directory<a class="headerlink" href="#sample-data-directory-output-directory" title="Permanent link">&para;</a></h3>
+<p>The <code>sample_data</code> directory must have:</p>
+<ul>
+<li>a directory named as the sample's tumorId</li>
+<li>tumor and reference BAM and BAM index files in the sample's directory, named as tumorId and referenceId.bam</li>
+</ul>
+<p>i.e. see folder tree below</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sample_data
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w"> </span>└──<span class="w"> </span>tumorID
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span>├──<span class="w"> </span>referenceId.bam
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span>├──<span class="w"> </span>referenceId.bam.bai
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span>├──<span class="w"> </span>tumorId.bam
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span>└──<span class="w"> </span>tumorId.bam.bai
+</code></pre></div>
+<p>In the tumorID folder the pipeline will make a directory for each of the steps and store the results in subfolders.</p>
+<h3 id="gen_version-parameter"><code>gen_version</code> parameter<a class="headerlink" href="#gen_version-parameter" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Genome version</th>
+<th style="text-align: center;">Genome file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">V38</td>
+<td style="text-align: center;"><code>./ref_data_dir/V38/ref_genome/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">V37</td>
+<td style="text-align: center;"><code>./ref_data_dir/V37/ref_genome/Homo_sapiens.GRCh37.GATK.illumina.fasta</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="threads-and-memory-parameters"><code>threads</code> and <code>memory</code> parameters<a class="headerlink" href="#threads-and-memory-parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>threads</code> number of threads used for each component</li>
+<li><code>memory</code>: GB allocated to each component (default=12GB)</li>
+</ul>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>my directory:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pipeline/test_data/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w"> </span>└──<span class="w"> </span>COLO928T
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span>├──<span class="w"> </span>COLO928R.bam
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span>├──<span class="w"> </span>COLO928R.bam.bai
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span>├──<span class="w"> </span>COLO928T.bam
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span>└──<span class="w"> </span>COLO928T.bam.bai
+</code></pre></div>
+Run: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./scripts/run_pipeline<span class="w"> </span>test_data<span class="w"> </span><span class="s2">&quot;COLO928T,COLO928R&quot;</span><span class="w"> </span>V37<span class="w"> </span>WGS<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">16</span>
+</code></pre></div>
+<details class="example">
+<summary>Example output</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pipeline/test_data/COLO829T
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── amber
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>│   ├── amber.version
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>│   ├── COLO829R.amber.homozygousregion.tsv
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>│   ├── COLO829R.amber.snp.vcf.gz
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>│   ├── COLO829R.amber.snp.vcf.gz.tbi
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>│   ├── COLO829T.amber.baf.pcf
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>│   ├── COLO829T.amber.baf.tsv.gz
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>│   ├── COLO829T.amber.contamination.tsv
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>│   ├── COLO829T.amber.contamination.vcf.gz
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>│   ├── COLO829T.amber.contamination.vcf.gz.tbi
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>│   └── COLO829T.amber.qc
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>├── cobalt
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>│   ├── cobalt.version
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>│   ├── COLO829R.cobalt.gc.median.tsv
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>│   ├── COLO829R.cobalt.ratio.median.tsv
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>│   ├── COLO829R.cobalt.ratio.pcf
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>│   ├── COLO829T.cobalt.gc.median.tsv
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>│   ├── COLO829T.cobalt.ratio.pcf
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>│   └── COLO829T.cobalt.ratio.tsv.gz
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>├── COLO829R.bam
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>├── COLO829R.bam.bai
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>├── COLO829T.bam
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>├── COLO829T.bam.bai
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>├── gridss
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>│   ├── COLO829R.sv_prep.bam
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>│   ├── COLO829R.sv_prep.junctions.csv
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>│   ├── COLO829R.sv_prep.sorted.bam
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>│   ├── COLO829R.sv_prep.sorted.bam.bai
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>│   ├── COLO829T.gridss.raw.vcf.gz
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>│   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>│   ├── COLO829T.gridss.raw.vcf.gz.tbi
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>│   ├── COLO829T.gridss.unfiltered.vcf.gz
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>│   ├── COLO829T.gridss.unfiltered.vcf.gz.tbi
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>│   ├── COLO829T.sv_prep.bam
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>│   ├── COLO829T.sv_prep.fragment_lengths
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>│   ├── COLO829T.sv_prep.junctions.csv
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>│   ├── COLO829T.sv_prep.sorted.bam
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>│   ├── COLO829T.sv_prep.sorted.bam.bai
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>│   └── gridss
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>│       ├── COLO829R.bam.gridss.working
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>│       ├── COLO829R.sv_prep.sorted.bam.gridss.working
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>│       │   ├── COLO829R.sv_prep.sorted.bam.cigar_metrics
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>│       │   ├── COLO829R.sv_prep.sorted.bam.computesamtags.changes.tsv
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>│       │   ├── COLO829R.sv_prep.sorted.bam.idsv_metrics
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>│       │   ├── COLO829R.sv_prep.sorted.bam.insert_size_histogram.pdf
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>│       │   ├── COLO829R.sv_prep.sorted.bam.insert_size_metrics
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>│       │   ├── COLO829R.sv_prep.sorted.bam.mapq_metrics
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>│       │   ├── COLO829R.sv_prep.sorted.bam.sv.bam
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>│       │   ├── COLO829R.sv_prep.sorted.bam.sv.bam.csi
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>│       │   └── COLO829R.sv_prep.sorted.bam.tag_metrics
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>│       ├── COLO829T.bam.gridss.working
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>│       ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.gridss.working
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.alignment_summary_metrics
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.cigar_metrics
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.coverage.blacklist.bed
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.downsampled_0.bed
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.excluded_0.bed
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.idsv_metrics
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.mapq_metrics
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.subsetCalled_0.bed
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.sv.bam
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.sv.bam.bai
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>│       │   └── COLO829T.gridss.raw.vcf.gz.assembly.bam.tag_metrics
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>│       ├── COLO829T.gridss.raw.vcf.gz.gridss.working
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>│       │   └── COLO829T.gridss.raw.vcf.gz.allocated.vcf.idx
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>│       ├── COLO829T.sv_prep.sorted.bam.gridss.working
+<a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.cigar_metrics
+<a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.computesamtags.changes.tsv
+<a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.idsv_metrics
+<a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.insert_size_histogram.pdf
+<a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.insert_size_metrics
+<a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.mapq_metrics
+<a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.sv.bam
+<a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.sv.bam.csi
+<a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a>│       │   └── COLO829T.sv_prep.sorted.bam.tag_metrics
+<a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>│       ├── gridss.full.20221116_120546.bbgn004.49271.log
+<a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a>│       ├── gridss.timing.20221116_120546.bbgn004.49271.log
+<a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a>│       └── libsswjni.so
+<a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a>├── gripss_germline
+<a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a>│   ├── COLO829T.gripss.filtered.germline.vcf.gz
+<a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a>│   ├── COLO829T.gripss.filtered.germline.vcf.gz.tbi
+<a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a>│   ├── COLO829T.gripss.germline.vcf.gz
+<a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a>│   └── COLO829T.gripss.germline.vcf.gz.tbi
+<a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>├── gripss_somatic
+<a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a>│   ├── COLO829T.gripss.filtered.somatic.vcf.gz
+<a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a>│   ├── COLO829T.gripss.filtered.somatic.vcf.gz.tbi
+<a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a>│   ├── COLO829T.gripss.somatic.vcf.gz
+<a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a>│   └── COLO829T.gripss.somatic.vcf.gz.tbi
+<a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a>├── lilac
+<a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a>│   ├── COLO829T.candidates.coverage.csv
+<a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a>│   ├── COLO829T.lilac.csv
+<a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a>│   └── COLO829T.lilac.qc.csv
+<a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a>├── linx_germline
+<a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a>│   ├── COLO829T.linx.germline.clusters.tsv
+<a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a>│   ├── COLO829T.linx.germline.disruption.tsv
+<a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a>│   ├── COLO829T.linx.germline.driver.catalog.tsv
+<a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a>│   ├── COLO829T.linx.germline.links.tsv
+<a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a>│   ├── COLO829T.linx.germline.svs.tsv
+<a id="__codelineno-7-100" name="__codelineno-7-100" href="#__codelineno-7-100"></a>│   └── linx.version
+<a id="__codelineno-7-101" name="__codelineno-7-101" href="#__codelineno-7-101"></a>├── linx_somatic
+<a id="__codelineno-7-102" name="__codelineno-7-102" href="#__codelineno-7-102"></a>│   ├── COLO829T.linx.breakend.tsv
+<a id="__codelineno-7-103" name="__codelineno-7-103" href="#__codelineno-7-103"></a>│   ├── COLO829T.linx.clusters.tsv
+<a id="__codelineno-7-104" name="__codelineno-7-104" href="#__codelineno-7-104"></a>│   ├── COLO829T.linx.driver.catalog.tsv
+<a id="__codelineno-7-105" name="__codelineno-7-105" href="#__codelineno-7-105"></a>│   ├── COLO829T.linx.drivers.tsv
+<a id="__codelineno-7-106" name="__codelineno-7-106" href="#__codelineno-7-106"></a>│   ├── COLO829T.linx.fusion.tsv
+<a id="__codelineno-7-107" name="__codelineno-7-107" href="#__codelineno-7-107"></a>│   ├── COLO829T.linx.links.tsv
+<a id="__codelineno-7-108" name="__codelineno-7-108" href="#__codelineno-7-108"></a>│   ├── COLO829T.linx.svs.tsv
+<a id="__codelineno-7-109" name="__codelineno-7-109" href="#__codelineno-7-109"></a>│   ├── COLO829T.linx.vis_copy_number.tsv
+<a id="__codelineno-7-110" name="__codelineno-7-110" href="#__codelineno-7-110"></a>│   ├── COLO829T.linx.vis_fusion.tsv
+<a id="__codelineno-7-111" name="__codelineno-7-111" href="#__codelineno-7-111"></a>│   ├── COLO829T.linx.vis_gene_exon.tsv
+<a id="__codelineno-7-112" name="__codelineno-7-112" href="#__codelineno-7-112"></a>│   ├── COLO829T.linx.vis_protein_domain.tsv
+<a id="__codelineno-7-113" name="__codelineno-7-113" href="#__codelineno-7-113"></a>│   ├── COLO829T.linx.vis_segments.tsv
+<a id="__codelineno-7-114" name="__codelineno-7-114" href="#__codelineno-7-114"></a>│   ├── COLO829T.linx.vis_sv_data.tsv
+<a id="__codelineno-7-115" name="__codelineno-7-115" href="#__codelineno-7-115"></a>│   ├── linx.version
+<a id="__codelineno-7-116" name="__codelineno-7-116" href="#__codelineno-7-116"></a>│   ├── plot_data
+<a id="__codelineno-7-117" name="__codelineno-7-117" href="#__codelineno-7-117"></a>│   │   ├── COLO829T.chr10.debug.003.png.error
+<a id="__codelineno-7-118" name="__codelineno-7-118" href="#__codelineno-7-118"></a>│   │   ├── COLO829T.chr10.debug.003.png.out
+<a id="__codelineno-7-119" name="__codelineno-7-119" href="#__codelineno-7-119"></a>│   │   ├── COLO829T.chr10.debug.chromosome.circos
+<a id="__codelineno-7-120" name="__codelineno-7-120" href="#__codelineno-7-120"></a>│   │   ├── COLO829T.chr10.debug.circos.003.conf
+<a id="__codelineno-7-121" name="__codelineno-7-121" href="#__codelineno-7-121"></a>│   │   ├── COLO829T.chr10.debug.cna.circos
+<a id="__codelineno-7-122" name="__codelineno-7-122" href="#__codelineno-7-122"></a>│   │   ├── COLO829T.chr10.debug.connector.circos
+<a id="__codelineno-7-123" name="__codelineno-7-123" href="#__codelineno-7-123"></a>│   │   ├── COLO829T.chr10.debug.distance.circos
+<a id="__codelineno-7-124" name="__codelineno-7-124" href="#__codelineno-7-124"></a>│   │   ├── COLO829T.chr10.debug.exon.circos
+<a id="__codelineno-7-125" name="__codelineno-7-125" href="#__codelineno-7-125"></a>│   │   ├── COLO829T.chr10.debug.exon.rank.circos
+<a id="__codelineno-7-126" name="__codelineno-7-126" href="#__codelineno-7-126"></a>│   │   ├── COLO829T.chr10.debug.fragile.circos
+<a id="__codelineno-7-127" name="__codelineno-7-127" href="#__codelineno-7-127"></a>│   │   ├── COLO829T.chr10.debug.gene.circos
+<a id="__codelineno-7-128" name="__codelineno-7-128" href="#__codelineno-7-128"></a>│   │   ├── COLO829T.chr10.debug.gene.name.circos
+<a id="__codelineno-7-129" name="__codelineno-7-129" href="#__codelineno-7-129"></a>│   │   ├── COLO829T.chr10.debug.karyotype.circos
+<a id="__codelineno-7-130" name="__codelineno-7-130" href="#__codelineno-7-130"></a>│   │   ├── COLO829T.chr10.debug.line_element.circos
+<a id="__codelineno-7-131" name="__codelineno-7-131" href="#__codelineno-7-131"></a>│   │   ├── COLO829T.chr10.debug.link.circos
+<a id="__codelineno-7-132" name="__codelineno-7-132" href="#__codelineno-7-132"></a>│   │   ├── COLO829T.chr10.debug.map.circos
+<a id="__codelineno-7-133" name="__codelineno-7-133" href="#__codelineno-7-133"></a>│   │   ├── COLO829T.chr10.debug.position.circos
+<a id="__codelineno-7-134" name="__codelineno-7-134" href="#__codelineno-7-134"></a>│   │   ├── COLO829T.chr10.debug.scatter.circos
+<a id="__codelineno-7-135" name="__codelineno-7-135" href="#__codelineno-7-135"></a>│   │   ├── COLO829T.chr10.debug.scatter.sgl.circos
+<a id="__codelineno-7-136" name="__codelineno-7-136" href="#__codelineno-7-136"></a>│   │   ├── COLO829T.chr10.debug.segment.circos
+<a id="__codelineno-7-137" name="__codelineno-7-137" href="#__codelineno-7-137"></a>│   │   ├── COLO829T.chr18.debug.003.png.error
+<a id="__codelineno-7-138" name="__codelineno-7-138" href="#__codelineno-7-138"></a>│   │   ├── COLO829T.chr18.debug.003.png.out
+<a id="__codelineno-7-139" name="__codelineno-7-139" href="#__codelineno-7-139"></a>│   │   ├── COLO829T.chr18.debug.chromosome.circos
+<a id="__codelineno-7-140" name="__codelineno-7-140" href="#__codelineno-7-140"></a>│   │   ├── COLO829T.chr18.debug.circos.003.conf
+<a id="__codelineno-7-141" name="__codelineno-7-141" href="#__codelineno-7-141"></a>│   │   ├── COLO829T.chr18.debug.cna.circos
+<a id="__codelineno-7-142" name="__codelineno-7-142" href="#__codelineno-7-142"></a>│   │   ├── COLO829T.chr18.debug.connector.circos
+<a id="__codelineno-7-143" name="__codelineno-7-143" href="#__codelineno-7-143"></a>│   │   ├── COLO829T.chr18.debug.distance.circos
+<a id="__codelineno-7-144" name="__codelineno-7-144" href="#__codelineno-7-144"></a>│   │   ├── COLO829T.chr18.debug.exon.circos
+<a id="__codelineno-7-145" name="__codelineno-7-145" href="#__codelineno-7-145"></a>│   │   ├── COLO829T.chr18.debug.exon.rank.circos
+<a id="__codelineno-7-146" name="__codelineno-7-146" href="#__codelineno-7-146"></a>│   │   ├── COLO829T.chr18.debug.fragile.circos
+<a id="__codelineno-7-147" name="__codelineno-7-147" href="#__codelineno-7-147"></a>│   │   ├── COLO829T.chr18.debug.gene.circos
+<a id="__codelineno-7-148" name="__codelineno-7-148" href="#__codelineno-7-148"></a>│   │   ├── COLO829T.chr18.debug.gene.name.circos
+<a id="__codelineno-7-149" name="__codelineno-7-149" href="#__codelineno-7-149"></a>│   │   ├── COLO829T.chr18.debug.karyotype.circos
+<a id="__codelineno-7-150" name="__codelineno-7-150" href="#__codelineno-7-150"></a>│   │   ├── COLO829T.chr18.debug.line_element.circos
+<a id="__codelineno-7-151" name="__codelineno-7-151" href="#__codelineno-7-151"></a>│   │   ├── COLO829T.chr18.debug.link.circos
+<a id="__codelineno-7-152" name="__codelineno-7-152" href="#__codelineno-7-152"></a>│   │   ├── COLO829T.chr18.debug.map.circos
+<a id="__codelineno-7-153" name="__codelineno-7-153" href="#__codelineno-7-153"></a>│   │   ├── COLO829T.chr18.debug.position.circos
+<a id="__codelineno-7-154" name="__codelineno-7-154" href="#__codelineno-7-154"></a>│   │   ├── COLO829T.chr18.debug.scatter.circos
+<a id="__codelineno-7-155" name="__codelineno-7-155" href="#__codelineno-7-155"></a>│   │   ├── COLO829T.chr18.debug.scatter.sgl.circos
+<a id="__codelineno-7-156" name="__codelineno-7-156" href="#__codelineno-7-156"></a>│   │   ├── COLO829T.chr18.debug.segment.circos
+<a id="__codelineno-7-157" name="__codelineno-7-157" href="#__codelineno-7-157"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.003.png.error
+<a id="__codelineno-7-158" name="__codelineno-7-158" href="#__codelineno-7-158"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.003.png.out
+<a id="__codelineno-7-159" name="__codelineno-7-159" href="#__codelineno-7-159"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.chromosome.circos
+<a id="__codelineno-7-160" name="__codelineno-7-160" href="#__codelineno-7-160"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.circos.003.conf
+<a id="__codelineno-7-161" name="__codelineno-7-161" href="#__codelineno-7-161"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.cna.circos
+<a id="__codelineno-7-162" name="__codelineno-7-162" href="#__codelineno-7-162"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.connector.circos
+<a id="__codelineno-7-163" name="__codelineno-7-163" href="#__codelineno-7-163"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.distance.circos
+<a id="__codelineno-7-164" name="__codelineno-7-164" href="#__codelineno-7-164"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.exon.circos
+<a id="__codelineno-7-165" name="__codelineno-7-165" href="#__codelineno-7-165"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.exon.rank.circos
+<a id="__codelineno-7-166" name="__codelineno-7-166" href="#__codelineno-7-166"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.fragile.circos
+<a id="__codelineno-7-167" name="__codelineno-7-167" href="#__codelineno-7-167"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.gene.circos
+<a id="__codelineno-7-168" name="__codelineno-7-168" href="#__codelineno-7-168"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.gene.name.circos
+<a id="__codelineno-7-169" name="__codelineno-7-169" href="#__codelineno-7-169"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.karyotype.circos
+<a id="__codelineno-7-170" name="__codelineno-7-170" href="#__codelineno-7-170"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.line_element.circos
+<a id="__codelineno-7-171" name="__codelineno-7-171" href="#__codelineno-7-171"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.link.circos
+<a id="__codelineno-7-172" name="__codelineno-7-172" href="#__codelineno-7-172"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.map.circos
+<a id="__codelineno-7-173" name="__codelineno-7-173" href="#__codelineno-7-173"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.position.circos
+<a id="__codelineno-7-174" name="__codelineno-7-174" href="#__codelineno-7-174"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.scatter.circos
+<a id="__codelineno-7-175" name="__codelineno-7-175" href="#__codelineno-7-175"></a>│   │   ├── COLO829T.cluster-1.sv1.debug.scatter.sgl.circos
+<a id="__codelineno-7-176" name="__codelineno-7-176" href="#__codelineno-7-176"></a>│   │   └── COLO829T.cluster-1.sv1.debug.segment.circos
+<a id="__codelineno-7-177" name="__codelineno-7-177" href="#__codelineno-7-177"></a>│   └── plots
+<a id="__codelineno-7-178" name="__codelineno-7-178" href="#__codelineno-7-178"></a>│       ├── COLO829T.chr10.debug.003.png
+<a id="__codelineno-7-179" name="__codelineno-7-179" href="#__codelineno-7-179"></a>│       ├── COLO829T.chr18.debug.003.png
+<a id="__codelineno-7-180" name="__codelineno-7-180" href="#__codelineno-7-180"></a>│       └── COLO829T.cluster-1.sv1.debug.003.png
+<a id="__codelineno-7-181" name="__codelineno-7-181" href="#__codelineno-7-181"></a>├── pave_germline
+<a id="__codelineno-7-182" name="__codelineno-7-182" href="#__codelineno-7-182"></a>│   ├── COLO829T.sage.germline.pave.vcf.gz
+<a id="__codelineno-7-183" name="__codelineno-7-183" href="#__codelineno-7-183"></a>│   └── COLO829T.sage.germline.pave.vcf.gz.tbi
+<a id="__codelineno-7-184" name="__codelineno-7-184" href="#__codelineno-7-184"></a>├── pave_somatic
+<a id="__codelineno-7-185" name="__codelineno-7-185" href="#__codelineno-7-185"></a>│   ├── COLO829T.sage.somatic.pave.vcf.gz
+<a id="__codelineno-7-186" name="__codelineno-7-186" href="#__codelineno-7-186"></a>│   └── COLO829T.sage.somatic.pave.vcf.gz.tbi
+<a id="__codelineno-7-187" name="__codelineno-7-187" href="#__codelineno-7-187"></a>├── purple
+<a id="__codelineno-7-188" name="__codelineno-7-188" href="#__codelineno-7-188"></a>│   ├── circos
+<a id="__codelineno-7-189" name="__codelineno-7-189" href="#__codelineno-7-189"></a>│   │   ├── COLO829R.ratio.circos
+<a id="__codelineno-7-190" name="__codelineno-7-190" href="#__codelineno-7-190"></a>│   │   ├── COLO829T.baf.circos
+<a id="__codelineno-7-191" name="__codelineno-7-191" href="#__codelineno-7-191"></a>│   │   ├── COLO829T.circos.conf
+<a id="__codelineno-7-192" name="__codelineno-7-192" href="#__codelineno-7-192"></a>│   │   ├── COLO829T.circos.png.error
+<a id="__codelineno-7-193" name="__codelineno-7-193" href="#__codelineno-7-193"></a>│   │   ├── COLO829T.circos.png.out
+<a id="__codelineno-7-194" name="__codelineno-7-194" href="#__codelineno-7-194"></a>│   │   ├── COLO829T.cnv.circos
+<a id="__codelineno-7-195" name="__codelineno-7-195" href="#__codelineno-7-195"></a>│   │   ├── COLO829T.indel.circos
+<a id="__codelineno-7-196" name="__codelineno-7-196" href="#__codelineno-7-196"></a>│   │   ├── COLO829T.input.conf
+<a id="__codelineno-7-197" name="__codelineno-7-197" href="#__codelineno-7-197"></a>│   │   ├── COLO829T.input.png.error
+<a id="__codelineno-7-198" name="__codelineno-7-198" href="#__codelineno-7-198"></a>│   │   ├── COLO829T.input.png.out
+<a id="__codelineno-7-199" name="__codelineno-7-199" href="#__codelineno-7-199"></a>│   │   ├── COLO829T.link.circos
+<a id="__codelineno-7-200" name="__codelineno-7-200" href="#__codelineno-7-200"></a>│   │   ├── COLO829T.map.circos
+<a id="__codelineno-7-201" name="__codelineno-7-201" href="#__codelineno-7-201"></a>│   │   ├── COLO829T.ratio.circos
+<a id="__codelineno-7-202" name="__codelineno-7-202" href="#__codelineno-7-202"></a>│   │   ├── COLO829T.snp.circos
+<a id="__codelineno-7-203" name="__codelineno-7-203" href="#__codelineno-7-203"></a>│   │   └── gaps.txt
+<a id="__codelineno-7-204" name="__codelineno-7-204" href="#__codelineno-7-204"></a>│   ├── COLO829T.driver.catalog.germline.tsv
+<a id="__codelineno-7-205" name="__codelineno-7-205" href="#__codelineno-7-205"></a>│   ├── COLO829T.driver.catalog.somatic.tsv
+<a id="__codelineno-7-206" name="__codelineno-7-206" href="#__codelineno-7-206"></a>│   ├── COLO829T.purple.cnv.gene.tsv
+<a id="__codelineno-7-207" name="__codelineno-7-207" href="#__codelineno-7-207"></a>│   ├── COLO829T.purple.cnv.somatic.tsv
+<a id="__codelineno-7-208" name="__codelineno-7-208" href="#__codelineno-7-208"></a>│   ├── COLO829T.purple.germline.deletion.tsv
+<a id="__codelineno-7-209" name="__codelineno-7-209" href="#__codelineno-7-209"></a>│   ├── COLO829T.purple.germline.vcf.gz
+<a id="__codelineno-7-210" name="__codelineno-7-210" href="#__codelineno-7-210"></a>│   ├── COLO829T.purple.germline.vcf.gz.tbi
+<a id="__codelineno-7-211" name="__codelineno-7-211" href="#__codelineno-7-211"></a>│   ├── COLO829T.purple.purity.range.tsv
+<a id="__codelineno-7-212" name="__codelineno-7-212" href="#__codelineno-7-212"></a>│   ├── COLO829T.purple.purity.tsv
+<a id="__codelineno-7-213" name="__codelineno-7-213" href="#__codelineno-7-213"></a>│   ├── COLO829T.purple.qc
+<a id="__codelineno-7-214" name="__codelineno-7-214" href="#__codelineno-7-214"></a>│   ├── COLO829T.purple.segment.tsv
+<a id="__codelineno-7-215" name="__codelineno-7-215" href="#__codelineno-7-215"></a>│   ├── COLO829T.purple.somatic.clonality.tsv
+<a id="__codelineno-7-216" name="__codelineno-7-216" href="#__codelineno-7-216"></a>│   ├── COLO829T.purple.somatic.hist.tsv
+<a id="__codelineno-7-217" name="__codelineno-7-217" href="#__codelineno-7-217"></a>│   ├── COLO829T.purple.somatic.vcf.gz
+<a id="__codelineno-7-218" name="__codelineno-7-218" href="#__codelineno-7-218"></a>│   ├── COLO829T.purple.somatic.vcf.gz.tbi
+<a id="__codelineno-7-219" name="__codelineno-7-219" href="#__codelineno-7-219"></a>│   ├── COLO829T.purple.sv.vcf.gz
+<a id="__codelineno-7-220" name="__codelineno-7-220" href="#__codelineno-7-220"></a>│   ├── COLO829T.purple.sv.vcf.gz.tbi
+<a id="__codelineno-7-221" name="__codelineno-7-221" href="#__codelineno-7-221"></a>│   ├── plot
+<a id="__codelineno-7-222" name="__codelineno-7-222" href="#__codelineno-7-222"></a>│   │   ├── COLO829T.circos.png
+<a id="__codelineno-7-223" name="__codelineno-7-223" href="#__codelineno-7-223"></a>│   │   ├── COLO829T.copynumber.png
+<a id="__codelineno-7-224" name="__codelineno-7-224" href="#__codelineno-7-224"></a>│   │   ├── COLO829T.input.png
+<a id="__codelineno-7-225" name="__codelineno-7-225" href="#__codelineno-7-225"></a>│   │   ├── COLO829T.map.png
+<a id="__codelineno-7-226" name="__codelineno-7-226" href="#__codelineno-7-226"></a>│   │   ├── COLO829T.purity.range.png
+<a id="__codelineno-7-227" name="__codelineno-7-227" href="#__codelineno-7-227"></a>│   │   ├── COLO829T.segment.png
+<a id="__codelineno-7-228" name="__codelineno-7-228" href="#__codelineno-7-228"></a>│   │   ├── COLO829T.somatic.clonality.png
+<a id="__codelineno-7-229" name="__codelineno-7-229" href="#__codelineno-7-229"></a>│   │   ├── COLO829T.somatic.png
+<a id="__codelineno-7-230" name="__codelineno-7-230" href="#__codelineno-7-230"></a>│   │   └── COLO829T.somatic.rainfall.png
+<a id="__codelineno-7-231" name="__codelineno-7-231" href="#__codelineno-7-231"></a>│   └── purple.version
+<a id="__codelineno-7-232" name="__codelineno-7-232" href="#__codelineno-7-232"></a>├── run005_37_wgs.log
+<a id="__codelineno-7-233" name="__codelineno-7-233" href="#__codelineno-7-233"></a>├── sage_germline
+<a id="__codelineno-7-234" name="__codelineno-7-234" href="#__codelineno-7-234"></a>│   ├── COLO829T.sage.germline.vcf.gz
+<a id="__codelineno-7-235" name="__codelineno-7-235" href="#__codelineno-7-235"></a>│   └── COLO829T.sage.germline.vcf.gz.tbi
+<a id="__codelineno-7-236" name="__codelineno-7-236" href="#__codelineno-7-236"></a>└── sage_somatic
+<a id="__codelineno-7-237" name="__codelineno-7-237" href="#__codelineno-7-237"></a>    ├── COLO829R.sage.bqr.tsv
+<a id="__codelineno-7-238" name="__codelineno-7-238" href="#__codelineno-7-238"></a>    ├── COLO829T.sage.bqr.tsv
+<a id="__codelineno-7-239" name="__codelineno-7-239" href="#__codelineno-7-239"></a>    ├── COLO829T.sage.exon.medians.tsv
+<a id="__codelineno-7-240" name="__codelineno-7-240" href="#__codelineno-7-240"></a>    ├── COLO829T.sage.gene.coverage.tsv
+<a id="__codelineno-7-241" name="__codelineno-7-241" href="#__codelineno-7-241"></a>    ├── COLO829T.sage.somatic.vcf.gz
+<a id="__codelineno-7-242" name="__codelineno-7-242" href="#__codelineno-7-242"></a>    └── COLO829T.sage.somatic.vcf.gz.tbi
+</code></pre></div>
+</details>
+</div>
+<div class="tabbed-block">
+<p>to run the pipeline the command is the following: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./scripts/run_pipeline<span class="w"> </span>&lt;sample_data&gt;<span class="w"> </span><span class="s2">&quot;tumorID&quot;</span><span class="w"> </span>&lt;gen_versio&gt;<span class="w"> </span>&lt;run<span class="w"> </span>mode&gt;<span class="w"> </span>&lt;threads&gt;<span class="w"> </span>&lt;memory&gt;
+</code></pre></div>
+<h3 id="sample-data-directory-output-directory_1"><code>sample data</code> directory = output directory<a class="headerlink" href="#sample-data-directory-output-directory_1" title="Permanent link">&para;</a></h3>
+<p>The <code>sample_data</code> must have:</p>
+<ul>
+<li>a directory named as the sample's tumorId</li>
+<li>tumor BAM and BAM index files in the sample's directory, named as tumorId and referenceId.bam</li>
+</ul>
+<p>i.e. see folder tree below</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sample_data
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w"> </span>└──<span class="w"> </span>tumorID
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">      </span>├──<span class="w"> </span>tumorId.bam
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">      </span>└──<span class="w"> </span>tumorId.bam.bai
+</code></pre></div>
+<p>In the tumorID folder the pipeline will make a directory for each of the steps and store the results in subfolders.</p>
+<h3 id="gen_version-parameter_1"><code>gen_version</code> parameter<a class="headerlink" href="#gen_version-parameter_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Genome version</th>
+<th style="text-align: center;">Genome file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">V38</td>
+<td style="text-align: center;"><code>./ref_data_dir/V38/ref_genome/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">V37</td>
+<td style="text-align: center;"><code>./ref_data_dir/V37/ref_genome/Homo_sapiens.GRCh37.GATK.illumina.fasta</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="threads-and-memory-parameters_1"><code>threads</code> and <code>memory</code> parameters<a class="headerlink" href="#threads-and-memory-parameters_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>threads</code> number of threads used for each component</li>
+<li><code>memory</code>: GB allocated to each component (default=12GB)</li>
+</ul>
+<h2 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h2>
+<p>my directory:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>pipeline/test_data/
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w"> </span>└──<span class="w"> </span>COLO928T
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span>├──<span class="w"> </span>COLO928T.bam
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">      </span>└──<span class="w"> </span>COLO928T.bam.bai
+</code></pre></div>
+Run: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./scripts/run_pipeline<span class="w"> </span>test_data<span class="w"> </span>COLO928T<span class="w"> </span>V37<span class="w"> </span>PANEL<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">16</span>
+</code></pre></div>
+<details class="example">
+<summary>Example output</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>pipeline/test_data/COLO829T/
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>├── amber
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>│   ├── amber.version
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>│   ├── COLO829T.amber.baf.pcf
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>│   ├── COLO829T.amber.baf.tsv.gz
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>│   └── COLO829T.amber.qc
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>├── cobalt
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>│   ├── cobalt.version
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>│   ├── COLO829T.cobalt.gc.median.tsv
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>│   ├── COLO829T.cobalt.ratio.pcf
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>│   └── COLO829T.cobalt.ratio.tsv.gz
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>├── COLO829T.bam
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>├── COLO829T.bam.bai
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>├── gridss
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>│   ├── COLO829T.gridss.raw.vcf.gz
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>│   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>│   ├── COLO829T.gridss.raw.vcf.gz.tbi
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>│   ├── COLO829T.gridss.unfiltered.vcf.gz
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>│   ├── COLO829T.gridss.unfiltered.vcf.gz.tbi
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>│   ├── COLO829T.sv_prep.bam
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>│   ├── COLO829T.sv_prep.fragment_lengths
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>│   ├── COLO829T.sv_prep.junctions.csv
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>│   ├── COLO829T.sv_prep.sorted.bam
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>│   ├── COLO829T.sv_prep.sorted.bam.bai
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>│   └── gridss
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>│       ├── COLO829T.bam.gridss.working
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>│       ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.gridss.working
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.alignment_summary_metrics
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.cigar_metrics
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.coverage.blacklist.bed
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.downsampled_0.bed
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.excluded_0.bed
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.idsv_metrics
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.mapq_metrics
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.subsetCalled_0.bed
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.sv.bam
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>│       │   ├── COLO829T.gridss.raw.vcf.gz.assembly.bam.sv.bam.bai
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>│       │   └── COLO829T.gridss.raw.vcf.gz.assembly.bam.tag_metrics
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>│       ├── COLO829T.gridss.raw.vcf.gz.gridss.working
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>│       │   └── COLO829T.gridss.raw.vcf.gz.allocated.vcf.idx
+<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>│       ├── COLO829T.sv_prep.sorted.bam.gridss.working
+<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.cigar_metrics
+<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.computesamtags.changes.tsv
+<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.idsv_metrics
+<a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.insert_size_histogram.pdf
+<a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.insert_size_metrics
+<a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.mapq_metrics
+<a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.sv.bam
+<a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>│       │   ├── COLO829T.sv_prep.sorted.bam.sv.bam.csi
+<a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a>│       │   └── COLO829T.sv_prep.sorted.bam.tag_metrics
+<a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a>│       ├── fbrando
+<a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a>│       ├── gridss.full.20230113_110106.login01.6901.log
+<a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>│       └── libsswjni.so
+<a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a>├── gripss
+<a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a>│   ├── COLO829T.gripss.filtered.somatic.vcf.gz
+<a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a>│   ├── COLO829T.gripss.filtered.somatic.vcf.gz.tbi
+<a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a>│   ├── COLO829T.gripss.somatic.vcf.gz
+<a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a>│   └── COLO829T.gripss.somatic.vcf.gz.tbi
+<a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>├── lilac
+<a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a>│   ├── COLO829T.candidates.coverage.csv
+<a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a>│   ├── COLO829T.lilac.csv
+<a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a>│   └── COLO829T.lilac.qc.csv
+<a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a>├── linx
+<a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a>│   ├── plot_data
+<a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a>│   └── plots
+<a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a>├── pave
+<a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a>│   ├── COLO829T.sage.pave.vcf.gz
+<a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a>│   └── COLO829T.sage.pave.vcf.gz.tbi
+<a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a>├── purple
+<a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a>│   ├── circos
+<a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a>│   │   ├── COLO829T.baf.circos
+<a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a>│   │   ├── COLO829T.circos.conf
+<a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a>│   │   ├── COLO829T.circos.png.error
+<a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a>│   │   ├── COLO829T.circos.png.out
+<a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a>│   │   ├── COLO829T.cnv.circos
+<a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a>│   │   ├── COLO829T.indel.circos
+<a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a>│   │   ├── COLO829T.input.conf
+<a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a>│   │   ├── COLO829T.input.png.error
+<a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a>│   │   ├── COLO829T.input.png.out
+<a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a>│   │   ├── COLO829T.link.circos
+<a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a>│   │   ├── COLO829T.map.circos
+<a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a>│   │   ├── COLO829T.ratio.circos
+<a id="__codelineno-12-83" name="__codelineno-12-83" href="#__codelineno-12-83"></a>│   │   ├── COLO829T.snp.circos
+<a id="__codelineno-12-84" name="__codelineno-12-84" href="#__codelineno-12-84"></a>│   │   ├── gaps.txt
+<a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a>│   │   └── null.ratio.circos
+<a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a>│   ├── COLO829T.driver.catalog.somatic.tsv
+<a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a>│   ├── COLO829T.purple.cnv.gene.tsv
+<a id="__codelineno-12-88" name="__codelineno-12-88" href="#__codelineno-12-88"></a>│   ├── COLO829T.purple.cnv.somatic.tsv
+<a id="__codelineno-12-89" name="__codelineno-12-89" href="#__codelineno-12-89"></a>│   ├── COLO829T.purple.purity.range.tsv
+<a id="__codelineno-12-90" name="__codelineno-12-90" href="#__codelineno-12-90"></a>│   ├── COLO829T.purple.purity.tsv
+<a id="__codelineno-12-91" name="__codelineno-12-91" href="#__codelineno-12-91"></a>│   ├── COLO829T.purple.qc
+<a id="__codelineno-12-92" name="__codelineno-12-92" href="#__codelineno-12-92"></a>│   ├── COLO829T.purple.segment.tsv
+<a id="__codelineno-12-93" name="__codelineno-12-93" href="#__codelineno-12-93"></a>│   ├── COLO829T.purple.somatic.clonality.tsv
+<a id="__codelineno-12-94" name="__codelineno-12-94" href="#__codelineno-12-94"></a>│   ├── COLO829T.purple.somatic.hist.tsv
+<a id="__codelineno-12-95" name="__codelineno-12-95" href="#__codelineno-12-95"></a>│   ├── COLO829T.purple.somatic.vcf.gz
+<a id="__codelineno-12-96" name="__codelineno-12-96" href="#__codelineno-12-96"></a>│   ├── COLO829T.purple.somatic.vcf.gz.tbi
+<a id="__codelineno-12-97" name="__codelineno-12-97" href="#__codelineno-12-97"></a>│   ├── COLO829T.purple.sv.vcf.gz
+<a id="__codelineno-12-98" name="__codelineno-12-98" href="#__codelineno-12-98"></a>│   ├── COLO829T.purple.sv.vcf.gz.tbi
+<a id="__codelineno-12-99" name="__codelineno-12-99" href="#__codelineno-12-99"></a>│   ├── plot
+<a id="__codelineno-12-100" name="__codelineno-12-100" href="#__codelineno-12-100"></a>│   │   ├── COLO829T.input.png
+<a id="__codelineno-12-101" name="__codelineno-12-101" href="#__codelineno-12-101"></a>│   │   ├── COLO829T.somatic.clonality.png
+<a id="__codelineno-12-102" name="__codelineno-12-102" href="#__codelineno-12-102"></a>│   │   ├── COLO829T.somatic.png
+<a id="__codelineno-12-103" name="__codelineno-12-103" href="#__codelineno-12-103"></a>│   │   └── COLO829T.somatic.rainfall.png
+<a id="__codelineno-12-104" name="__codelineno-12-104" href="#__codelineno-12-104"></a>│   └── purple.version
+<a id="__codelineno-12-105" name="__codelineno-12-105" href="#__codelineno-12-105"></a>└── sage
+<a id="__codelineno-12-106" name="__codelineno-12-106" href="#__codelineno-12-106"></a>    ├── COLO829T.sage.bqr.tsv
+<a id="__codelineno-12-107" name="__codelineno-12-107" href="#__codelineno-12-107"></a>    ├── COLO829T.sage.exon.medians.tsv
+<a id="__codelineno-12-108" name="__codelineno-12-108" href="#__codelineno-12-108"></a>    ├── COLO829T.sage.gene.coverage.tsv
+<a id="__codelineno-12-109" name="__codelineno-12-109" href="#__codelineno-12-109"></a>    ├── COLO829T.sage.vcf.gz
+<a id="__codelineno-12-110" name="__codelineno-12-110" href="#__codelineno-12-110"></a>    └── COLO829T.sage.vcf.gz.tbi
+</code></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>This option is going to take longer since we are running the alignment step.</p>
+<div class="admonition info">
+<p class="admonition-title">Run mode</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">WGS mode</label><label for="__tabbed_3_2">Panel mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>to run the pipeline the command is the following: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>./scripts/run_pipeline<span class="w"> </span>&lt;sample_data&gt;<span class="w"> </span><span class="s2">&quot;tumorID,referenceID&quot;</span><span class="w"> </span>&lt;gen_version&gt;<span class="w"> </span>&lt;run_mode&gt;<span class="w"> </span>&lt;threads&gt;<span class="w"> </span>&lt;memory&gt;
+</code></pre></div>
+<h3 id="sample-data-directory-output-directory_2"><code>sample data</code> directory = output directory<a class="headerlink" href="#sample-data-directory-output-directory_2" title="Permanent link">&para;</a></h3>
+<p>The <code>sample_data</code> directory must have:</p>
+<ul>
+<li>a directory named as the sample's tumorId</li>
+<li>tumor and reference fastq files in the sample's directory, named as tumorId and referenceId.fastq.gz</li>
+</ul>
+<p>i.e. see folder tree below</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sample_data
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w"> </span>└──<span class="w"> </span>tumorID
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">      </span>├──<span class="w"> </span>referenceId.fastq.gz
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">      </span>└──<span class="w"> </span>tumorId.fastq.gz
+</code></pre></div>
+<p>The pipeline searches for the files that match the regex <code>tumorId.*.fastq.gz</code> and <code>referenceId.*.fastq.gz</code> in order to perform the alignment. Therefore, you could provide several fastq.gz files to align as in the example below: </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sample_data
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w"> </span>└──<span class="w"> </span>tumorID
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">      </span>├──<span class="w"> </span>referenceId_L001_R1_001.fastq.gz
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">      </span>├──<span class="w"> </span>referenceId_L001_R2_001.fastq.gz
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">      </span>├──<span class="w"> </span>tumorId_L001_R1_001.fastq.gz
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">      </span>└──<span class="w"> </span>tumorId_L001_R2_001.fastq.gz
+</code></pre></div>
+the pipeline will match all the fastq files that start with the <code>referenceId</code> or <code>tumorId</code> and end with <code>fastq.gz</code>, then it aligns them to the <strong>reference genome</strong>.</p>
+<h3 id="gen_version-parameter_2"><code>gen_version</code> parameter<a class="headerlink" href="#gen_version-parameter_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Genome version</th>
+<th style="text-align: center;">Genome file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">V38</td>
+<td style="text-align: center;"><code>./ref_data_dir/V38/ref_genome/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">V37</td>
+<td style="text-align: center;"><code>./ref_data_dir/V37/ref_genome/Homo_sapiens.GRCh37.GATK.illumina.fasta</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="threads-and-memory-parameters_2"><code>threads</code> and <code>memory</code> parameters<a class="headerlink" href="#threads-and-memory-parameters_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>threads</code> number of threads used for each component</li>
+<li><code>memory</code>: GB allocated to each component (default=12GB)</li>
+</ul>
+<h2 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h2>
+<p>my directory:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>pipeline/test_data/
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w"> </span>└──<span class="w"> </span>ALL-280622
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">      </span>├──<span class="w"> </span>ALL-280622-DIAGNOSTIC-DNA_1.fastq.gz
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">      </span>└──<span class="w"> </span>ALL-280622-DIAGNOSTIC-DNA_2.fastq.gz
+</code></pre></div>
+Run: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>./scripts/run_pipeline<span class="w"> </span>test_data<span class="w"> </span><span class="s2">&quot;ALL-280622&quot;</span><span class="w"> </span>V37<span class="w"> </span>WGS<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">16</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">WGS without reference</p>
+<p>as this example, it is possible to use WGS without a non-tumoral reference. the output is the following: </p>
+<details class="example output without reference">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>TBC
+</code></pre></div>
+</details>
+</div>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<h2 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Federica Brando</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
