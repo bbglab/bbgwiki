@@ -2,9 +2,9 @@
 
 ## Description
 
-BGsignature is a package used to compute mutational profiles. A mutational profile corresponds to the count or the frequencies of mutations in every possible k-nucleotide (e.g., trinucleotide or pentanucleotide) contexts. 
+BGsignature is a tool to compute mutational profiles. A mutational profile corresponds to the count or the frequencies of mutations in every possible k-nucleotide (e.g., trinucleotide or pentanucleotide) contexts. BGsignature can be used from the command line or as a Python package.
 
-BGsignature package includes three tools:
+It includes three main functionalities:
 
 * __count__: get the number of mutations in the k-nucleotide contexts or just count different k-mers
 * __frequency__: get the frequency of mutations (count divided by total mutations) in the k-nucleotide contexts
@@ -38,6 +38,8 @@ The region file can simply include the coordinates of the reference genome (all 
 bgsignature count -r my/regions/file -s 3 -g hg38 --cores 4 --collapse --exclude-N -o my/count.json
 ```
 
+`collapse` add together reverse complementary sequences
+
 ### 3. Get the frequency of mutations normalized by trinucleotide bias
 
 ```bash
@@ -45,7 +47,7 @@ bgsignature normalize -m my/muts.tsv -r my/regions.tsv --normalize my/count.json
 ```
 
 ## Repository
-Click here to see the [repository of BGsignature](https://bitbucket.org/bgframework/bgsignature/src/master/){:target="_blank"}.
+Check out the [BGsignature repository](https://bitbucket.org/bgframework/bgsignature/src/master/){:target="_blank"}. It includes additional information and (not fully comprehensive) examples on how to use the tool as Python package.
 
 ## Reference
 - Stefano Pellegrini
