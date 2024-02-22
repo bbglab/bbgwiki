@@ -10,7 +10,7 @@ install.packages('Seurat')
 library(Seurat)
 ```
 
-For further usage, please refer to: https://satijalab.org/seurat/
+For further usage, please refer to the [Seurat website](https://satijalab.org/seurat/)
 
 
 ## Reference
