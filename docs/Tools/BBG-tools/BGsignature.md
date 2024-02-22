@@ -22,14 +22,25 @@ pip install bgsignature
 
 BGsignature requires two input files:
 
-* __mutation file__: a compressed tab separated file (tsv) including an header and at least the following columns: CHROMOSOME, POSITION, REF, ALT. Other useful but not necessary columns to include in the mutation file are SAMPLE, CANCER_TYPE and SIGNATURE.
-* __regions file__: 
+* __mutations file__: tab separated file (can be compressed into gz, bgz or xz formats) with a header and at least these columns: CHROMOSOME, POSITION, REF, ALT. In addition, SAMPLE, CANCER_TYPE and SIGNATURE are optional columns that can be used for grouping the signature.
 
-# Examples
+* __regions file__: tab separated file (can be compressed into gz, bgz or xz formats) with a header and at least these columns: CHROMOSOME, START, END, ELEMENT. In addition, SYMBOL, and SEGMENT are optional columns that can be used for grouping the signature.
+
+## Examples
+
+Example on how to compute the normalized frequency of mutations in trinucleotide contexts, i.e., the mutationalal profile of 192 channels often used by the driver discovery methods developed by the BBGLab.
+
+1. Get the region files.
+
+The region file can simply include the coordinates of the reference genome (including all regions), or the coordinates of a subset of regions of interest that the user want to use to compute the mutational profiles. The reference genome can be downloaded from different sources such as the [UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgTables){:target="_blank"}.
+
+2. Get the count of mutatation in trinucleotide contexts
 
 ```bash
-<examples on how to compute the mutational profiles of 192 channels used by the methods in intogen>
+bgsignature count -r my/regions/file -s 3 -g hg38 --cores 4 --collapse --exclude-N -o my/count.json
 ```
+
+3. Get the frequency of mutations normalized by trinucleotide bias
 
 
 ## Repository
