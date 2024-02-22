@@ -92,6 +92,9 @@ Full instructions on how to download and use cached files can be found [here](ht
 
 Be careful when running VEP with the TAB output and then merging again the variants from a VCF file, some indels are reformated in VEP and you cannot pair them with the original mutations.
 
+!!! info
+    You can find another example using VEP data and google cloud -- see [Extract minibams from Hartwig data in googleCloud](../../Plots_and_scripts/minibam_hartwig_GCP) section.
+
 ## Links
 
 - [Ensembl-VEP documentation](https://www.ensembl.org/info/docs/tools/vep/script/VEP_script_documentation.pdf)
