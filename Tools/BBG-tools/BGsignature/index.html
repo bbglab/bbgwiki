@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -3449,7 +3449,7 @@
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Example on how to compute the normalized frequency of mutations in trinucleotide contexts, i.e., the mutationalal profile of 192 channels often used by the driver discovery methods developed by the BBGLab.</p>
 <h3 id="1-get-the-region-files">1. Get the region files<a class="headerlink" href="#1-get-the-region-files" title="Permanent link">&para;</a></h3>
-<p>The region file can simply include the coordinates of the reference genome (all regions), or the coordinates of a subset of regions of interest. The reference genome can be downloaded from different sources such as the <a href="https://genome.ucsc.edu/cgi-bin/hgTables" target="_blank">UCSC Genome Browser</a>.</p>
+<p>The region file can simply include the coordinates of the reference genome (all regions), or the coordinates of a subset of regions of interest. The reference genome can be downloaded from different sources such as the <a href="https://www.ncbi.nlm.nih.gov/datasets/genome/" target="_blank">GenBank</a> or <a href="https://genome.ucsc.edu/cgi-bin/hgTables" target="_blank">UCSC Genome Browser</a>.</p>
 <h3 id="2-get-the-count-of-trinucleotides-it-will-be-used-to-normalize-the-frequency-of-mutations">2. Get the count of trinucleotides (it will be used to normalize the frequency of mutations)<a class="headerlink" href="#2-get-the-count-of-trinucleotides-it-will-be-used-to-normalize-the-frequency-of-mutations" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bgsignature<span class="w"> </span>count<span class="w"> </span>-r<span class="w"> </span>my/regions/file<span class="w"> </span>-s<span class="w"> </span><span class="m">3</span><span class="w"> </span>-g<span class="w"> </span>hg38<span class="w"> </span>--cores<span class="w"> </span><span class="m">4</span><span class="w"> </span>--collapse<span class="w"> </span>--exclude-N<span class="w"> </span>-o<span class="w"> </span>my/count.json
 </code></pre></div>
@@ -3518,7 +3518,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
