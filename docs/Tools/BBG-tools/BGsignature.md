@@ -30,7 +30,7 @@ Example on how to compute the normalized frequency of mutations in trinucleotide
 
 ### 1. Get the region files
 
-The region file can simply include the coordinates of the reference genome (all regions), or the coordinates of a subset of regions of interest. The reference genome can be downloaded from different sources such as the [UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgTables){:target="_blank"}.
+The region file can simply include the coordinates of the reference genome (all regions), or the coordinates of a subset of regions of interest. The reference genome can be downloaded from different sources such as the [GenBank](https://www.ncbi.nlm.nih.gov/datasets/genome/){:target="_blank"} or [UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgTables){:target="_blank"}.
 
 ### 2. Get the count of trinucleotides (it will be used to normalize the frequency of mutations)
 
