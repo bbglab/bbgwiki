@@ -29,6 +29,7 @@ Optional arguments:
     -w: target node
     -J: job name
     -x: binary that you want to run interactively
+    -p: specify queue
 ```
 
 #### 1. `salloc`
