@@ -15,7 +15,7 @@ If the `login01` has changed to `bbgn###` where `###` is the number identifying 
 Apart from the basic use, there are optional arguments/flags for extra features:
 
 ```bash
-interactive [-c] [-m] [-w] [-J] [-x]
+interactive [-c] [-m] [-w] [-J] [-x] [-p]
 ```
 
 - `-c`: Number of CPU cores (default: 1)
@@ -23,6 +23,7 @@ interactive [-c] [-m] [-w] [-J] [-x]
 - `-w`: Target node
 - `-J`: Job name
 - `-x`: Binary that you want to run interactively
+- `-p`: specify queue (see [queues](https://bbglab.github.io/bbgwiki/Cluster_basics/queues/))
 
 ## Reference
 
