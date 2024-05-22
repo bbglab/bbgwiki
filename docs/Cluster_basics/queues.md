@@ -4,10 +4,10 @@
 When submitting jobs to the bbgcluster, with [interactive](https://bbglab.github.io/bbgwiki/Cluster_basics/Interactive/) or e.g., [sbatch](https://bbglab.github.io/bbgwiki/Cluster_basics/Submitting_jobs/SLURM/), you have the option to specify the queue/partition where sending the job. By default (if not specified), it goes to the `normal`partition.
 
 ### Choose the correct queue
-Selecting the right queue is crucial for the proper functioning of the cluster:
-- `normal`: Standard job in terms of time and resources. E.g, notebook, an `interactive`, etc
-- `bigmem`: Job requiring a lot of memory. 512Gb at max.
-- `bigrun`: Job requiring a lot of nodes during hours/days (a lot of cpus/mem). Normally this case is when using a (nextflow) pipeline and your main job is submitting many sub-jobs to the queue for days. *Optimal for intogen/boostDM, sarek, deepUMIcaller,... jobs*
+Selecting the right queue is crucial for the proper functioning of the cluster:    
+- `normal`: Standard job in terms of time and resources. E.g, notebook, an `interactive`, etc    
+- `bigmem`: Job requiring a lot of memory. 512Gb at max.    
+- `bigrun`: Job requiring a lot of nodes during hours/days (a lot of cpus/mem). Normally this case is when using a (nextflow) pipeline and your main job is submitting many sub-jobs to the queue for days. *Optimal for intogen/boostDM, sarek, deepUMIcaller,... jobs*    
 
 ### List queues
 
