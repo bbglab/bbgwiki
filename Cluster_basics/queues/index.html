@@ -3365,10 +3365,10 @@
 <h1 id="queues">Queues<a class="headerlink" href="#queues" title="Permanent link">&para;</a></h1>
 <p>When submitting jobs to the bbgcluster, with <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/Interactive/">interactive</a> or e.g., <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/Submitting_jobs/SLURM/">sbatch</a>, you have the option to specify the queue/partition where sending the job. By default (if not specified), it goes to the <code>normal</code>partition.</p>
 <h3 id="choose-the-correct-queue">Choose the correct queue<a class="headerlink" href="#choose-the-correct-queue" title="Permanent link">&para;</a></h3>
-<p>Selecting the right queue is crucial for the proper functioning of the cluster:
-- <code>normal</code>: Standard job in terms of time and resources. E.g, notebook, an <code>interactive</code>, etc
-- <code>bigmem</code>: Job requiring a lot of memory. 512Gb at max.
-- <code>bigrun</code>: Job requiring a lot of nodes during hours/days (a lot of cpus/mem). Normally this case is when using a (nextflow) pipeline and your main job is submitting many sub-jobs to the queue for days. <em>Optimal for intogen/boostDM, sarek, deepUMIcaller,... jobs</em></p>
+<p>Selecting the right queue is crucial for the proper functioning of the cluster:  <br />
+- <code>normal</code>: Standard job in terms of time and resources. E.g, notebook, an <code>interactive</code>, etc  <br />
+- <code>bigmem</code>: Job requiring a lot of memory. 512Gb at max.  <br />
+- <code>bigrun</code>: Job requiring a lot of nodes during hours/days (a lot of cpus/mem). Normally this case is when using a (nextflow) pipeline and your main job is submitting many sub-jobs to the queue for days. <em>Optimal for intogen/boostDM, sarek, deepUMIcaller,... jobs</em>    </p>
 <h3 id="list-queues">List queues<a class="headerlink" href="#list-queues" title="Permanent link">&para;</a></h3>
 <p>Once you enter the bbgcluster, you will see in the terminal <code>&lt;username&gt;@login01</code>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;username&gt;@login01:~$ sinfo
