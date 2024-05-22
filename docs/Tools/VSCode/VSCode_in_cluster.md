@@ -93,7 +93,7 @@ From your bbgcluster home do:
 
 ```
 unset XDG_RUNTIME_DIR && \
-code-server --port 8090 \ 
+code-server --port 8090 \
             --bind-addr 0.0.0.0 \
             --cert vscode.crt \
             --cert-key vscode.key
