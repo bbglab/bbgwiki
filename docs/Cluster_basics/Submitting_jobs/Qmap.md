@@ -32,7 +32,23 @@ $ qmap submit filename.qmap
 
 ```
 
+## Aditional info 
+
+### Extra parameters
+
+If you need to provide any [extra parameter](https://qmap.readthedocs.io/en/latest/concepts.html#parameters) directly to SLURM, you can do it defining a new profile.config file. E.g.
+```
+executor = slurm
+
+[params]
+extra = -p bigmem
+```
+
+By default, the queue used is `bigrun`.
+
+
+
 ## Reference
 
-- Jordi Deu-Pons
+- Federica Brando
 - Miguel Grau
