@@ -653,6 +653,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aditional-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aditional info
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aditional info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -3371,6 +3395,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aditional-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aditional info
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aditional info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -3415,9 +3463,18 @@
 <h3 id="2-run-qmap-submit-from-the-login-node">2. Run "qmap submit" from the login node<a class="headerlink" href="#2-run-qmap-submit-from-the-login-node" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>qmap<span class="w"> </span>submit<span class="w"> </span>filename.qmap
 </code></pre></div>
+<h2 id="aditional-info">Aditional info<a class="headerlink" href="#aditional-info" title="Permanent link">&para;</a></h2>
+<h3 id="extra-parameters">Extra parameters<a class="headerlink" href="#extra-parameters" title="Permanent link">&para;</a></h3>
+<p>If you need to provide any <a href="https://qmap.readthedocs.io/en/latest/concepts.html#parameters">extra parameter</a> directly to SLURM, you can do it defining a new profile.config file. E.g.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>executor = slurm
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>[params]
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>extra = -p bigmem
+</code></pre></div></p>
+<p>By default, the queue used is <code>bigrun</code>.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Jordi Deu-Pons</li>
+<li>Federica Brando</li>
 <li>Miguel Grau</li>
 </ul>
 
