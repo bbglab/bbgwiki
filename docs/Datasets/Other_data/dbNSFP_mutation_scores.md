@@ -13,7 +13,11 @@ We can retrieve mutation scores for a given set of input mutations using the com
 Within an interactive session in the cluster, you can use the following command line as a template and modify it according to your specific needs:
 
 ```
-singularity exec /workspace/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /workspace/datasets/vep/homo_sapiens/111_GRCh38/ --format ensembl --tab -i input_mutations.tsv --offline --cache -o output_annotated_mutations.tsv --species homo_sapiens --assembly GRCh38 --fork 8 --canonical --plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz,SIFT_score,SIFT4G_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationAssessor_score,FATHMM_score,MetaLR_score,MetaRNN_score,CADD_raw,VEST4_score,PROVEAN_score,REVEL_score,ESM1b_score,EVE_score,AlphaMissense_score,phyloP100way_vertebrate,phyloP470way_mammalian,phyloP17way_primate
+singularity exec /workspace/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /workspace/datasets/vep/ \
+--tab -i input_mutations.tsv --offline --cache -o output_annotated_mutations.tsv \
+--species homo_sapiens --assembly GRCh38 --fork 8 --canonical \
+--plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz,\
+SIFT_score,SIFT4G_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationAssessor_score,FATHMM_score,MetaLR_score,MetaRNN_score,CADD_raw,VEST4_score,PROVEAN_score,REVEL_score,ESM1b_score,EVE_score,AlphaMissense_score,phyloP100way_vertebrate,phyloP470way_mammalian,phyloP17way_primate
 ```
 
 ## Remarks
@@ -21,8 +25,7 @@ singularity exec /workspace/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep 
 `input_mutations.tsv` must be in an accepted format for VEP, a tab separated file with **chromosome**, **start**, **end** and **variant** like in the following example will work.
 
 ```
-15	90084266	90084266	C/A
-15	90084267	90084267	T/A
+17  43045712    43045712    T/C
 ```
 
 `output_annotated_mutations.tsv` is the filename of the output.
@@ -35,8 +38,8 @@ Bear in mind that some scores have several tracks of data and some postprocessin
 
 
 ## Reference
-Ferran Muiños
-Paula Gomis
+Ferran Muiños, 
+Paula Gomis, 
 Miguel Grau
 
-2024/02/22
+Updated 2024/07/01
