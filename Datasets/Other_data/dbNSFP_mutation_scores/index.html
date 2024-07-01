@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -144,7 +144,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -3371,22 +3371,25 @@ for variant effect analysis, including benchmarking of new variant effect tools.
 <h2 id="how-to-fetch-mutation-scores-from-the-dbnsfp-database">How to fetch mutation scores from the dbNSFP database<a class="headerlink" href="#how-to-fetch-mutation-scores-from-the-dbnsfp-database" title="Permanent link">&para;</a></h2>
 <p>We can retrieve mutation scores for a given set of input mutations using the command line from the ENSEMBL-VEP alongside the <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_plugins.html#dbnsfp">dbNSFP plugin</a>.</p>
 <p>Within an interactive session in the cluster, you can use the following command line as a template and modify it according to your specific needs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>singularity exec /workspace/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /workspace/datasets/vep/homo_sapiens/111_GRCh38/ --format ensembl --tab -i input_mutations.tsv --offline --cache -o output_annotated_mutations.tsv --species homo_sapiens --assembly GRCh38 --fork 8 --canonical --plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz,SIFT_score,SIFT4G_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationAssessor_score,FATHMM_score,MetaLR_score,MetaRNN_score,CADD_raw,VEST4_score,PROVEAN_score,REVEL_score,ESM1b_score,EVE_score,AlphaMissense_score,phyloP100way_vertebrate,phyloP470way_mammalian,phyloP17way_primate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>singularity exec /workspace/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /workspace/datasets/vep/ \
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--tab -i input_mutations.tsv --offline --cache -o output_annotated_mutations.tsv \
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--species homo_sapiens --assembly GRCh38 --fork 8 --canonical \
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz,\
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>SIFT_score,SIFT4G_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationAssessor_score,FATHMM_score,MetaLR_score,MetaRNN_score,CADD_raw,VEST4_score,PROVEAN_score,REVEL_score,ESM1b_score,EVE_score,AlphaMissense_score,phyloP100way_vertebrate,phyloP470way_mammalian,phyloP17way_primate
 </code></pre></div>
 <h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
 <p><code>input_mutations.tsv</code> must be in an accepted format for VEP, a tab separated file with <strong>chromosome</strong>, <strong>start</strong>, <strong>end</strong> and <strong>variant</strong> like in the following example will work.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>15  90084266    90084266    C/A
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>15  90084267    90084267    T/A
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>17  43045712    43045712    T/C
 </code></pre></div>
 <p><code>output_annotated_mutations.tsv</code> is the filename of the output.</p>
 <p><code>--canonical</code> is a VEP command line option, it simply adds a column pointing out whether the transcript is canonical.</p>
 <p>Right after <code>--plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz</code> and separated by commas it goes the list of all the accepted scores that you want to be mapped to your query mutations. You can check out the full list of scores here:</p>
 <p>Bear in mind that some scores have several tracks of data and some postprocessing might be required after the query.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<p>Ferran Muiños
-Paula Gomis
+<p>Ferran Muiños, 
+Paula Gomis, 
 Miguel Grau</p>
-<p>2024/02/22</p>
+<p>Updated 2024/07/01</p>
 
 
 
@@ -3442,7 +3445,7 @@ Miguel Grau</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
     
   </body>
