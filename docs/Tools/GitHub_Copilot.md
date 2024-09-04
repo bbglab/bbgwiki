@@ -28,7 +28,7 @@ Here's the official video from VSCode explaining the basic features of GitHub Co
 }
 </style>
 
-### 1. Ghost Text
+### Ghost Text
 
 - Code as you normally would, and the ghost text will start to appear.
 - You can also trigger the ghost text by writting a comment about what you want to do.
@@ -37,7 +37,7 @@ Here's the official video from VSCode explaining the basic features of GitHub Co
 
 ![Ghost text](../assets/images/example-ghc-ghost.png)
 
-### 2. Code Suggestions
+### Code Suggestions
 
 - If you want to see more suggestions, you can hit `Ctrl + Enter` for Copilot to generate several suggestions in a separate window for you to accept whichever one you want to use.
 
@@ -47,7 +47,7 @@ Here's the official video from VSCode explaining the basic features of GitHub Co
     If you are using a Jupyter Notebook, the `Ctrl + Enter` command will run the cell, so if you want to open the suggestions panel, you can change the keybinding in the settings.
     Go to `File > Preferences > Keyboard Shortcuts`, search for `GitHub Copilot: Open Completions Panel` and change the keybinding to whatever you want (for example, `Ctrl + K`, `Ctrl + Enter`).
 
-### 3. Inline Chat
+### Inline Chat
 
 - Triggered by `Ctrl + I`.
 - The generated code doesn't exist in your file until you hit accept.
@@ -55,7 +55,7 @@ Here's the official video from VSCode explaining the basic features of GitHub Co
 
 ![Inline chat](../assets/images/example-ghc-inline-chat.png)
 
-### 4. Chat Sidebar
+### Chat Sidebar
 
 - Classic chat interface.
 - In the side bar, search for the chat icon.
@@ -67,11 +67,11 @@ Here's the official video from VSCode explaining the basic features of GitHub Co
 
 ![Chat Sidebar](../assets/images/example-ghc-chat-sidebar.png)
 
-### 4. Code Refactoring
+### Code Refactoring
 
 Copilot is very useful even if you are not actively interacting with it. Just by typing and accepting the ghost suggestions, you will see your coding performance improving. Having said that, there are more ways you can use Copilot to refactor your code.
 
-#### 4.1. Improve Code
+#### Improve Code
 
 You can ask Copilot to improve your code, for example, by making it more efficient, more readable, or by adding documentation and comments to it.
 
@@ -79,62 +79,68 @@ You can ask Copilot to improve your code, for example, by making it more efficie
 - **Readability**: Copilot can suggest ways to make your code more readable, for example, by using more descriptive variable names or by breaking down complex code into smaller, more manageable pieces.
 - **Documentation**: Copilot can suggest ways to add documentation and comments to your code, for example, by adding comments to explain what a particular piece of code does or by adding documentation to explain how a particular function works.
 
-#### 4.2. Rename Variables
+#### Rename Variables
 
 By typing `F2` when having your cursor on top of a variable or function name, you can rename it accross the entire file. This is integrated in VSCode by default, but with Github Copilot, you get access to suggestions for the new names.
 
 ![Example Rename Variable](../assets/images/example-ghc-rename.png)
 
-### 5. Git Integration
+### Git Integration
 
-#### 5.1. Commits
+#### Commits
 
 If you go to the source control tab in VSCode, you will see a sparkle ✨ icon that when clicked will understand the changes you made and suggest a commit message for you.
 
 ![Example Github Copilot Commit](../assets/images/example-ghc-commit.png)
 
-#### 5.2 Pull Requests
+#### Pull Requests
 
-### 6. Useful Commands
+Github Copilot can also help you create a pull request. After clicking the icon to create a pull request next to your branch, you will see the prompt to add a title and the pull request body. Next to the title box, you will see the same sparkle ✨ icon that will suggest both the title and the body of the pull request.
 
-#### 6.1. `/fix`
+![Example Github Copilot Pull Request](../assets/images/example-ghc-pr.png)
+
+### Useful Commands
+
+#### `/fix`
 
 Fix the selected code. You can also give the error message you are getting. This command is more powerful than not using it, even though sometimes there might be no difference.
 
 ![Example Function Error](../assets/images/example-function-error.png)
 ![Example Github Copilot Fix](../assets/images/example-ghc-fix.png)
 
-#### 6.2. `/explain`
+#### `/explain`
 
 Explain the selected code.
 
 ![Example Github Copilot Explain Command](../assets/images/example-ghc-explain.png)
 
-#### 6.3. `/test`
+#### `/tests`
 
-The command `/test` will generate a test for the selected code. This makes writting tests much easier and faster.
+The command `/tests` will generate a test for the selected code. This makes writting tests much easier and faster.
 
 ![Example Github Copilot Test](../assets/images/example-ghc-tests.png)
 
-#### 6.4. `/new`
+#### `/new`
 
-Create any file you want with the instructions you provide.
+Create any file or even workspace based on your instructions. This also includes the content of the file.
 
-#### 6.5. `/newNotebook`
+![Example GitHub Copilot New](../assets/images/example-ghc-new.png)
+
+#### `/newNotebook`
 
 Create a Jupyter Notebook based on the instructions you provide. It works better than the `/new` since this one is specifically designed for Jupyter Notebooks, which turns more powerful for this usecase.
 
 ![Example Github Copilot /newNotebook](../assets/images/example-ghc-newnotebook.png)
 
-#### 6.6. `@terminal`
+#### `@terminal`
 
 Ask how to do something in the terminal.
 
-### 7. Manage Context
+### Manage Context
 
 Normally, if you want to provide context for your query, you simply need to **highlight** the code you want to use as context. However, you can also use the following commands to provide context:
 
-#### 7.1. `@workspace`
+#### `@workspace`
 
 By adding this command next to your query, you are telling Copilot to look at the entire workspace to give you a better suggestion. The workspace corresponds to the root folder that you have opened in VSCode.
 
@@ -143,7 +149,7 @@ By adding this command next to your query, you are telling Copilot to look at th
 !!! TIP
     Try to open VSCode in the root folder of your project, instead of a very general folder (such as `/workspace`, `/workspace/projects`, etc), to get more accurate suggestions, since Copilot won't have to look through a lot of files to give you a suggestion.
 
-#### 7.2. `#file`
+#### `#file`
 
 If you want to use one or more specific files as context for your query, you can add the `#file` command followed by the name of the file you want to use. This can be done as many times as you want, with different files.
 
@@ -152,13 +158,13 @@ If you want to use one or more specific files as context for your query, you can
 !!! WARNING
     If the file you are using as context is too big, Copilot will highlight that file indicating that it couldn't use the whole content of the file, but still attempt to give you a suggestion based on the part of the file it could read.
 
-#### 7.3. `#terminalSelection`
+#### `#terminalSelection`
 
 Similarly to the way that you can just select part of your code to use it as context for Copilot, you can highlight anything in the terminal and use the `#terminalSelection` command to tell Copilot to use that as context.
 
 ![Example Github Copilot Terminal Selection](../assets/images/example-ghc-terminal-selection.png)
 
-#### 7.3. `#terminalLastCommand`
+#### `#terminalLastCommand`
 
 If you want to use the last command you executed in the terminal as context for your query, you can use the `#terminalLastCommand` command.
 
