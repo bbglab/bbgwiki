@@ -59,6 +59,9 @@ Here's the official video from VSCode explaining the basic features of GitHub Co
 
 - Classic chat interface.
 - In the side bar, search for the chat icon.
+
+![GitHub Copilot Chat Icon](../assets/images/gh-chat-icon.png)
+
 - You can ask for help, ask for explanations, or ask for more suggestions.
 - When you get code suggested, you also get a small panel to quickly insert the code into your file, copy the content, and more options.
 
