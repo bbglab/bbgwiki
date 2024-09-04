@@ -68,11 +68,11 @@ Copilot is very useful even if you are not actively interacting with it. Just by
 
 You can ask Copilot to improve your code, for example, by making it more efficient, more readable, or by adding documentation and comments to it.
 
-#### 4.2. Simplify Code
+- **Efficiency**: Copilot can suggest ways to make your code more efficient, for example, by using a more efficient algorithm or by reducing the number of lines of code.
+- **Readability**: Copilot can suggest ways to make your code more readable, for example, by using more descriptive variable names or by breaking down complex code into smaller, more manageable pieces.
+- **Documentation**: Copilot can suggest ways to add documentation and comments to your code, for example, by adding comments to explain what a particular piece of code does or by adding documentation to explain how a particular function works.
 
-You can ask Copilot to simplify your code. This can be useful when you have a complex piece of code that you want to make more readable or efficient. It is also useful when trying to understand code from someone else (see [!explain](#)
-
-#### 4.4. Rename Variables
+#### 4.2. Rename Variables
 
 By typing `F2` when having your cursor on top of a variable or function name, you can rename it accross the entire file. This is integrated in VSCode by default, but with Github Copilot, you get access to suggestions for the new names.
 
@@ -93,6 +93,9 @@ If you go to the source control tab in VSCode, you will see a sparkle ✨ icon t
 #### 6.1. `/fix`
 
 Fix the selected code. You can also give the error message you are getting. This command is more powerful than not using it, even though sometimes there might be no difference.
+
+![Example Function Error](../assets/images/example-function-error.png)
+![Example Github Copilot Fix](../assets/images/example-ghc-fix.png)
 
 #### 6.2. `/explain`
 
@@ -152,10 +155,37 @@ Similarly to the way that you can just select part of your code to use it as con
 
 If you want to use the last command you executed in the terminal as context for your query, you can use the `#terminalLastCommand` command.
 
-!!! NOTE
+!!! TIP
     The difference between this one and the ' #terminalSelection' is that this one will use the last command you executed in the terminal, whithout having to highlight anything, while the other one will use whatever you have selected in the terminal, even if it has nothing to do with the latest command you executed.
 
+### Installation & Setup
+
+#### Local Machine
+
+If you want to install GitHub Copilot in your local machine, you can simply install it from the Extensions tab in VSCode. Once you hit install, it will ask you to sign in with your GitHub account.
+
+!!! NOTE
+    You need to have done the setup asked by IT in order to enrol into the GitHub Academy program. The instructions on how to do so are [here](https://irbwiki.irbbarcelona.pcb.ub.es/books/howtos/page/enrol-github-academy).
+
+#### Cluster
+
+As seen in [VSCode in the cluster](../VSCode/VSCode_in_cluster) or [VSCode in interactive node](../VSCode/cluster_node), you can also use GitHub Copilot in the cluster. Unfortunatelly, as of the time of writing, Copilot cannot be installed as simply as in your local machine. However, you can follow these steps in order to manually install it:
+
+1. Visit the [GitHub Copilot Extension page](https://marketplace.visualstudio.com/items?itemName=github.copilot){:target="_blank"}.
+2. Look for a "Download Extension" link. It shoudl be in the side-bar under the "Resources" header.
+3. You'll get a file called something like `GitHub.copilot-1.226.0.vsix`. Move this file into the cluster.
+4. With your VSCode session opened from the cluster, go to the Extensions tab and click on the three dots in the top right corner. Select "Install from VSIX..." and select the file you just moved into the cluster.
+5. You will be asked to sign in with your GitHub account. Follow the instructions to do so.
+6. You should now have GitHub Copilot installed in your cluster session.
+
+!!! NOTE
+    As of the time of writing, this way of installing GitHub Copilot only includes the feature of the [Ghost Text](#1-ghost-text), but not the rest of the features.
+
 ## GitHub Copilot CLI
+
+You can use GitHub Copilot in the terminal as well!
+
+Here's a video with the installation process and an explanation of how to use GitHub Copilot CLI in the terminal:
 
 <div class="video-wrapper">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/fHwtrOcLAnI?si=7ztVv97_zvfsFCde" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -174,8 +204,6 @@ If you see that the suggestion needs to be changed or you want to add extra info
 ![Example GHCS Revise](../assets/images/example-ghcs-revise.png)
 
 ### Installation
-
-Here's a video explaining the installation process for GitHub Copilot CLI:
 
 The instructions on how to set it up can be found [here](https://github.blog/changelog/2024-03-21-github-copilot-general-availability-in-the-cli/){:target="_blank"}.
 
