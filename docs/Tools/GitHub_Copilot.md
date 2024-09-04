@@ -43,6 +43,10 @@ Here's the official video from VSCode explaining the basic features of GitHub Co
 
 ![Github Copilot Suggestions](../assets/images/example-ghc-suggestions.png)
 
+!!! TIP
+    If you are using a Jupyter Notebook, the `Ctrl + Enter` command will run the cell, so if you want to open the suggestions panel, you can change the keybinding in the settings.
+    Go to `File > Preferences > Keyboard Shortcuts`, search for `GitHub Copilot: Open Completions Panel` and change the keybinding to whatever you want (for example, `Ctrl + K`, `Ctrl + Enter`).
+
 ### 3. Inline Chat
 
 - Triggered by `Ctrl + I`.
