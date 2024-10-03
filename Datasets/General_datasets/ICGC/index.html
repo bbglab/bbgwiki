@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -919,6 +919,15 @@
   <a href="#data-access" class="md-nav__link">
     <span class="md-ellipsis">
       Data access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download data files
     </span>
   </a>
   
@@ -3374,6 +3383,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#download-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download data files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#citing-in-publications-and-presentations" class="md-nav__link">
     <span class="md-ellipsis">
       Citing in Publications and Presentations
@@ -3409,16 +3427,35 @@
 <h1 id="icgc">ICGC<a class="headerlink" href="#icgc" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>The International Cancer Genome Consortium (ICGC) is a global initiative to build a comprehensive catalog of mutational abnormalities in the major tumor types. ICGC’s Data Portal is a user-friendly platform for efficient visualization, analysis and interpretation of large, diverse cancer datasets. </p>
-<p>The portal currently contains data from 84 worldwide cancer projects, collectively representing about 77 million somatic mutations and molecular data from over 20,000 contributors.</p>
-<p>The ICGC Data Portal provides many tools for visualizing, querying, and downloading cancer data, which is released on a quarterly schedule.</p>
+<p>The portal currently contains data from 86 worldwide cancer projects, collectively representing about 77 million somatic mutations and molecular data from over 20,000 contributors.</p>
+<p>ICGC Data portal also inculde cases from PCWAG and TCGA cohorts.</p>
+<p><strong>Note</strong></p>
+<p>The ICGC Data Portal officially closed in June, 2024</p>
+<p>While the interactive web portal has been decommissioned, the most recent release and PCAWG data remain available for authorized users. For information on accessing ICGC 25K data, see the documentation for <a href="https://docs.icgc-argo.org/docs/data-access/icgc-25k-data">ICGC 25K Data Access</a>.</p>
+<p>If you have any questions please contact the <a href="https://platform.icgc-argo.org/contact">ICGC ARGO Helpdesk</a></p>
+<p><strong>New features</strong></p>
+<ul>
+<li>Data Release 28 was the last data release of the ICGC-25K Data Portal. The ICGC Data Portal is no longer accepting data submissions.</li>
+<li>We are excited to announce the launch of the <a href="https://platform.icgc-argo.org/">ICGC ARGO Data Platform</a>, a major milestone following the ICGC 25K Data Portal. ARGO represents an international effort to advance cancer genomics through high-quality clinical and molecular data for international researchers.</li>
+</ul>
 <h2 id="data-access">Data access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
-<p>You can find the data from ICGC in the folder:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
+<p>You can find the last data-version (2021) from ICGC in the folder:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/workspace/datasets/intogen_datasets/genomes/datasets/icgc/20211021/
 </code></pre></div></p>
-<div class="admonition note annotate">
-<p class="admonition-title">Website</p>
-<p><a href="https://dcc.icgc.org" target="_blank">https://dcc.icgc.org</a></p>
-</div>
+<h2 id="download-data-files">Download data files<a class="headerlink" href="#download-data-files" title="Permanent link">&para;</a></h2>
+<p>ICGC data files (i.e.  bam files) are stored in different repositories depending on the ICGC project they belong. Such repositories have their own architecture, data access controls, data portals and download clients.</p>
+<ul>
+<li>Cancer Genome Collaboratory </li>
+<li>GDC - Chicago</li>
+<li>PDC - Chicago</li>
+<li>EGA - Hinxton</li>
+<li>Azure - Toronto</li>
+<li>AWS - Virginia</li>
+</ul>
+<p>To download controlled data, a user must apply for access at the corresponding data access control body. 
+- US based projects are authorized by dbGaP.
+- non-US projects are authorized by the ICGC Data Access Compliance Office (DACO).</p>
+<p>More information in <a href="https://docs.icgc.org/download/data-access/">ICGC DDC Docs</a></p>
 <h2 id="citing-in-publications-and-presentations">Citing in Publications and Presentations<a class="headerlink" href="#citing-in-publications-and-presentations" title="Permanent link">&para;</a></h2>
 <p>To cite the ICGC 25K Data Portal, please cite this publication:</p>
 <blockquote>
@@ -3430,6 +3467,7 @@
 <ul>
 <li>Paula Gomis</li>
 <li>Monica Sanchez</li>
+<li>Joan Enric</li>
 </ul>
 
 
@@ -3483,10 +3521,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>
