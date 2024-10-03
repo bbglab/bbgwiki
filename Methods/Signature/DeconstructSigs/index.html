@@ -3443,7 +3443,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>library<span class="o">(</span>deconstructSigs<span class="o">)</span>
 </code></pre></div>
 <h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
-<p>The input for the method is a dataframe with the mutational data containing the following colunns:
+<p>The input for the method is a dataframe with the mutational data containing the following columns:
 - sample identifier (sample.id)
 - chromosome (chr)
 - base position (pos)
@@ -3466,7 +3466,7 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">                       </span>sample.id<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>,
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">                       </span>contexts.needed<span class="w"> </span><span class="o">=</span><span class="w"> </span>TRUE<span class="o">)</span>
 </code></pre></div>
-<p>Important! If the input data frame contains the raw number of mutations thean it shoul be normalized. The minimum required normalization for the function to work - is the relative frequency of the mutations not the raw counts (so that the sum in the row is equal to 1). For this you can simply set contexts.needed = TRUE when running whichSignatures(). Further normalization for the 3nt context of target region can be done using tri.counts.method parameter. Possible values are 'exome', 'genome', 'exome2genome' or the data frame with the corresponding numbers of contexts. </p>
+<p>Important! If the input data frame contains the raw number of mutations then it should be normalized. The minimum required normalization for the function to work - is the relative frequency of the mutations not the raw counts (so that the sum in the row is equal to 1). For this you can simply set contexts.needed = TRUE when running whichSignatures(). Further normalization for the 3nt context of target region can be done using tri.counts.method parameter. Possible values are 'exome', 'genome', 'exome2genome' or the data frame with the corresponding numbers of contexts. </p>
 <p>Optional parameters for reconstruction:
 associated -- vector of signatures (limits the reconstruction to listed signatures)
 signatures.limit -- number (limit the number of signatures present in the reconstruction)
