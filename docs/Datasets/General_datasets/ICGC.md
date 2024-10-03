@@ -5,26 +5,29 @@ The International Cancer Genome Consortium (ICGC) is a global initiative to buil
 
 The portal currently contains data from 86 worldwide cancer projects, collectively representing about 77 million somatic mutations and molecular data from over 20,000 contributors.
 
-The ICGC Data Portal provides many tools for visualizing, querying, and downloading cancer data, which is released on a quarterly schedule.
+ICGC Data portal also inculde cases from PCWAG and TCGA cohorts.
+
 
 **Note**
-ICGC Data portal also inculde cases from PCWAG and TCGA cohorts.
+
+The ICGC Data Portal officially closed in June, 2024
+
+While the interactive web portal has been decommissioned, the most recent release and PCAWG data remain available for authorized users. For information on accessing ICGC 25K data, see the documentation for [ICGC 25K Data Access](https://docs.icgc-argo.org/docs/data-access/icgc-25k-data).
+
+If you have any questions please contact the [ICGC ARGO Helpdesk](https://platform.icgc-argo.org/contact)
+
 
 **New features**
 
 - Data Release 28 was the last data release of the ICGC-25K Data Portal. The ICGC Data Portal is no longer accepting data submissions.
 - We are excited to announce the launch of the [ICGC ARGO Data Platform](https://platform.icgc-argo.org/), a major milestone following the ICGC 25K Data Portal. ARGO represents an international effort to advance cancer genomics through high-quality clinical and molecular data for international researchers.
 
-
 ## Data access
 
-
-You can find the data from ICGC in the folder:
+You can find the last data-version (2021) from ICGC in the folder:
 ```bash 
-
+/workspace/datasets/intogen_datasets/genomes/datasets/icgc/20211021/
 ```
-!!! note annotate "Website" 
-	[https://dcc.icgc.org](https://dcc.icgc.org){:target="_blank"}
 
 ## Download data files
 
@@ -38,11 +41,10 @@ ICGC data files (i.e.  bam files) are stored in different repositories depending
 - AWS - Virginia
 
  To download controlled data, a user must apply for access at the corresponding data access control body. 
-- US based projects are authorized by dbGaP
+- US based projects are authorized by dbGaP.
 - non-US projects are authorized by the ICGC Data Access Compliance Office (DACO).
 
 More information in [ICGC DDC Docs](https://docs.icgc.org/download/data-access/)
-
 
 
 ## Citing in Publications and Presentations
@@ -52,4 +54,5 @@ To cite the ICGC 25K Data Portal, please cite this publication:
 ## Reference
 - Paula Gomis
 - Monica Sanchez
+- Joan Enric
 
