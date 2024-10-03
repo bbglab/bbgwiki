@@ -10,7 +10,7 @@ library(deconstructSigs)
 ```
 
 ### Input 
-The input for the method is a dataframe with the mutational data containing the following colunns:
+The input for the method is a dataframe with the mutational data containing the following columns:
 - sample identifier (sample.id)
 - chromosome (chr)
 - base position (pos)
@@ -42,7 +42,7 @@ sigs.output = whichSignatures(tumor.ref = sigs.input,
                        contexts.needed = TRUE)
 ```
 
-Important! If the input data frame contains the raw number of mutations thean it shoul be normalized. The minimum required normalization for the function to work - is the relative frequency of the mutations not the raw counts (so that the sum in the row is equal to 1). For this you can simply set contexts.needed = TRUE when running whichSignatures(). Further normalization for the 3nt context of target region can be done using tri.counts.method parameter. Possible values are 'exome', 'genome', 'exome2genome' or the data frame with the corresponding numbers of contexts. 
+Important! If the input data frame contains the raw number of mutations then it should be normalized. The minimum required normalization for the function to work - is the relative frequency of the mutations not the raw counts (so that the sum in the row is equal to 1). For this you can simply set contexts.needed = TRUE when running whichSignatures(). Further normalization for the 3nt context of target region can be done using tri.counts.method parameter. Possible values are 'exome', 'genome', 'exome2genome' or the data frame with the corresponding numbers of contexts. 
 
 Optional parameters for reconstruction:
 associated -- vector of signatures (limits the reconstruction to listed signatures)
