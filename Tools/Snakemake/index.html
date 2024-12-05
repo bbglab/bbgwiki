@@ -2901,6 +2901,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#example1-a-simple-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example1. A simple example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example2-wildcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example2. Wildcards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to-be-continued" class="md-nav__link">
     <span class="md-ellipsis">
       TO BE CONTINUED...
@@ -3554,6 +3572,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#example1-a-simple-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example1. A simple example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example2-wildcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example2. Wildcards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to-be-continued" class="md-nav__link">
     <span class="md-ellipsis">
       TO BE CONTINUED...
@@ -3619,29 +3655,29 @@
 <h1 id="snakemake">Snakemake<a class="headerlink" href="#snakemake" title="Permanent link">&para;</a></h1>
 <p>The Snakemake workflow management system is a tool to create <strong>reproducible and scalable</strong> data analyses. Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition. Finally, Snakemake workflows can entail a description of required software, which will be automatically deployed to any execution environment.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>You can use conda/mamba  to install Snakemake:
+<p>You can use conda/mamba  to install Snakemake:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#mamba way. FASTER</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span>conda<span class="w">  </span>install<span class="w">  </span>-n<span class="w">  </span>mambaenv<span class="w">  </span>-c<span class="w">  </span>conda-forge<span class="w">  </span>mamba
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>$<span class="w"> </span>conda<span class="w">  </span>activate<span class="w">  </span>mambaenv
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>$<span class="w"> </span>mamba<span class="w">  </span>create<span class="w">  </span>-c<span class="w">  </span>conda-forge<span class="w">  </span>-c<span class="w">  </span>bioconda<span class="w">  </span>-n<span class="w">  </span>snakemakenv<span class="w">  </span>snakemake
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$<span class="w"> </span>conda<span class="w">  </span>activate<span class="w">  </span>snakemakenv
-</code></pre></div></p>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">#conda way</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>conda<span class="w">  </span>create<span class="w">  </span>-c<span class="w">  </span>conda-forge<span class="w">  </span>-c<span class="w">  </span>bioconda<span class="w">  </span>-n<span class="w">  </span>snakemakenv<span class="w">  </span>snakemake
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$<span class="w"> </span>conda<span class="w">  </span>activate<span class="w">  </span>snakemakenv
 </code></pre></div>
-<p>More details <a href="https://snakemake.readthedocs.io/en/stable/getting_started/installation.html">here</a> </p>
+<p>More details <a href="https://snakemake.readthedocs.io/en/stable/getting_started/installation.html">here</a></p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Before actually running a snakemake pipeline, you can try the <code>dry mode (-np)</code>, which do not execute anything, and display what would be done. This is a good way to check that all the commands/inputs/output are as expected:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>snakemake<span class="w"> </span>--snakefile<span class="w"> </span>example.snk.py<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span><span class="w"> </span>-np
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>snakemake<span class="w"> </span>--snakefile<span class="w"> </span>example.snk.py<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span><span class="w"> </span>-np
 </code></pre></div>
-And if you want to run it:
+<p>And if you want to run it:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>snakemake<span class="w"> </span>--snakefile<span class="w"> </span>example.snk.py<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>For usage documentation, run <code>snakemake --help</code>.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Let's start with a very basic example, a pipeline with a single real step.</p>
-<p>### Example1. A simple example
+<h3 id="example1-a-simple-example">Example1. A simple example<a class="headerlink" href="#example1-a-simple-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">#dry run</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">#snakemake --snakefile example1.snk.py --cores 1 -np</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -3664,19 +3700,21 @@ And if you want to run it:
 <a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="n">shell</span><span class="p">:</span><span class="s2">&quot;&quot;&quot; </span>
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="s2">        fastqc -o output/ -t 1 </span><span class="si">{input}</span>
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="s2">    &quot;&quot;&quot;</span>
-</code></pre></div></p>
+</code></pre></div>
 <div class="admonition warning annotate">
 <p class="admonition-title"> Snakemake starts at the end. </p>
-</div>
-<p>By default snakemake executes the first rule in the snakefile. It is possible to overwrite this behavior by explicitly marking a rule as being the default target via the default_target directive. (<a href="It%20is%20possible%20to%20overwrite%20this%20behavior%20to%20use%20the%20first%20rule%20as%20a%20default%20target,%20by%20explicitly%20marking%20a%20rule%20as%20being%20the%20default%20target%20via%20the%20default_target%20directive:">+ info</a>). </p>
+<p>By default snakemake executes the first rule in the snakefile. It is possible to overwrite this behavior by explicitly marking a rule as being the default target via the default_target directive. </p>
 <p>As you can see, there are two rules, <code>all</code> and <code>FASTQC</code> but actually only one of them (<code>FASTQC</code>) is a proper rule. Our first rule, <code>all</code>, requires as an input the final output of the pipeline, the <code>fastqc.html</code> files. We only define it as a final-rule, to explicity define what we want as a final pipeline ouput. To obtain the rule <code>all</code> input (and finish the pipeline's execution), snakemake checks which rule needs to be executed to obtain it (<code>FASTQC</code>, in this case). Then it checks again the input of <code>FASTQC</code>, in case it is the output from another rule, and so on, until it reaches the beggining of the pipeline. In this example, there is only one rule, so the final output (<code>fastqc.html</code> files) is the output of the unique rule (<code>FASTQC</code>).</p>
-<p>Every step from the pipeline is defined within a rule. Every rule has some basic parameters:
-- <strong>Input/output</strong> where we define the input and expected output of our rule.
-- <strong>Shell/run/script</strong>: A rule can be a bash command (<code>shell</code>), a python script (<code>run</code>) or a script in almost any language (<code>script</code>).</p>
+</div>
+<p>Every step from the pipeline is defined within a rule. Every rule has some basic parameters:</p>
+<ul>
+<li><strong>Input/output</strong> where we define the input and expected output of our rule.</li>
+<li><strong>Shell/run/script</strong>: A rule can be a bash command (<code>shell</code>), a python script (<code>run</code>) or a script in almost any language (<code>script</code>).</li>
+</ul>
 <p>Additionally, there are many optional parameters: <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#threads">threads</a>, <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#resources">resources</a> , <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#preemptible-jobs">preemptible-jobs</a>, <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#messages">messages</a>, <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#log-files">Log-Files</a> and <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html">more.</a>..</p>
-<p>### Example2. <strong>Wildcards</strong></p>
+<h3 id="example2-wildcards">Example2. <strong>Wildcards</strong><a class="headerlink" href="#example2-wildcards" title="Permanent link">&para;</a></h3>
 <p>In this case, we specified (hardcoded) the name of the samples (<code>['sample1_1',  'sample1_2']</code>) and the input folder (<code>data/</code>)</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">#dry run</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">#dry run</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">#snakemake --snakefile example2.snk.py --cores 1 -np</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kn">import</span> <span class="nn">subprocess</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">glob</span>
@@ -3700,10 +3738,8 @@ And if you want to run it:
 <a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>    <span class="n">shell</span><span class="p">:</span><span class="s2">&quot;&quot;&quot; </span>
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="s2">        fastqc -o output/ -t 1 </span><span class="si">{input}</span>
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="s2">    &quot;&quot;&quot;</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="n">Usage</span><span class="p">:</span> <span class="n">nextflow</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">arg</span><span class="o">...</span><span class="p">]</span>
 </code></pre></div>
-Now, If we run the script in dry mode:
+<p>Now, If we run the script in dry mode:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>snakemake<span class="w"> </span>--snakefile<span class="w"> </span>example2.snk.py<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span><span class="w"> </span>-np
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Building<span class="w"> </span>DAG<span class="w"> </span>of<span class="w"> </span>jobs...
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Job<span class="w"> </span>stats:
@@ -3754,9 +3790,11 @@ Now, If we run the script in dry mode:
 <a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>all<span class="w">           </span><span class="m">1</span><span class="w">              </span><span class="m">1</span><span class="w">              </span><span class="m">1</span>
 <a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>total<span class="w">         </span><span class="m">3</span><span class="w">              </span><span class="m">1</span><span class="w">              </span><span class="m">1</span>
 </code></pre></div>
-For every sample defined in the <code>SAMPLES = ['sample1_1', 'sample1_2']</code>, it executes the rule <code>FASTQC</code>:
-- <code>fastqc -o output/ -t 1 data/sample1_1.fastq.gz</code>
-- <code>fastqc -o output/ -t 1 data/sample1_2.fastq.gz</code></p>
+<p>For every sample defined in the <code>SAMPLES = ['sample1_1', 'sample1_2']</code>, it executes the rule <code>FASTQC</code>:</p>
+<ul>
+<li><code>fastqc -o output/ -t 1 data/sample1_1.fastq.gz</code></li>
+<li><code>fastqc -o output/ -t 1 data/sample1_2.fastq.gz</code></li>
+</ul>
 <p>And it ends when the rule <code>all</code> is executed. Three rules are executed in total (<code>FASTQC</code> x2 times + <code>all</code> x 1 time).</p>
 <h3 id="to-be-continued">TO BE CONTINUED...<a class="headerlink" href="#to-be-continued" title="Permanent link">&para;</a></h3>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
@@ -3816,6 +3854,11 @@ For every sample defined in the <code>SAMPLES = ['sample1_1', 'sample1_2']</code
 
     
     <nav>
+      
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
+          
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+        </a>
       
         <a href="https://github.com/migrau" class="md-author" title="@migrau">
           
