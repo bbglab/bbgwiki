@@ -24,6 +24,11 @@ theme:
   features:
     - navigation.top
     - content.code.annotate
+    - search.suggest
+
+plugins: 
+  - search
+  - tags
 
 markdown_extensions:
   - admonition
