@@ -1904,6 +1904,81 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paired-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paired End
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single End
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -3471,6 +3546,81 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paired-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paired End
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single End
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -3495,8 +3645,80 @@
 
 
 <h1 id="trimmomatic">Trimmomatic<a class="headerlink" href="#trimmomatic" title="Permanent link">&para;</a></h1>
+<div class="admonition note annotate">
+<p>Trimmomatic, a  flexible read trimming tool for Illumina NGS data.</p>
+</div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Trimmomatic performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.</p>
+<p>The current trimming steps are:</p>
+<ul>
+<li><strong>ILLUMINACLIP</strong>: Cut adapter and other illumina-specific sequences from the read.</li>
+<li><strong>SLIDINGWINDOW</strong>: Perform a sliding window trimming, cutting once the average quality within the window falls below a threshold.</li>
+<li><strong>LEADING</strong>: Cut bases off the start of a read, if below a threshold quality</li>
+<li><strong>TRAILING</strong>: Cut bases off the end of a read, if below a threshold quality</li>
+<li><strong>CROP</strong>: Cut the read to a specified length</li>
+<li><strong>HEADCROP</strong>: Cut the specified number of bases from the start of the read</li>
+<li><strong>MINLEN</strong>: Drop the read if it is below a specified length</li>
+<li><strong>TOPHRED33</strong>: Convert quality scores to Phred-33</li>
+<li><strong>TOPHRED64</strong>: Convert quality scores to Phred-64</li>
+</ul>
+<p>It works with FASTQ (using phred + 33 or phred + 64 quality scores, depending on the Illumina pipeline used), either uncompressed or gzipp'ed FASTQ. Use of gzip format is determined based on the .gz extension.</p>
+<p>For single-ended data, one input and one output file are specified, plus the processing steps. For paired-end data, two input files are specified, and 4 output files, 2 for the 'paired' output where both reads survived the processing, and 2 for corresponding 'unpaired' output where a read survived, but the partner read did not.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
+<p>Use the bioconda channel to install Trimmomatic:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>trimmomatic
+</code></pre></div>
+<p>Check the installation simply running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>trimmomatic
+</code></pre></div>
+<p>This should output a message or the help output.</p>
+<h3 id="manual-installation">Manual Installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h3>
+<p>As <code>Trimmomatic</code> is a Java-based tool, be sure to have Java installed checking the version:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>java<span class="w"> </span>-version
+</code></pre></div>
+<p>Install it if needed.</p>
+<p>The easiest option is to download a binary release zip, and unpack it somewhere convenient.
+You can download the binary file from the <a href="https://github.com/timflutre/trimmomatic">GitHub</a> official <code>Trimmomatic</code> repo or from the website:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+</code></pre></div>
+<p>I recommend to download the <code>version 0.40</code> directly from the GitHub repo.
+Then you'll have to unzip the downloaded file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>unzip<span class="w"> </span>Trimmomatic-0.40.zip
+</code></pre></div>
+<p>This is optional, but if you want to use <code>Trimmomatic</code> globally, add it to your path:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/path/to/trimmomatic:<span class="nv">$PATH</span>
+</code></pre></div>
+<h2 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
+<h3 id="basic-syntax">Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>java<span class="w"> </span>-jar<span class="w"> </span>trimmomatic.jar<span class="w"> </span>&lt;mode&gt;<span class="w"> </span>&lt;input&gt;<span class="w"> </span>&lt;options&gt;
+</code></pre></div>
+<ul>
+<li><code>mode</code>: Specify whether it's single-end (SE) or paired-end (PE) sequencing.</li>
+<li><code>input</code>: The input FASTQ file(s).</li>
+<li><code>options</code>: Specify trimming options (e.g., adapters, quality thresholds).</li>
+</ul>
+<h3 id="paired-end">Paired End<a class="headerlink" href="#paired-end" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>java<span class="w"> </span>-jar<span class="w"> </span>trimmomatic-0.39.jar<span class="w"> </span>PE<span class="w"> </span>input_forward.fq.gz<span class="w"> </span>input_reverse.fq.gz<span class="w"> </span>output_forward_paired.fq.gz<span class="w"> </span>output_forward_unpaired.fq.gz<span class="w"> </span>output_reverse_paired.fq.gz<span class="w"> </span>output_reverse_unpaired.fq.gz<span class="w"> </span>ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True<span class="w"> </span>LEADING:3<span class="w"> </span>TRAILING:3<span class="w"> </span>MINLEN:36
+</code></pre></div>
+<p>This will perform the following:</p>
+<ul>
+<li>Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)</li>
+<li>Remove leading low quality or N bases (below quality 3) (LEADING:3)</li>
+<li>Remove trailing low quality or N bases (below quality 3) (TRAILING:3)</li>
+<li>Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)</li>
+<li>Drop reads below the 36 bases long (MINLEN:36)</li>
+</ul>
+<h3 id="single-end">Single End<a class="headerlink" href="#single-end" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>java<span class="w"> </span>-jar<span class="w"> </span>trimmomatic-0.35.jar<span class="w"> </span>SE<span class="w"> </span>-phred33<span class="w"> </span>input.fq.gz<span class="w"> </span>output.fq.gz<span class="w"> </span>ILLUMINACLIP:TruSeq3-SE:2:30:10<span class="w"> </span>LEADING:3<span class="w"> </span>TRAILING:3<span class="w"> </span>SLIDINGWINDOW:4:15<span class="w"> </span>MINLEN:36
+</code></pre></div>
+<p>This will perform the same steps as paired-end command, using the single-ended adapter file.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://www.usadellab.org/cms/?page=trimmomatic">Full documentation</a></li>
+<li><a href="https://github.com/timflutre/trimmomatic">trimmomatic GitHub</a></li>
+<li>Davide Scarpetta</li>
+</ul>
 
 
 
