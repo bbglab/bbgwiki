@@ -5,4 +5,4 @@ This website is meant to include information of all the **tools** and **data** u
 
 ---
 
-![bbglab team](assets/images/bbglab_retreat_2023.jpg)
+![bbglab team](assets/images/bbglab_irb_2024.jpg)
