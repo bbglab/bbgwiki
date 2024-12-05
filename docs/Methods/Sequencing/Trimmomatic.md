@@ -58,7 +58,7 @@ You can download the binary file from the [GitHub](https://github.com/timflutre/
 http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
 ```
 
-I reccomend to download the `version 0.40` directly from the GitHub repo.
+I recommend to download the `version 0.40` directly from the GitHub repo.
 Then you'll have to unzip the downloaded file:
 
 ```bash
