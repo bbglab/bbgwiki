@@ -1801,6 +1801,72 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-command-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic command syntax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -3389,6 +3455,72 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-command-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic command syntax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -3414,7 +3546,95 @@
 
 <h1 id="cutadapt">Cutadapt<a class="headerlink" href="#cutadapt" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<div class="admonition note annotate">
+<p>Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.</p>
+</div>
+<hr />
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>You can check the installation documentation <a href="https://cutadapt.readthedocs.io/en/stable/installation.html">here</a>.</p>
+<h3 id="package-manager">Package Manager<a class="headerlink" href="#package-manager" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cutadapt
+</code></pre></div>
+<p>Or possibly</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-cutadapt
+</code></pre></div>
+<p>Verify the installation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cudatapt<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
+<p>If you use <code>conda</code>, you can install <code>cutadapt</code> with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>cutadapt
+</code></pre></div>
+<h2 id="basic-usage">Basic usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
+<p>For the full list of options:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cutadapt<span class="w"> </span>-h
+</code></pre></div>
+<h3 id="basic-command-syntax">Basic command syntax<a class="headerlink" href="#basic-command-syntax" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cutadapt<span class="w"> </span>-a<span class="w"> </span>&lt;adapter-sequence&gt;<span class="w"> </span>-o<span class="w"> </span>&lt;output-file&gt;<span class="w"> </span>&lt;input-file&gt;
+</code></pre></div>
+<p>For example, trimming an adapter (<code>AGATCGGAAGAG</code> in this case) from a fastq file will be:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cutadapt<span class="w"> </span>-a<span class="w"> </span>AGATCGGAAGAG<span class="w"> </span>-o<span class="w"> </span>output_reads.fastq<span class="w"> </span>input_reads.fastq
+</code></pre></div>
+<p>If you're working with paired-end reads, specify both input and output files:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cutadapt<span class="w"> </span>-a<span class="w"> </span>AGATCGGAAGAG<span class="w"> </span>-A<span class="w"> </span>AGATCGGAAGAG<span class="w"> </span>-o<span class="w"> </span>output_R1.fastq<span class="w"> </span>-p<span class="w"> </span>output_R2.fastq<span class="w"> </span>input_R1.fastq<span class="w"> </span>input_R2.fastq
+</code></pre></div>
+<p>You can use <code>cutadapt</code> to trim low-quality bases from the ends of reads ( in this example quality score &lt; 20):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cutadapt<span class="w"> </span>-q<span class="w"> </span><span class="m">20</span><span class="w"> </span>-o<span class="w"> </span>output_reads.fastq<span class="w"> </span>input_reads.fastq
+</code></pre></div>
+<p>And also to discard reads shorter than a selected value after trimming (in this example 30 nucleotides)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cutadapt<span class="w"> </span>-m<span class="w"> </span><span class="m">30</span><span class="w"> </span>-o<span class="w"> </span>output_reads.fastq<span class="w"> </span>input_reads.fastq
+</code></pre></div>
+<h2 id="warning">Warning<a class="headerlink" href="#warning" title="Permanent link">&para;</a></h2>
+<p>Check out the full documentation on how to use cutadapt for all different types of adapters.
+Cutadapt can detect multiple adapter types:</p>
+<table>
+<thead>
+<tr>
+<th>Adapter Type</th>
+<th>Command-line Option</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regular 3' adapter</td>
+<td><code>-a ADAPTER</code></td>
+</tr>
+<tr>
+<td>Regular 5' adapter</td>
+<td><code>-g ADAPTER</code></td>
+</tr>
+<tr>
+<td>Non-internal 3' adapter</td>
+<td><code>-a ADAPTERX</code></td>
+</tr>
+<tr>
+<td>Non-internal 5' adapter</td>
+<td><code>-g XADAPTER</code></td>
+</tr>
+<tr>
+<td>Anchored 3' adapter</td>
+<td><code>-a ADAPTER$</code></td>
+</tr>
+<tr>
+<td>Anchored 5' adapter</td>
+<td><code>-g ^ADAPTER</code></td>
+</tr>
+<tr>
+<td>5' or 3' (both possible)</td>
+<td><code>-b ADAPTER</code></td>
+</tr>
+<tr>
+<td>Linked adapter</td>
+<td><code>-a ADAPTER1...ADAPTER2 -g ADAPTER1...ADAPTER2</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://cutadapt.readthedocs.io/en/stable/index.html">Full documentation</a></li>
+<li><a href="https://github.com/marcelm/cutadapt">cutadapt GitHub</a></li>
+<li>Davide Scarpetta</li>
+</ul>
 
 
 
