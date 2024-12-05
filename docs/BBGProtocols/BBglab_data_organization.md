@@ -1,15 +1,17 @@
-# BBGlab best practices on data organization
+# BBGlab best practices
 
-Here we present some best practices on how to organize data in projects in the **Cluster** and **Google Drive** to make your life easier and when day comes to be able to set up the **[BBGlab Exit protocol](https://drive.google.com/drive/folders/1veXAAucPqNQ2KIVFLyEJqPVjEeDcqsR-)**.
+We all want the BBGlab to be a well-organized space where files or data — yours or a colleague's — are quick and easy to find. To help, we present some best practices on how to organize data in projects in the **Cluster** and **Google Drive** to make your life easier to save time and boost efficiency. With these practices, you will also be able to set up **[BBGlab Exit protocol](https://drive.google.com/file/d/1Z-jg7cLP7lAPZL0PC88pnozc_7gVF_2S/view?usp=drive_link)** handing things over when the time comes, making transitions easy and efficient for everyone. 
+
+In addition, we've included practices focused on sustainability to help reduce our carbon footprint and promote an environmentally friendly workplace.
 
 ## Organizing the data
 
 ### Project Compilation
 
-You MUST add the relevant information about your project to the ProjectCompilation excel for all the BBGlab members. It is the responsibility of all the people involved to keep it updated.    
+Essential information both for both finished and on going projects:
 
-Essential information both for finished and for on going projects:
- - Data
+ - Data:
+   remember it is **essential** that all your project data is updated and stored in [BBGlab datasets](https://docs.google.com/spreadsheets/d/10eVPI8X9dObmSdypmcID0DTxO1XW8h3AGHbm_IT0El8/edit?usp=sharing). Check how to do it in the BBGWiki **Datasets/Datasets_BBGLAB**. It is responsibility of all the users involved in the project to keep it updated!
  - Scripts
  - Environments
  - Notebooks
@@ -19,9 +21,7 @@ Essential information both for finished and for on going projects:
 		- Custom scripts
 	 - Environments in the cluster
 	- Tools installed in your user in the cluster (some /bin folder somewhere) linked to source code
-- Figures
-- Abstracts, Slides, Posters, Manuscripts
-
+ 
 ### Google Drive
 
 You should have one directory per project shared (if necessary) with the people ivolved in the project. This directory MUST contain the following:
@@ -89,6 +89,22 @@ Fill contact compilation sheet with contact details including:
 -   Older collaborations contacts
     
 -   Regular contacts
+
+## Be environmentally friendly!
+
+Did you know it is estimated that the emission of a biology project (both wet and dry lab) has an estimated cost of 29 tCO2e/person? Or that a single analysis of RNA seq data of 10 million 100bp reads aligned to *P.falciparum* (13Gb, 1h 30) cost 240g CO2e? Also data storage has an environmental impact: a data center uses as much water as three average-sized hospitals. So our work also leaves a carbon footprint that we should be aware of and try to reduce it as much as possible. What can we do?
+
+ - Reduce electricity
+	 - Turn off the screens when you are not in the lab. Also the mouse and the keyboard
+	 - Lock the computer when it is necessary
+	 - Turn off the light of the lab when you are the last one leaving
+ - Reduce the CO2 cost of your coding: you can estimate the CO2 footprint of your scripts or pipelines and make it efficientlier with many tools like:
+	 -  [nf-co2footprint](https://github.com/nextflow-io/nf-co2footprint)
+	 - [CodeCarbon](https://codecarbon.io/)
+	 - [carbontracker](https://github.com/lfwa/carbontracker)
+	 -  Check out more [here](https://github.com/GreenAlgorithms/GreenAlgorithms4HPC)
+
+If you want to learn more about this take a look to Loïc Lannealongue session [Towards environmentally sustainable computational science with Green Algorithms](https://summit.nextflow.io/2024/barcelona/agenda/10-30--towards-environmentally-sustainable-computational-science/) presented nextflow submit Barcelona2 024.
 
 ## Reference
 - Elisabet Figuerola
