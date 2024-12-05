@@ -4,7 +4,7 @@ Set of useful Python resources as listed on the [BBGcloud Dashboard](https://bbg
 #### Coding basics
 
 [Get started with Python](https://bbgcloud.irbbarcelona.org/dashboard/python/index.html) - 
-Python tutorial covering the basis of Python 
+Python tutorial covering the basics of Python
 
 [Good coding practices](https://bbgcloud.irbbarcelona.org/dashboard/goodpractices/index.html) - Good practices for the BBLab coders
 
