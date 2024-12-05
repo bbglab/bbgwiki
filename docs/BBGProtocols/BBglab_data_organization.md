@@ -8,7 +8,7 @@ In addition, we've included practices focused on sustainability to help reduce o
 
 ### Project Compilation
 
-Essential information both for both finished and on going projects:
+Essential information for both finished and ongoing projects:
 
  - Data:
    remember it is **essential** that all your project data is updated and stored in [BBGlab datasets](https://docs.google.com/spreadsheets/d/10eVPI8X9dObmSdypmcID0DTxO1XW8h3AGHbm_IT0El8/edit?usp=sharing). Check how to do it in the BBGWiki **Datasets/Datasets_BBGLAB**. It is responsibility of all the users involved in the project to keep it updated!
