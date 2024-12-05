@@ -1,6 +1,6 @@
 # BBGlab best practices
 
-We all want the BBGlab to be a well-organized space where files or data — yours or a colleague's — are quick and easy to find. To help, we present some best practices on how to organize data in projects in the **Cluster** and **Google Drive** to make your life easier to save time and boost efficiency. With these practices, you will also be able to set up **[BBGlab Exit protocol](https://drive.google.com/file/d/1Z-jg7cLP7lAPZL0PC88pnozc_7gVF_2S/view?usp=drive_link)** handing things over when the time comes, making transitions easy and efficient for everyone. 
+We all want the BBGlab to be a well-organized space where files or data — yours or a colleague's — are quick and easy to find. To help, we present some best practices on how to organize data in projects in the **Cluster** and **Google Drive** to save time and boost efficiency. With these practices, you will also be able to set up **[BBGlab Exit protocol](https://drive.google.com/file/d/1Z-jg7cLP7lAPZL0PC88pnozc_7gVF_2S/view?usp=drive_link)** handing things over when the time comes, making transitions easy and efficient for everyone.
 
 In addition, we've included practices focused on sustainability to help reduce our carbon footprint and promote an environmentally friendly workplace.
 
