@@ -3,8 +3,22 @@ site_name: BBG-Wiki
 theme:
   name: material
   palette:
-    primary: orange
-    accent: orange
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: orange
+      accent: deep_orange
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: orange
+      accent: deep_orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   logo: assets/images/bbglabLOGO_small.png
   favicon: assets/images/bbglabLOGO_small.png
   features:
