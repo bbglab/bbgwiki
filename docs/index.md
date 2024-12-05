@@ -1,3 +1,8 @@
+---
+hide:
+  - feedback
+---
+
 <!-- # Home -->
 # Welcome to the BBG-Wiki! ![bbglab-logo](assets/images/bbglabLOGO_small.png)
 

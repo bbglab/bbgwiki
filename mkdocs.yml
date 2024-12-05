@@ -3,13 +3,32 @@ site_name: BBG-Wiki
 theme:
   name: material
   palette:
-    primary: orange
-    accent: orange
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: orange
+      accent: deep_orange
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: orange
+      accent: deep_orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   logo: assets/images/bbglabLOGO_small.png
   favicon: assets/images/bbglabLOGO_small.png
   features:
     - navigation.top
     - content.code.annotate
+    - search.suggest
+
+plugins: 
+  - search
+  - tags
 
 markdown_extensions:
   - admonition
@@ -29,3 +48,29 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX # Replace with Google Analytics tracking ID
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/heart
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/heart-broken
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://github.com/bbglab/bbgwiki/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">feedback form</a>.

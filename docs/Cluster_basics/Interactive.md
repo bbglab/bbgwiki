@@ -1,3 +1,13 @@
+---
+search:
+  boost: 2 
+
+tags:
+  - IRBCluster
+  - BBGCluster
+  - HPC
+---
+
 # Interactive
 
 The `interactive` command gives to the user an **interactive shell** in the cluster with slurm allocation. In other words, it allocates the user to a specific node of the cluster so that the jobs can be executed there without disturbing the rest of the users.
