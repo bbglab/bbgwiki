@@ -41,7 +41,7 @@ There is a difference between running an interactive session within the BBGClust
     $ interactive
     ```
 
-    If the `login01` has changed to `irbcn##` where `###` is the number identifying the current node.
+    If the `irblogin01` has changed to `irbcn##` where `###` is the number identifying the current node.
     
     Apart from the basic use, there are optional arguments/flags for extra features:
     
@@ -50,7 +50,7 @@ There is a difference between running an interactive session within the BBGClust
     - `-w`: Target node
     - `-J`: Job name
     - `-x`: Binary that you want to run interactively
-    - `-p`: specify queue (see [queues](https://bbglab.github.io/bbgwiki/Cluster_basics/queues/))
+    - `-p`: specify queue (see [queues](https://bbglab.github.io/bbgwiki/Cluster_basics/queues/)) (default: `bbg_cpu_zen4`)
     - `-q`: specify the QoS (see [slides](https://bbgcloud.irbbarcelona.org/f/559435))
 
 ## Reference
