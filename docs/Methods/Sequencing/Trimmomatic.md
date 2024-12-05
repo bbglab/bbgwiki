@@ -52,7 +52,7 @@ java -version
 Install it if needed.
 
 The easiest option is to download a binary release zip, and unpack it somewhere convenient.
-You can download the binary file from the [GitHub](https://github.com/timflutre/trimmomatic) offial `Trimmomatic` repo or from the website:
+You can download the binary file from the [GitHub](https://github.com/timflutre/trimmomatic) official `Trimmomatic` repo or from the website:
 
 ```bash
 http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
