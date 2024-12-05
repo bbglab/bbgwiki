@@ -25,6 +25,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: MkDocs gh-deploy
+        env:
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
         run: |
           git pull
           mkdocs gh-deploy --force
