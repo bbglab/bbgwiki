@@ -26,6 +26,9 @@ Containers built by ITS Research are stored in `/data/containers` and are suppor
 ## Further reading
 
 - [Singularity website](https://sylabs.io/guides/latest/user-guide/index.html)
+- [BBGcloud presentation on Singularity](https://docs.google.com/presentation/d/1D4ExctFpb2kiSGMQ5rOQ4ctw6lktloey1Ak6xD9ZQ38/edit#slide=id.p)  
+- [BBGcloud presentation on Linux and containers](https://docs.google.com/presentation/d/1FRRg5Rml8sIPgm6KLEIK-Avr7vAyE_0yIRVUFug0U3s/edit#slide=id.p)  
+
 - Running `singularity help` and `singularity CMD help` (replace `CMD` with a Singularity command, such as `run`)
 - Viewing the "singularity" manual page
 
@@ -33,4 +36,5 @@ Containers built by ITS Research are stored in `/data/containers` and are suppor
 
 - Jordi Deu-Pons
 - Miguel Grau
+- Axel Rosendahl Huber
 - Carlos López-Elorduy
