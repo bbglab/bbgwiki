@@ -19,7 +19,7 @@ There are three different options that requires different files:
 
 |Options   | Reference Genome | Panel | FASTQ | Notes |
 |---------|:-----------------:|:--------:|:-------:|--------|
-|1. DNA v2.0.2|yes|1 DNA| DNA | Possibility to stop the run after cells.bam file is produced
+|1. DNA v2.0.2|yes|1 DNA| DNA | Possibility to stop the run after cells.bam file is produced |
 |2. DNA + Protein v2.0.2|yes|1 DNA + 1 Protein| DNA + Protein| The number of DNA and Protein FASTQ files **must be the same**|
 |3. Merge Runs v1.0 |no|no|no| at least two **.h5** files (recommended no more than 5)|
 
@@ -34,9 +34,9 @@ At the end of the run we end up with a list of files. A detailed list of output 
 
 |File   | Extension | Notes |
 |---------|:-----------------:|:--------|
-|**report.html**|`.html`| It contains the run details with a summary of the most important specs. Merge Runs and DNA only option do not produce this report.
-|**cells.loom** |`.loom`| It consists of a numerical genotype (NGT) matrix that has 4 other layers. It contains metadata for all the variants. It's the file used as input for [Tapestri Insight](Tapestri_insight.md).
-|**dna+protein.h5** |`.h5`| It contsins data for one or more run. Each run contains data for one or more assays (eg. DNA assay, CNV assay, Protein assay) associated with all the barcodes. It's the file used as input for [Mosaic package](Mosaic.md).
+|**report.html**|`.html`| It contains the run details with a summary of the most important specs. Merge Runs and DNA only option do not produce this report.|
+|**cells.loom** |`.loom`| It consists of a numerical genotype (NGT) matrix that has 4 other layers. It contains metadata for all the variants. It's the file used as input for [Tapestri Insight](Tapestri_insight.md).|
+|**dna+protein.h5** |`.h5`| It contsins data for one or more run. Each run contains data for one or more assays (eg. DNA assay, CNV assay, Protein assay) associated with all the barcodes. It's the file used as input for [Mosaic package](Mosaic.md).|
 
 ## Additional resources
 

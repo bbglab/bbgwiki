@@ -19,7 +19,7 @@ For the time being this tutorial does not cover the set up part in depth. Howeve
 
 ### Become a certificate authority
 
-```
+```sh
 # Generate private key
 openssl genrsa -des3 -out myCA.key 2048
 
@@ -29,7 +29,7 @@ openssl req -x509 -new -nodes -key myCA.key -sha256 -days 825 -out myCA.pem
 
 ### Create CA-signed certs
 
-```
+```sh
 NAME=vscode  # Use your own domain name
 # Generate a private key
 openssl genrsa -out $NAME.key 2048
@@ -59,11 +59,14 @@ openssl x509 -req -in $NAME.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial \
 ### Screen
 
 In the bbgcluster, either create
-```
+
+```sh
 screen -S vscode
 ```
+
 or access an existing *vscode* screen
-```
+
+```sh
 screen -r vscode
 ```
 
@@ -74,24 +77,24 @@ screen -r vscode
 
 Launch an interactive session within a given node, allocating some computing resources:
 
-```
+```sh
 interactive -w <bbg-node> -c 6 -m 20
 ```
 
 ### Conda activate *vsc_node* environment
 
-```
+```sh
 conda activate vsc_node
 ```
 
 !!! warning
-    the environment *vsc_node* is supposed to have been already created by the user; check this [reference](https://bbglab.github.io/bbgwiki/Tools/VSCode/cluster_node/#create-a-conda-environment).
+    the environment *vsc_node* is supposed to have been already created by the user; check this [reference](cluster_node.md#create-a-conda-environment).
 
 ### Launch vscode server
 
 From your bbgcluster home do:
 
-```
+```sh
 unset XDG_RUNTIME_DIR && \
 code-server --port 8090 \
             --bind-addr 0.0.0.0 \
@@ -108,7 +111,7 @@ code-server --port 8090 \
 
 In a terminal of your local computer, do the following:
 
-```
+```sh
 ssh -L 8090:<bbgnode>:8090 \
     -p 22022 \
     <bbg-user>@bbgcluster \
@@ -122,15 +125,14 @@ ssh -L 8090:<bbgnode>:8090 \
 
 Type the following **https** address in the browser:
 
-```
+```sh
 https://0.0.0.0:8090/
 ```
 
 A password prompt will appear. Fullfill the password request with a password you must have generated during the security setup referred to above.
 
-
 ## Reference
 
-- Federica Brando
-- Ferriol Calvet
-- Ferran Muiños
+* Federica Brando
+* Ferriol Calvet
+* Ferran Muiños

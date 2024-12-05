@@ -182,7 +182,7 @@ If you want to install GitHub Copilot in your local machine, you can simply inst
 
 #### Cluster
 
-As seen in [VSCode in the cluster](../VSCode/VSCode_in_cluster) or [VSCode in interactive node](../VSCode/cluster_node), you can also use GitHub Copilot in the cluster. Unfortunatelly, as of the time of writing, Copilot cannot be installed as simply as in your local machine. However, you can follow these steps in order to manually install it:
+As seen in [VSCode in the cluster](VSCode/VSCode_in_cluster.md) or [VSCode in interactive node](VSCode/cluster_node.md), you can also use GitHub Copilot in the cluster. Unfortunatelly, as of the time of writing, Copilot cannot be installed as simply as in your local machine. However, you can follow these steps in order to manually install it:
 
 1. Visit the [GitHub Copilot Extension page](https://marketplace.visualstudio.com/items?itemName=github.copilot){:target="_blank"}.
 2. Look for a "Download Extension" link. It shoudl be in the side-bar under the "Resources" header.
@@ -192,7 +192,7 @@ As seen in [VSCode in the cluster](../VSCode/VSCode_in_cluster) or [VSCode in in
 6. You should now have GitHub Copilot installed in your cluster session.
 
 !!! NOTE
-    As of the time of writing, this way of installing GitHub Copilot only includes the feature of the [Ghost Text](#1-ghost-text), but not the rest of the features.
+    As of the time of writing, this way of installing GitHub Copilot only includes the feature of the [Ghost Text](#ghost-text), but not the rest of the features.
 
 ## GitHub Copilot CLI
 

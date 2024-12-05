@@ -13,7 +13,7 @@ Download and installation guide is available [here](https://support.missionbio.c
 
 Tapestri insight has a GUI and does not require command line nor programming skills to use it.
 
-The file type supported are `.loom` files, that can be found in the list of ouput file from the [Tapestri pipeline](../Tapestri_pipeline/#3-output) summary page of the analysis, in the user private area.
+The file type supported are `.loom` files, that can be found in the list of ouput file from the [Tapestri pipeline](Tapestri_pipeline.md#3-output) summary page of the analysis, in the user private area.
 
 An optional input could be a whitelist file with known chromosomal locations with pathogenic variants that, even if they do not pass the built-in quality filters, they are still carried on for the analysis.
 
