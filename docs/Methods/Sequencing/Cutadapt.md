@@ -45,7 +45,7 @@ For the full list of options:
 cutadapt -h
 ```
 
-### Basic command sintax
+### Basic command syntax
 
 ```bash
 cutadapt -a <adapter-sequence> -o <output-file> <input-file>
