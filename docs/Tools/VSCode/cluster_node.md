@@ -148,7 +148,7 @@ basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = $NAME # Be sure to include the domain name here because Common Name is not so commonly honoured by itself
+DNS.1 = $NAME # Be sure to include the domain name here because Common Name is not so commonly honored by itself
 DNS.2 = bar.$NAME # Optionally, add additional domains (I've added a subdomain here)
 IP.1 = 0.0.0.0 # Optionally, add an IP address (if the connection which you have planned requires it)
 EOF
