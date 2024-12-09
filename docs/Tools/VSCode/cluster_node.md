@@ -230,7 +230,7 @@ Type the following **https** address in the browser:
 https://0.0.0.0:8090/
 ```
 
-A password prompt will appear. Fullfill the password request with a password you must have generated during the security setup referred to above.
+A password prompt will appear. Fulfill the password request with a password you must have generated during the security setup referred to above.
 
 
 ## Reference
