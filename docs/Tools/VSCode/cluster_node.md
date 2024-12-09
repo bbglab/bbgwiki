@@ -106,7 +106,7 @@ When entering the URL in your browser, click `Visit site` and introduce the pass
 
 ### Description
 
-The macgiver way of mounting the bbgcluster filesystem in our respective local computers is very inefficient when it comes to coding with VSCode, particularly with regards to git version control capabilities.
+The MacGyver way of mounting the bbgcluster filesystem in our respective local computers is very inefficient when it comes to coding with VSCode, particularly with regards to git version control capabilities.
 
 But there is a way to use full-fledged capabilities of VSCode for projects that are kept in the bbgcluster.
 
