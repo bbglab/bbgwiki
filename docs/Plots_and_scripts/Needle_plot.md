@@ -59,8 +59,8 @@ import matplotlib as mpl
 
 
 ### PFAM info
-PFAM_files = "/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm//pfam_biomart.tsv.gz"
-PFAM_info = "/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm//pfam_names.info.csv"
+PFAM_files = "/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_biomart.tsv.gz"
+PFAM_info = "/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_names.info.csv"
 
 
 ### CDS coordinates
