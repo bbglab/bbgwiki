@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -3594,7 +3594,7 @@ Needle plots are useful when you want to plot frequency of mutations on the prot
 It requires an <strong>input matrix</strong>  including gene name column called <code>'gene'</code>, nucleotide position column called <code>'Protein_position'</code> and the number of mutations affecting the same position <code>'number_observed_muts'</code>. 
 The function also needs the <strong>gene</strong> name and the <strong>transcript</strong> used. </p>
 <h2 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">needle_plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">gene</span><span class="p">,</span> <span class="n">transcript</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">needle_plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">gene</span><span class="p">,</span> <span class="n">transcript</span><span class="p">):</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">rcParamsDefault</span><span class="p">)</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;arial&#39;</span><span class="p">]</span>
@@ -3626,20 +3626,20 @@ The function also needs the <strong>gene</strong> name and the <strong>transcrip
 </code></pre></div>
 <img alt="Plot mutational profile" src="../../assets/images/Needleplot.png" /></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">collections</span> <span class="k">as</span> <span class="n">mc</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">gridspec</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">collections</span> <span class="k">as</span> <span class="n">mc</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">gridspec</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">### PFAM info</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">PFAM_files</span> <span class="o">=</span> <span class="s2">&quot;/workspace/datasets/intogen/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/pfam/pfam_biomart.tsv.gz&quot;</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">PFAM_info</span> <span class="o">=</span> <span class="s2">&quot;/workspace/datasets/intogen/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/pfam/pfam_names.info.csv&quot;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">PFAM_files</span> <span class="o">=</span> <span class="s2">&quot;/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_biomart.tsv.gz&quot;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">PFAM_info</span> <span class="o">=</span> <span class="s2">&quot;/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_names.info.csv&quot;</span>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1">### CDS coordinates</span>
@@ -3648,7 +3648,7 @@ The function also needs the <strong>gene</strong> name and the <strong>transcrip
 <a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="c1">## Functions</span>
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">def</span> <span class="nf">get_PFAMs_per_transcript</span><span class="p">(</span><span class="n">PFAM_files</span><span class="p">,</span> <span class="n">PFAM_info</span><span class="p">,</span> <span class="n">transcript</span><span class="p">):</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_PFAMs_per_transcript</span><span class="p">(</span><span class="n">PFAM_files</span><span class="p">,</span> <span class="n">PFAM_info</span><span class="p">,</span> <span class="n">transcript</span><span class="p">):</span>
 <a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="n">df_pfam</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">PFAM_files</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ENSEMBL_GENE&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSEMBL_TRANSCRIPT&quot;</span><span class="p">,</span> <span class="s2">&quot;START&quot;</span><span class="p">,</span> <span class="s2">&quot;END&quot;</span><span class="p">,</span> <span class="s2">&quot;DOMAIN&quot;</span><span class="p">])</span>
 <a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>    <span class="n">df_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">PFAM_info</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;DOMAIN&quot;</span><span class="p">,</span> <span class="s2">&quot;CLAN&quot;</span><span class="p">,</span> <span class="s2">&quot;CLAN_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;DOMAIN_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;Long Name&quot;</span><span class="p">])</span>
 <a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
@@ -3663,7 +3663,7 @@ The function also needs the <strong>gene</strong> name and the <strong>transcrip
 <a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    <span class="k">return</span> <span class="n">df_pfam_gene</span>
 <a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
 <a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
-<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="k">def</span> <span class="nf">get_positions_in_CDS</span><span class="p">(</span><span class="n">transcript</span><span class="p">,</span> <span class="n">path_coord</span><span class="p">):</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_positions_in_CDS</span><span class="p">(</span><span class="n">transcript</span><span class="p">,</span> <span class="n">path_coord</span><span class="p">):</span>
 <a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_coord</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>                     <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gene&#39;</span><span class="p">,</span> <span class="s1">&#39;gene_symbol&#39;</span><span class="p">,</span> <span class="s1">&#39;prot&#39;</span><span class="p">,</span> <span class="s1">&#39;chr&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;cds&#39;</span><span class="p">,</span> <span class="s1">&#39;genpos&#39;</span><span class="p">,</span>
 <a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>                            <span class="s1">&#39;strand&#39;</span><span class="p">,</span> <span class="s1">&#39;transcript&#39;</span><span class="p">])</span>
@@ -3679,7 +3679,7 @@ The function also needs the <strong>gene</strong> name and the <strong>transcrip
 <a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>    <span class="k">return</span> <span class="n">toappend</span>
 <a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
 <a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>
-<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="k">def</span> <span class="nf">plot_gene_full_nucleotide</span><span class="p">(</span><span class="n">subset_data_pfam</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">gene</span><span class="p">,</span> <span class="n">transcript</span><span class="p">,</span> <span class="n">path_coord</span><span class="p">,</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span><span class="p">):</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="k">def</span><span class="w"> </span><span class="nf">plot_gene_full_nucleotide</span><span class="p">(</span><span class="n">subset_data_pfam</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">gene</span><span class="p">,</span> <span class="n">transcript</span><span class="p">,</span> <span class="n">path_coord</span><span class="p">,</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span><span class="p">):</span>
 <a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>
 <a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>    <span class="c1"># remove those mutations not falling in CDS:</span>
 <a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AA&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;n&#39;</span><span class="p">]</span>
@@ -3765,7 +3765,7 @@ The function also needs the <strong>gene</strong> name and the <strong>transcrip
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2025</span>
   </span>
 
     
@@ -3775,7 +3775,7 @@ The function also needs the <strong>gene</strong> name and the <strong>transcrip
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2025</span>
   </span>
 
     
@@ -3979,7 +3979,7 @@ The function also needs the <strong>gene</strong> name and the <strong>transcrip
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
