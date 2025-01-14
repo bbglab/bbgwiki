@@ -4,6 +4,7 @@ In the BBG Lab we have a [google spreadsheet](https://docs.google.com/spreadshee
 
 ## Description
 This spreadheet contains 4 sheets:  
+
 - **External**: This table contains information about all the external datasets (related to sample sequencing data) used in the BBG Lab. It includes downloaded datasets (and the path to the cluster where you can find it) as well as datasets of which we have access through a cloud or external connection (e.g. Genomics England, UKbiobank).  
 - **Internal**: This table contains information about all the internal datasets sequenced at the BBG Lab (e.g. samples from patients from Sant Joan de Déu).  
 - **Form External**: This table contains new external datasets added by any BBG user. You can [add new external datasets using this form](https://forms.gle/dBAJD3wZV2MyvVx79). New datasets will be added as new rows.  
