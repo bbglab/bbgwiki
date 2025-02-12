@@ -120,79 +120,218 @@ Open Visual Studio Code and make sure you have installed the `Remote - SSH` exte
 
 Open the side bar at the "Remote - SSH" panel, and then click the `irbccn*` option. A new window will open with the terminal connected to the interactive node. All the execution of notebooks and debuggers will be done from this node.
 
-## Using code-server
+## From Browser (*code-server*)
 
-### Requirements
+This approach doesn't use the VSCode app, but instead uses the code-server package to run a VSCode instance in the cluster. This will result in launching VSCode from the browser.
 
--   **Conda** or **Mamba** installed
--   Have an account on [ngrok](https://ngrok.com)
+===+ "Setup 1: Code-Server"
 
-### Create a conda environment
+    **Description**
 
-The conda environment must include the packages `code-server`, `pyngrok` and `screen`
+    The macgiver way of mounting the bbgcluster filesystem in our respective local computers is very inefficient when it comes to coding with VSCode, particularly with regards to git version control capabilities.
 
-```bash
-conda create -n vsc_node -c conda-forge code-server screen pyngrok -y
-conda activate vsc_node
-```
+    But there is a way to use full-fledged capabilities of VSCode for projects that are kept in the bbgcluster.
 
-### Run code server in a screen (inside `login01`)
+    **TL;DR**
 
-```bash
-screen -S vscode
-```
+    * Launch a vscode server in the bbgcluster.
+    * SSH tunnel to this session from a local terminal.
+    * Connect to the server using a browser.
+    * Do so while keeping everything secure.
 
-Right after creating the screen, create an interactive session and remember on which node you are allocated.
+    **Setting all up**
 
-```bash
-interactive
-conda activate vsc_node
-code-server
-```
+    For the time being this tutorial does not cover the set up part in depth. However, here there is a bundle of command lines that are needed for setting up the security part.
 
-Exit the screen with `Ctrl + A + D`
+    **Become a certificate authority**
 
-### Run a Ngrok tunnel in a screen (inside `login01`)
+    ```sh
+    # Generate private key
+    openssl genrsa -des3 -out myCA.key 2048
 
-!!! note
+    # Generate root certificate
+    openssl req -x509 -new -nodes -key myCA.key -sha256 -days 825 -out myCA.pem
+    ```
 
-    If this is your first time doing this step, you'll first need to setup your authentification token for ngrok.
+    **Create CA-signed certs**
 
-    1. Log in to your [ngrok home page](https://ngrok.com).
-    2. On the left-hand side bar: `Getting Started > Your Authtoken`
-    3. On the `Command Line` section, **copy only the key**, which is the big string with random letters and numbers.
-    4. Go back to the terminanl in the cluster (with the `vsc_pyngrok` environment activated) and add your authentification token with the following command:
+    ```sh
+    NAME=vscode  # Use your own domain name
+    # Generate a private key
+    openssl genrsa -out $NAME.key 2048
 
-        `ngrok authtoken <the_token_you_copied_in_the_previous_step>`
+    # Create a certificate-signing request
+    openssl req -new -key $NAME.key -out $NAME.csr
 
-    This setup only has to be done once.
+    # Create a config file for the extensions
+    >$NAME.ext cat <<-EOF
+    authorityKeyIdentifier=keyid,issuer
+    basicConstraints=CA:FALSE
+    keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+    subjectAltName = @alt_names
+    [alt_names]
+    DNS.1 = $NAME # Be sure to include the domain name here because Common Name is not so commonly honoured by itself
+    DNS.2 = bar.$NAME # Optionally, add additional domains (I've added a subdomain here)
+    IP.1 = 0.0.0.0 # Optionally, add an IP address (if the connection which you have planned requires it)
+    EOF
 
-```bash
-screen -S pyngrok
-```
+    # Create the signed certificate
+    openssl x509 -req -in $NAME.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial \
+    -out $NAME.crt -days 825 -sha256 -extfile $NAME.ext
+    ```
 
-```bash
-interactive -w <bbgnXXX> # Node of previous step
-conda activate vsc_node
-pyngrok http 8080
-```
+    **VSCode server in the bbgcluster**
 
-Copy the URL to your browser and exit the session `Ctrl + A + D`
+    **Screen**
 
-### Check your VSCode password
+    In the bbgcluster, either create
 
-```bash
-cat ~/.config/code-server/config.yaml
-```
+    ```sh
+    screen -S vscode
+    ```
 
-### Browse your VSCode remotely
+    or access an existing *vscode* screen
 
-When entering the URL in your browser, click `Visit site` and introduce the password you obtained in the previous step in order to be able to use VSCode.
+    ```sh
+    screen -r vscode
+    ```
 
-![Screenshot from 2022-11-21 09-06-25](https://user-images.githubusercontent.com/1315429/202997070-fe8d28cb-97f5-4981-bf84-2909056e8fbd.png)
+    !!! warning
+        When opening a new screen, this should be done from the `login01` node, since this guarantees that the screen will be **constantly running** and not shut down (which could happen if the screen is opened in one of the other nodes).
+
+    **Interactive**
+
+    Launch an interactive session within a given node, allocating some computing resources:
+
+    ```sh
+    interactive -w <bbg-node> -c 6 -m 20
+    ```
+
+    **Conda activate *vsc_node* environment**
+
+    ```sh
+    conda activate vsc_node
+    ```
+
+    !!! warning
+        the environment *vsc_node* is supposed to have been already created by the user; check this [reference](cluster_node.md#create-a-conda-environment).
+
+    **Launch vscode server**
+
+    From your bbgcluster home do:
+
+    ```sh
+    unset XDG_RUNTIME_DIR && \
+    code-server --port 8090 \
+                --bind-addr 0.0.0.0 \
+                --cert vscode.crt \
+                --cert-key vscode.key
+    ```
+
+    !!! warning
+        *--cert* file **vscode.crt**
+        *--cert-key* file **vscode.key**
+        are supposed to be already generated by the user.
+
+    **SSH tunnel**
+
+    In a terminal of your local computer, do the following:
+
+    ```sh
+    ssh -L 8090:<bbgnode>:8090 \
+        -p 22022 \
+        <bbg-user>@bbgcluster \
+        -t "htop"
+    ```
+
+    !!! warning
+        *htop* is just a dirty trick to ensure the SSH tunnel does not spontaneouly shut down.
+
+    **Connect to the server**
+
+    Type the following **https** address in the browser:
+
+    ```sh
+    https://0.0.0.0:8090/
+    ```
+
+    A password prompt will appear. Fullfill the password request with a password you must have generated during the security setup referred to above.
+
+=== "Setup 2: PyNgrok"
+
+    **Requirements**
+
+    -   **Conda** or **Mamba** installed
+    -   Have an account on [ngrok](https://ngrok.com)
+
+    **Create a conda environment**
+
+    The conda environment must include the packages `code-server`, `pyngrok` and `screen`
+
+    ```bash
+    conda create -n vsc_node -c conda-forge code-server screen pyngrok -y
+    conda activate vsc_node
+    ```
+
+    **Run code server in a screen (inside `login01`)**
+
+    ```bash
+    screen -S vscode
+    ```
+
+    Right after creating the screen, create an interactive session and remember on which node you are allocated.
+
+    ```bash
+    interactive
+    conda activate vsc_node
+    code-server
+    ```
+
+    Exit the screen with `Ctrl + A + D`
+
+    **Run a Ngrok tunnel in a screen (inside `login01`)**
+
+    !!! note
+
+        If this is your first time doing this step, you'll first need to setup your authentification token for ngrok.
+
+        1. Log in to your [ngrok home page](https://ngrok.com).
+        2. On the left-hand side bar: `Getting Started > Your Authtoken`
+        3. On the `Command Line` section, **copy only the key**, which is the big string with random letters and numbers.
+        4. Go back to the terminanl in the cluster (with the `vsc_pyngrok` environment activated) and add your authentification token with the following command:
+
+            `ngrok authtoken <the_token_you_copied_in_the_previous_step>`
+
+        This setup only has to be done once.
+
+    ```bash
+    screen -S pyngrok
+    ```
+
+    ```bash
+    interactive -w <bbgnXXX> # Node of previous step
+    conda activate vsc_node
+    pyngrok http 8080
+    ```
+
+    Copy the URL to your browser and exit the session `Ctrl + A + D`
+
+    **Check your VSCode password**
+
+    ```bash
+    cat ~/.config/code-server/config.yaml
+    ```
+
+    **Browse your VSCode remotely**
+
+    When entering the URL in your browser, click `Visit site` and introduce the password you obtained in the previous step in order to be able to use VSCode.
+
+    ![Screenshot from 2022-11-21 09-06-25](https://user-images.githubusercontent.com/1315429/202997070-fe8d28cb-97f5-4981-bf84-2909056e8fbd.png)
 
 ## Reference
 
 -   Carlos López-Elorduy
 -   Federica Brando
+-   Ferriol Calvet
+-   Ferran Muiños
 -   Jordi Deu Pons
