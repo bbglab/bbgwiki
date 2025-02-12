@@ -293,12 +293,12 @@ This approach doesn't use the VSCode app, but instead uses the code-server packa
 
     !!! note
 
-        If this is your first time doing this step, you'll first need to setup your authentification token for ngrok.
+        If this is your first time doing this step, you'll first need to setup your authentication token for ngrok.
 
         1. Log in to your [ngrok home page](https://ngrok.com).
         2. On the left-hand side bar: `Getting Started > Your Authtoken`
         3. On the `Command Line` section, **copy only the key**, which is the big string with random letters and numbers.
-        4. Go back to the terminanl in the cluster (with the `vsc_pyngrok` environment activated) and add your authentification token with the following command:
+        4. Go back to the terminanl in the cluster (with the `vsc_pyngrok` environment activated) and add your authentication token with the following command:
 
             `ngrok authtoken <the_token_you_copied_in_the_previous_step>`
 
