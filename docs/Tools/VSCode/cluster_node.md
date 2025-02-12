@@ -10,12 +10,12 @@ These are the instructions to use Visual Studio Code to run and debug scripts/no
 
 The first step is to allocate the resources you will need for your executions. We can do this with the `interactive` command.
 
-> [!NOTE]
-> Consider launching the interactive session in a screen so that it doesn't get killed when the terminal is closed.
->
-> ```bash
-> screen -S vscode
-> ```
+!!! tip "Use screen"
+    Consider launching the interactive session in a screen so that it doesn't get killed when the terminal is closed.
+
+    ```bash
+    screen -S vscode
+    ```
 
 Launch an interactive session within a given node, allocating some computing resources:
 
@@ -38,18 +38,18 @@ irbccn43.hpc.irbbarcelona.pcb.ub.es
 
 ### Step 2: [CLUSTER] Execute job vscode-interactive-job.sh
 
-> [!NOTE]
-> **First time setup**
->
-> If it is the first time you are using this method, copy the following lines into a file called `vscode-interactive-job.sh` in your home directory.
->
-> ```bash
-> #!/bin/bash
-> #SBATCH --job-name="tunnel"
-> #SBATCH --time=8:00:00     # walltime
-> 
-> /usr/sbin/sshd -D -p 2222 -f /dev/null -h ${HOME}/.ssh/id_ecdsa # uses the user key as the host key
-> ```
+!!! note "First time setup"
+    If it is the first time you are using this method, copy the following lines into a file called `vscode-interactive-job.sh` in your home directory.
+
+    **File: `vscode-interactive-job.sh`**
+
+    ```bash
+    #!/bin/bash
+    #SBATCH --job-name="tunnel"
+    #SBATCH --time=8:00:00     # walltime
+    
+    /usr/sbin/sshd -D -p 2222 -f /dev/null -h ${HOME}/.ssh/id_ecdsa # uses the user key as the host key
+    ```
 
 Execute the `vscode-interactive-job.sh` script with:
 
@@ -95,8 +95,8 @@ Host irbccn43
     Port 2222
 ```
 
-> [!IMPORTANT]
-> This is marked as a "*ONE-TIME-STEP*", but in reality it depends on the node you are allocated. If you need to change the node or add a new node, the configuration will need to be updated.
+!!! warning "Node change"
+    This is marked as a "*ONE-TIME-STEP*", but in reality it depends on the node you are allocated. If you need to change the node or add a new node, **the configuration will need to be updated**.
 
 #### Step 4.1: [LOCAL] [ONE-TIME-STEP] Access though the terminal to the node
 
