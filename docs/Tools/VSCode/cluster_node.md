@@ -10,7 +10,7 @@ These are the instructions to use Visual Studio Code to run and debug scripts/no
 
 The first step is to allocate the resources you will need for your executions. We can do this with the `interactive` command.
 
-!!! tip "Use screen"
+!!! tip "Tip: Use `screen`"
     Consider launching the interactive session in a screen so that it doesn't get killed when the terminal is closed.
 
     ```bash
@@ -57,6 +57,15 @@ Execute the `vscode-interactive-job.sh` script with:
 bash vscode-interactive-job.sh
 ```
 
+!!! failure "`id_ecdsa` not found"
+    If you get an error saying that the file `id_ecdsa` is not found, you can generate it with the following command:
+
+    ```bash
+    ssh-keygen -t ecdsa
+    ```
+
+    It will prompt you several times to confirm the generation of the key. You can just press `Enter` to accept the default values.
+
 The terminal will look like it got stuck, but what is happening is that it is waiting for the SSH tunnel to be established.
 
 ### Step 3: [LOCAL] Open SSH tunnel
@@ -98,6 +107,53 @@ Host irbccn43
 !!! warning "Node change"
     This is marked as a "*ONE-TIME-STEP*", but in reality it depends on the node you are allocated. If you need to change the node or add a new node, **the configuration will need to be updated**.
 
+
+!!! tip "Tip (Optional): Helper function to add SSH configuration"
+    Here is a helper function that you can add to your `.bashrc` file to make it easier to setup the node and the tunnel.
+
+    Steps the function does:
+
+    1. Prompts only for the **host alias**.
+    2. Checks if a config entry for that **host already exists** in `~/.ssh/config` (and skips adding it if so).
+    3. Uses the fixed configuration values (with HostName as "%h", the fixed ProxyJump, port 2222, and the current computer user).
+    4. Computes the full hostname for the tunnel (by appending ".hpc.irbbarcelona.pcb.ub.es" to the alias) and creates the SSH tunnel (running in the background).
+
+    ```bash
+    add_cluster_ssh_host_with_tunnel() {
+        read -p "Enter host alias (e.g., irbccn43): " host_alias
+        current_user=$(whoami)
+
+        # Check if SSH config for this host already exists
+        if grep -qE "^Host[[:space:]]+${host_alias}\$" ~/.ssh/config; then
+            echo "SSH configuration for host '${host_alias}' already exists. Skipping configuration update."
+        else
+            new_entry="Host ${host_alias}
+        HostName %h
+        ProxyJump irblogin01.irbbarcelona.pcb.ub.es
+        User ${current_user}
+        Port 2222
+        "
+            echo -e "\n${new_entry}" >> ~/.ssh/config
+            echo "SSH configuration added for host '${host_alias}'."
+        fi
+
+        # Create the SSH tunnel.
+        # Assuming the full hostname is <host_alias>.hpc.irbbarcelona.pcb.ub.es
+        computed_hostname="${host_alias}.hpc.irbbarcelona.pcb.ub.es"
+        tunnel_cmd="ssh -f -N -L 2222:${computed_hostname}:22 ${current_user}@irblogin01.irbbarcelona.pcb.ub.es"
+        echo "Establishing SSH tunnel with command:"
+        echo "${tunnel_cmd}"
+        eval ${tunnel_cmd}
+        if [ $? -eq 0 ]; then
+            echo "SSH tunnel established for host '${host_alias}'."
+        else
+            echo "Failed to establish SSH tunnel."
+        fi
+    }
+
+    alias addsshcluster='add_cluster_ssh_host_with_tunnel'
+    ```
+
 #### Step 4.1: [LOCAL] [ONE-TIME-STEP] Access though the terminal to the node
 
 To make sure the configuration is working, you can access the node through the terminal with the following command:
@@ -119,6 +175,12 @@ This is needed the first time you connect to a new node, so that the node is add
 Open Visual Studio Code and make sure you have installed the `Remote - SSH` extension.
 
 Open the side bar at the "Remote - SSH" panel, and then click the `irbccn*` option. A new window will open with the terminal connected to the interactive node. All the execution of notebooks and debuggers will be done from this node.
+
+!!! tip "Tip: Create a 'Profile' to keep the VSCode settings and extensions"
+    You can create a profile in VSCode to keep the settings and extensions for the connection to the cluster. This works similar to the idea of conda environments, but for the VSCode settings.
+
+    To create a profile, click on the gear icon in the bottom left corner of VSCode, and then click on Profiles and create a new profile.
+
 
 ## From Browser (*code-server*)
 
