@@ -9,8 +9,7 @@ Conda and mamba are open source **package manager** and **environment management
 
 The difference between the two is that **mamba** is a fast, drop-in replacement for conda that highly improves package resolution speed and efficiency (and we recommend you use it instead of conda to make your life happier :)). 
 
-!!! info The majority of the commands showed below are also supported by mamba
-
+!!! info The majority of the commands shown below are also supported by mamba
 ## Installation
 ### Conda
 
