@@ -43,7 +43,7 @@ At the end of the run we end up with a list of files. A detailed list of output 
 MissionBio provided a personal training course, the video lesson on Tapestri Pipeline can be found here:
 
 ```sh
-/workspace/projects/scell_tall/LOPEBIG_44_analysis/mosaic/Video_Trainings/MissionBio-1-TapestriPipeline.mp4
+/data/bbg/projects/scell_tall/LOPEBIG_44_analysis/mosaic/Video_Trainings/MissionBio-1-TapestriPipeline.mp4
 ```
 
 ## Links

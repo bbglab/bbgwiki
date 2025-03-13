@@ -17,7 +17,7 @@ Find below references to the publicly available repo as well as to example scrip
 [Figure 1 code](https://github.com/bbglab/boostdm-analyses/tree/master/Figure1), [Manuscript Figure 1 PDF](https://github.com/bbglab/boostdm-analyses/blob/master/figures_paper/Figure1.pdf)
 
 #### BBG Workspace
-Notebook: ``/workspace/projects/boostdm_ch/notebooks/benchmarks-precision-recall.ipynb``
+Notebook: ``/data/bbg/projects/boostdm_ch/notebooks/benchmarks-precision-recall.ipynb``
 
 ### Radar plots
 ![BBGWiki edit online tutorial](../assets/images/radar_plot_example.png)
@@ -26,7 +26,7 @@ Notebook: ``/workspace/projects/boostdm_ch/notebooks/benchmarks-precision-recall
 [Figure 2 code](https://github.com/bbglab/boostdm-analyses/tree/master/Figure2), [Manuscript Figure 2 PDF](https://github.com/bbglab/boostdm-analyses/blob/master/figures_paper/Figure2.pdf)
 
 #### BBG Workspace
-Notebook: ``/workspace/projects/boostdm_ch/notebooks/run8_20220705_feature-landscape/BoostDM-CH_run20220705_blueprints_SDM_JER.ipynb``
+Notebook: ``/data/bbg/projects/boostdm_ch/notebooks/run8_20220705_feature-landscape/BoostDM-CH_run20220705_blueprints_SDM_JER.ipynb``
 
 ### Blueprints
 ![BBGWiki edit online tutorial](../assets/images/blueprint_example.png)
@@ -35,7 +35,7 @@ Notebook: ``/workspace/projects/boostdm_ch/notebooks/run8_20220705_feature-lands
 [Figure 3 code](https://github.com/bbglab/boostdm-analyses/tree/master/Figure3), [Manuscript Figure 3 PDF](https://github.com/bbglab/boostdm-analyses/blob/master/figures_paper/Figure3.pdf)
 
 #### BBG Workspace
-Notebook: ``/workspace/projects/boostdm_ch/notebooks/run8_20220705_feature-landscape/BoostDM-CH_run20220705_blueprints_SDM_JER.ipynb``
+Notebook: ``/data/bbg/projects/boostdm_ch/notebooks/run8_20220705_feature-landscape/BoostDM-CH_run20220705_blueprints_SDM_JER.ipynb``
 
 # Reference
 * Ferran Muiños

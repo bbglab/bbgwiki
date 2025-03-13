@@ -55,7 +55,7 @@ CPCT02010728    2:176568493-176568893
 We need to extract the CRAM URLs from the _manifest.json_ of the hartwig release of interest, in this case _20230914v_:
 
 ```
-#/workspace/datasets/hartwig/20230914/scripts/minibam/extract_urls.py
+#/data/bbg/datasets/hartwig/20230914/scripts/minibam/extract_urls.py
 
 import json
 import csv
@@ -86,8 +86,8 @@ def process_manifest(json_file_path, txt_file_path, csv_output_path):
                 print(f"Warning: No CRAM URL found for sample {sample_id}")
 
 if __name__ == "__main__":
-    json_file_path = "/workspace/datasets/hartwig/20230914/manifest.json"
-    txt_file_path = "/workspace/datasets/hartwig/20230914/scripts/minibam/IDs_regions.csv"
+    json_file_path = "/data/bbg/datasets/hartwig/20230914/manifest.json"
+    txt_file_path = "/data/bbg/datasets/hartwig/20230914/scripts/minibam/IDs_regions.csv"
     csv_output_path = "IDs_regions_url.csv"
 
     process_manifest(json_file_path, txt_file_path, csv_output_path)
@@ -106,7 +106,7 @@ CPCT02010702T   19:18451144-18451544    gs://example_url/CPCT02010702T/cram/CPCT
 For each line, it extracts the regions in a minibam. If the next region is from the same sample, it keeps the cram. If not, it deletes the cram and downloads the next one.
 
 ```
-#/workspace/datasets/hartwig/20230914/scripts/minibam/dwnRunMiniBam_multi.py
+#/data/bbg/datasets/hartwig/20230914/scripts/minibam/dwnRunMiniBam_multi.py
 
 import subprocess
 

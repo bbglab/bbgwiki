@@ -19,7 +19,7 @@ Access to UKB data is restricted to authorized users that have to submit a resea
 
 Originally, the data was downloadable, so we have in our cluster a lot of clinical data from the entire cohort and also the WES from 200,000 individuals in the folder:
 ```bash 
-/workspace/datasets/ukbiobank_ch/
+/data/bbg/datasets/ukbiobank_ch/
 ```
 
 More recently, the UK Biobank Research Analysis Platform ([UKB RAP](https://www.ukbiobank.ac.uk/enable-your-research/research-analysis-platform)) was created, so the data can not be downloaded anymore. The UKB RAP is a platform in the cloud based on DNA Nexus. The WES data from the full cohort and the WGS data are only accessible through this platform.

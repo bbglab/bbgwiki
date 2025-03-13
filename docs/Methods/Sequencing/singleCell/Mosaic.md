@@ -15,10 +15,10 @@ conda activate mosaic
 ```
 
 ??? tip "Tip - Installing from exported environment"
-    Another way of installing mosaic with some other packages used during the first analysis of the data is with the exported env: `/workspace/projects/scell_tall/mosaic180123.txt`.
+    Another way of installing mosaic with some other packages used during the first analysis of the data is with the exported env: `/data/bbg/projects/scell_tall/mosaic180123.txt`.
 
     ```sh
-    conda create --name mosaic --file /workspace/projects/scell_tall/mosaic180123.txt
+    conda create --name mosaic --file /data/bbg/projects/scell_tall/mosaic180123.txt
     ```
 
 ## Jupyter tutorials
@@ -29,9 +29,9 @@ conda activate mosaic
 !!! warning "Data accessibility"
     You might need additional accessibility to run some of the analysis available in the jupyter notebooks.
 
-In the folder `/workspace/projects/scell_tall/LOPEBIG_44_analysis/` there are four notebooks that were used to do some of the initial analysis on data. In these notebooks you can find some of mosaic built-in functions and some custom functions.
+In the folder `/data/bbg/projects/scell_tall/LOPEBIG_44_analysis/` there are four notebooks that were used to do some of the initial analysis on data. In these notebooks you can find some of mosaic built-in functions and some custom functions.
 
-Additionally you can find some other notebooks in the section below: [Link](Mosaic.md#links) and in the folder `/workspace/projects/scell_tall/LOPEBIG_44_analysis/`
+Additionally you can find some other notebooks in the section below: [Link](Mosaic.md#links) and in the folder `/data/bbg/projects/scell_tall/LOPEBIG_44_analysis/`
 
 ## FAQ
 
@@ -59,9 +59,9 @@ MissionBio provides some video tutorials on their website: [Mosaic tutorials](ht
 Additionally, the company provided a personal training course, the video lessons can be found here:
 
 ```sh
-/workspace/projects/scell_tall/LOPEBIG_44_analysis/mosaic/Video_Trainings/MissionBio-3_1-Mosaic.mp4
+/data/bbg/projects/scell_tall/LOPEBIG_44_analysis/mosaic/Video_Trainings/MissionBio-3_1-Mosaic.mp4
 
-/workspace/projects/scell_tall/LOPEBIG_44_analysis/mosaic/Video_Trainings/MissionBio-3_2-Mosaic.mp4
+/data/bbg/projects/scell_tall/LOPEBIG_44_analysis/mosaic/Video_Trainings/MissionBio-3_2-Mosaic.mp4
 ```
 
 ## Links

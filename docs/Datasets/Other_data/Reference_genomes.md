@@ -4,7 +4,7 @@
 The same reference genomes are used across many different projects. Although each user may prefer to have its own copy of the genome sequence, there is a `genomes` folder in datasets that can serve as the collective storage of reference genomes.
 
 You can find the full path to the directory here:
-`/workspace/datasets/genomes/`
+`/data/bbg/datasets/genomes/`
 
 The contents of this folder are the following:
 ```

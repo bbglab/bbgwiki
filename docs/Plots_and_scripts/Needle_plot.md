@@ -59,12 +59,12 @@ import matplotlib as mpl
 
 
 ### PFAM info
-PFAM_files = "/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_biomart.tsv.gz"
-PFAM_info = "/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_names.info.csv"
+PFAM_files = "/data/bbg/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_biomart.tsv.gz"
+PFAM_info = "/data/bbg/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_names.info.csv"
 
 
 ### CDS coordinates
-path_coord =  "/workspace/datasets/intogen/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/cds_biomart.tsv"
+path_coord =  "/data/bbg/datasets/intogen/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/cds_biomart.tsv"
 
 
 ## Functions

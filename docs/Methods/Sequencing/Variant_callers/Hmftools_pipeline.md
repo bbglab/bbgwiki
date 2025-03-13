@@ -17,7 +17,7 @@ The scripts, the tools and the reference data are provided by HMF on their [GitH
 Move to the hmftools pipeline folder:
 
 ```sh
-cd /workspace/projects/hartwig/hmftools/pipeline/
+cd /data/bbg/projects/hartwig/hmftools/pipeline/
 ```
 
 create a conda envirnoment with the `environment.yml` file.
@@ -33,7 +33,7 @@ conda activate hmftpipe
 ```
 
 !!! warning Data Access
-    You need specific permission to access the `/workspace/projects/hartwig/` following folder. Please contact Martina or Paula if you need to use this data. More info [here](../../../Datasets/General_datasets/Hartwig.md).
+    You need specific permission to access the `/data/bbg/projects/hartwig/` following folder. Please contact Martina or Paula if you need to use this data. More info [here](../../../Datasets/General_datasets/Hartwig.md).
 
 ## Run
 

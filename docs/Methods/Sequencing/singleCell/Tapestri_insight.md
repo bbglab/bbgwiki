@@ -21,7 +21,7 @@ An optional input could be a whitelist file with known chromosomal locations wit
 
 MissionBio provided a personal training course, the video lesson on Tapestri Insights can be found here:
 
-    /workspace/projects/scell_tall/LOPEBIG_44_analysis/mosaic/Video_Trainings/MissionBio-2-TapestriInsight.mp4
+    /data/bbg/projects/scell_tall/LOPEBIG_44_analysis/mosaic/Video_Trainings/MissionBio-2-TapestriInsight.mp4
 
 ## Links
 
