@@ -7,8 +7,6 @@ Please note the actual printer model should appear in your PC as: **Colour-Laser
 
 **Disclaimer:** While we hope these instructions help improve the printing process, we cannot guarantee they will resolve all issues. Still, we believe it's better than nothing!
 
-## Printing files from your computer
-
 ## Printing files directly from a USB device
 
 1.  Insert USB to printer
