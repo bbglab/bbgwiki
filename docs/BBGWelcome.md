@@ -1,4 +1,4 @@
-# Welcome to the BBG Lab! 
+# Welcome to the BBG Lab!
 
 Here you can find some resources to help you start smoothly.
 
@@ -44,7 +44,7 @@ Tutorial on Python classes.
 - [Python decorators](https://docs.google.com/presentation/d/17nwq5Og14bborFSgAnapjrW-6-KIM9KJfm7hKE_KZU8/edit?usp=sharing)  
 Introduction to Pyhton decorators.
 - [Git](https://bbgcloud.irbbarcelona.org/dashboard/git/index.html)  
-Understand git version control system.
+Understand git version control system. Here the [link](https://bbgcloud.irbbarcelona.org/apps/files/files?dir=/everybody/Slides/20240215-Federica-%20Agora%20-Git%20and%20Github) to the Agora about Git and GitHub.
 - [Write docs](https://bbgcloud.irbbarcelona.org/dashboard/docs/index.html)  
 Create documentation for your project using Sphinx.
 - [Points of view](https://docs.google.com/presentation/d/1HvGeGT9NBhVc0SKlyTx5Fae_4aTbyyfjVA7LIUvFBZA/edit?usp=sharing)  
@@ -53,3 +53,4 @@ Summary 38 Points of View articles. Points of view are columns on data visualiza
 ## Reference
 
 - Stefano Pellegrini
+- Davide Scarpetta
