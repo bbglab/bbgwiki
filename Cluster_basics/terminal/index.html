@@ -761,6 +761,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compressed-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compressed files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-basic-commands" class="md-nav__link">
     <span class="md-ellipsis">
       Other basic commands
@@ -3850,6 +3859,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compressed-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compressed files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#other-basic-commands" class="md-nav__link">
     <span class="md-ellipsis">
       Other basic commands
@@ -3955,10 +3973,6 @@
 <td>Create new file called <code>newfile.txt</code></td>
 </tr>
 <tr>
-<td><code>echo "message"</code></td>
-<td>Print <code>message</code> in the terminal</td>
-</tr>
-<tr>
 <td><code>echo "Hello BBGLab!" &gt; newfile.txt</code></td>
 <td>Save output of <code>echo</code> command into a file called <code>newfile.txt</code></td>
 </tr>
@@ -3998,12 +4012,39 @@
 <td>Copy <code>file1.txt</code> into <code>file2.txt</code></td>
 </tr>
 <tr>
+<td><code>diff file1.txt file2.txt</code></td>
+<td>Compare the contents of two files and display the differences</td>
+</tr>
+<tr>
 <td><code>rm file.txt</code></td>
 <td>Remove <code>file.txt</code></td>
 </tr>
 <tr>
 <td><code>rm -rf dir1</code></td>
 <td>Remove directory <code>dir1</code> and <strong>ALL THE FILES INSIDE</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="compressed-files">Compressed files<a class="headerlink" href="#compressed-files" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gzip file.txt</code></td>
+<td>Compress <code>file.txt</code></td>
+</tr>
+<tr>
+<td><code>gunzip file.txt</code></td>
+<td>Expand <code>file.txt</code></td>
+</tr>
+<tr>
+<td><code>zcat file.txt.gz</code></td>
+<td>Read a gzipped file without uncompressing</td>
 </tr>
 </tbody>
 </table>
@@ -4025,6 +4066,14 @@
 <td>Show contents of <code>file.txt</code></td>
 </tr>
 <tr>
+<td><code>less file.txt</code></td>
+<td>Show contents of <code>file.txt</code> one page at a time</td>
+</tr>
+<tr>
+<td><code>head file.txt</code></td>
+<td>Show first 10 lines of <code>file.txt</code></td>
+</tr>
+<tr>
 <td><code>grep "sentence" file.txt</code></td>
 <td>Search the word "sentence" in <code>file.txt</code></td>
 </tr>
@@ -4036,6 +4085,10 @@
 <td><code>man echo</code></td>
 <td>Manual (documentation) of command <code>echo</code></td>
 </tr>
+<tr>
+<td><code>which echo</code></td>
+<td>Show the full path of command <code>echo</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
@@ -4044,6 +4097,7 @@
 <li>Federica Brando</li>
 <li>Miguel Grau</li>
 <li>Jordi Deu-Pons</li>
+<li>Laura Torrens</li>
 </ul>
 
 
@@ -4067,7 +4121,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 15:40:28">March 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 15:51:32">March 13, 2025</span>
   </span>
 
     
@@ -4077,7 +4131,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 15:40:28">March 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 15:51:32">March 13, 2025</span>
   </span>
 
     
@@ -4094,6 +4148,16 @@
 
     
     <nav>
+      
+        <a href="https://github.com/lauratorrens" class="md-author" title="@lauratorrens">
+          
+          <img src="https://avatars.githubusercontent.com/u/87863304?v=4&size=72" alt="lauratorrens">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
       
         <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
           
