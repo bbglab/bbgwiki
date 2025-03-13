@@ -12,10 +12,10 @@ Here you can find some resources to help you start smoothly.
 
 ## Social
 
-- [Our Website](http://bbglab.irbbarcelona.org/)
-- [Our LinkedIn](https://www.linkedin.com/company/barcelona-biomedical-genomics-lab-bbglab)
-- [Our Bluesky](https://bsky.app/profile/bbglab.bsky.social)
-- [Our Twitter](https://twitter.com/bbglab)
+- [Website](http://bbglab.irbbarcelona.org/)
+- [LinkedIn](https://www.linkedin.com/company/barcelona-biomedical-genomics-lab-bbglab)
+- [Bluesky](https://bsky.app/profile/bbglab.bsky.social)
+- [Twitter](https://twitter.com/bbglab)
 
 ## Repositories
 - [Github](https://github.com/bbglab)
