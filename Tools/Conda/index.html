@@ -20,7 +20,7 @@
     
     
       
-        <title>Conda - BBG-Wiki</title>
+        <title>Conda and mamba - BBG-Wiki</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conda" class="md-skip">
+        <a href="#conda-and-mamba" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Conda
+              Conda and mamba
             
           </span>
         </div>
@@ -2923,7 +2923,7 @@
           
   
   <span class="md-ellipsis">
-    Conda
+    Conda and mamba
     
   </span>
   
@@ -2935,7 +2935,7 @@
         
   
   <span class="md-ellipsis">
-    Conda
+    Conda and mamba
     
   </span>
   
@@ -2963,6 +2963,39 @@
       Description
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mamba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mamba
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3853,6 +3886,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mamba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mamba
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get-started" class="md-nav__link">
     <span class="md-ellipsis">
       Get started
@@ -3971,111 +4037,137 @@
   
 
 
-<h1 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h1>
+<h1 id="conda-and-mamba">Conda and mamba<a class="headerlink" href="#conda-and-mamba" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Conda is an open source package management system and environment management system that runs on Windows, macOS, Linux and z/OS. Conda quickly installs, runs and updates packages and their dependencies.</p>
+<p>Conda and mamba are open source <strong>package manager</strong> and <strong>environment management</strong> systems for Python and other languages. They run on Windows, macOS, Linux and z/OS. These tools automate the process of installing, updating, configuring and removing software packages. They manage dependencies, ensuring that all required libraries and components are correctly installed and compatible. In our case, using package managers is specially useful because:
+- They provide a way to ensure <strong>reproducibility</strong> in our code
+- They allow a project's software tools to be <strong>portable</strong>
+- They allow user-level installation (<em>i.e.</em> <strong>do not require sudo</strong> permissions)</p>
+<p>The difference between the two is that <strong>mamba</strong> is a fast, drop-in replacement for conda that highly improves package resolution speed and efficiency (and we recommend you use it instead of conda to make your life happier :)). </p>
+<div class="admonition info the majority of the commands shown below are also supported by mamba">
+<p class="admonition-title">Info</p>
+</div>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
+<p>Conda has two possible installers:
+- Anaconda: already comes with installed packages for data science and Anaconda Navigator (GUI application). Follow the instructions.
+- <strong>Miniconda</strong> (recommended): minimal installer provided by Anaconda  </p>
+<p>Download any of the two installers and in your terminal run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bash<span class="w"> </span>&lt;conda-installer-name&gt;-latest-Linux-x86_64.sh&gt;
+</code></pre></div>
+<p>Detailed instructions <a href="https://docs.conda.io/projects/conda/en/stable/user-guide/install/linux.html#installing-on-linux">here</a>. 
+To update conda, run:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>update<span class="w"> </span>conda
+</code></pre></div></p>
+<h3 id="mamba">Mamba<a class="headerlink" href="#mamba" title="Permanent link">&para;</a></h3>
+<p>The installer for mamba is <strong>micromamba</strong>. To install it run:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SHELL</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-L<span class="w"> </span>micro.mamba.pm/install.sh<span class="o">)</span>
+</code></pre></div>
+To update mamba:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>micromamba<span class="w"> </span>self-update
+</code></pre></div></p>
 <h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;env<span class="w"> </span>name&gt;<span class="w"> </span>&lt;package<span class="o">[=</span>&lt;version&gt;<span class="o">]</span>&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>&lt;env<span class="w"> </span>name&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>conda<span class="w"> </span>install<span class="w"> </span>&lt;package<span class="o">[=</span>version<span class="o">]</span>&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;env<span class="w"> </span>name&gt;<span class="w"> </span>&lt;package<span class="o">[=</span>&lt;version&gt;<span class="o">]</span>&gt;
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>&lt;env<span class="w"> </span>name&gt;
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>conda<span class="w"> </span>install<span class="w"> </span>&lt;package<span class="o">[=</span>version<span class="o">]</span>&gt;
 </code></pre></div>
 <hr />
 <h2 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h2>
 <h3 id="environments">Environments<a class="headerlink" href="#environments" title="Permanent link">&para;</a></h3>
 <p><strong>Activate</strong> an environment:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;
 </code></pre></div>
 <p><strong>Deactivates</strong> an environment. If in <code>base</code>, closes conda.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>deactivate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>conda<span class="w"> </span>deactivate
 </code></pre></div>
 <p><strong>List</strong> all environments:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>env<span class="w"> </span>list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>env<span class="w"> </span>list
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>info<span class="w"> </span>--envs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda<span class="w"> </span>info<span class="w"> </span>--envs
 </code></pre></div>
 <p><strong>Create</strong> a new virtual environment with <packages></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;<span class="w"> </span><span class="o">[</span>&lt;packages<span class="o">[=</span>&lt;version&gt;<span class="o">]</span>&gt;<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;<span class="w"> </span><span class="o">[</span>&lt;packages<span class="o">[=</span>&lt;version&gt;<span class="o">]</span>&gt;<span class="o">]</span>
 </code></pre></div>
 <p><strong>Export</strong> active environment to a file</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>environment.yml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>environment.yml
 </code></pre></div>
 <p><strong>Export all environments</strong> to its own file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span><span class="w"> </span>env<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>conda<span class="w"> </span>env<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s2">&quot; &quot;</span><span class="w"> </span>-f1<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="si">${</span><span class="nv">env</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span><span class="p">;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">   </span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$env</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">env</span><span class="si">}</span>.yml
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">done</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">for</span><span class="w"> </span>env<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>conda<span class="w"> </span>env<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s2">&quot; &quot;</span><span class="w"> </span>-f1<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="si">${</span><span class="nv">env</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span><span class="p">;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">   </span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$env</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">env</span><span class="si">}</span>.yml
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">done</span>
 </code></pre></div>
 <p>Create environment <strong>from file</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 </code></pre></div>
 <p><strong>Clone</strong> an environment</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;<span class="w"> </span>--clone<span class="w"> </span>&lt;original<span class="w"> </span>environment&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;<span class="w"> </span>--clone<span class="w"> </span>&lt;original<span class="w"> </span>environment&gt;
 </code></pre></div>
 <p><strong>Remove</strong> an environment</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;<span class="w"> </span>--all
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>&lt;environment<span class="w"> </span>name&gt;<span class="w"> </span>--all
 </code></pre></div>
 <p><strong>List all packages</strong> installed (in current environment)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>conda<span class="w"> </span>list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>conda<span class="w"> </span>list
 </code></pre></div>
 <p>List all packages installed <strong>with path</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>conda<span class="w"> </span>list<span class="w"> </span>--explicit
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>conda<span class="w"> </span>list<span class="w"> </span>--explicit
 </code></pre></div>
 <p>Show <strong>history of changes</strong> in packages</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>conda<span class="w"> </span>list<span class="w"> </span>--revisions
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>conda<span class="w"> </span>list<span class="w"> </span>--revisions
 </code></pre></div>
 <hr />
 <h3 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h3>
 <p><strong>Install</strong> a package (<em>use <code>-f</code> to force the installation</em>)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>conda<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>conda<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;
 </code></pre></div>
 <p>Install package(s) specified in a <strong>file</strong> (like a Python <strong>requirements</strong> file)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>conda<span class="w"> </span>install<span class="w"> </span>--file<span class="w"> </span>&lt;file&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>conda<span class="w"> </span>install<span class="w"> </span>--file<span class="w"> </span>&lt;file&gt;
 </code></pre></div>
 <p><strong>Uninstall</strong> a package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>&lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>conda<span class="w"> </span>remove<span class="w"> </span>&lt;package&gt;
 </code></pre></div>
 <p><strong>Search</strong> for a package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>conda<span class="w"> </span>search<span class="w"> </span>&lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>conda<span class="w"> </span>search<span class="w"> </span>&lt;package&gt;
 </code></pre></div>
 <hr />
 <h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <p><strong>Show</strong> configuration</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--show
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--show
 </code></pre></div>
 <p><strong>Add channels</strong> (use <code>add</code> instead of <code>append</code> to put the channel on the top of the list)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--append<span class="w"> </span>channels<span class="w"> </span>&lt;channel<span class="w"> </span>name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--append<span class="w"> </span>channels<span class="w"> </span>&lt;channel<span class="w"> </span>name&gt;
 </code></pre></div>
 <hr />
 <h3 id="building-packages">Building Packages<a class="headerlink" href="#building-packages" title="Permanent link">&para;</a></h3>
 <p><strong>Install</strong> conda build</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>conda<span class="w"> </span>install<span class="w"> </span>conda-build
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>conda<span class="w"> </span>install<span class="w"> </span>conda-build
 </code></pre></div>
 <p><strong>Build</strong> package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>conda<span class="w"> </span>build<span class="w"> </span>&lt;directory<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>files&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>conda<span class="w"> </span>build<span class="w"> </span>&lt;directory<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>files&gt;
 </code></pre></div>
 <p>Build for <strong>other platforms</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>conda<span class="w"> </span>convert<span class="w"> </span>--platform<span class="w"> </span>all<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>conda<span class="w"> </span>convert<span class="w"> </span>--platform<span class="w"> </span>all<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>package&gt;
 </code></pre></div>
 <p><strong>Install built</strong> package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>conda<span class="w"> </span>install<span class="w"> </span>--use-local<span class="w"> </span>&lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>conda<span class="w"> </span>install<span class="w"> </span>--use-local<span class="w"> </span>&lt;package&gt;
 </code></pre></div>
 <hr />
 <h3 id="from-pypi">From Pypi<a class="headerlink" href="#from-pypi" title="Permanent link">&para;</a></h3>
 <p><strong>Create</strong> files</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>conda<span class="w"> </span>skeleton<span class="w"> </span>pypi<span class="w"> </span>&lt;package&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>conda<span class="w"> </span>skeleton<span class="w"> </span>pypi<span class="w"> </span>&lt;package&gt;
 </code></pre></div>
 <p>Build for <strong>different Python version</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>conda<span class="w"> </span>build<span class="w"> </span>--python<span class="w"> </span>&lt;version&gt;<span class="w"> </span>&lt;directory<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>files&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>conda<span class="w"> </span>build<span class="w"> </span>--python<span class="w"> </span>&lt;version&gt;<span class="w"> </span>&lt;directory<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>files&gt;
 </code></pre></div>
 <hr />
 <h3 id="custom-channel">Custom Channel<a class="headerlink" href="#custom-channel" title="Permanent link">&para;</a></h3>
 <p><strong>Add</strong> channel</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--append<span class="w"> </span>channels<span class="w"> </span>file://&lt;path<span class="w"> </span>to<span class="w"> </span>folder&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>conda<span class="w"> </span>config<span class="w"> </span>--append<span class="w"> </span>channels<span class="w"> </span>file://&lt;path<span class="w"> </span>to<span class="w"> </span>folder&gt;
 </code></pre></div>
 <p><strong>(re)build</strong> the index</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>conda<span class="w"> </span>index<span class="w"> </span>&lt;channel<span class="w"> </span>folder&gt;/&lt;platform&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>conda<span class="w"> </span>index<span class="w"> </span>&lt;channel<span class="w"> </span>folder&gt;/&lt;platform&gt;
 </code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4083,6 +4175,7 @@
 <li>Miguel Grau</li>
 <li>Federica Brando</li>
 <li>Carlos López-Elorduy</li>
+<li>Raquel Blanco</li>
 </ul>
 
 
@@ -4106,7 +4199,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 14:54:30">March 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 15:37:28">March 13, 2025</span>
   </span>
 
     
@@ -4116,7 +4209,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 14:54:30">March 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2025 15:37:28">March 13, 2025</span>
   </span>
 
     
@@ -4134,6 +4227,16 @@
     
     <nav>
       
+        <a href="https://github.com/rblancomi" class="md-author" title="@rblancomi">
+          
+          <img src="https://avatars.githubusercontent.com/u/73313581?v=4&size=72" alt="rblancomi">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
         <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
           
           <img src="https://avatars.githubusercontent.com/u/107858804?v=4&size=72" alt="CarlosLopezElorduy">
@@ -4145,6 +4248,12 @@
         </a>
       
       
+      
+        
+          <a href="https://github.com/bbglab/bbgwiki/blob/main/docs/Tools/Conda.md" class="md-author md-author--more">
+            +1
+          </a>
+        
       
     </nav>
   </span>
@@ -4189,7 +4298,7 @@
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/bbglab/bbgwiki/issues/new/?title=[Feedback]+Conda+-+/Tools/Conda/" target="_blank" rel="noopener">feedback form</a>.
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/bbglab/bbgwiki/issues/new/?title=[Feedback]+Conda%20and%20mamba+-+/Tools/Conda/" target="_blank" rel="noopener">feedback form</a>.
             </div>
           
         </div>
