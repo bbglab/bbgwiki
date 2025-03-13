@@ -1,20 +1,44 @@
-Welcome to the BBG Lab! Here you can find essential resources to help you start smoothly.
+# Welcome to the BBG Lab! 
+Here you can find some resources to help you start smoothly.
 
-##  Communication
-
+## Communication
 - [Gmail](https://www.google.com/gmail)
 - [Hangouts](https://www.google.com/gmail)
 - [Calendar](https://www.google.com/calendar)
 
-##  Files
+## Files
 - [NextCloud](https://bbgcloud.irbbarcelona.org/)
 - [Google Drive](https://drive.google.com/)
 
-## BBGLab
+## Social
 
-- [Our page](http://bbglab.irbbarcelona.org/)
-- [Our twitter](https://twitter.com/bbglab)
+- [Our Website](http://bbglab.irbbarcelona.org/)
+- [Our LinkedIn](https://www.linkedin.com/company/barcelona-biomedical-genomics-lab-bbglab)
+- [Our Bluesky](https://bsky.app/profile/bbglab.bsky.social)
+- [Our Twitter](https://twitter.com/bbglab)
 
-## Our repositories
+## Repositories
 - [Github](https://github.com/bbglab)
 - [Bitbucket](https://bitbucket.org/bbglab/)
+
+## Cheatsheets
+- [Summary cheatsheet](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=bbglab&printable=True)
+- [Others](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets)
+
+## Learning
+- [Get started with Python](https://bbgcloud.irbbarcelona.org/dashboard/python/index.html)  
+Python tutorial covering the basis of Python.
+- [Python classes](http://nbviewer.jupyter.org/urls/bitbucket.org/bgframework/bgschool/raw/master/python/notebooks/classes.ipynb)  
+Tutorial on Python classes.
+- [Python decorators](https://docs.google.com/presentation/d/17nwq5Og14bborFSgAnapjrW-6-KIM9KJfm7hKE_KZU8/edit?usp=sharing)  
+Introduction to Pyhton decorators.
+- [Git](https://bbgcloud.irbbarcelona.org/dashboard/git/index.html)  
+Understand git version control system.
+- [Write docs](https://bbgcloud.irbbarcelona.org/dashboard/docs/index.html)  
+Create documentation for your project using Sphinx.
+- [Points of view](https://docs.google.com/presentation/d/1HvGeGT9NBhVc0SKlyTx5Fae_4aTbyyfjVA7LIUvFBZA/edit?usp=sharing)  
+Summary 38 Points of View articles. Points of view are columns on data visualization published in Nature Methods containing practical advices on visualizing scientific data.
+
+## Reference
+
+- Stefano Pellegrini
