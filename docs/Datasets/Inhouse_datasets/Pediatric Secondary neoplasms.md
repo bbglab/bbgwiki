@@ -20,8 +20,7 @@ s3://bbg/datasets/tumor/sjd_seq/platinum_results/20220528/
 
 ```
 
-The `202208009` run is the one used in the second tumors paper (DOI:10.1158/2159-8290.CD-23-1186). 
-
+The `20220809` run is the one used in the second tumors paper (DOI:10.1158/2159-8290.CD-23-1186).
 `sarek`results can be found at:
 ```
 /data/bbg/datasets/tumor/sjd_seq/platinum_results/20220809/[sample_id]/sarek_results/
