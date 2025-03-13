@@ -42,7 +42,7 @@ Python tutorial covering the basis of Python.
 - [Python classes](http://nbviewer.jupyter.org/urls/bitbucket.org/bgframework/bgschool/raw/master/python/notebooks/classes.ipynb)  
 Tutorial on Python classes.
 - [Python decorators](https://docs.google.com/presentation/d/17nwq5Og14bborFSgAnapjrW-6-KIM9KJfm7hKE_KZU8/edit?usp=sharing)  
-Introduction to Pyhton decorators.
+Introduction to Python decorators.
 - [Git](https://bbgcloud.irbbarcelona.org/dashboard/git/index.html)  
 Understand git version control system. Here the [link](https://bbgcloud.irbbarcelona.org/apps/files/files?dir=/everybody/Slides/20240215-Federica-%20Agora%20-Git%20and%20Github) to the Agora about Git and GitHub.
 - [Write docs](https://bbgcloud.irbbarcelona.org/dashboard/docs/index.html)  
