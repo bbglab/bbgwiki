@@ -28,5 +28,5 @@ This plot is the comparison of the trinucleotide counts of the mappable genome (
 ![image](https://github.com/user-attachments/assets/e4eb98e6-0a4c-4ea5-aef7-8c44ab8eb904)
 
 ## References
-Mònica Sánchez Guixé\
+Mònica Sánchez Guixé  
 Olivia Dove

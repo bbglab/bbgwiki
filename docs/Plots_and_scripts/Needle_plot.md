@@ -23,7 +23,7 @@ def needle_plot(data, gene, transcript):
     mpl.rcParams['figure.dpi']= 200
 
     # get PFAM domains and subset the mutation data
-    subset_data_pfam = get_PFAMs_per_transcript(PFAM_files, PFAM_info, transcript)
+    subset_data_pfam = get_PFAMs_per_transcript(df_pfam, df_names, transcript)
 
     # define figure layout
     fig = plt.figure(figsize=(8, 2.25))
@@ -33,16 +33,22 @@ def needle_plot(data, gene, transcript):
     ax2 = plt.subplot(gs[-1, :2], sharex=ax1)
 
     # plot for each axes
-    plot_gene_full_nucleotide(subset_data_pfam, data, gene, transcript, path_coord, ax1, ax2)
+    plot_gene_full_nucleotide(subset_data_pfam, data, gene, transcript, ax1, ax2)
     ax2.set_xlabel('CDS base position')
     plt.show()
 ```
 
 ## Example
 ```py
-needle_plot(data, 'DNMT3A', 'ENST00000264709')
+data = pd.DataFrame({
+    'gene': ['TP53', 'TP53', 'TP53'],
+    'Protein_position': [45, 36, 89],
+    'number_observed_muts': [3, 5, 1]
+})
+
+needle_plot(data, 'TP53', 'ENST00000269305')
 ```
-![Plot mutational profile](../assets/images/Needleplot.png)
+![Plot mutational profile](../assets/images/Needleplot_example.png)
 
 
 ## Dependencies
@@ -56,26 +62,22 @@ from matplotlib import gridspec
 from collections import defaultdict
 from scipy.stats import norm
 import matplotlib as mpl
-
+import os
 
 ### PFAM info
-PFAM_files = "/workspace/datasets/intogen/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/pfam/pfam_biomart.tsv.gz"
-PFAM_info = "/workspace/datasets/intogen/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/pfam/pfam_names.info.csv"
 
-
-### CDS coordinates
-path_coord =  "/workspace/datasets/intogen/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/cds_biomart.tsv"
-
+BOOSTDM_DATASETS = "/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/"
+PFAM_file_path = os.path.join(BOOSTDM_DATASETS, 'pfam_biomart.tsv.gz')
+PFAM_info_path = os.path.join(BOOSTDM_DATASETS, 'pfam_info.name.tsv')
+df_pfam = pd.read_csv(PFAM_file_path, sep="\t", names=["ENSEMBL_GENE", "TRANSCRIPT_ID", "START", "END", "DOMAIN"])
+df_names = pd.read_csv(PFAM_info_path, sep="\t", names=["DOMAIN", "CLAN", "CLAN_NAME", "DOMAIN_NAME", "Long Name"])
 
 ## Functions
 
-def get_PFAMs_per_transcript(PFAM_files, PFAM_info, transcript):
-    df_pfam = pd.read_csv(PFAM_files, sep="\t", names=["ENSEMBL_GENE", "ENSEMBL_TRANSCRIPT", "START", "END", "DOMAIN"])
-    df_names = pd.read_csv(PFAM_info, sep="\t", names=["DOMAIN", "CLAN", "CLAN_NAME", "DOMAIN_NAME", "Long Name"])
-
+def get_PFAMs_per_transcript(df_pfam, df_names, transcript):
     # Get domains
-    df_pfam_gene = df_pfam[(df_pfam["ENSEMBL_TRANSCRIPT"] == transcript)]
-    df_pfam_gene = df_pfam_gene[["ENSEMBL_TRANSCRIPT", "START", "END", "DOMAIN"]].drop_duplicates()
+    df_pfam_gene = df_pfam[(df_pfam["TRANSCRIPT_ID"] == transcript)]
+    df_pfam_gene = df_pfam_gene[["TRANSCRIPT_ID", "START", "END", "DOMAIN"]].drop_duplicates()
     df_pfam_gene = pd.merge(df_pfam_gene, df_names[["DOMAIN", "DOMAIN_NAME"]].drop_duplicates(), how="left")
     df_pfam_gene["POS"] = df_pfam_gene.apply(lambda row: row["START"] + ((row["END"] - row["START"]) // 2), axis=1)
     df_pfam_gene["SIZE"] = df_pfam_gene.apply(lambda row: row["END"] - row["START"] + 1, axis=1)
@@ -84,53 +86,35 @@ def get_PFAMs_per_transcript(PFAM_files, PFAM_info, transcript):
     return df_pfam_gene
 
 
-def get_positions_in_CDS(transcript, path_coord):
-    df = pd.read_csv(path_coord, sep='\t', low_memory=False,
-                     names=['gene', 'gene_symbol', 'prot', 'chr', 's', 'e', 'aa', 'cds', 'genpos',
-                            'strand', 'transcript'])
+def plot_gene_full_nucleotide(subset_data_pfam, df, gene, transcript, ax1, ax2):
 
-    toappend = []
-    strand = ''
-    for i, row in df[df['transcript'] == transcript].sort_values(by='s').iterrows():
-        toappend.extend([i for i in range(row['s'], row['e'] + 1)])
-        strand = row['strand']
-    if strand == -1:
-        toappend = toappend[::-1]
-
-    return toappend
-
-
-def plot_gene_full_nucleotide(subset_data_pfam, df, gene, transcript, path_coord, ax0, ax1):
-
-    # remove those mutations not falling in CDS:
-    df = df[df['AA'] != 'n']
+    # plot for each axes
+    df = df[df['Protein_position'] != '-']
     df = df[df['gene'] == gene]
 
-    # Configure the axis
-    ax0.set_title('Observed mutations')
-    ax0.set_ylabel("mutation count")
+    # remove those mutations not falling in CDS:
+    ax1.set_title('Observed mutations')
+    ax1.set_ylabel("mutation count")
 
-    ax0.spines['bottom'].set_visible(False)
-    ax0.spines['left'].set_linewidth(1)
-    ax0.spines['right'].set_visible(False)
-    ax0.spines['top'].set_visible(False)
-    ax0.tick_params(axis='y', labelsize=6, pad=0.25, width=0.25, length=1.5)
-    ax1.tick_params(axis='x', length=0)
-    ax1.set_yticks([])
-    #ax0.set_xticks([])
+    ax1.spines['bottom'].set_visible(False)
+    ax1.spines['left'].set_linewidth(1)
+    ax1.spines['right'].set_visible(False)
+    ax1.spines['top'].set_visible(False)
+    ax1.tick_params(axis='y', labelsize=6, pad=0.25, width=0.25, length=1.5)
+    ax2.tick_params(axis='x', length=0)
+    ax2.set_yticks([])
 
-    # set equivalent coordinates for the three possible mutations
-    set_coordinates = get_positions_in_CDS(transcript, path_coord)
-
-    # we need to get the set of equivalent coordinates per gene
-    equivalent_coordinates = {coord: i for i, coord in enumerate(set_coordinates)}
-    vals_coord = list(equivalent_coordinates.values())
-    axs = [ax0]
-    for ax in axs:
-        ax.set_xlim(np.min(vals_coord), np.max(vals_coord))
+    # get the max_aa
+    path_coord =  "/workspace/datasets/intogen/output/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/cds_biomart.tsv"
+    path_coord_gene = pd.read_csv(path_coord, sep='\t', low_memory=False,
+                         names=['gene', 'gene_symbol', 'prot', 'chr', 's', 'e', 'aa', 'cds', 'genpos',
+                                'strand', 'transcript'])
+    path_coord_gene = path_coord_gene[path_coord_gene['transcript'] == transcript].sort_values(by='aa').reset_index(drop=True)
+    max_aa = int(path_coord_gene.loc[0,'genpos']/3)
+    ax1.set_xlim(0, max_aa)
 
     # plot observed mutations
-    pos_list = df["pos"].tolist()
+    pos_list = df["Protein_position"].tolist()
     ys = df["number_observed_muts"].values
 
     coordinates_mutations = []
@@ -140,27 +124,38 @@ def plot_gene_full_nucleotide(subset_data_pfam, df, gene, transcript, path_coord
     # for each of the positions
     for i, p in enumerate(pos_list):
         if ys[i] > 0:
+            coordinates_mutations.append([(int(p), 0),
+                                      (int(p), ys[i])])
 
-            coordinates_mutations.append([(equivalent_coordinates[p], 0),
-                                          (equivalent_coordinates[p], ys[i] - 0.1)])
-
-            x_axis.append(equivalent_coordinates[p])
+            x_axis.append(int(p))
             y_axis.append(ys[i])
 
     lc = mc.LineCollection(coordinates_mutations, colors='black', linewidths=1, alpha=0.3)
-    ax0.add_collection(lc)
+    ax1.add_collection(lc)
 
     size = 12
-    ax0.scatter(x_axis, y_axis, s=size, c='red', alpha=0.7)
+    ax1.scatter(x_axis, y_axis, s=size, c='red', alpha=0.7)
     
-    ax1.set_ylim(0, 1)
+    ax2.set_ylim(0, 1)
 
+                      
     for i, r in subset_data_pfam.iterrows():
-        start_base = 3 * r['START']
-        size_base = 3 * r['SIZE']
+        start_base = r['START']
+        size_base = r['SIZE']
         rect = patches.Rectangle(xy=(start_base, 0), width=size_base, height=5, color=r["Color"], alpha=0.5, zorder=2)
-        ax1.annotate(s=r["DOMAIN_NAME"], xy=(start_base + 1, 0.3), fontsize=7)
-        ax1.add_patch(rect)
+        ax2.annotate(text=r["DOMAIN_NAME"], xy=(start_base + 1, 0.3), fontsize=7)
+        ax2.add_patch(rect)
+        ax2.set_xticks(np.append(np.arange(0, max_aa, 100)[:-1], max_aa))
+        ax2.set_xticklabels(np.append(np.arange(0, max_aa, 100)[:-1], max_aa), fontsize = 6)
+        ax2.set_xlim(0, max_aa)
+        ax2.set_yticks([])
+        ax2.tick_params(axis='x', which='major', pad=3)
+            
+    ax1.tick_params(axis='x', labelsize=0, color='w')
+
+    ax2.set_xlabel('CDS base position')
+
+    plt.show()
 ```
 
 ## Reference
