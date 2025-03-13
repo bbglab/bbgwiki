@@ -16,7 +16,7 @@ They are included in intOGen 2023 and 2024:
 `CGCI_WGS_BL_2020`
 `CGCI_WGS_CESC_2020`
 
-We have granted access to these datasets (phs000235, data agreement code: XXX )
+We have granted access to these datasets (phs000235, data agreement code: 26799 )
 
 ## Reference
 Mònica Sánchez Guixé  
