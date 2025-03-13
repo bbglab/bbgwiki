@@ -1,7 +1,7 @@
 # Nmdetective
 
 ## Description
-This is data are NMD predictions per every site in the exome.  
+These are NMD predictions per every site in the exome.  
 It is taken from this work from Fran Supek:
 Lindeboom et al 2020
 *The impact of nonsense-mediated mRNA decay on genetic disease, gene editing and cancer immunotherapy*
