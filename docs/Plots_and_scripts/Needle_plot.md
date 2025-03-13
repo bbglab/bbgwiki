@@ -89,7 +89,7 @@ def get_PFAMs_per_transcript(df_pfam, df_names, transcript):
 def plot_gene_full_nucleotide(subset_data_pfam, df, gene, transcript, ax1, ax2):
 
     # plot for each axes
-    df = data[data['Protein_position'] != '-']
+    df = df[df['Protein_position'] != '-']
     df = df[df['gene'] == gene]
 
     # remove those mutations not falling in CDS:
