@@ -26,15 +26,13 @@ Note that if you want to get a decomposition of the extracted signatures into kn
 * Then it automatically selects one of those sets based on its internal criteria.
 * It then takes the signatures and the mutational profile of each of the provided samples and it assigns the extracted signatures to the samples.
 
-**_WARNING:_ this assignment of the extracted signatures is of low quality and it should not be trusted**
+!!! warning "this assignment of the extracted signatures is of low quality and it should not be trusted"
 
-Once you get the set of extracted signatures that you trust, you should use them through [SigProfilerAssignment](https://github.com/AlexandrovLab/SigProfilerAssignment) to get the proportion of mutations of each sample that correspond to each signature. Doing this in these two steps increases the accuracy of the result. To be more specific you should provide the extracted set of signatures as the [signature_database](https://github.com/AlexandrovLab/SigProfilerAssignment#:~:text=will%20be%20used.-,signature_database,-String) option of this second tool.
-
-
-
-* Another output that the tool provies is to do a deconstruction of those extracted signatures into the known COSMIC signatures if you asked for that. But there is no magic trick here, or at least not that I know. (look at the comment for the input in case you are interested in getting this)
+        Once you get the set of extracted signatures that you trust, you should use them through [SigProfilerAssignment](https://github.com/AlexandrovLab/SigProfilerAssignment) to get the proportion of mutations of each sample that correspond to each signature. Doing this in these two steps increases the accuracy of the result. To be more specific you should provide the extracted set of signatures as the [signature_database](https://github.com/AlexandrovLab/SigProfilerAssignment#:~:text=will%20be%20used.-,signature_database,-String) option of this second tool.
 
 
+
+* Another output that the tool provides is to do a deconstruction of those extracted signatures into the known COSMIC signatures if you asked for that. But there is no magic trick here, or at least not that I know. (look at the comment for the input in case you are interested in getting this)
 ## Scripts that may be used if interested:
 
 Full credit to @efigb for the script
