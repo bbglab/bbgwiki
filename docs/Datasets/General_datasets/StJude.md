@@ -10,7 +10,7 @@ Click [here](https://platform.stjude.cloud/data/diseases/tumor){:target="_blank"
 ## Data access
 You can find the data from St. Jude Cloud in the folder:
 ```bash 
-/workspace/datasets/stjude
+/data/bbg/datasets/stjude
 ```
 
 !!! warning "Permission"

@@ -6,8 +6,8 @@ The Therapeutically Applicable Research to Generate Effective Treatments (TARGET
 ## Data access
 You can find TARGET pediatric cancer data in the folder:
 ```bash
-/workspace/datasets/intogen_datasets/genomes/datasets/target/20190228/original_data/
-/workspace/datasets/intogen_datasets/genomes/datasets/gdc/target/20200917/
+/data/bbg/datasets/intogen_datasets/genomes/datasets/target/20190228/original_data/
+/data/bbg/datasets/intogen_datasets/genomes/datasets/gdc/target/20200917/
 ```
 
 !!! note annotate "Website of the project" 
