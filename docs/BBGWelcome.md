@@ -1,12 +1,15 @@
 # Welcome to the BBG Lab! 
+
 Here you can find some resources to help you start smoothly.
 
 ## Communication
+
 - [Gmail](https://www.google.com/gmail)
 - [Hangouts](https://www.google.com/gmail)
 - [Calendar](https://www.google.com/calendar)
 
 ## Files
+
 - [NextCloud](https://bbgcloud.irbbarcelona.org/)
 - [Google Drive](https://drive.google.com/)
 
@@ -18,14 +21,22 @@ Here you can find some resources to help you start smoothly.
 - [Twitter](https://twitter.com/bbglab)
 
 ## Repositories
+
 - [Github](https://github.com/bbglab)
 - [Bitbucket](https://bitbucket.org/bbglab/)
 
 ## Cheatsheets
-- [Summary cheatsheet](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=bbglab&printable=True)
-- [Others](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets)
+
+- [Summary cheatsheet](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=bbglab&printable=True) - Summary cheatsheet with the basis
+- [Screen](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=screen&printable=True) - Working with **screen**
+- Git - Manage **git** version control system
+  - [Basic user](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=git.basic&printable=True)
+  - [Advanced](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=git&printable=True)
+- [Python packages](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=python_packages&printable=True) - Manage Python packages with **pip** and **conda**
+- [Conda](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=conda&printable=True) - Manage software with **conda**
 
 ## Learning
+
 - [Get started with Python](https://bbgcloud.irbbarcelona.org/dashboard/python/index.html)  
 Python tutorial covering the basis of Python.
 - [Python classes](http://nbviewer.jupyter.org/urls/bitbucket.org/bgframework/bgschool/raw/master/python/notebooks/classes.ipynb)  
