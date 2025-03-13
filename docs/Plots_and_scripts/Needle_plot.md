@@ -48,7 +48,7 @@ data = pd.DataFrame({
 
 needle_plot(data, 'TP53', 'ENST00000269305')
 ```
-![Plot mutational profile](../assets/images/Needleplot.png)
+![Plot mutational profile](../assets/images/Needleplot_example.png)
 
 
 ## Dependencies
