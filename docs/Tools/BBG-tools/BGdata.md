@@ -2,8 +2,7 @@
 
 ## Description
 
-**bgdata** is a simple data package manager. What is gives is essentially a path to a certain data package. The package is specified by 4 layers: *project*, *dataset*, *version* and *build*.
-
+**bgdata** is a simple data package manager. What it gives is essentially a path to a certain data package. The package is specified by 4 layers: *project*, *dataset*, *version* and *build*.
 **Installation**
 
 **bgdata** is written in Python and requires Python>=3.4.
