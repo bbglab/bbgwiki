@@ -92,7 +92,7 @@ Did you know it is estimated that the emission of a biology project (both wet an
 	 - Turn off the screens when you are not in the lab. Also the mouse and the keyboard
 	 - Lock/Suspend the computer when it is not used
 	 - Turn off the light of the lab when you are the last one leaving
- - Reduce the CO2 cost of your coding: you can estimate the CO2 footprint of your scripts or pipelines and make it efficientlier with many tools like:
+ - Reduce the CO2 cost of your coding: you can estimate the CO2 footprint of your scripts or pipelines and make it more efficiently with many tools like:
 	 -  [nf-co2footprint](https://github.com/nextflow-io/nf-co2footprint)
 	 - [CodeCarbon](https://codecarbon.io/)
 	 - [carbontracker](https://github.com/lfwa/carbontracker)
