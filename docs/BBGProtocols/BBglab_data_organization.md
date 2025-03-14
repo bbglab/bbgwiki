@@ -31,8 +31,7 @@ Organize your project directories with this basic structure:
 
 ### Google Drive
 
-You should have one directory per project **only** shared with the people ivolved in the project. This directory **must** contain the following:
-
+You should have one directory per project **only** shared with the people involved in the project. This directory **must** contain the following:
 #### Slides
 
 It is good to include links to where plots were generated as much as possible. This directory would contain:
