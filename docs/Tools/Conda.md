@@ -3,13 +3,16 @@
 ## Description
 
 Conda and mamba are open source **package manager** and **environment management** systems for Python and other languages. They run on Windows, macOS, Linux and z/OS. These tools automate the process of installing, updating, configuring and removing software packages. They manage dependencies, ensuring that all required libraries and components are correctly installed and compatible. In our case, using package managers is specially useful because:
+
 - They provide a way to ensure **reproducibility** in our code
 - They allow a project's software tools to be **portable**
 - They allow user-level installation (*i.e.* **do not require sudo** permissions)
 
 The difference between the two is that **mamba** is a fast, drop-in replacement for conda that highly improves package resolution speed and efficiency (and we recommend you use it instead of conda to make your life happier :)). 
 
-!!! info The majority of the commands shown below are also supported by mamba
+!!! info 
+    The majority of the commands shown below are also supported by mamba
+
 ## Installation
 ### Conda
 
