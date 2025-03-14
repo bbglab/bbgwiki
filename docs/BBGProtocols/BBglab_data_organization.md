@@ -11,8 +11,7 @@ You MUST add all the relevant information about your finished or ongoing project
 1. [ProjectCompilation](https://docs.google.com/spreadsheets/d/1jJleTek9eP4S6CCe5fO8_M4-vLuKhumgKjlQ58jP_rc/edit?gid=0#gid=0) google spreadsheet. It should be one file per BBGlab member. 
 2. [BBGlab datasets](https://bbglab.github.io/bbgwiki/Datasets/Datasets_BBGLAB/) google spreadsheet.
 
-> **It is esential to fill all these files so that all your project data is updated and stored. It is the responsibility of ALL the users involved in the project to keep it updated!**
-
+> **It is essential to fill all these files so that all your project data is updated and stored. It is the responsibility of ALL the users involved in the project to keep it updated!**
 
 Organize your project directories with this basic structure:
 
