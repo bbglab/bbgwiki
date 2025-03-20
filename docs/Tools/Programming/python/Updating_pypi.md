@@ -14,24 +14,28 @@
 Updates the tools necessary for the packages:
 
 ```sh
-python -m pip install --user --upgrade setuptools wheel
+python -m pip install --user --upgrade setuptools wheel build
 python -m pip install --user --upgrade twine
+python -m pip install -U packaging
 ```
 
 ### **2 Step** - Create a local distribution packages
 
 The following command will make the folder `dist/` with new version of the files.
 
-    python setup.py sdist bdist_wheel
-    ls dist
+    python -m build --sdist
+    python -m build --wheel
+    twine check dist/*
 
-If everything is in the right place then you can go ahead.
+If everything passes the checks then you can go ahead.
 
 ### **3 Step** - Upload the distribution to a test server
 
-    python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+In order to perform this step you need to have an account in the test.pypi.org registry.
 
-You can check the package in the test.pypi server:
+    python -m twine upload --repository testpypi dist/* -u __token__
+
+An API token is required to upload the package. You can generate one in your account settings. Once everything is all set, you can check the package in the test.pypi server:
 
     https://test.pypi.org/project/<PACKAGE>/<VERSION>/
 
@@ -41,7 +45,7 @@ Create a local environment to see if the package works:
 
     conda create --name test_pypi python
 
-Then install the package from the test server:
+Then install the package from the test server (An API token is required to upload the package):
 
     python -m pip install --index-url https://test.pypi.org/simple/ --no-deps <PACKAGE>
 
@@ -49,7 +53,7 @@ Then install the package from the test server:
 
 Ready to roll!
 
-    python -m twine upload dist/*
+    python -m twine upload --repository pypi -u __token__ dist/*
 
 Check the package online:
 
