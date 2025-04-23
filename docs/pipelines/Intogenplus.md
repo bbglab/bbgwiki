@@ -35,8 +35,7 @@ Before launching the pipeline, some parameters needs to be configured. Here a si
     ![Revision number](../assets/images/intogen-dsl2/revision_number.png){ height="300" style="display: block; margin: 0 auto" }
 
     By default, the **revision number** is linked to the stable tag of the pipeline. As of now - it's `2024.11-dsl2`. 
-    This can eventually be change if a run is resumed or relaunched from the run section. 
-
+    This can eventually be changed if a run is resumed or relaunched from the run section. 
     !!! note "Please be aware that changing this section may affect the `resume` option"
 
     #### **Config profile**
@@ -45,7 +44,7 @@ Before launching the pipeline, some parameters needs to be configured. Here a si
 
     - `test` --> this is using the [CBIOP cohort](https://github.com/bbglab/intogen-plus-dsl2/blob/dev/DSL2/tests/data/pipeline/input/cbioportal_prad_broad/data_mutations_extended.txt) in the repo [optional]
     - `test_full` --> this is using the full datasets of intogen [optional].
-    - `singularity` --> this is allowing the use of singulairty for using the containers
+    - `singularity` --> this is allowing the use of singularity for using the containers
     - `irb` --> this is allocating the right resources and queue for the slurm executor in the IRBCluster
 
     #### **Workflow run name**
