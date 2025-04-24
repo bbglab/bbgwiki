@@ -24,8 +24,7 @@ you'll be able to launch the pipeline.
 
 ![alt text](../assets/images/intogen-dsl2/intogen_seqera.png)
 
-Before launching the pipeline, some parameters needs to be configured. Here a simple but complete list of useful parameters are explained.
-
+Before launching the pipeline, some parameters need to be configured. Here a simple but complete list of useful parameters is explained.
 !!! warning "We highly recommend to keep the defaults for those parameters not discussed in this page."
 
 === "General config section"
