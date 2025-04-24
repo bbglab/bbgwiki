@@ -58,7 +58,14 @@ Before launching the pipeline, some parameters needs to be configured. Here a si
     - If I am reproducing the v2024 run I would call it: `v2024_ALL`
     - If I am running a specific cohort from an external collaborator I would call it: `v2024_EXT_COLLAB`
 
-    !!! danger "Do not add: date, name of who's launching the pipeline or leave the default value."
+    #### **Work directory**
+
+    ![work directory](../assets/images/intogen-dsl2/work_dir.png){ height="300" style="display: block; margin: 0 auto" }
+    
+    By default, the work directory is `/data/bbg/nobackup2/work/IntOGenDSL2/v2024/`. You should create a subfolder using e.g. the same name as the `Outdir` from the next section.
+    
+    !!! warning "Delete the work folder once the intogen run finishes successfully."
+    
 
 === "Run parameters section"
 
@@ -70,6 +77,9 @@ Before launching the pipeline, some parameters needs to be configured. Here a si
     ```sh
     /path/to/datasets/for/intogen/input1 /path/to/datasets/for/intogen/input2 /path/to/datasets/for/intogen/input3
     ```
+
+    !!! question "How do I prepare the input for IntOGen?"
+        Great question! Here the documentation where everything is explained: [intogen-plus.readthedocs](https://intogen-plus.readthedocs.io/en/v2024/usage.html#input)
 
     #### **Outdir**
 
@@ -112,3 +122,4 @@ Once both those sections are completed we are safe to run the pipeline.
 ## References
 
 - Federica Brando
+- Miguel Grau
