@@ -3,7 +3,25 @@
 ## Description
 BgReference is a library to fast retrive Genome Reference partial sequences.
 
-## Instalation 
+### List of available genomes (v0.7)
+```bash
+# Using HUMAN_GENOME_SEQUENCE_MAPS
+hg19
+hg38
+hg18
+```
+
+```bash
+# Using MOUSE_GENOME_SEQUENCE_MAPS
+c3h
+mm10
+mm39
+cast
+car
+f344
+```
+
+## Installation 
 ```bash
 conda install -c conda-forge -c bbglab bgreference
 ```
