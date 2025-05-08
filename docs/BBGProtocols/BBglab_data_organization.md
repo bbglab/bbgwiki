@@ -98,7 +98,7 @@ Did you know it is estimated that the emission of a biology project (both wet an
 	 - [carbontracker](https://github.com/lfwa/carbontracker)
 	 -  Check out more [here](https://github.com/GreenAlgorithms/GreenAlgorithms4HPC)
 
-Check Loïc Lannealongue [talk] in Nextflow Submit 2024 in Barcelona (https://summit.nextflow.io/2024/barcelona/agenda/10-30--towards-environmentally-sustainable-computational-science/) to learn more about this.
+Check [Loïc Lannealongue talk](https://summit.nextflow.io/2024/barcelona/agenda/10-30--towards-environmentally-sustainable-computational-science/) in Nextflow Submit 2024 in Barcelona to learn more about this.
 
 ## Reference
 
