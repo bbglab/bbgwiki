@@ -3,7 +3,7 @@
 ## Description
 BgReference is a library to fast retrive Genome Reference partial sequences.
 
-### List of available genomes (v0.7)
+## List of available genomes (v0.7)
 ```bash
 # Using HUMAN_GENOME_SEQUENCE_MAPS
 hg19
