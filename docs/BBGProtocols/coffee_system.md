@@ -51,7 +51,7 @@ Thanks a lot!
 
 ## Slack coffee bot
 
-It is easy to forget when it is your turn to clean the coffee machine, many of us have been there. So, to help you remember, we have a slack channel called `@Coffee reminder BOT` that sends a reminder every Monday of the week to the person who is responsible for cleaning the coffee machine. This is a bot that sends a message to the individual person.
+It is easy to forget when it is your turn to clean the coffee machine, many of us have been there. So, to help you remember, we have a Slack bot user called `@Coffee reminder BOT` that sends a reminder every Monday of the week to the person who is responsible for cleaning the coffee machine. This bot sends a direct message to the individual person.
 
 The source code as well as the instructions for using it can be found in the [Coffee bot GitHub repository](https://github.com/bbglab/slack-coffee-bot), maintained by [@CarlosLopezElorduy](https://github.com/CarlosLopezElorduy).
 
