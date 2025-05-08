@@ -49,3 +49,7 @@ This way, you only need to define the path logic once and can reuse it throughou
 
 !!! info
     Keeping shared variables—like paths, pipeline run names, or directory names—in a single Python file that can be imported from other scripts or notebooks is a good practice. It helps avoid inconsistencies and reduces the risk of forgetting to update paths or values across multiple files.
+
+## Reference
+
+- Stefano Pellegrini
