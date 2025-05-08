@@ -103,7 +103,7 @@ The [Visual Studio Code](https://code.visualstudio.com/) editor has a built-in G
 
 - **Don't Commit Half-Done Work**
   You should only commit code when a logical component is completed.
-  If you‘re tempted to commit just because you need a clean working copy (to check out a branch, pull in changes, etc.) consider using `git stash` instead.
+  If you're tempted to commit just because you need a clean working copy (to check out a branch, pull in changes, etc.) consider using `git stash` instead.
 
 - **Test Your Code Before You Commit**
   Test it thoroughly to make sure it really is completed and has no side effects (as far as one can tell).
