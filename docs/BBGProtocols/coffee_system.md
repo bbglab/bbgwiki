@@ -1,6 +1,6 @@
 # Info for bbg-coffee drinkers
 
-## System for the coffee:
+## System for the coffee
 
 - Every week there is one person responsible for cleaning the coffee machine.
 - The list is [here](https://docs.google.com/spreadsheets/d/1fA5wBTpkHbuZXG3J1i39s_XP5k__pzl_qwYGCRwjgvI/edit#gid=2079108469) in the same group meetings & agora sheet, on the right side.
@@ -33,10 +33,10 @@
 
   **1** ![coffee1](../assets/images/coffee1.jpg){ width="300" }
   **2** ![coffee2](../assets/images/coffee2.jpg){ width="300" }
-  
+
   **3** ![coffee3](../assets/images/coffee3.jpg){ width="300" }
   **4** ![coffee4](../assets/images/coffee4.jpg){ width="300" }
-  
+
   **5** ![coffee2](../assets/images/coffee5.jpg){ width="300" }
 
   To extract this inner part (coffee grinder), press the red buttons and pull out.
@@ -49,8 +49,17 @@ Remember to tidy up a little bit, for any remaining coffee leftovers on the tabl
 
 Thanks a lot!
 
+## Slack coffee bot
+
+It is easy to forget when it is your turn to clean the coffee machine, many of us have been there. So, to help you remember, we have a Slack bot user called `@Coffee reminder BOT` that sends a reminder every Monday of the week to the person who is responsible for cleaning the coffee machine. This bot sends a direct message to the individual person.
+
+The source code as well as the instructions for using it can be found in the [Coffee bot GitHub repository](https://github.com/bbglab/slack-coffee-bot), maintained by [@CarlosLopezElorduy](https://github.com/CarlosLopezElorduy).
+
+Every time a new person joins or exits the lab, a specific file within the code of the bot needs to be updated. If this happens, please contact any of the people in the references below, and they will update the required information.
+
 ## References
 
 - Monica
 - Martina
 - Erika
+- Carlos
