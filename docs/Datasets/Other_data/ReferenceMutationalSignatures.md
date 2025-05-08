@@ -10,6 +10,9 @@
 ### *Highlights*
 - COSMIC displays for each signature a battery of analyses showing about tissue prevalence, strand asymmetry, enrichment of histone modifications, nucleosome occupancy, CTCF occupancy, etc.
 
+### *Where is this data stored in the cluster?*
+A tab-separated table with the COSMIC v3.4 signatures is available at `/data/bbg/datasets/COSMIC_signatures/COSMIC_v3.4_SBS_GRCh38.txt`. Rows represent the 96 possible mutational contexts (as trinucleotides) and columns the name of the reference signature. Each column sums to one and the values in each cell are the contribution of the mutational context to that signature. Bear in mind that this contribution was calculated for the whole genome content and you may need to adjust these contributions if your genome content is different (*e.g.*: panel sequencing).
+
 ### *Signature groups*
 As you probably know for several of the signatures in the COSMIC reference catalog there is a known aetiology, and this allows us to define several signature groups.
 
