@@ -12,10 +12,10 @@ We can retrieve mutation scores for a given set of input mutations using the com
 Within an interactive session in the cluster, you can use the following command line as a template and modify it according to your specific needs:
 
 ```
-singularity exec /workspace/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /workspace/datasets/vep/ \
+singularity exec /data/bbg/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /data/bbg/datasets/vep/ \
 --tab -i input_mutations.tsv --offline --cache -o output_annotated_mutations.tsv \
 --species homo_sapiens --assembly GRCh38 --fork 8 --canonical \
---plugin MaveDB,file=/workspace/datasets/vep/homo_sapiens/plugins/MaveDB_variants.tsv.gz
+--plugin MaveDB,file=/data/bbg/datasets/vep/homo_sapiens/plugins/MaveDB_variants.tsv.gz
 ```
 
 ## Remarks

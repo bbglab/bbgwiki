@@ -15,7 +15,7 @@ Click [here](https://sjlife.stjude.org/study-population.html){:target="_blank"} 
 ## Data access
 You can find the data from St. Jude LIFE in the folder:
 ```bash 
-/workspace/datasets/stjudelife
+/data/bbg/datasets/stjudelife
 ```
 
 

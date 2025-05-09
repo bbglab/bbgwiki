@@ -147,7 +147,7 @@ By adding this command next to your query, you are telling Copilot to look at th
 ![Example Github Copilot @workspace](../assets/images/example-ghc-workspace.png)
 
 !!! TIP
-    Try to open VSCode in the root folder of your project, instead of a very general folder (such as `/workspace`, `/workspace/projects`, etc), to get more accurate suggestions, since Copilot won't have to look through a lot of files to give you a suggestion.
+    Try to open VSCode in the root folder of your project, instead of a very general folder (such as `/workspace`, `/data/bbg/projects`, etc), to get more accurate suggestions, since Copilot won't have to look through a lot of files to give you a suggestion.
 
 #### `#file`
 

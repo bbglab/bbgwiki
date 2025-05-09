@@ -36,7 +36,7 @@ Data includes:
 
 ## Description
 
-You can find the data in the folder: `/workspace/projects/genomic_regions/`
+You can find the data in the folder: `/data/bbg/projects/genomic_regions/`
 
 - `./raw_data`: contains databases from which raw data has been downloaded
 - `./scripts`: contains code to parse raw data

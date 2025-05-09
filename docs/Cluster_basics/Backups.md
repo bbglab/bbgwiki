@@ -15,10 +15,10 @@ Depending the partition, the safety level is different:
 
 ## Example of recovering data
 
-Let's say we have deleted or edited by mistake a file in a partition with snapshots (e.g. `/workspace/projects/`). If we check the content of the `.snapshot/` folder:
+Let's say we have deleted or edited by mistake a file in a partition with snapshots (e.g. `/data/bbg/projects/`). If we check the content of the `.snapshot/` folder:
 
 ```sh
-mgrau@login01:/workspace/projects$ ls /workspace/projects/.snapshot/
+mgrau@login01:/data/bbg/projects$ ls /data/bbg/projects/.snapshot/
 daily_at_23_noSun.2023-06-05_2300  daily_at_23_noSun.2023-06-15_2300        hourly_mon2fri_11_15_19.2023-06-16_1900  hourly_mon2fri_11_15_19.2023-06-21_1900  Sun_at_23.2023-05-14_2300
 daily_at_23_noSun.2023-06-06_2300  daily_at_23_noSun.2023-06-16_2300        hourly_mon2fri_11_15_19.2023-06-19_1100  hourly_mon2fri_11_15_19.2023-06-22_1100  Sun_at_23.2023-05-21_2300
 daily_at_23_noSun.2023-06-07_2300  daily_at_23_noSun.2023-06-17_2300        hourly_mon2fri_11_15_19.2023-06-19_1500  hourly_mon2fri_11_15_19.2023-06-22_1500  Sun_at_23.2023-05-28_2300
@@ -35,7 +35,7 @@ We can see a daily snapshot at 23.00h during the last 15 days (`daily_at_23_noSu
 Inside every snapshot, we can see the same file structure of `projects`:
 
 ```sh
-mgrau@login01:/workspace/projects$ ls /workspace/projects/.snapshot/daily_at_23_noSun.2023-06-05_2300
+mgrau@login01:/data/bbg/projects$ ls /data/bbg/projects/.snapshot/daily_at_23_noSun.2023-06-05_2300
 all_aecc                      clustering_3d          diskusage20200511.txt   healthy_chemo              nanopore              regulatory_regions        small_collaborations_ines
 all_aecc_pediatric            cndrivers              diskusage20200619.txt   hotmaps_signatures         neoantigen            repair_states             stjude
 alphafold_features            colorectal_apoe        diskusage20200725.txt   immune_biomarkers          new_oncodrivemut      replication_timing        st_jude_life

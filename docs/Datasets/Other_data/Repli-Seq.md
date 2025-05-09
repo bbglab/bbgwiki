@@ -1,7 +1,7 @@
 # Repli-Seq data
 
 Cluster location:
-`/workspace/nobackup/repliseq`
+`/data/bbg/nobackup/repliseq`
 
 ## Description
 

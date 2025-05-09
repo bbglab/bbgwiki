@@ -9,9 +9,9 @@
 
 There is a shared folder in datasets where there are several vep cache versions and docker containers. If you are planning to download one, make sure to store it in this location.
 
-`/workspace/datasets/vep`
+`/data/bbg/datasets/vep`
 
-The easiest way to use a new version of vep is downloading the [docker container](https://hub.docker.com/r/ensemblorg/ensembl-vep/tags?page=1). Most popular versions are already downloaded in `/workspace/datasets/vep/homo_sapiens` (or `/workspace/datasets/vep/mus_musculus` for mice).
+The easiest way to use a new version of vep is downloading the [docker container](https://hub.docker.com/r/ensemblorg/ensembl-vep/tags?page=1). Most popular versions are already downloaded in `/data/bbg/datasets/vep/homo_sapiens` (or `/data/bbg/datasets/vep/mus_musculus` for mice).
 
 An example for downloading a new version:
 
@@ -34,7 +34,7 @@ For more details, you can follow the [installation guide](https://www.ensembl.or
 Once you are in a working node:
 
 ```sh
-mgrau@bbgn009:/workspace/datasets/vep/homo_sapiens$ singularity exec ensembl-vep_109.sif vep
+mgrau@bbgn009:/data/bbg/datasets/vep/homo_sapiens$ singularity exec ensembl-vep_109.sif vep
 
 #----------------------------------#
 # ENSEMBL VARIANT EFFECT PREDICTOR #
@@ -79,7 +79,7 @@ http://www.ensembl.org/info/docs/tools/vep/script/vep_options.html
 A real example command could be:
 
 ```sh
-mgrau@bbgn009:/workspace/datasets/vep/homo_sapiens$ singularity exec vep109.sif vep --dir /workspace/datasets/vep/ -i variants_ref38.vcf.gz --offline --format vcf --vcf --cache -o exampleout.vcf --species homo_sapiens --assembly GRCh38 --fork 8
+mgrau@bbgn009:/data/bbg/datasets/vep/homo_sapiens$ singularity exec vep109.sif vep --dir /data/bbg/datasets/vep/ -i variants_ref38.vcf.gz --offline --format vcf --vcf --cache -o exampleout.vcf --species homo_sapiens --assembly GRCh38 --fork 8
 ```
 
 To speed up the process, it is recommended to use the downloaded vep-cache files specifying the directory (`--dir`) and the `--offline` and `--cache` options. VEP allows multithreating using the `--fork` option.
