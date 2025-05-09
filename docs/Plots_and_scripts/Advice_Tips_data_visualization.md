@@ -23,7 +23,7 @@ Covering
 ### Color usage:
 ##### Perception of color: 
 Some important considerations when selecting a color palette include:
-- **Does the palette retains its integrity when printed in black and white?** Gradients are a good idea to satisfy this criteria, e.g. the `viridis` palettes.  
+- **Does the palette retain its integrity when printed in black and white?** Gradients are a good idea to satisfy this criteria, e.g. the `viridis` palettes.  
 - **Are people with colorblindness able to understand it?** [Color blindness simulators](https://www.color-blindness.com/coblis-color-blindness-simulator/). Can help with that. Also, the `colorblindr` R package can simulate color blindness to ggplot objects.
 
 ##### Color palettes:
