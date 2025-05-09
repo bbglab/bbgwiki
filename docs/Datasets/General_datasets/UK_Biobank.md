@@ -32,7 +32,7 @@ Originally, the data was downloadable, so we have in our cluster a lot of clinic
 also the WES from 200,000 individuals in the folder:
 
 ```bash
-/workspace/datasets/ukbiobank_ch/
+/data/bbg/datasets/ukbiobank_ch/
 ```
 
 More recently, the UK Biobank Research Analysis Platform

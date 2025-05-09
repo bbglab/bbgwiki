@@ -20,7 +20,7 @@ characteristics of the cohort from St. Jude LIFE.
 You can find the data from St. Jude LIFE in the folder:
 
 ```bash
-/workspace/datasets/stjudelife
+/data/bbg/datasets/stjudelife
 ```
 
 !!! note annotate "Website"

@@ -169,7 +169,7 @@ suggestion. The workspace corresponds to the root folder that you have opened in
 
 !!! TIP
     Try to open VSCode in the root folder of your project, instead of a very general folder (such as `/workspace`,
-    `/workspace/projects`, etc), to get more accurate suggestions, since Copilot won't have to
+    `/data/bbg/projects`, etc), to get more accurate suggestions, since Copilot won't have to
     look through a lot of files to give you a suggestion.
 
 #### `#file`

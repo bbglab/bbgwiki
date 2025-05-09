@@ -1,7 +1,7 @@
 ---
 name: BBGwiki | hackathon issue type
 about: Template issue to track progress in hackathon
-title: BBGwiki | [update/add/fix
+title: BBGwiki | [update/add/fix]
 labels: ''
 assignees: ''
 

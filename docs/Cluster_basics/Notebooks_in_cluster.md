@@ -47,7 +47,7 @@ You will need to follow the next steps:
 5. Go to the folder that you wish to run the notebook:
 
     ```bash
-    (base)[screen_name] <username>@bbgn005:~$ cd /workspace/folder
+    (base)[screen_name] <username>@bbgn005:~$ cd /data/bbg/folder
     ```
 
 6. Run the jupyter notebook:

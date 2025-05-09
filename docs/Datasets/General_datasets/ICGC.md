@@ -33,7 +33,7 @@ through high-quality clinical and molecular data for international researchers.
 You can find the last data-version (2021) from ICGC in the folder:
 
 ```bash
-/workspace/datasets/intogen_datasets/genomes/datasets/icgc/20211021/
+/data/bbg/datasets/intogen_datasets/genomes/datasets/icgc/20211021/
 ```
 
 ## Download data files

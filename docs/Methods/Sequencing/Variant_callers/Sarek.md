@@ -95,7 +95,7 @@ If you run the entire pipeline, you will end with many files. From those, we wil
 ## Links
 
 - [Sarek official webpage](https://nf-co.re/sarek/3.1.2)
-- As an output example, the data in `/workspace/datasets/all_aecc_pediatric` was generated using sarek version 3.1.1.
+- As an output example, the data in `/data/bbg/datasets/all_aecc_pediatric` was generated using sarek version 3.1.1.
 Feel free to give it a look if needed.
 
 ## Reference

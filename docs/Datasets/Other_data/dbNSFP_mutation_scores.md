@@ -15,10 +15,10 @@ Within an interactive session in the cluster, you can use the following command 
 template and modify it according to your specific needs:
 
 ```sh
-singularity exec /workspace/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /workspace/datasets/vep/ \
+singularity exec /data/bbg/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /data/bbg/datasets/vep/ \
 --tab -i input_mutations.tsv --offline --cache -o output_annotated_mutations.tsv \
 --species homo_sapiens --assembly GRCh38 --fork 8 --canonical \
---plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz,\
+--plugin dbNSFP,/data/bbg/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz,\
 SIFT_score,SIFT4G_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationAssessor_score,FATHMM_score,MetaLR_score,MetaRNN_score,CADD_raw,VEST4_score,PROVEAN_score,REVEL_score,ESM1b_score,EVE_score,AlphaMissense_score,phyloP100way_vertebrate,phyloP470way_mammalian,phyloP17way_primate
 ```
 
@@ -35,7 +35,7 @@ SIFT_score,SIFT4G_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationAssess
 
 `--canonical` is a VEP command line option, it simply adds a column pointing out whether the transcript is canonical.
 
-Right after `--plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz` and separated by commas
+Right after `--plugin dbNSFP,/data/bbg/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz` and separated by commas
 it goes the list of all the accepted scores that you want to be mapped to your query mutations.
 You can check out the full list of scores here:
 

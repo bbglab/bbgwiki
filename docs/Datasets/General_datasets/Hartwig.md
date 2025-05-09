@@ -17,7 +17,7 @@ Paula if you need to use this data.
 Once you obtains permissions, you can find the data from Hartwig Medical Foundation Database on bbgcluster here:
 
 ```bash
-/workspace/datasets/hartwig
+/data/bbg/datasets/hartwig
 ```
 
 ## Processed data
@@ -30,14 +30,14 @@ For one such project (immunobiomarkers) a pipeline to extract and format HMF bio
 different data types. The HMF processed clinical data is output on our cluster here:
 
 ```bash
-/workspace/datasets/hartwig/20220809/biomarkers/tmp/clinical_ready.csv
+/data/bbg/datasets/hartwig/20220809/biomarkers/tmp/clinical_ready.csv
 ```
 
 The full output from the biomarkers pipline collects more than 60,000 curated columns of biomarkers into a table
 ready for analysis (located in folder below):
 
 ```bash
-/workspace/datasets/hartwig/20220809/biomarkers/clean/biomarkers_AdjTPM.csv
+/data/bbg/datasets/hartwig/20220809/biomarkers/clean/biomarkers_AdjTPM.csv
 ```
 
 ## Exhaustive Study

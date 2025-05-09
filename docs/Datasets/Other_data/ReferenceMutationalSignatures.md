@@ -12,6 +12,18 @@
 - COSMIC displays for each signature a battery of analyses showing about tissue prevalence, strand asymmetry, enrichment
 - of histone modifications, nucleosome occupancy, CTCF occupancy, etc.
 
+### *Where is this data stored in the cluster?*
+A tab-separated table with the COSMIC v3.4 signatures is available at:
+`/data/bbg/datasets/COSMIC_signatures/COSMIC_v3.4_SBS_GRCh38.txt`.
+
+Key details about the data:
+- **Rows**: Represent the 96 possible pyrimidine-centered trinucleotide contexts.
+- **Columns**: Denote the respective reference signatures. Each column sums to one.
+- **Cell values**: Indicate the frequencies of mutations matching that context relative to the total mutations observed (*i.e.*, the proportion of mutations matching that trinucleotide context).
+
+Important considerations:
+- These frequencies are not equivalent to mutation rates. They were derived from whole genome samples where the reference trinucleotides are not equally represented.
+- If your study involves a different reference genome or a specific genomic region with a distinct trinucleotide content (e.g., panel sequencing), you may need to rescale the relative frequencies of the signatures accordingly.
 ### *Signature groups*
 
 As you probably know for several of the signatures in the COSMIC reference catalog there is a known aetiology, and this

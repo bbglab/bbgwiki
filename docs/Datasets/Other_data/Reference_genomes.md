@@ -7,7 +7,7 @@ of the genome sequence, there is a `genomes` folder in datasets that can serve a
 storage of reference genomes.
 
 You can find the full path to the directory here:
-`/workspace/datasets/genomes/`
+`/data/bbg/datasets/genomes/`
 
 The contents of this folder are the following:
 

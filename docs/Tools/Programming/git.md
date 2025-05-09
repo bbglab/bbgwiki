@@ -107,7 +107,66 @@ the history of your project, create commits, switch branches, etc.
 - **Diff Editor**: Visualize the changes made to your project.
 ![Diff](../../assets/images/vscode-diff.png)
 
+## Best practices
+
+### Commits
+
+- **Commit Related Changes**
+  A commit should be a wrapper for related changes. One commit = one task.
+
+- **Commit Often**
+  Small commits are easier to review, rollback, and share.
+
+- **Don't Commit Half-Done Work**
+  You should only commit code when a logical component is completed.
+  If you're tempted to commit just because you need a clean working copy (to check out a branch, pull in changes, etc.) consider using `git stash` instead.
+
+- **Test Your Code Before You Commit**
+  Test it thoroughly to make sure it really is completed and has no side effects (as far as one can tell).
+
+- **Write Good Commit Messages**
+
+  | **Type**   | **Description**                                        |
+  |------------|--------------------------------------------------------|
+  | `add`      | new code                                               |
+  | `fix`      | bug fix                                                |
+  | `chore`    | maintenance, tooling, or other non-production changes  |
+  | `feat`     | new feature for the user                               |
+  | `test`     | adding or updating tests                               |
+  | `refactor` | code restructuring (variable names, functions, folders)|
+  | `docs`     | documentation only                                     |
+
+  Each commit message should start with one of the types above, followed by a colon and a short description. For example:
+
+  ```text
+  feat: add functionality
+  fix: resolve crash
+  docs: update usage guide
+  ```
+
+### Branching
+
+- **Clear Naming Convention**  
+  Use `type/short-description` (e.g. `feature/this-is-a-new-feature`, `bugfix/in-this-we-fix-an-error`, `chore/update-dependencies`).
+
+- **One Concern per Branch**  
+  Keep each branch focused on a single feature, bugfix, or chore to make review and testing easier.
+
+- **Regularly Sync with Main**  
+  Pull or rebase the latest `main` into your branch often to minimize merge conflicts.
+
+- **Short-lived Branches**  
+  Aim to finish and merge branches within a few days; long-lived branches increase integration pain.
+
+- **Use Pull Requests for Merging**  
+  Open a PR against `main` (or your integration branch), add a clear description (you can use GitHub copilot to automatically generate a clear description of your PR), link related issues.
+  Add at least one reviewer and wait for the approval before merging to `main`.
+
+- **Clean up after merge**  
+  Delete branches once they’ve been merged to keep your repo tidy and avoid confusion.
+
 ## References
 
 - Carlos López-Elorduy
 - Federica Brando
+- Davide Scarpetta

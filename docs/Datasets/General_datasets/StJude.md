@@ -16,7 +16,7 @@ available in St. Jude Cloud.
 You can find the data from St. Jude Cloud in the folder:
 
 ```bash
-/workspace/datasets/stjude
+/data/bbg/datasets/stjude
 ```
 
 !!! warning "Permission"

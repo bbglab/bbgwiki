@@ -28,7 +28,7 @@ available repo as well as to example scripts stored in the bbg-cluster ``/worksp
 Notebook:
 
 ```sh
-/workspace/projects/boostdm_ch/notebooks/benchmarks-precision-recall.ipynb
+/data/bbg/projects/boostdm_ch/notebooks/benchmarks-precision-recall.ipynb
 ```
 
 ### Radar plots
@@ -45,7 +45,7 @@ Notebook:
     Notebook:
 
     ```sh
-    /workspace/projects/boostdm_ch/notebooks/run8_20220705_feature-landscape/BoostDM-CH_run20220705_blueprints_SDM_JER.ipynb
+    /data/bbg/projects/boostdm_ch/notebooks/run8_20220705_feature-landscape/BoostDM-CH_run20220705_blueprints_SDM_JER.ipynb
     ```
 
 ### Blueprints
@@ -62,7 +62,7 @@ Notebook:
     Notebook:
 
     ```sh
-    /workspace/projects/boostdm_ch/notebooks/run8_20220705_feature-landscape/BoostDM-CH_run20220705_blueprints_SDM_JER.ipynb
+    /data/bbg/projects/boostdm_ch/notebooks/run8_20220705_feature-landscape/BoostDM-CH_run20220705_blueprints_SDM_JER.ipynb
     ```
 
 ## Reference

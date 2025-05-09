@@ -76,6 +76,25 @@ screen -X -S [screen number ID or name] quit
 pkill screen
 ```
 
+### Force screen detach and reattach to your current terminal
+
+This command can be useful when a screen session remains attached (e.g., after a dropped SSH connection), preventing access. This situation may occur if the session was not properly detached or became a ghost session.
+
+To check your screen status, use the following command:
+
+```bash
+screen -ls
+
+There are screens on:
+	1234567.myscreen	(Attached)
+```
+
+To force detach and reattach to your current terminal :
+
+```bash
+screen -D -r 1234567.myscreen
+```
+
 ---
 
 ## Documentation
@@ -89,4 +108,4 @@ You can also check the [full documentation](https://www.gnu.org/software/screen/
 - Carlos López-Elorduy
 - Jordi Deu-Pons
 - Miguel Grau
-  
+- Rocio Chamorro

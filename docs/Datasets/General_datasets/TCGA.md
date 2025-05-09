@@ -19,13 +19,13 @@ characterizations performed and an initial analysis of the data.
 You can find the data from TCGA in the folder:
 
 ```bash
-/workspace/datasets/intogen_datasets/genomes/tcga_20171006/filtered
+/data/bbg/datasets/intogen_datasets/genomes/tcga_20171006/filtered
 ```
 
 You can find clinical data from samples from TCGA in the folder:
 
 ```bash
-/workspace/datasets/intogen_datasets/genomes/tcga_20171006/metadata
+/data/bbg/datasets/intogen_datasets/genomes/tcga_20171006/metadata
 ```
 
 !!! note annotate "Website"

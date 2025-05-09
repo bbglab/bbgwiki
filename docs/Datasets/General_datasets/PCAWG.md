@@ -15,25 +15,25 @@ RNAs, and large-scale structural alterations.
 You can find the data from PCAWG in the folder:
 
 ```bash
-/workspace/datasets/intogen_datasets/genomes/pcawg_20160110/filtered
+/data/bbg/datasets/intogen_datasets/genomes/pcawg_20160110/filtered
 ```
 
 You can find clinical data from samples from PCAWG in the file:
 
 ```bash
-/workspace/datasets/intogen_datasets/genomes/pcawg_20160110/original_data/pcawg_donor_clinical_August2016_v9.csv
+/data/bbg/datasets/intogen_datasets/genomes/pcawg_20160110/original_data/pcawg_donor_clinical_August2016_v9.csv
 ```
 
 You can find clinical data from samples from Hartwig in the file:
 
 ```bash
-/workspace/datasets/intogen_datasets/genomes/pcawg_20160110/original_data/pcawg_specimen_histology_August2016_v9.csv
+/data/bbg/datasets/intogen_datasets/genomes/pcawg_20160110/original_data/pcawg_specimen_histology_August2016_v9.csv
 ```
 
 Additional data about ... from PCAWG is available in the folder (you will need special permission to use this data):
 
 ```bash
-/workspace/datasets/pcawg
+/data/bbg/datasets/pcawg
 ```
 
 !!! note annotate "Website"
