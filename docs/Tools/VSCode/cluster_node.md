@@ -107,7 +107,6 @@ Host irbccn43
 !!! warning "Node change"
     This is marked as a "*ONE-TIME-STEP*", but in reality it depends on the node you are allocated. If you need to change the node or add a new node, **the configuration will need to be updated**.
 
-
 !!! tip "Tip (Optional): Helper function to add SSH configuration"
     Here is a helper function that you can add to your `.bashrc` file to make it easier to setup the node and the tunnel.
 
@@ -180,7 +179,6 @@ Open the side bar at the "Remote - SSH" panel, and then click the `irbccn*` opti
     You can create a profile in VSCode to keep the settings and extensions for the connection to the cluster. This works similar to the idea of conda environments, but for the VSCode settings.
 
     To create a profile, click on the gear icon in the bottom left corner of VSCode, and then click on Profiles and create a new profile.
-
 
 ## From Browser (*code-server*)
 
@@ -392,8 +390,8 @@ This approach doesn't use the VSCode app, but instead uses the code-server packa
 
 ## Reference
 
--   Carlos López-Elorduy
--   Federica Brando
--   Ferriol Calvet
--   Ferran Muiños
--   Jordi Deu Pons
+- Carlos López-Elorduy
+- Federica Brando
+- Ferriol Calvet
+- Ferran Muiños
+- Jordi Deu Pons
