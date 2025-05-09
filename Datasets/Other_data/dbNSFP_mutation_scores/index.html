@@ -4203,10 +4203,10 @@ for variant effect analysis, including benchmarking of new variant effect tools.
 <h2 id="how-to-fetch-mutation-scores-from-the-dbnsfp-database">How to fetch mutation scores from the dbNSFP database<a class="headerlink" href="#how-to-fetch-mutation-scores-from-the-dbnsfp-database" title="Permanent link">&para;</a></h2>
 <p>We can retrieve mutation scores for a given set of input mutations using the command line from the ENSEMBL-VEP alongside the <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_plugins.html#dbnsfp">dbNSFP plugin</a>.</p>
 <p>Within an interactive session in the cluster, you can use the following command line as a template and modify it according to your specific needs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>singularity exec /workspace/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /workspace/datasets/vep/ \
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>singularity exec /data/bbg/datasets/vep/homo_sapiens/ensembl-vep_111.0.sif vep --dir /data/bbg/datasets/vep/ \
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--tab -i input_mutations.tsv --offline --cache -o output_annotated_mutations.tsv \
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--species homo_sapiens --assembly GRCh38 --fork 8 --canonical \
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz,\
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--plugin dbNSFP,/data/bbg/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz,\
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>SIFT_score,SIFT4G_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationAssessor_score,FATHMM_score,MetaLR_score,MetaRNN_score,CADD_raw,VEST4_score,PROVEAN_score,REVEL_score,ESM1b_score,EVE_score,AlphaMissense_score,phyloP100way_vertebrate,phyloP470way_mammalian,phyloP17way_primate
 </code></pre></div>
 <h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
@@ -4215,7 +4215,7 @@ for variant effect analysis, including benchmarking of new variant effect tools.
 </code></pre></div>
 <p><code>output_annotated_mutations.tsv</code> is the filename of the output.</p>
 <p><code>--canonical</code> is a VEP command line option, it simply adds a column pointing out whether the transcript is canonical.</p>
-<p>Right after <code>--plugin dbNSFP,/workspace/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz</code> and separated by commas it goes the list of all the accepted scores that you want to be mapped to your query mutations. You can check out the full list of scores here:</p>
+<p>Right after <code>--plugin dbNSFP,/data/bbg/datasets/vep/homo_sapiens/plugins/dbNSFP4.5a_grch38.gz</code> and separated by commas it goes the list of all the accepted scores that you want to be mapped to your query mutations. You can check out the full list of scores here:</p>
 <p>Bear in mind that some scores have several tracks of data and some postprocessing might be required after the query.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <p>Ferran Muiños, 
@@ -4244,7 +4244,7 @@ Miguel Grau</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:18:17">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:28:47">May 9, 2025</span>
   </span>
 
     
@@ -4254,7 +4254,7 @@ Miguel Grau</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:18:17">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:28:47">May 9, 2025</span>
   </span>
 
     
@@ -4271,6 +4271,11 @@ Miguel Grau</p>
 
     
     <nav>
+      
+        <a href="https://github.com/AxelRosendahlHuber" class="md-author" title="@AxelRosendahlHuber">
+          
+          <img src="https://avatars.githubusercontent.com/u/36924327?v=4&size=72" alt="AxelRosendahlHuber">
+        </a>
       
         <a href="https://github.com/koszulordie" class="md-author" title="@koszulordie">
           

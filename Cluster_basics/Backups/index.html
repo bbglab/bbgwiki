@@ -4173,8 +4173,8 @@
 <li><strong><code>nobackup/</code></strong>/ <strong><code>nobackup2/</code></strong> : No backup at all...</li>
 </ul>
 <h2 id="example-of-recovering-data">Example of recovering data<a class="headerlink" href="#example-of-recovering-data" title="Permanent link">&para;</a></h2>
-<p>Let's say we have deleted or edited by mistake a file in a partition with snapshots (e.g. <code>/workspace/projects/</code>). If we check the content of the <code>.snapshot/</code> folder:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mgrau@login01:/workspace/projects$<span class="w"> </span>ls<span class="w"> </span>/workspace/projects/.snapshot/
+<p>Let's say we have deleted or edited by mistake a file in a partition with snapshots (e.g. <code>/data/bbg/projects/</code>). If we check the content of the <code>.snapshot/</code> folder:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mgrau@login01:/data/bbg/projects$<span class="w"> </span>ls<span class="w"> </span>/data/bbg/projects/.snapshot/
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>daily_at_23_noSun.2023-06-05_2300<span class="w">  </span>daily_at_23_noSun.2023-06-15_2300<span class="w">        </span>hourly_mon2fri_11_15_19.2023-06-16_1900<span class="w">  </span>hourly_mon2fri_11_15_19.2023-06-21_1900<span class="w">  </span>Sun_at_23.2023-05-14_2300
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>daily_at_23_noSun.2023-06-06_2300<span class="w">  </span>daily_at_23_noSun.2023-06-16_2300<span class="w">        </span>hourly_mon2fri_11_15_19.2023-06-19_1100<span class="w">  </span>hourly_mon2fri_11_15_19.2023-06-22_1100<span class="w">  </span>Sun_at_23.2023-05-21_2300
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>daily_at_23_noSun.2023-06-07_2300<span class="w">  </span>daily_at_23_noSun.2023-06-17_2300<span class="w">        </span>hourly_mon2fri_11_15_19.2023-06-19_1500<span class="w">  </span>hourly_mon2fri_11_15_19.2023-06-22_1500<span class="w">  </span>Sun_at_23.2023-05-28_2300
@@ -4187,7 +4187,7 @@
 </code></pre></div>
 <p>We can see a daily snapshot at 23.00h during the last 15 days (<code>daily_at_23_noSun.2023-06-XX_2300</code>). Then we have 3 snapshots per day (at 11h,15h and 19h) during the last 5 working-days (<code>hourly_mon2fri_11_15_19.2023-06-XX_XX00</code>) and then we have one snapshot weekly (sunday at 23h) during the last 12 weeks (<code>Sun_at_23.2023-0X-XX_2300</code>).</p>
 <p>Inside every snapshot, we can see the same file structure of <code>projects</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mgrau@login01:/workspace/projects$<span class="w"> </span>ls<span class="w"> </span>/workspace/projects/.snapshot/daily_at_23_noSun.2023-06-05_2300
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mgrau@login01:/data/bbg/projects$<span class="w"> </span>ls<span class="w"> </span>/data/bbg/projects/.snapshot/daily_at_23_noSun.2023-06-05_2300
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>all_aecc<span class="w">                      </span>clustering_3d<span class="w">          </span>diskusage20200511.txt<span class="w">   </span>healthy_chemo<span class="w">              </span>nanopore<span class="w">              </span>regulatory_regions<span class="w">        </span>small_collaborations_ines
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>all_aecc_pediatric<span class="w">            </span>cndrivers<span class="w">              </span>diskusage20200619.txt<span class="w">   </span>hotmaps_signatures<span class="w">         </span>neoantigen<span class="w">            </span>repair_states<span class="w">             </span>stjude
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>alphafold_features<span class="w">            </span>colorectal_apoe<span class="w">        </span>diskusage20200725.txt<span class="w">   </span>immune_biomarkers<span class="w">          </span>new_oncodrivemut<span class="w">      </span>replication_timing<span class="w">        </span>st_jude_life
@@ -4233,7 +4233,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:18:17">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:28:47">May 9, 2025</span>
   </span>
 
     
@@ -4243,7 +4243,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:18:17">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:28:47">May 9, 2025</span>
   </span>
 
     
@@ -4261,6 +4261,11 @@
     
     <nav>
       
+        <a href="https://github.com/AxelRosendahlHuber" class="md-author" title="@AxelRosendahlHuber">
+          
+          <img src="https://avatars.githubusercontent.com/u/36924327?v=4&size=72" alt="AxelRosendahlHuber">
+        </a>
+      
         <a href="https://github.com/migrau" class="md-author" title="@migrau">
           
           <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
@@ -4276,12 +4281,13 @@
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
-        <a href="https://github.com/Paulagomis" class="md-author" title="@Paulagomis">
-          
-          <img src="https://avatars.githubusercontent.com/u/60719236?v=4&size=72" alt="Paulagomis">
-        </a>
       
       
+        
+          <a href="https://github.com/bbglab/bbgwiki/blob/main/docs/Cluster_basics/Backups.md" class="md-author md-author--more">
+            +1
+          </a>
+        
       
     </nav>
   </span>
