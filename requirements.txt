@@ -1,4 +1,4 @@
-mkdocs >= 1.5.3
+mkdocs >= 1.2.2
 mkdocs-material >= 7.1.11
 mkdocs-static-i18n >= 0.18
 mkdocs-git-authors-plugin >= 0.9.2
