@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-** Name the page you want to update/add/fix **
-- 
+## [Name of the page you want to update/add/fix]
 
-** Describe very very briefly what you are doing**
-- Updating/adding/fixing..
+- _Describe very very briefly what you are doing_
+
+- _Updating/adding/fixing.._

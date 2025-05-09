@@ -21,18 +21,17 @@ Data includes:
 - `lncrna_splice_sites`
 - `splice_sites`
 
-
 ## Releases
 
 - **Release 2 (30-09-2020)**: The coordinates are extracted from the `gtf3` annotation file.
-    - CDS coordinates are generated in two flavours: with and without (default) STOP codon.
-    - Gencode v35
-    - Ensembl canonical transcripts v101
+  - CDS coordinates are generated in two flavours: with and without (default) STOP codon.
+  - Gencode v35
+  - Ensembl canonical transcripts v101
 
 - **Release 1 (2019)**: The coordinates are extracted from the `gtf` annotation file.
-    - CDS coordinates are generated without STOP codon.
-    - Gencode v31
-    - Ensembl canonical transcripts v97
+  - CDS coordinates are generated without STOP codon.
+  - Gencode v31
+  - Ensembl canonical transcripts v97
 
 ## Description
 
@@ -47,4 +46,4 @@ You can find the data in the folder: `/workspace/projects/genomic_regions/`
 
 - Joan Enric
 
-Created on 2019-07-08 by claudia.arnedo@irbbarcelona.org
+Created on 2019-07-08 by <claudia.arnedo@irbbarcelona.org>

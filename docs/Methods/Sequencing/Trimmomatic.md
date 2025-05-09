@@ -5,12 +5,14 @@
 
 ## Description
 
-Trimmomatic performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
+Trimmomatic performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of
+trimming steps and their associated parameters are supplied on the command line.
 
 The current trimming steps are:
 
 - **ILLUMINACLIP**: Cut adapter and other illumina-specific sequences from the read.
-- **SLIDINGWINDOW**: Perform a sliding window trimming, cutting once the average quality within the window falls below a threshold.
+- **SLIDINGWINDOW**: Perform a sliding window trimming, cutting once the average quality within the window falls
+below a threshold.
 - **LEADING**: Cut bases off the start of a read, if below a threshold quality
 - **TRAILING**: Cut bases off the end of a read, if below a threshold quality
 - **CROP**: Cut the read to a specified length
@@ -19,9 +21,12 @@ The current trimming steps are:
 - **TOPHRED33**: Convert quality scores to Phred-33
 - **TOPHRED64**: Convert quality scores to Phred-64
 
-It works with FASTQ (using phred + 33 or phred + 64 quality scores, depending on the Illumina pipeline used), either uncompressed or gzipp'ed FASTQ. Use of gzip format is determined based on the .gz extension.
+It works with FASTQ (using phred + 33 or phred + 64 quality scores, depending on the Illumina pipeline used),
+either uncompressed or gzipp'ed FASTQ. Use of gzip format is determined based on the .gz extension.
 
-For single-ended data, one input and one output file are specified, plus the processing steps. For paired-end data, two input files are specified, and 4 output files, 2 for the 'paired' output where both reads survived the processing, and 2 for corresponding 'unpaired' output where a read survived, but the partner read did not.
+For single-ended data, one input and one output file are specified, plus the processing steps. For paired-end data,
+two input files are specified, and 4 output files, 2 for the 'paired' output where both reads survived the processing,
+and 2 for corresponding 'unpaired' output where a read survived, but the partner read did not.
 
 ## Installation
 
@@ -52,7 +57,8 @@ java -version
 Install it if needed.
 
 The easiest option is to download a binary release zip, and unpack it somewhere convenient.
-You can download the binary file from the [GitHub](https://github.com/timflutre/trimmomatic) official `Trimmomatic` repo or from the website:
+You can download the binary file from the [GitHub](https://github.com/timflutre/trimmomatic)
+official `Trimmomatic` repo or from the website:
 
 ```bash
 http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
@@ -94,7 +100,8 @@ This will perform the following:
 - Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)
 - Remove leading low quality or N bases (below quality 3) (LEADING:3)
 - Remove trailing low quality or N bases (below quality 3) (TRAILING:3)
-- Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)
+- Scan the read with a 4-base wide sliding window, cutting when the average
+quality per base drops below 15 (SLIDINGWINDOW:4:15)
 - Drop reads below the 36 bases long (MINLEN:36)
 
 ### Single End

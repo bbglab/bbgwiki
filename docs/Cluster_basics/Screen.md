@@ -4,7 +4,8 @@
 
 The `screen` command opens a session which will be **running even if you disconnect from the cluster**.
 
-This is especially useful for time-consuming processes, so that you can leave them running in the background without the fear of accidentally disconnecting and losing all the progress.
+This is especially useful for time-consuming processes, so that you can leave them running in the background
+without the fear of accidentally disconnecting and losing all the progress.
 
 You can also open several screens for different processes, which you can detach and attach to them as you like.
 
@@ -21,7 +22,8 @@ screen -S <custom_name>
 ```
 
 !!! warning
-    When opening a new screen, this should be done from the `login01` node, since this guarantees that the screen will be **constantly running** and not shut down (which could happen if the screen is opened in one of the other nodes).
+    When opening a new screen, this should be done from the `login01` node, since this guarantees that the screen will
+    be **constantly running** and not shut down (which could happen if the screen is opened in one of the other nodes).
 
 ### List screens
 
@@ -47,13 +49,14 @@ Re-attaches to a detached screen.
 screen -r [#]
 ```
 
-Naming a screen session which is already open: 
-1. <kbd>Ctrl</kbd> +<kbd>A</kbd>
+Naming a screen session which is already open:
+
+1. <kbd>Ctrl</kbd> +<kbd>A</kbd> <!--markdownlint-disable MD033-->
 2. type `:sessionname mySessionName` (the semicolon is needed, replace mySessionName by the name of your preference)
 
-
 !!! note
-    If there are multiple screens available, include the **number** of the screen id (or **name**) to identify which screen to re-attach.
+    If there are multiple screens available, include the **number** of the screen id (or **name**)
+    to identify which screen to re-attach.
 
 ### Exit and kill screen
 

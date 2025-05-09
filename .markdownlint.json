@@ -1,0 +1,13 @@
+{
+    "code-block-style": {
+      "style": "fenced"
+    },
+
+    "line-length": {
+      "strict": true,
+      "code_blocks": false,
+      "line_length": 120
+  },
+  "MD046": false,
+  "MD033": false
+}

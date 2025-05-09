@@ -1,7 +1,8 @@
 # Variant consequences
 
-**DISCLAIMER**:  the decisions reflected in the instructions below might not be the best solution for all use cases, but are done with the best of my knowledge and with the best intention to make something useful and applicable across projects in the lab.
-
+**DISCLAIMER**:  the decisions reflected in the instructions below might not be the best solution for all use cases,
+but are done with the best of my knowledge and with the best intention to make something
+useful and applicable across projects in the lab.
 
 ## Problem
 
@@ -18,24 +19,32 @@ Since some times we might not be interested in having very detailed consequence 
 
 ## Description
 
-This document contains information on how to handle this situation to get a single consequence per variant if this is the goal of the users in some project.
+This document contains information on how to handle this situation to get a single consequence per variant if this is
+the goal of the users in some project.
 
-The first section covers how to rank the variants according to the deleteriousness, and the second section covers how to group variants into broader consequence types.
+The first section covers how to rank the variants according to the deleteriousness, and the second section covers how
+to group variants into broader consequence types.
 
-So far we have been using the following ranking of Sequence Ontology terms associated with consequence types of variants: <https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html>
-For the grouping of variants we have been using ad-hoc collections on a case by case basis -- see e.g. boostDM. I agree that it would be good to establish once and for all a consensus grouping of SO consequence types for general variant analyses.
+So far we have been using the following ranking of Sequence Ontology terms associated with consequence types of
+variants: <https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html>
+For the grouping of variants we have been using ad-hoc collections on a case by case basis -- see
+e.g. boostDM. I agree that it would be good to establish once and for all a consensus grouping of SO
+consequence types for general variant analyses.
 
 ## Reducing to a single consequence per variant
 
 ### Step 1: Choose one consequence per transcript
+
 In some cases you might get more than one consequence type, for the same variant in the same transcript.
 
-In these cases you want to preserve only the most deleterious one, but you might want to be careful with variants in non-coding transcripts.
+In these cases you want to preserve only the most deleterious one, but you might want to be careful
+with variants in non-coding transcripts.
 
-By applying `most_deleterious_within_variant()` function to the string of variant consequence you will get a single consequence per transcript.
+By applying `most_deleterious_within_variant()` function to the string of variant consequence
+you will get a single consequence per transcript.
 
-See the order of the consequences in the `CONSEQUENCES_LIST_WITHIN` list to understand which is the priority of consequence types when grouping.
-
+See the order of the consequences in the `CONSEQUENCES_LIST_WITHIN` list to understand which is
+the priority of consequence types when grouping.
 
 ```py
 CONSEQUENCES_LIST_WITHIN = [
@@ -101,13 +110,10 @@ def most_deleterious_within_variant(impact_vep_string):
         return '-'
 ```
 
+### Step 2: From a single consequence per variant per transcript, to a single consequence per variant
 
-
-
-
-### Step 2: From a single consequence per variant per transcript, to a single consequence per variant.
-
-Consequence list taken from: [https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html](https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html)
+Consequence list taken from:
+[https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html](https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html) <!-- markdownlint-disable MD013 -->
 
 List of consequences updated on the 2023-06-22. Ensembl 109
 
@@ -168,7 +174,8 @@ for x in list_of_annotations:
 
 ```
 
-`list_of_single_annotations` will be a list with a single annotation per row that can be added as a new column in the dataframe that you will have.
+`list_of_single_annotations` will be a list with a single annotation per row
+that can be added as a new column in the dataframe that you will have.
 
 ## Broader categories of variants
 
@@ -277,8 +284,10 @@ for x in list_of_annotations:
 
 ```
 
-`list_of_single_annotations` will be a list with a single annotation per row that can be added as a new column in the dataframe that you will have.
-`list_of_broad_annotations` will be a list with a single broad annotation per row that can be added as a new column in the dataframe that you will have.
+- `list_of_single_annotations` will be a list with a single annotation per row that can be added as a new column in
+the dataframe that you will have.
+- `list_of_broad_annotations` will be a list with a single broad annotation per row that can be added as a new column
+in the dataframe that you will have.
 
 ## Reference
 

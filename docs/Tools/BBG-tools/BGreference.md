@@ -1,13 +1,17 @@
 # BgReference
 
 ## Description
+
 BgReference is a library to fast retrive Genome Reference partial sequences.
 
-## Instalation 
+## Instalation
+
 ```bash
 conda install -c conda-forge -c bbglab bgreference
 ```
+
 or
+
 ```bash
 pip install bgreference
 ```
@@ -31,10 +35,13 @@ hg19('MT', 234, size=3)
 hg19('chrM', 234, size=3)
 hg19('chrMT', 234, size=3)
 ```
+
 ## Repository
-Click here to see the [repository of BgReference](https://bitbucket.org/bgframework/bgreference/src/master/){:target="_blank"}.
+
+Click here to see the [repository of BgReference](https://bitbucket.org/bgframework/bgreference/src/master/){:target="_blank"}. <!--markdownlint-disable MD013-->
 
 ## Reference
+
 - Jordi Deu-Pons
 - Miguel Grau
-- Paula Gomis 
+- Paula Gomis

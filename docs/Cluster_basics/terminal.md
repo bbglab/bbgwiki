@@ -60,8 +60,8 @@ In this section we are going to show the basic commands to navigate and manage f
 
 ## Reference
 
--   Carlos López-Elorduy
--   Federica Brando
--   Miguel Grau
--   Jordi Deu-Pons
--   Laura Torrens
+- Carlos López-Elorduy
+- Federica Brando
+- Miguel Grau
+- Jordi Deu-Pons
+- Laura Torrens

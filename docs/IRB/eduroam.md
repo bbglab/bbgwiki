@@ -8,7 +8,7 @@
 - Check the checkbox "_No CA certificate is required_"
 - **PEAP version:** Automatic
 - **Inner authentication:** MSCHAPv2
-- **Username:** clusteruser@irbbarcelona.org
+- **Username:** <clusteruser@irbbarcelona.org>
 - **Password:** _IRB password_
 
 ## Example

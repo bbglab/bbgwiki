@@ -1,14 +1,18 @@
 # Needle plot
 
 ## Description
-A **needle plot** displays vertical lines that connect the data points to a horizontal baseline. 
+
+A **needle plot** displays vertical lines that connect the data points to a horizontal baseline.
 Needle plots are useful when you want to plot frequency of mutations on the protein body.
 
-The `needle_plot` function allows you to perform the needle plot with the representation of the protein body including domains.
-It requires an **input matrix**  including gene name column called `'gene'`, nucleotide position column called `'Protein_position'` and the number of mutations affecting the same position `'number_observed_muts'`. 
-The function also needs the **gene** name and the **transcript** used. 
+The `needle_plot` function allows you to perform the needle plot with the representation of the
+protein body including domains.
+It requires an **input matrix**  including gene name column called `'gene'`, nucleotide position column called
+`'Protein_position'` and the number of mutations affecting the same position `'number_observed_muts'`.
+The function also needs the **gene** name and the **transcript** used.
 
 ## Function
+
 ```py
 def needle_plot(data, gene, transcript):
     
@@ -39,6 +43,7 @@ def needle_plot(data, gene, transcript):
 ```
 
 ## Example
+
 ```py
 data = pd.DataFrame({
     'gene': ['TP53', 'TP53', 'TP53'],
@@ -48,10 +53,11 @@ data = pd.DataFrame({
 
 needle_plot(data, 'TP53', 'ENST00000269305')
 ```
+
 ![Plot mutational profile](../assets/images/Needleplot_example.png)
 
-
 ## Dependencies
+
 ```py
 import pandas as pd
 import numpy as np
@@ -159,4 +165,5 @@ def plot_gene_full_nucleotide(subset_data_pfam, df, gene, transcript, ax1, ax2):
 ```
 
 ## Reference
+
 Joan Enric

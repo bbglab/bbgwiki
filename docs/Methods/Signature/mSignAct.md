@@ -2,8 +2,8 @@
 
 ## Description
 
-mSigAct is a signature fitting tool (R) to evaluate the improvement of the fitting in a given sample when adding an additional signature (test signature).\
-It was developed by [Steve Rozen lab](https://github.com/steverozen/mSigAct).
+mSigAct is a signature fitting tool (R) to evaluate the improvement of the fitting in a given sample when adding an
+additional signature (test signature). It was developed by [Steve Rozen lab](https://github.com/steverozen/mSigAct).
 
 ## Getting started
 
@@ -25,7 +25,8 @@ source("/path/to/mSigAct/mSigTools.v0.13.R")
 
 You need to prepare several input files:
 
-- signature_file: A matrix table with the probabilities of the signatures (from COSMIC) that you want to test. The last column is the test signature. (96 channels)
+- signature_file: A matrix table with the probabilities of the signatures (from COSMIC) that you want to test.
+The last column is the test signature. (96 channels)
 - mutation_file: A matrix table with the counts from the samples that you want to analize (96 channels)
 
 Format for the signature_file:
@@ -120,7 +121,8 @@ saveRDS(mSigAct, file = paste(outpath, name_outfile, sep ="\t"))
 
 ## Reference
 
-Alvin W. T. Ng et al. ,Aristolochic acids and their derivatives are widely implicated in liver cancers in Taiwan and throughout Asia.Sci. Transl. Med.9,eaan6446(2017).DOI:10.1126/scitranslmed.aan6446
+Alvin W. T. Ng et al. ,Aristolochic acids and their derivatives are widely implicated in liver cancers in Taiwan and
+throughout Asia.Sci. Transl. Med.9,eaan6446(2017).DOI:10.1126/scitranslmed.aan6446
 
 BBglab membes to ask to:
 

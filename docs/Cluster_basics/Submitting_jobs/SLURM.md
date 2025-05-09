@@ -1,6 +1,7 @@
 # SLURM
 
-[SLURM](https://slurm.schedmd.com) is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
+[SLURM](https://slurm.schedmd.com) is an open source, fault-tolerant, and highly scalable cluster management
+and job scheduling system for large and small Linux clusters.
 
 ## Description
 
@@ -15,9 +16,8 @@ There are 3 major command to submit jobs:
 - `salloc` : Obtain a job allocation
 
 !!! tip inline "Use `interactive`!"
-  
-    Instead of using the above mentioned commands, you can use `interactive`, a in-house command that allows to allocate resources in the cluster.
-    More reference [here](../Interactive.md)
+    Instead of using the above mentioned commands, you can use `interactive`, a in-house command that allows to
+    allocate resources in the cluster. More reference [here](../Interactive.md)
   
 ```bash
 $ interactive -h 
@@ -51,7 +51,8 @@ The options are plenty and can be inspected by typing `salloc --help` command.
 
 #### 2. `srun`
 
-Submits an application for immediate execution. The command is interactive, it will output on the terminal that runs it and it is blocking, this means that you cannot use the terminal where you `srun` command.
+Submits an application for immediate execution. The command is interactive, it will output on the terminal that runs it
+and it is blocking, this means that you cannot use the terminal where you `srun` command.
 
 ><my_applicayion.sh\>
 
@@ -108,11 +109,12 @@ sbatch <my_job_script>
 This will send to the cluster a job with 8 cores and 16GB of RAM named _my_job_name_ and with a time limit of _30mins_.
 
 !!! tip "Use `qmap`!"
-  
-    Do you need to run parallel jobs in the cluster? You can use an in-house package called `qmap`, that allows you to let SLURM decide where and which node to use to run the commands with basic template file.
+    Do you need to run parallel jobs in the cluster? You can use an in-house package called `qmap`, that allows you to
+    let SLURM decide where and which node to use to run the commands with basic template file.
     More info [here](./Qmap.md)
 
-Another method to submit more jobs to the cluster is to use **SLURM array jobs**. The setup of these jobs is virtually similar to a regular SLURM job, but with the difference that a `SLURM_JOB_
+Another method to submit more jobs to the cluster is to use **SLURM array jobs**. The setup of these jobs is virtually
+similar to a regular SLURM job, but with the difference that a `SLURM_JOB_
 
 ```sh
 #!/bin/bash
@@ -131,7 +133,8 @@ sh example_job.sh ${SLURM_ARRAY_TASK_ID}
 
 #### 1. `squeue`
 
-In order to see the queue status of the cluster and what is going on in the nodes, you can access the list  with the general command:
+In order to see the queue status of the cluster and what is going on in the nodes, you can
+access the list  with the general command:
 
 ```bash
 squeue
@@ -160,11 +163,10 @@ You can specify some parameters:
 Full list of parameters can be seen with `scancel --help` command.
 
 !!! tip "What about canceling more than one job?"
-
-    **SPOILER ALERT!** You can! 
+    **SPOILER ALERT!** You can!
     You can either list all the jobs one after the other.
 
-    ```sh
+    ```sh 
     scancel job_id1 job_id2 job_id3
     ```
 
