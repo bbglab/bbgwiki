@@ -18,7 +18,7 @@ Covering
   
 
 ### Other resources:
-- [awesome-genome-visualization](https://cmdcolin.github.io/awesome-genome-visualization/?latest=true)
+- [awesome-genome-visualization](https://cmdcolin.github.io/awesome-genome-visualization/?latest=true): A curated list of tools and libraries for genome visualization, including interactive and static visualization options.
 
 ### Colour resources for plots
 
