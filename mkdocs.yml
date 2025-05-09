@@ -78,14 +78,14 @@ extra:
     provider: google
     property: G-XXXXXXXXXX # Replace with Google Analytics tracking ID
     feedback:
-      title: Was this page helpful?
+      title: How Can We Make This Better??
       ratings:
-        - icon: material/heart
-          name: This page was helpful
+        - icon: material/thumb-up
+          name: Helpful!
           data: 1
           note: >-
             Thanks for your feedback!
-        - icon: material/heart-broken
+        - icon: octicons/bug-16
           name: This page could be improved
           data: 0
           note: >- 
