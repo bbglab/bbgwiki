@@ -34,7 +34,7 @@ Some important considerations when selecting a color palette include:
 
 ### Creating reusable themes in R:
 Creating reusable themes in R is a great way to ensure consistency and save time across visualizations. 
-##### 1. 1. Create a Custom Theme Function
+##### 1. Create a Custom Theme Function
 ```R
 library(ggplot2)
 
