@@ -13,10 +13,10 @@ Sarek workflow consists of the following steps:
 - **Preprocessing** (based on GATK4 Best Practices): includes sequencing quality control, reads alignment (BWA),
 mark duplicates and base recalibration.
 - **Variant calling**. You can choose any caller, but here are some recommendations:
-  - *HaplotypeCaller* for germline SNVs and indels.
-  - *[Mutect2](Mutect2.md)* and *Strelka* for somatic SNVs and indels.
-  - *Manta* for structural variants (SVs).
-  - *ASCAT* for copy number variants (CNVs)
+    - *HaplotypeCaller* for germline SNVs and indels.
+    - *[Mutect2](Mutect2.md)* and *Strelka* for somatic SNVs and indels.
+    - *Manta* for structural variants (SVs).
+    - *ASCAT* for copy number variants (CNVs)
 - **Annotation**: you can choose snpEff, VEP or merge both.
 
 Note sarek allows to run the pipeline starting from any step.

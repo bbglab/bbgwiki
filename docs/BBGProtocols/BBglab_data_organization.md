@@ -23,11 +23,11 @@ Organize your project directories with this basic structure:
 - Environments
 - Notebooks
 - Software (useful)
-  - Local in your computer
-    - Tools not installable in the cluster
-    - Custom scripts
-  - Environments in the cluster
-    - Tools installed in your user in the cluster (some /bin folder somewhere) linked to source code
+    - Local in your computer
+        - Tools not installable in the cluster
+        - Custom scripts
+    - Environments in the cluster
+        - Tools installed in your user in the cluster (some /bin folder somewhere) linked to source code
 
 - Figures
 - Abstracts, Slides, Posters, Manuscripts
@@ -54,8 +54,8 @@ It is good to include links to where plots were generated as much as possible. T
 #### Manuscripts
 
 - Mature versions of the figures including
-  - Images
-  - Link to code (i.e. GitHub repo)
+    - Images
+    - Link to code (i.e. GitHub repo)
 - Text
 If different versions, make sure that the date is updated. Do not remove older versions, either make sure that the
 history is available or duplicate the file and store it in the OLD_versions folder.
@@ -104,18 +104,18 @@ average-sized hospitals. So our work also leaves a carbon footprint that we shou
 try to reduce it as much as possible. What can we do?
 
 - Reduce electricity
-  - Turn off the screens when you are not in the lab. Also the mouse and the keyboard
-  - Lock/Suspend the computer when it is not used
-  - Turn off the light of the lab when you are the last one leaving
+    - Turn off the screens when you are not in the lab. Also the mouse and the keyboard
+    - Lock/Suspend the computer when it is not used
+    - Turn off the light of the lab when you are the last one leaving
 - Reduce the CO2 cost of your coding: you can estimate the CO2 footprint of your scripts or pipelines and
 make it more efficiently with many tools like:
-  - [nf-co2footprint](https://github.com/nextflow-io/nf-co2footprint)
-  - [CodeCarbon](https://codecarbon.io/)
-  - [carbontracker](https://github.com/lfwa/carbontracker)
-  - Check out more [here](https://github.com/GreenAlgorithms/GreenAlgorithms4HPC)
+    - [nf-co2footprint](https://github.com/nextflow-io/nf-co2footprint)
+    - [CodeCarbon](https://codecarbon.io/)
+    - [carbontracker](https://github.com/lfwa/carbontracker)
+    - Check out more [here](https://github.com/GreenAlgorithms/GreenAlgorithms4HPC)
 
-Check Loïc Lannealongue [talk] in Nextflow Submit 2024 in
-Barcelona (<https://summit.nextflow.io/2024/barcelona/agenda/10-30--towards-environmentally-sustainable-computational-science/>) to learn more about this. <!-- markdownlint-disable MD013 -->
+Check Loïc Lannealongue [talk](<https://summit.nextflow.io/2024/barcelona/agenda/10-30--towards-environmentally-sustainable-computational-science/>) <!-- markdownlint-disable MD013 -->
+in Nextflow Submit 2024 in Barcelona to learn more about this.
 
 ## Reference
 

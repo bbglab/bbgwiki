@@ -24,14 +24,14 @@ Data includes:
 ## Releases
 
 - **Release 2 (30-09-2020)**: The coordinates are extracted from the `gtf3` annotation file.
-  - CDS coordinates are generated in two flavours: with and without (default) STOP codon.
-  - Gencode v35
-  - Ensembl canonical transcripts v101
+    - CDS coordinates are generated in two flavours: with and without (default) STOP codon.
+    - Gencode v35
+    - Ensembl canonical transcripts v101
 
 - **Release 1 (2019)**: The coordinates are extracted from the `gtf` annotation file.
-  - CDS coordinates are generated without STOP codon.
-  - Gencode v31
-  - Ensembl canonical transcripts v97
+    - CDS coordinates are generated without STOP codon.
+    - Gencode v31
+    - Ensembl canonical transcripts v97
 
 ## Description
 

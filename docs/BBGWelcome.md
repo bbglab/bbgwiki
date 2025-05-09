@@ -31,8 +31,8 @@ Here you can find some resources to help you start smoothly.
 Summary cheatsheet with the basis
 - [Screen](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=screen&printable=True) - Working with **screen**
 - Git - Manage **git** version control system
-  - [Basic user](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=git.basic&printable=True)
-  - [Advanced](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=git&printable=True)
+    - [Basic user](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=git.basic&printable=True)
+    - [Advanced](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=git&printable=True)
 - [Python packages](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=python_packages&printable=True) -
 Manage Python packages with **pip** and **conda**
 - [Conda](https://bbgcloud.irbbarcelona.org/dashboard/cheatsheets?page=conda&printable=True) -

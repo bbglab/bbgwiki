@@ -34,7 +34,7 @@ complex applications.
 
 ## Singularity
 
-<img alt="singulairity logo" src="/docs/assets/images/singularity_logo.png"  width="100" height="100">
+<img alt="singulairity logo" src="../../assets/images/singularity_logo.png"  width="100" height="100">
 
 [Singularity](https://sylabs.io/guides/latest/user-guide/introduction.html) (also known as Apptainer in newer releases)
 is a secure, Open Source container platform designed for HPC environments. Compared to Docker,

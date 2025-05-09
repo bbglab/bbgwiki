@@ -18,7 +18,7 @@ This page aims to gather the nucleotide counts files stored in the cluster for s
 and nucleotide combinations:
 
 - **Whole genome GRCh38 trinucleotide counts (32 channels)**
-  - Created by [Alexandrov Lab for SigProfiler](https://github.com/AlexandrovLab/SigProfilerMatrixGenerator/tree/master/SigProfilerMatrixGenerator/references/chromosomes/context_distributions)<!--markdownlint-disable MD013-->
-  - Stored at `/data/bbg/datasets/genomes/context_counts/sigprofiler/context_counts_GRCh38_96.csv`  
-  - Rows represent trinucleotides, columns chromosomes and cells are filled with the absolute trinucleotide count
+    - Created by [Alexandrov Lab for SigProfiler](https://github.com/AlexandrovLab/SigProfilerMatrixGenerator/tree/master/SigProfilerMatrixGenerator/references/chromosomes/context_distributions)<!--markdownlint-disable MD013-->
+    - Stored at `/data/bbg/datasets/genomes/context_counts/sigprofiler/context_counts_GRCh38_96.csv`  
+    - Rows represent trinucleotides, columns chromosomes and cells are filled with the absolute trinucleotide count
   for the reference genome
