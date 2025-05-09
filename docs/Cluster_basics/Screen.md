@@ -75,7 +75,7 @@ pkill screen
 
 ### Force screen detach and reattach to your current terminal
 
-This can be useful when there is a screen on: ... (Attached)", but you can't access it, it usually means the session is still considered attached elsewhere — often due to a dropped SSH connection, a session that wasn’t properly detached or a zombie/ghost screen session.
+This command can be useful when a screen session remains attached (e.g., after a dropped SSH connection), preventing access. This situation may occur if the session was not properly detached or became a ghost session.
 
 ```bash
 screen -D -r [screen number ID or name]
