@@ -1790,6 +1790,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#where-is-this-data-stored-in-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where is this data stored in the cluster?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#signature-groups" class="md-nav__link">
     <span class="md-ellipsis">
       Signature groups
@@ -4261,6 +4270,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#where-is-this-data-stored-in-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where is this data stored in the cluster?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#signature-groups" class="md-nav__link">
     <span class="md-ellipsis">
       Signature groups
@@ -4342,6 +4360,16 @@
 <ul>
 <li>COSMIC displays for each signature a battery of analyses showing about tissue prevalence, strand asymmetry, enrichment of histone modifications, nucleosome occupancy, CTCF occupancy, etc.</li>
 </ul>
+<h3 id="where-is-this-data-stored-in-the-cluster"><em>Where is this data stored in the cluster?</em><a class="headerlink" href="#where-is-this-data-stored-in-the-cluster" title="Permanent link">&para;</a></h3>
+<p>A tab-separated table with the COSMIC v3.4 signatures is available at:
+<code>/data/bbg/datasets/COSMIC_signatures/COSMIC_v3.4_SBS_GRCh38.txt</code>.</p>
+<p>Key details about the data:
+- <strong>Rows</strong>: Represent the 96 possible pyrimidine-centered trinucleotide contexts.
+- <strong>Columns</strong>: Denote the respective reference signatures. Each column sums to one.
+- <strong>Cell values</strong>: Indicate the frequencies of mutations matching that context relative to the total mutations observed (<em>i.e.</em>, the proportion of mutations matching that trinucleotide context).</p>
+<p>Important considerations:
+- These frequencies are not equivalent to mutation rates. They were derived from whole genome samples where the reference trinucleotides are not equally represented.
+- If your study involves a different reference genome or a specific genomic region with a distinct trinucleotide content (e.g., panel sequencing), you may need to rescale the relative frequencies of the signatures accordingly.</p>
 <h3 id="signature-groups"><em>Signature groups</em><a class="headerlink" href="#signature-groups" title="Permanent link">&para;</a></h3>
 <p>As you probably know for several of the signatures in the COSMIC reference catalog there is a known aetiology, and this allows us to define several signature groups.</p>
 <p><a href="https://github.com/AlexandrovLab">AlexandrovLab</a> has defined these groups of COSMIC signatures.
@@ -4478,7 +4506,7 @@ You can use them for your own analysis, but when running any of the tools they d
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 11:18:06">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 13:35:02">May 9, 2025</span>
   </span>
 
     
@@ -4488,7 +4516,7 @@ You can use them for your own analysis, but when running any of the tools they d
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 11:18:06">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 13:35:02">May 9, 2025</span>
   </span>
 
     
@@ -4506,6 +4534,16 @@ You can use them for your own analysis, but when running any of the tools they d
     
     <nav>
       
+        <a href="https://github.com/rblancomi" class="md-author" title="@rblancomi">
+          
+          <img src="https://avatars.githubusercontent.com/u/73313581?v=4&size=72" alt="rblancomi">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
         <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
           
           <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
@@ -4516,12 +4554,13 @@ You can use them for your own analysis, but when running any of the tools they d
           <img src="https://avatars.githubusercontent.com/u/70538316?v=4&size=72" alt="koszulordie">
         </a>
       
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
       
       
+        
+          <a href="https://github.com/bbglab/bbgwiki/blob/main/docs/Datasets/Other_data/ReferenceMutationalSignatures.md" class="md-author md-author--more">
+            +1
+          </a>
+        
       
     </nav>
   </span>
