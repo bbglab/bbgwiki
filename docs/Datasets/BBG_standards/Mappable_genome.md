@@ -26,6 +26,7 @@ here: `/data/bbg/projects/hartwig/hotspots/hotspotfinder/2022_06/mappable_genome
 In this folder there is a file `paths.txt` with the paths to the original files.
 
 These are the main cluster paths relevant for the making of the mappable genome:
+
 - `/data/bbg/projects/pileup_mappability/`: mappable genome with GEM mapper.
 - `/data/bbg/datasets/mappability_blacklists/`: blacklisted regions from ENCODE
 - `/data/bbg/datasets/genomes/`: reference genomes

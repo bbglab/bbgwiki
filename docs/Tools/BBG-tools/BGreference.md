@@ -23,7 +23,8 @@ car
 f344
 ```
 
-## Installation 
+## Installation
+
 ```bash
 conda install -c conda-forge -c bbglab bgreference
 ```
