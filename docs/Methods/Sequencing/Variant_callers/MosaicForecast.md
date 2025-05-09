@@ -34,7 +34,7 @@ conda activate MF
 Other dependencies and resources could be downloaded though running:  
 bash downloads.sh 
 
-You can also set up the environment mannually, eventhough is not recommended.
+You can also set up the environment manually, even though it is not recommended.
 Theres a list of packages in the [git-repository](https://github.com/parklab/MosaicForecast)
 
 ## Resources:
