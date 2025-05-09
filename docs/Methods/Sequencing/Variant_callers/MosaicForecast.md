@@ -35,7 +35,7 @@ Other dependencies and resources could be downloaded though running:
 bash downloads.sh 
 
 You can also set up the environment manually, even though it is not recommended.
-Theres a list of packages in the [git-repository](https://github.com/parklab/MosaicForecast)
+There's a list of packages in the [git-repository](https://github.com/parklab/MosaicForecast)
 
 ## Resources:
 You will find how to download them in the [git-repository](https://github.com/parklab/MosaicForecast):
