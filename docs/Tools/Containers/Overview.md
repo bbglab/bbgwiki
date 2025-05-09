@@ -50,7 +50,7 @@ For more information on how to use it check the `Using_containers` section in th
 There are different places where you can find containers that are ready to use:
 * Our cluster: `/data/bbg/datasets/pipelines/nextflow_containers` here there are several containers that are used by different people in the lab, mainly for running Nextflow pipelines.
 
-* [BBGLab dockerhub](https://hub.docker.com/u/bbglab) here you can find the containers that have been built and shared by the lab. This is in general synchronized with the Dockerfile receipes here: [GitHub bbglab/containers](https://github.com/bbglab/containers). So whenever you need to build a new container with BBGLab tools make sure that you keep this good work and add the container receipe in this GitHub repository and then ask someone with permission to push the container to the collective dockerhub account.
+* [BBGLab dockerhub](https://hub.docker.com/u/bbglab) here you can find the containers that have been built and shared by the lab. This is in general synchronized with the Dockerfile recipes here: [GitHub bbglab/containers](https://github.com/bbglab/containers). So whenever you need to build a new container with BBGLab tools make sure that you keep this good work and add the container recipe in this GitHub repository and then ask someone with permission to push the container to the collective dockerhub account.
 
 
 

@@ -13,7 +13,7 @@ Containers are built from a definition file which allows the container to be bui
 
 ## How to build a container
 
-Docker and Singularity have different standard formats for building containers and writing the definition file. However since  Singularity 4 onwards these technology can use Dockerfile as a receipe so it would be nice to use this as a standard way of writing the container receipes.
+Docker and Singularity have different standard formats for building containers and writing the definition file. However since  Singularity 4 onwards these technology can use Dockerfile as a recipe so it would be nice to use this as a standard way of writing the container recipes.
 
 
 ## Comfortable ways of building containers
