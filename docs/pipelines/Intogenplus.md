@@ -36,7 +36,8 @@ useful parameters is explained.
     ![Revision number](../assets/images/intogen-dsl2/revision_number.png){ height="300" style="display: block; margin: 0 auto" }
 
     By default, the **revision number** is linked to the stable tag of the pipeline. As of now - it's `2024.11-dsl2`. 
-    This can eventually be changed if a run is resumed or relaunched from the run section. 
+    This can eventually be changed if a run is resumed or relaunched from the run section.
+
     !!! note "Please be aware that changing this section may affect the `resume` option"
 
     #### **Config profile**

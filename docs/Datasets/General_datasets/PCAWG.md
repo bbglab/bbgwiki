@@ -37,7 +37,7 @@ Additional data about ... from PCAWG is available in the folder (you will need s
 ```
 
 !!! note annotate "Website"
- [https://dcc.icgc.org/pcawg](https://dcc.icgc.org/pcawg){:target="_blank"}
+    [https://dcc.icgc.org/pcawg](https://dcc.icgc.org/pcawg){:target="_blank"}
 
 ## Citing in Publications and Presentations
 

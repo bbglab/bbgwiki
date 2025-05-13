@@ -20,10 +20,10 @@ You can find the data from St. Jude Cloud in the folder:
 ```
 
 !!! warning "Permission"
- To use data from St. Jude  you need special permission. Contact Martina or Paula if you need to use this data.
+    To use data from St. Jude  you need special permission. Contact Martina or Paula if you need to use this data.
 
 !!! note annotate "Website"
- [https://www.stjude.cloud/studies/pediatric-cancer-genome-project/](https://www.stjude.cloud/studies/pediatric-cancer-genome-project/){:target="_blank"} <!-- markdownlint-disable MD013 -->
+    [https://www.stjude.cloud/studies/pediatric-cancer-genome-project/](https://www.stjude.cloud/studies/pediatric-cancer-genome-project/){:target="_blank"} <!-- markdownlint-disable MD013 -->
 
 ## Citing in Publications and Presentations
 

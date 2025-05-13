@@ -1,7 +1,8 @@
 
 # Dynamic path configuration
 
-To ensure compatibility when running scripts or notebooks across different clusters (IRB or BBG), you can use the following Python line to dynamically set the working directory based on the machine hostname:
+To ensure compatibility when running scripts or notebooks across different clusters (IRB or BBG), you can use the
+following Python line to dynamically set the working directory based on the machine hostname:
 
 ```python
 import socket
@@ -10,7 +11,9 @@ WORKSPACE = "/data/bbg" if socket.gethostname().startswith("irb") else "/workspa
 ```
 
 !!! warning
-    This line assumes the script is being executed on a working node, where the hostname reflects the actual compute environment. It will not work if you are on the login node, which you shouldn't be using for computation in any case.
+    This line assumes the script is being executed on a working node, where the hostname reflects the actual compute
+    environment. It will not work if you are on the login node, which you shouldn't
+    be using for computation in any case.
 
 ## How to Use
 

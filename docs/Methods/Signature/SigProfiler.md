@@ -32,11 +32,11 @@ the posterior. Otherwise it makes no sense to use this automatic decomposition.
 * extracted signatures to the samples.
 
 !!! warning "this assignment of the extracted signatures is of low quality and it should not be trusted"
-        Once you get the set of extracted signatures that you trust, you should use them through
-        [SigProfilerAssignment](https://github.com/AlexandrovLab/SigProfilerAssignment) to get the proportion of
-        mutations of each sample that correspond to each signature. Doing this in these two steps increases the
-        accuracy of the result. To be more specific you should provide the extracted set of signatures as the
-        [signature_database](https://github.com/AlexandrovLab/SigProfilerAssignment#:~:text=will%20be%20used.-,signature_database,-String) option of this second tool. <!-- markdownlint-disable MD013 -->
+    Once you get the set of extracted signatures that you trust, you should use them through
+    [SigProfilerAssignment](https://github.com/AlexandrovLab/SigProfilerAssignment) to get the proportion of
+    mutations of each sample that correspond to each signature. Doing this in these two steps increases the
+    accuracy of the result. To be more specific you should provide the extracted set of signatures as the
+    [signature_database](https://github.com/AlexandrovLab/SigProfilerAssignment#:~:text=will%20be%20used.-,signature_database,-String) option of this second tool. <!-- markdownlint-disable MD013 -->
 
 * Another output that the tool provides is to do a deconstruction of those extracted signatures into the known COSMIC signatures if you asked for that. But there is no magic trick here, or at least not that I know. (look at the comment for the input in case you are interested in getting this)
 

@@ -21,15 +21,15 @@ mosaic mutations from germline variants and sequencing artifacts with high preci
 
 1. We have created a docker image with all dependencies installed: <https://hub.docker.com/r/yanmei/mosaicforecast>  
     Usage:  
-      docker image pull yanmei/mosaicforecast:0.0.1  
-      docker run -v ${your_local_directory}:/MF --rm -it yanmei/mosaicforecast:0.0.1 /bin/bash  
-      gunzip hs37d5.fa.gz  
-      Phase.py /MF/demo/ /MF/demo/phasing hs37d5.fa /MF/demo/test.input 20 k24.umap.wg.bw 4
+        docker image pull yanmei/mosaicforecast:0.0.1  
+        docker run -v ${your_local_directory}:/MF --rm -it yanmei/mosaicforecast:0.0.1 /bin/bash  
+        gunzip hs37d5.fa.gz  
+        Phase.py /MF/demo/ /MF/demo/phasing hs37d5.fa /MF/demo/test.input 20 k24.umap.wg.bw 4
 
   !!! note
-    Please note that "${your_local_directory}:/MF" is the absolute path of your local mosaicforecast directory.
-    After attaching your local MF directory to the docker image, you would be able to read and write from that directory
-    in your docker image. The attached directory in the docker image would be "/MF".
+        Please note that "${your_local_directory}:/MF" is the absolute path of your local mosaicforecast directory.
+        After attaching your local MF directory to the docker image, you would be able to read
+        and write from that directory in your docker image. The attached directory in the docker image would be "/MF".
 2. You could also install conda first (<https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh>), and
   then create an environment using conda through this command:
   
@@ -83,12 +83,12 @@ n_threads_parallel sequencing_file_format(bam/cram)
 **Note:**
 
 1. Name of bam files should be "sample.bam" under the bam\_dir, and there should be index files under the same directory
-  (samtools index sample.bam).
+(samtools index sample.bam).
 2. There should be a fai file under the same dir of the fasta file (samtools faidx input.fa).
 3. File format of the input\_positions: chr pos-1 pos ref alt sample, sep=\t
 4. The "min\_dp\_inforSNPs" is the minimum depth of coverage of trustworthy neaby het SNPs, can be set to 20.
 5. The program to extract mappability score: "bigWigAverageOverBed" should be downloaded and installed, and its path
-  should be added to the PATH environment variable.
+should be added to the PATH environment variable.
 
 **Demo:**
 

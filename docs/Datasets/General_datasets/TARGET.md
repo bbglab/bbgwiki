@@ -16,9 +16,10 @@ You can find TARGET pediatric cancer data in the folder:
 ```
 
 !!! note annotate "Website of the project"
- [ocg.cancer.gov/programs/target](https://ocg.cancer.gov/programs/target){:target="_blank"}
+    [ocg.cancer.gov/programs/target](https://ocg.cancer.gov/programs/target){:target="_blank"}
 
-!!! note annotate "Website of the data (processed on GDC)" [portal.gdc.cancer.gov/projects/TARGET/](https://portal.gdc.cancer.gov/projects?filters=%7B%22op%22%3A%22and%22%2C%22content%22%3A%5B%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22projects.program.name%22%2C%22value%22%3A%5B%22TARGET%22%5D%7D%7D%5D%7D){:target="_blank"} <!-- markdownlint-disable MD013 -->
+!!! note annotate "Website of the data (processed on GDC)"
+    [portal.gdc.cancer.gov/projects/TARGET/](https://portal.gdc.cancer.gov/projects?filters=%7B%22op%22%3A%22and%22%2C%22content%22%3A%5B%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22projects.program.name%22%2C%22value%22%3A%5B%22TARGET%22%5D%7D%7D%5D%7D){:target="_blank"} <!-- markdownlint-disable MD013 -->
 
 ## Citing in Publications and Presentations
 

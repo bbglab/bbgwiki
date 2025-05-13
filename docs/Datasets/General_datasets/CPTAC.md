@@ -5,7 +5,7 @@
 ## Data access
 
 !!! note annotate "Website"
- [placeholder](placeholder)){:target="_blank"}
+    <!--[placeholder](placeholder){:target="_blank"}-->
 
 ## Citing in Publications and Presentations
 

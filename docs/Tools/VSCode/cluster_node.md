@@ -2,13 +2,15 @@
 
 ## Description
 
-These are the instructions to use Visual Studio Code to run and debug scripts/notebooks within an **interactive node** from the cluster.
+These are the instructions to use Visual Studio Code to run and debug scripts/notebooks
+within an **interactive node** from the cluster.
 
 ## Using VSCode App
 
 ### Step 1: [CLUSTER] Open interactive session
 
-The first step is to allocate the resources you will need for your executions. We can do this with the `interactive` command.
+The first step is to allocate the resources you will need for your executions.
+We can do this with the `interactive` command.
 
 !!! tip "Tip: Use `screen`"
     Consider launching the interactive session in a screen so that it doesn't get killed when the terminal is closed.
@@ -39,7 +41,8 @@ irbccn43.hpc.irbbarcelona.pcb.ub.es
 ### Step 2: [CLUSTER] Execute job vscode-interactive-job.sh
 
 !!! note "First time setup"
-    If it is the first time you are using this method, copy the following lines into a file called `vscode-interactive-job.sh` in your home directory.
+    If it is the first time you are using this method, copy the following lines into a
+    file called `vscode-interactive-job.sh` in your home directory.
 
     **File: `vscode-interactive-job.sh`**
 
@@ -66,7 +69,8 @@ bash vscode-interactive-job.sh
 
     It will prompt you several times to confirm the generation of the key. You can just press `Enter` to accept the default values.
 
-The terminal will look like it got stuck, but what is happening is that it is waiting for the SSH tunnel to be established.
+The terminal will look like it got stuck, but what is happening is that it is waiting for
+the SSH tunnel to be established.
 
 ### Step 3: [LOCAL] Open SSH tunnel
 
@@ -105,10 +109,12 @@ Host irbccn43
 ```
 
 !!! warning "Node change"
-    This is marked as a "*ONE-TIME-STEP*", but in reality it depends on the node you are allocated. If you need to change the node or add a new node, **the configuration will need to be updated**.
+    This is marked as a "*ONE-TIME-STEP*", but in reality it depends on the node you are allocated.
+    If you need to change the node or add a new node, **the configuration will need to be updated**.
 
 !!! tip "Tip (Optional): Helper function to add SSH configuration"
-    Here is a helper function that you can add to your `.bashrc` file to make it easier to setup the node and the tunnel.
+    Here is a helper function that you can add to your `.bashrc` file to make it easier to
+    setup the node and the tunnel.
 
     Steps the function does:
 
@@ -173,16 +179,19 @@ This is needed the first time you connect to a new node, so that the node is add
 
 Open Visual Studio Code and make sure you have installed the `Remote - SSH` extension.
 
-Open the side bar at the "Remote - SSH" panel, and then click the `irbccn*` option. A new window will open with the terminal connected to the interactive node. All the execution of notebooks and debuggers will be done from this node.
+Open the side bar at the "Remote - SSH" panel, and then click the `irbccn*` option. A new window will open with the
+terminal connected to the interactive node. All the execution of notebooks and debuggers will be done from this node.
 
 !!! tip "Tip: Create a 'Profile' to keep the VSCode settings and extensions"
-    You can create a profile in VSCode to keep the settings and extensions for the connection to the cluster. This works similar to the idea of conda environments, but for the VSCode settings.
+    You can create a profile in VSCode to keep the settings and extensions for the connection to the cluster.
+    This works similar to the idea of conda environments, but for the VSCode settings.
 
     To create a profile, click on the gear icon in the bottom left corner of VSCode, and then click on Profiles and create a new profile.
 
 ## From Browser (*code-server*)
 
-This approach doesn't use the VSCode app, but instead uses the code-server package to run a VSCode instance in the cluster. This will result in launching VSCode from the browser.
+This approach doesn't use the VSCode app, but instead uses the code-server package to run a VSCode instance in the
+cluster. This will result in launching VSCode from the browser.
 
 ===+ "Setup 1: Code-Server"
 
