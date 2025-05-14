@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4415,7 +4415,8 @@
 
 
 <h1 id="slurm">SLURM<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h1>
-<p><a href="https://slurm.schedmd.com">SLURM</a> is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.</p>
+<p><a href="https://slurm.schedmd.com">SLURM</a> is an open source, fault-tolerant, and highly scalable cluster management
+and job scheduling system for large and small Linux clusters.</p>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>With SLURM commands you can SUBMIT and MANAGE jobs in the cluster.</p>
 <h3 id="submit">SUBMIT<a class="headerlink" href="#submit" title="Permanent link">&para;</a></h3>
@@ -4427,8 +4428,8 @@
 </ul>
 <div class="admonition tip inline">
 <p class="admonition-title">Use <code>interactive</code>!</p>
-<p>Instead of using the above mentioned commands, you can use <code>interactive</code>, a in-house command that allows to allocate resources in the cluster.
-More reference <a href="../../Interactive/">here</a></p>
+<p>Instead of using the above mentioned commands, you can use <code>interactive</code>, a in-house command that allows to
+allocate resources in the cluster. More reference <a href="../../Interactive/">here</a></p>
 </div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>interactive<span class="w"> </span>-h<span class="w"> </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Usage:<span class="w"> </span>interactive<span class="w"> </span><span class="o">[</span>-c<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="o">]</span><span class="w"> </span><span class="o">[</span>-w<span class="o">]</span><span class="w"> </span><span class="o">[</span>-J<span class="o">]</span><span class="w"> </span><span class="o">[</span>-x<span class="o">]</span>
@@ -4453,7 +4454,8 @@ More reference <a href="../../Interactive/">here</a></p>
 It's asking to allocate 4GB of memory on node bbgn004 for a job named "my_cool_job"</p>
 </details>
 <h4 id="2-srun">2. <code>srun</code><a class="headerlink" href="#2-srun" title="Permanent link">&para;</a></h4>
-<p>Submits an application for immediate execution. The command is interactive, it will output on the terminal that runs it and it is blocking, this means that you cannot use the terminal where you <code>srun</code> command.</p>
+<p>Submits an application for immediate execution. The command is interactive, it will output on the terminal that runs it
+and it is blocking, this means that you cannot use the terminal where you <code>srun</code> command.</p>
 <blockquote>
 <p>&lt;my_applicayion.sh&gt;</p>
 </blockquote>
@@ -4497,10 +4499,12 @@ There are a fair amount of parameters that can be inspected with the following c
 <p>This will send to the cluster a job with 8 cores and 16GB of RAM named <em>my_job_name</em> and with a time limit of <em>30mins</em>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Use <code>qmap</code>!</p>
-<p>Do you need to run parallel jobs in the cluster? You can use an in-house package called <code>qmap</code>, that allows you to let SLURM decide where and which node to use to run the commands with basic template file.
+<p>Do you need to run parallel jobs in the cluster? You can use an in-house package called <code>qmap</code>, that allows you to
+let SLURM decide where and which node to use to run the commands with basic template file.
 More info <a href="../Qmap/">here</a></p>
 </div>
-<p>Another method to submit more jobs to the cluster is to use <strong>SLURM array jobs</strong>. The setup of these jobs is virtually similar to a regular SLURM job, but with the difference that a `SLURM_JOB_</p>
+<p>Another method to submit more jobs to the cluster is to use <strong>SLURM array jobs</strong>. The setup of these jobs is virtually
+similar to a regular SLURM job, but with the difference that a `SLURM_JOB_</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">#SBATCH --job-name=example_jobname</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
@@ -4513,7 +4517,8 @@ More info <a href="../Qmap/">here</a></p>
 </code></pre></div>
 <h3 id="manage">MANAGE<a class="headerlink" href="#manage" title="Permanent link">&para;</a></h3>
 <h4 id="1-squeue">1. <code>squeue</code><a class="headerlink" href="#1-squeue" title="Permanent link">&para;</a></h4>
-<p>In order to see the queue status of the cluster and what is going on in the nodes, you can access the list  with the general command:</p>
+<p>In order to see the queue status of the cluster and what is going on in the nodes, you can
+access the list  with the general command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>squeue
 </code></pre></div>
 <p>You can also specify some parameters:</p>
@@ -4535,7 +4540,7 @@ More info <a href="../Qmap/">here</a></p>
 <p>Full list of parameters can be seen with <code>scancel --help</code> command.</p>
 <div class="admonition tip">
 <p class="admonition-title">What about canceling more than one job?</p>
-<p><strong>SPOILER ALERT!</strong> You can! 
+<p><strong>SPOILER ALERT!</strong> You can!
 You can either list all the jobs one after the other.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>scancel<span class="w"> </span>job_id1<span class="w"> </span>job_id2<span class="w"> </span>job_id3
 </code></pre></div>
@@ -4570,7 +4575,7 @@ You can either list all the jobs one after the other.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4580,7 +4585,7 @@ You can either list all the jobs one after the other.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2022 08:42:27">July 22, 2022</span>
   </span>
 
     
@@ -4598,9 +4603,9 @@ You can either list all the jobs one after the other.</p>
     
     <nav>
       
-        <a href="https://github.com/migrau" class="md-author" title="@migrau">
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
-          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
@@ -4608,9 +4613,9 @@ You can either list all the jobs one after the other.</p>
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
-        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
+        <a href="https://github.com/migrau" class="md-author" title="@migrau">
           
-          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
         </a>
       
         <a href="https://github.com/AxelRosendahlHuber" class="md-author" title="@AxelRosendahlHuber">
@@ -4805,10 +4810,10 @@ You can either list all the jobs one after the other.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

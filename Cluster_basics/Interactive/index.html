@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4273,13 +4273,17 @@
 
 
 <h1 id="interactive">Interactive<a class="headerlink" href="#interactive" title="Permanent link">&para;</a></h1>
-<p>The <code>interactive</code> command gives to the user an <strong>interactive shell</strong> in the cluster with slurm allocation. In other words, it allocates the user to a specific node of the cluster so that the jobs can be executed there without disturbing the rest of the users.</p>
+<p>The <code>interactive</code> command gives to the user an <strong>interactive shell</strong> in the cluster with slurm allocation. In other
+words, it allocates the user to a specific node of the cluster so that the jobs
+can be executed there without disturbing the rest of the users.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>There is a difference between running an interactive session within the BBGCluster or the IRB Cluster. Please select the tab accordingly to where you are working.</p>
+<p>There is a difference between running an interactive session within the BBGCluster or the IRB Cluster.
+Please select the tab accordingly to where you are working.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">BBG Cluster</label><label for="__tabbed_1_2">IRB Cluster</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Once you enter the bbgcluster, you will see in the terminal <code>&lt;username&gt;@login01</code>. It is here where, if you want to be allocated to your own node, you can just run the command:</p>
+<p>Once you enter the bbgcluster, you will see in the terminal <code>&lt;username&gt;@login01</code>. It is here where, <!--markdownlint-disable MD046-->
+if you want to be allocated to your own node, you can just run the command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>interactive
 </code></pre></div>
 <p>If the <code>login01</code> has changed to <code>bbgn###</code> where <code>###</code> is the number identifying the current node.</p>
@@ -4297,11 +4301,13 @@
 <p>In order to run <code>interactive</code> command in the IRB cluster you need to tell your terminal where to find it first.</p>
 <div class="admonition warning">
 <p class="admonition-title">Installation</p>
-<p>The <code>interactive</code> script is located here: <code>/data/bbg/software/bin/interactive</code>. In order to have it always available from wherever directory you want to run it, you need to add the following to your <code>.bashrc</code></p>
+<p>The <code>interactive</code> script is located here: <code>/data/bbg/software/bin/interactive</code>. In order to have it always
+available from wherever directory you want to run it, you need to add the following to your <code>.bashrc</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/home/<span class="nv">$USER</span>/.local/bin/:/data/bbg/software/bin/:<span class="nv">$PATH</span>
 </code></pre></div>
 </div>
-<p>Once you enter the irbcluster, you will see in the terminal <code>&lt;username&gt;@irblogin01</code>. Here is where you'd need to allocate desired resources to start working. The command to run is the following:</p>
+<p>Once you enter the irbcluster, you will see in the terminal <code>&lt;username&gt;@irblogin01</code>. Here is where you'd need to
+allocate desired resources to start working. The command to run is the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>interactive
 </code></pre></div>
 <p>If the <code>irblogin01</code> has changed to <code>irbcn##</code> where <code>###</code> is the number identifying the current node.</p>
@@ -4312,7 +4318,7 @@
 <li><code>-w</code>: Target node</li>
 <li><code>-J</code>: Job name</li>
 <li><code>-x</code>: Binary that you want to run interactively</li>
-<li><code>-p</code>: specify queue (see <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/queues/">queues</a>) (default: <code>bbg_cpu_zen4</code>)</li>
+<li><code>-p</code>: specify queue (see <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/queues/">queues</a>) (default: <code>bbg_cpu_zen4</code>) <!--markdownlint-disable MD013--></li>
 <li><code>-q</code>: specify the QoS (see <a href="https://bbgcloud.irbbarcelona.org/f/559435">slides</a>)</li>
 </ul>
 </div>
@@ -4347,7 +4353,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4357,7 +4363,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2022 08:42:27">July 22, 2022</span>
   </span>
 
     
@@ -4380,14 +4386,14 @@
           <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
-        <a href="https://github.com/migrau" class="md-author" title="@migrau">
-          
-          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
-        </a>
-      
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
           
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/migrau" class="md-author" title="@migrau">
+          
+          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
         </a>
       
         <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
@@ -4582,10 +4588,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

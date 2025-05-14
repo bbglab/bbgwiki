@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4369,7 +4369,7 @@
 <h1 id="qmap-submit">Qmap Submit<a class="headerlink" href="#qmap-submit" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>How to submit jobs to the Cluster using <strong>Qmap</strong>.</p>
-<p><strong>Qmap</strong> documentation: https://qmap.readthedocs.io</p>
+<p><strong>Qmap</strong> documentation: <a href="https://qmap.readthedocs.io">https://qmap.readthedocs.io</a></p>
 <h2 id="howto">Howto<a class="headerlink" href="#howto" title="Permanent link">&para;</a></h2>
 <h3 id="1-prepare-qmap-file-example">1. Prepare .qmap file (example)<a class="headerlink" href="#1-prepare-qmap-file-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">[</span>params<span class="o">]</span>
@@ -4385,16 +4385,17 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Rscript<span class="w"> </span>run.R<span class="w"> </span>../data/vafs.dat<span class="w"> </span>binomial.bmm<span class="w"> </span><span class="m">3</span><span class="w"> </span>./results.binomial.3
 </code></pre></div>
 <h3 id="2-run-qmap-submit-from-the-login-node">2. Run "qmap submit" from the login node<a class="headerlink" href="#2-run-qmap-submit-from-the-login-node" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>qmap<span class="w"> </span>submit<span class="w"> </span>filename.qmap
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>qmap<span class="w"> </span>submit<span class="w"> </span>filename.qmap
 </code></pre></div>
 <h2 id="aditional-info">Aditional info<a class="headerlink" href="#aditional-info" title="Permanent link">&para;</a></h2>
 <h3 id="extra-parameters">Extra parameters<a class="headerlink" href="#extra-parameters" title="Permanent link">&para;</a></h3>
-<p>If you need to provide any <a href="https://qmap.readthedocs.io/en/latest/concepts.html#parameters">extra parameter</a> directly to SLURM, you can do it defining a new profile.config file. E.g.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>executor = slurm
+<p>If you need to provide any <a href="https://qmap.readthedocs.io/en/latest/concepts.html#parameters">extra parameter</a> directly to
+SLURM, you can do it defining a new profile.config file. E.g.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">slurm</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>[params]
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>extra = -p bigmem
-</code></pre></div></p>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">[params]</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">extra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">-p bigmem</span>
+</code></pre></div>
 <p>By default, the queue used is <code>bigrun</code>.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4423,7 +4424,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4433,7 +4434,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2022 08:42:27">July 22, 2022</span>
   </span>
 
     
@@ -4451,14 +4452,19 @@
     
     <nav>
       
-        <a href="https://github.com/migrau" class="md-author" title="@migrau">
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
-          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
           
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/migrau" class="md-author" title="@migrau">
+          
+          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
         </a>
       
         <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
@@ -4647,10 +4653,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

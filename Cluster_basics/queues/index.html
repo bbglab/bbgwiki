@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -749,9 +749,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Choose the correct queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#list-queues" class="md-nav__link">
     <span class="md-ellipsis">
       List queues
@@ -759,13 +760,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#nextflow-example" class="md-nav__link">
     <span class="md-ellipsis">
       Nextflow example
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4225,9 +4231,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Choose the correct queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#list-queues" class="md-nav__link">
     <span class="md-ellipsis">
       List queues
@@ -4235,13 +4242,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#nextflow-example" class="md-nav__link">
     <span class="md-ellipsis">
       Nextflow example
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4287,33 +4299,42 @@
 
 
 <h1 id="queues">Queues<a class="headerlink" href="#queues" title="Permanent link">&para;</a></h1>
-<p>When submitting jobs to the bbgcluster, with <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/Interactive/">interactive</a> or e.g., <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/Submitting_jobs/SLURM/">sbatch</a>, you have the option to specify the queue/partition where sending the job. By default (if not specified), it goes to the <code>normal</code>partition.</p>
-<h3 id="choose-the-correct-queue">Choose the correct queue<a class="headerlink" href="#choose-the-correct-queue" title="Permanent link">&para;</a></h3>
-<p>Selecting the right queue is crucial for the proper functioning of the cluster:  <br />
-- <code>normal</code>: Standard job in terms of time and resources. E.g, notebook, an <code>interactive</code>, etc  <br />
-- <code>bigmem</code>: Job requiring a lot of memory. 512Gb at max.  <br />
-- <code>bigrun</code>: Job requiring a lot of nodes during hours/days (a lot of cpus/mem). Normally this case is when using a (nextflow) pipeline and your main job is submitting many sub-jobs to the queue for days. <em>Optimal for intogen/boostDM, sarek, deepUMIcaller,... jobs</em>    </p>
+<p>When submitting jobs to the bbgcluster, with <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/Interactive/">interactive</a>
+or e.g., <a href="https://bbglab.github.io/bbgwiki/Cluster_basics/Submitting_jobs/SLURM/">sbatch</a>, you have the option to
+specify the queue/partition where sending the job. By default (if not specified), it goes to the <code>normal</code>partition.</p>
+<h2 id="choose-the-correct-queue">Choose the correct queue<a class="headerlink" href="#choose-the-correct-queue" title="Permanent link">&para;</a></h2>
+<p>Selecting the right queue is crucial for the proper functioning of the cluster:</p>
+<ul>
+<li><code>normal</code>: Standard job in terms of time and resources. E.g, notebook, an <code>interactive</code>, etc</li>
+<li><code>bigmem</code>: Job requiring a lot of memory. 512Gb at max.</li>
+<li><code>bigrun</code>: Job requiring a lot of nodes during hours/days (a lot of cpus/mem). Normally this case is when using a
+(nextflow) pipeline and your main job is submitting many sub-jobs to the queue for days.
+<em>Optimal for intogen/boostDM, sarek, deepUMIcaller,... jobs</em></li>
+</ul>
 <h3 id="list-queues">List queues<a class="headerlink" href="#list-queues" title="Permanent link">&para;</a></h3>
-<p>Once you enter the bbgcluster, you will see in the terminal <code>&lt;username&gt;@login01</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;username&gt;@login01:~$ sinfo
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>normal*      up   infinite      1   drng bbgn004
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>normal*      up   infinite      6    mix bbgn[012,014,016,019-020,022]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>normal*      up   infinite      2  alloc bbgn[021,023]
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>normal*      up   infinite     11   idle bbgn[005-011,013,015,017-018]
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>bigmem       up   infinite      2    mix bbgn[020,022]
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>bigmem       up   infinite      2  alloc bbgn[021,023]
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>bigrun       up   infinite      6    mix bbgn[012,014,016,019-020,022]
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>bigrun       up   infinite      2  alloc bbgn[021,023]
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>bigrun       up   infinite      8   idle bbgn[008-011,013,015,017-018]
+<p>Once you enter the bbgcluster, you will see in the terminal <code>&lt;username&gt;@login01</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;username&gt;@login01:~$<span class="w"> </span>sinfo
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>PARTITION<span class="w"> </span>AVAIL<span class="w">  </span>TIMELIMIT<span class="w">  </span>NODES<span class="w">  </span>STATE<span class="w"> </span>NODELIST
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>normal*<span class="w">      </span>up<span class="w">   </span>infinite<span class="w">      </span><span class="m">1</span><span class="w">   </span>drng<span class="w"> </span>bbgn004
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>normal*<span class="w">      </span>up<span class="w">   </span>infinite<span class="w">      </span><span class="m">6</span><span class="w">    </span>mix<span class="w"> </span>bbgn<span class="o">[</span><span class="m">012</span>,014,016,019-020,022<span class="o">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>normal*<span class="w">      </span>up<span class="w">   </span>infinite<span class="w">      </span><span class="m">2</span><span class="w">  </span>alloc<span class="w"> </span>bbgn<span class="o">[</span><span class="m">021</span>,023<span class="o">]</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>normal*<span class="w">      </span>up<span class="w">   </span>infinite<span class="w">     </span><span class="m">11</span><span class="w">   </span>idle<span class="w"> </span>bbgn<span class="o">[</span><span class="m">005</span>-011,013,015,017-018<span class="o">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>bigmem<span class="w">       </span>up<span class="w">   </span>infinite<span class="w">      </span><span class="m">2</span><span class="w">    </span>mix<span class="w"> </span>bbgn<span class="o">[</span><span class="m">020</span>,022<span class="o">]</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>bigmem<span class="w">       </span>up<span class="w">   </span>infinite<span class="w">      </span><span class="m">2</span><span class="w">  </span>alloc<span class="w"> </span>bbgn<span class="o">[</span><span class="m">021</span>,023<span class="o">]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>bigrun<span class="w">       </span>up<span class="w">   </span>infinite<span class="w">      </span><span class="m">6</span><span class="w">    </span>mix<span class="w"> </span>bbgn<span class="o">[</span><span class="m">012</span>,014,016,019-020,022<span class="o">]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>bigrun<span class="w">       </span>up<span class="w">   </span>infinite<span class="w">      </span><span class="m">2</span><span class="w">  </span>alloc<span class="w"> </span>bbgn<span class="o">[</span><span class="m">021</span>,023<span class="o">]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>bigrun<span class="w">       </span>up<span class="w">   </span>infinite<span class="w">      </span><span class="m">8</span><span class="w">   </span>idle<span class="w"> </span>bbgn<span class="o">[</span><span class="m">008</span>-011,013,015,017-018<span class="o">]</span>
 </code></pre></div>
-In here, you can see all the three partitions (<code>normal</code>, <code>bigmem</code> and <code>bigrun</code>) and  the status of every working node (bbgnXXX). The possible states are:
-- <code>drng</code>: The node is under maintenance.
-- <code>alloc</code>: Nodes with no resources available
-- <code>idle</code>: Nodes with all the resources available.
-- <code>mix</code>: Nodes with some resources available.</p>
+<p>In here, you can see all the three partitions (<code>normal</code>, <code>bigmem</code> and <code>bigrun</code>) and  the status of every working
+node (bbgnXXX). The possible states are:</p>
+<ul>
+<li><code>drng</code>: The node is under maintenance.</li>
+<li><code>alloc</code>: Nodes with no resources available</li>
+<li><code>idle</code>: Nodes with all the resources available.</li>
+<li><code>mix</code>: Nodes with some resources available.</li>
+</ul>
 <h3 id="nextflow-example">Nextflow example<a class="headerlink" href="#nextflow-example" title="Permanent link">&para;</a></h3>
-<p>You can edit your nextflow config file and define the partition:
+<p>You can edit your nextflow config file and define the partition:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>process { 
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>executor = &#39;slurm&#39; 
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>queue = &#39;bigrun&#39; 
@@ -4324,7 +4345,7 @@ In here, you can see all the three partitions (<code>normal</code>, <code>bigmem
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>executor { 
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>queueSize = 30 
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>}
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Miguel Grau</li>
@@ -4352,7 +4373,7 @@ In here, you can see all the three partitions (<code>normal</code>, <code>bigmem
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4362,7 +4383,7 @@ In here, you can see all the three partitions (<code>normal</code>, <code>bigmem
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 22, 2024 12:16:35">May 22, 2024</span>
   </span>
 
     
@@ -4380,14 +4401,19 @@ In here, you can see all the three partitions (<code>normal</code>, <code>bigmem
     
     <nav>
       
-        <a href="https://github.com/migrau" class="md-author" title="@migrau">
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
-          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
           
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/migrau" class="md-author" title="@migrau">
+          
+          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
         </a>
       
       
@@ -4571,10 +4597,10 @@ In here, you can see all the three partitions (<code>normal</code>, <code>bigmem
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

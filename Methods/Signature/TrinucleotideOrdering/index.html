@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -2767,15 +2767,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-list-in-python-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full list in Python format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -4221,15 +4212,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-list-in-python-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full list in Python format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -4272,20 +4254,31 @@
 
 <h1 id="trinucleotide-context-ordering">Trinucleotide context ordering<a class="headerlink" href="#trinucleotide-context-ordering" title="Permanent link">&para;</a></h1>
 <p>Code to generate a list of 96 trinucleotide contexts with a pyrimidine reference in the most widely used ordering.
-This is the ordering in which trinucleotide contexts are typically displayed in the mutational profiles plots representing the single-base substitution mutational signatures by COSMIC.</p>
+This is the ordering in which trinucleotide contexts are typically displayed in the mutational profiles plots
+representing the single-base substitution mutational signatures by COSMIC.</p>
 <h2 id="python-code">Python code<a class="headerlink" href="#python-code" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>from itertools import product
-
-subs = [&#39;&#39;.join(z) for z in product(&#39;CT&#39;, &#39;ACGT&#39;) if z[0] != z[1]]  
-flanks = [&#39;&#39;.join(z) for z in product(&#39;ACGT&#39;, repeat=2)]  
-contexts = sorted([(s, f) for s, f in product(subs, flanks)], key=lambda x: (x[0], x[1]))  
-contexts_with_format = [f[0] + s[0] + f[1] + &#39;&gt;&#39; + s[1] for s, f in contexts]
-</code></pre></div>
-<h2 id="full-list-in-python-format">Full list in Python format<a class="headerlink" href="#full-list-in-python-format" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>full_list = [&#39;ACA&gt;A&#39;, &#39;ACC&gt;A&#39;, &#39;ACG&gt;A&#39;, &#39;ACT&gt;A&#39;, &#39;CCA&gt;A&#39;, &#39;CCC&gt;A&#39;, &#39;CCG&gt;A&#39;, &#39;CCT&gt;A&#39;, &#39;GCA&gt;A&#39;, &#39;GCC&gt;A&#39;, &#39;GCG&gt;A&#39;, &#39;GCT&gt;A&#39;, &#39;TCA&gt;A&#39;, &#39;TCC&gt;A&#39;, &#39;TCG&gt;A&#39;, &#39;TCT&gt;A&#39;, &#39;ACA&gt;G&#39;, &#39;ACC&gt;G&#39;, &#39;ACG&gt;G&#39;, &#39;ACT&gt;G&#39;, &#39;CCA&gt;G&#39;, &#39;CCC&gt;G&#39;, &#39;CCG&gt;G&#39;, &#39;CCT&gt;G&#39;, &#39;GCA&gt;G&#39;, &#39;GCC&gt;G&#39;, &#39;GCG&gt;G&#39;, &#39;GCT&gt;G&#39;, &#39;TCA&gt;G&#39;, &#39;TCC&gt;G&#39;, &#39;TCG&gt;G&#39;, &#39;TCT&gt;G&#39;, &#39;ACA&gt;T&#39;, &#39;ACC&gt;T&#39;, &#39;ACG&gt;T&#39;, &#39;ACT&gt;T&#39;, &#39;CCA&gt;T&#39;, &#39;CCC&gt;T&#39;, &#39;CCG&gt;T&#39;, &#39;CCT&gt;T&#39;, &#39;GCA&gt;T&#39;, &#39;GCC&gt;T&#39;, &#39;GCG&gt;T&#39;, &#39;GCT&gt;T&#39;, &#39;TCA&gt;T&#39;, &#39;TCC&gt;T&#39;, &#39;TCG&gt;T&#39;, &#39;TCT&gt;T&#39;, &#39;ATA&gt;A&#39;, &#39;ATC&gt;A&#39;, &#39;ATG&gt;A&#39;, &#39;ATT&gt;A&#39;, &#39;CTA&gt;A&#39;, &#39;CTC&gt;A&#39;, &#39;CTG&gt;A&#39;, &#39;CTT&gt;A&#39;, &#39;GTA&gt;A&#39;, &#39;GTC&gt;A&#39;, &#39;GTG&gt;A&#39;, &#39;GTT&gt;A&#39;, &#39;TTA&gt;A&#39;, &#39;TTC&gt;A&#39;, &#39;TTG&gt;A&#39;, &#39;TTT&gt;A&#39;, &#39;ATA&gt;C&#39;, &#39;ATC&gt;C&#39;, &#39;ATG&gt;C&#39;, &#39;ATT&gt;C&#39;, &#39;CTA&gt;C&#39;, &#39;CTC&gt;C&#39;, &#39;CTG&gt;C&#39;, &#39;CTT&gt;C&#39;, &#39;GTA&gt;C&#39;, &#39;GTC&gt;C&#39;, &#39;GTG&gt;C&#39;, &#39;GTT&gt;C&#39;, &#39;TTA&gt;C&#39;, &#39;TTC&gt;C&#39;, &#39;TTG&gt;C&#39;, &#39;TTT&gt;C&#39;, &#39;ATA&gt;G&#39;, &#39;ATC&gt;G&#39;, &#39;ATG&gt;G&#39;, &#39;ATT&gt;G&#39;, &#39;CTA&gt;G&#39;, &#39;CTC&gt;G&#39;, &#39;CTG&gt;G&#39;, &#39;CTT&gt;G&#39;, &#39;GTA&gt;G&#39;, &#39;GTC&gt;G&#39;, &#39;GTG&gt;G&#39;, &#39;GTT&gt;G&#39;, &#39;TTA&gt;G&#39;, &#39;TTC&gt;G&#39;, &#39;TTG&gt;G&#39;, &#39;TTT&gt;G&#39;]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">subs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">&#39;CT&#39;</span><span class="p">,</span> <span class="s1">&#39;ACGT&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>  
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">flanks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">&#39;ACGT&#39;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>  
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">contexts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span><span class="n">s</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="n">subs</span><span class="p">,</span> <span class="n">flanks</span><span class="p">)],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>  
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">contexts_with_format</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">contexts</span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">## Full list in Python format</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">full_list</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="s1">&#39;ACA&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;ACC&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;ACG&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;CCA&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;CCC&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;CCG&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;CCT&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GCA&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GCC&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GCG&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GCT&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;TCA&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;TCC&gt;A&#39;</span><span class="p">,</span> 
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="s1">&#39;TCG&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;TCT&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;ACA&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ACC&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ACG&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;CCA&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;CCC&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;CCG&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;CCT&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GCA&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GCC&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GCG&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GCT&gt;G&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="s1">&#39;TCA&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TCC&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TCG&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TCT&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ACA&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;ACC&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;ACG&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;ACT&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;CCA&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;CCC&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;CCG&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;CCT&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;GCA&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;GCC&gt;T&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="s1">&#39;GCG&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;GCT&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;TCA&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;TCC&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;TCG&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;TCT&gt;T&#39;</span><span class="p">,</span> <span class="s1">&#39;ATA&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;ATG&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;ATT&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;CTC&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;CTG&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;CTT&gt;A&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="s1">&#39;GTA&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GTC&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GTG&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GTT&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;TTA&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;TTC&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;TTG&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;TTT&gt;A&#39;</span><span class="p">,</span> <span class="s1">&#39;ATA&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;ATG&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;ATT&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;CTA&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;CTC&gt;C&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="s1">&#39;CTG&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;CTT&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;GTA&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;GTC&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;GTG&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;GTT&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;TTA&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;TTC&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;TTG&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;TTT&gt;C&#39;</span><span class="p">,</span> <span class="s1">&#39;ATA&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ATG&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;ATT&gt;G&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="s1">&#39;CTA&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;CTC&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;CTG&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;CTT&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GTA&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GTC&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GTG&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GTT&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TTA&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TTC&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TTG&gt;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TTT&gt;G&#39;</span><span class="p">]</span>
 </code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<p>Ferran Muiños</p>
+<ul>
+<li>Ferran Muiños</li>
+</ul>
 
 
 
@@ -4308,7 +4301,7 @@ contexts_with_format = [f[0] + s[0] + f[1] + &#39;&gt;&#39; + s[1] for s, f in c
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4318,7 +4311,7 @@ contexts_with_format = [f[0] + s[0] + f[1] + &#39;&gt;&#39; + s[1] for s, f in c
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 22, 2023 13:26:00">June 22, 2023</span>
   </span>
 
     
@@ -4339,6 +4332,11 @@ contexts_with_format = [f[0] + s[0] + f[1] + &#39;&gt;&#39; + s[1] for s, f in c
         <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
           <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
       
@@ -4522,10 +4520,10 @@ contexts_with_format = [f[0] + s[0] + f[1] + &#39;&gt;&#39; + s[1] for s, f in c
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

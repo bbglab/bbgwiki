@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4249,12 +4249,14 @@
 
 
 <h1 id="edit-bbg-wiki">Edit BBG-Wiki<a class="headerlink" href="#edit-bbg-wiki" title="Permanent link">&para;</a></h1>
-<p>The main language of the wiki documentation is <strong>Markdown</strong>. There are several online editors which can help writting Markdown text and automatically visualize what is being written.</p>
+<p>The main language of the wiki documentation is <strong>Markdown</strong>. There are several online editors which can help writting
+Markdown text and automatically visualize what is being written.</p>
 <ul>
 <li><a href="https://stackedit.io/app" target="_blank">StackEdit</a></li>
 <li><a href="https://pandao.github.io/editor.md/en.html" target="_blank">Editor.md</a></li>
 </ul>
-<p>This wiki is stored in a <strong>GitHub repository</strong>, where each section of the wiki corresponds to a single <strong>Markdown file</strong> (<code>*.md</code>). By editing these files either online or locally, the wiki can be updated by everyone.</p>
+<p>This wiki is stored in a <strong>GitHub repository</strong>, where each section of the wiki corresponds to a single
+<strong>Markdown file</strong> (<code>*.md</code>). By editing these files either online or locally, the wiki can be updated by everyone.</p>
 <ul>
 <li><a href="https://quickref.me/markdown" target="_blank">Markdown cheatsheet</a></li>
 <li><a href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/" target="_blank">Mkdocs documentation</a></li>
@@ -4262,7 +4264,8 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Online</label><label for="__tabbed_1_2">Local</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Go to the <a href="https://github.com/bbglab/bbgwiki" target="_blank">bbg-wiki repository</a> and edit any file inside the <code>docs/</code> folder, which contains all the files of the documentation.</p>
+<p>Go to the <a href="https://github.com/bbglab/bbgwiki" target="_blank">bbg-wiki repository</a> and edit any file inside <!--markdownlint-disable MD046-->
+the <code>docs/</code> folder, which contains all the files of the documentation.</p>
 <p><img alt="BBGWiki edit online tutorial" src="../assets/images/bbgwiki_edit_online.jpg" /></p>
 </div>
 <div class="tabbed-block">
@@ -4275,7 +4278,10 @@
 </code></pre></div>
 <details class="failure annotate">
 <summary>Error: My Github password seems to be wrong somehow...</summary>
-<p>It might be the case that at some point of this process, it asks for the Github user and password. However, although you should introduce your Github user, the password that it asks <strong>is not your Github password</strong>. In order to know what to introduce here, you need to generate a <code>ssh key</code> following one of these two options:</p>
+<p>It might be the case that at some point of this process, it asks for the Github user and password. 
+However, although you should introduce your Github user, the password that it asks 
+<strong>is not your Github password</strong>. In order to know what to introduce here, you need to generate a
+<code>ssh key</code> following one of these two options:</p>
 <ul>
 <li>
 <p>From the <strong>Github web</strong>:</p>
@@ -4297,8 +4303,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-o<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span>“ssh@github.com”
 </code></pre></div>
 <ul>
-<li>Click "Enter" on all the options (unless you want to save the key in a specific file, but it is not mandatory)</li>
-<li>Execute the next command to see the generated key (if you selected a specific file, change the <code>id_rsa</code> in the command by the name you inputed).</li>
+<li>Click "Enter" on all the options (unless you want to save the key in a specific file, 
+but it is not mandatory)</li>
+<li>Execute the next command to see the generated key (if you selected a specific file,
+change the <code>id_rsa</code> in the command by the name you inputed).</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cat<span class="w"> </span>id_rsa.pub
 </code></pre></div>
@@ -4310,12 +4318,14 @@
 </details>
 </li>
 <li>
-<p>Open the desired <code>.md</code> file with any IDE you prefer (vscode, pycharm, atom, etc) or any online editors above-mentioned.</p>
+<p>Open the desired <code>.md</code> file with any IDE you prefer (vscode, pycharm, atom, etc) or 
+any online editors above-mentioned.</p>
 </li>
 <li>
-<p>Check if you are happy with the edits by running the website at <strong>localhost</strong> (to try stuff before updating the main web) with the following: 
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdocs<span class="w"> </span>serve
-</code></pre></div></p>
+<p>Check if you are happy with the edits by running the website at <strong>localhost</strong> (to try 
+stuff before updating the main web) with the following: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdocs<span class="w"> </span>serve
+</code></pre></div>
 </li>
 <li>
 <p>Update web:</p>
@@ -4355,7 +4365,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4365,7 +4375,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2022 08:42:27">July 22, 2022</span>
   </span>
 
     
@@ -4383,11 +4393,6 @@
     
     <nav>
       
-        <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
-          
-          <img src="https://avatars.githubusercontent.com/u/107858804?v=4&size=72" alt="CarlosLopezElorduy">
-        </a>
-      
         <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
           <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
@@ -4396,6 +4401,11 @@
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
           
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
+          
+          <img src="https://avatars.githubusercontent.com/u/107858804?v=4&size=72" alt="CarlosLopezElorduy">
         </a>
       
       
@@ -4579,10 +4589,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

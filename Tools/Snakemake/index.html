@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -3385,7 +3385,7 @@
           <li class="md-nav__item">
   <a href="#to-be-continued" class="md-nav__link">
     <span class="md-ellipsis">
-      TO BE CONTINUED...
+      TO BE CONTINUED
     </span>
   </a>
   
@@ -4309,7 +4309,7 @@
           <li class="md-nav__item">
   <a href="#to-be-continued" class="md-nav__link">
     <span class="md-ellipsis">
-      TO BE CONTINUED...
+      TO BE CONTINUED
     </span>
   </a>
   
@@ -4371,7 +4371,10 @@
 
 
 <h1 id="snakemake">Snakemake<a class="headerlink" href="#snakemake" title="Permanent link">&para;</a></h1>
-<p>The Snakemake workflow management system is a tool to create <strong>reproducible and scalable</strong> data analyses. Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition. Finally, Snakemake workflows can entail a description of required software, which will be automatically deployed to any execution environment.</p>
+<p>The Snakemake workflow management system is a tool to create <strong>reproducible and scalable</strong> data analyses.
+Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster,
+grid and cloud environments, without the need to modify the workflow definition. Finally, Snakemake workflows
+can entail a description of required software, which will be automatically deployed to any execution environment.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>You can use conda/mamba  to install Snakemake:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#mamba way. FASTER</span>
@@ -4386,11 +4389,12 @@
 </code></pre></div>
 <p>More details <a href="https://snakemake.readthedocs.io/en/stable/getting_started/installation.html">here</a></p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>Before actually running a snakemake pipeline, you can try the <code>dry mode (-np)</code>, which do not execute anything, and display what would be done. This is a good way to check that all the commands/inputs/output are as expected:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>snakemake<span class="w"> </span>--snakefile<span class="w"> </span>example.snk.py<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span><span class="w"> </span>-np
+<p>Before actually running a snakemake pipeline, you can try the <code>dry mode (-np)</code>, which do not execute anything,
+and display what would be done. This is a good way to check that all the commands/inputs/output are as expected:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>snakemake<span class="w"> </span>--snakefile<span class="w"> </span>example.snk.py<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span><span class="w"> </span>-np
 </code></pre></div>
 <p>And if you want to run it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>snakemake<span class="w"> </span>--snakefile<span class="w"> </span>example.snk.py<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>snakemake<span class="w"> </span>--snakefile<span class="w"> </span>example.snk.py<span class="w"> </span>--cores<span class="w"> </span><span class="m">1</span>
 </code></pre></div>
 <p>For usage documentation, run <code>snakemake --help</code>.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
@@ -4421,17 +4425,32 @@
 </code></pre></div>
 <div class="admonition warning annotate">
 <p class="admonition-title"> Snakemake starts at the end. </p>
-<p>By default snakemake executes the first rule in the snakefile. It is possible to overwrite this behavior by explicitly marking a rule as being the default target via the default_target directive. </p>
-<p>As you can see, there are two rules, <code>all</code> and <code>FASTQC</code> but actually only one of them (<code>FASTQC</code>) is a proper rule. Our first rule, <code>all</code>, requires as an input the final output of the pipeline, the <code>fastqc.html</code> files. We only define it as a final-rule, to explicity define what we want as a final pipeline ouput. To obtain the rule <code>all</code> input (and finish the pipeline's execution), snakemake checks which rule needs to be executed to obtain it (<code>FASTQC</code>, in this case). Then it checks again the input of <code>FASTQC</code>, in case it is the output from another rule, and so on, until it reaches the beggining of the pipeline. In this example, there is only one rule, so the final output (<code>fastqc.html</code> files) is the output of the unique rule (<code>FASTQC</code>).</p>
+<p>By default snakemake executes the first rule in the snakefile. It is possible to overwrite this behavior by
+explicitly marking a rule as being the default target via the default_target directive.</p>
+<p>As you can see, there are two rules, <code>all</code> and <code>FASTQC</code> but actually only one of them (<code>FASTQC</code>) is a  <!-- markdownlint-disable MD046-->
+proper rule. Our first rule, <code>all</code>, requires as an input the final output of the pipeline, the <code>fastqc.html</code> 
+files. We only define it as a final-rule, to explicity define what we want as a final pipeline ouput. To obtain 
+the rule <code>all</code> input (and finish the pipeline's execution), snakemake checks which rule needs to be executed to 
+obtain it (<code>FASTQC</code>, in this case). Then it checks again the input of <code>FASTQC</code>, in case it is the output from 
+another rule, and so on, until it reaches the beggining of the pipeline. In this example, there is only one rule, 
+so the final output (<code>fastqc.html</code> files) is the output of the unique rule (<code>FASTQC</code>).</p>
 </div>
 <p>Every step from the pipeline is defined within a rule. Every rule has some basic parameters:</p>
 <ul>
 <li><strong>Input/output</strong> where we define the input and expected output of our rule.</li>
-<li><strong>Shell/run/script</strong>: A rule can be a bash command (<code>shell</code>), a python script (<code>run</code>) or a script in almost any language (<code>script</code>).</li>
+<li><strong>Shell/run/script</strong>: A rule can be a bash command (<code>shell</code>), a python script (<code>run</code>) or a script in</li>
+<li>almost any language (<code>script</code>).</li>
 </ul>
-<p>Additionally, there are many optional parameters: <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#threads">threads</a>, <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#resources">resources</a> , <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#preemptible-jobs">preemptible-jobs</a>, <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#messages">messages</a>, <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#log-files">Log-Files</a> and <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html">more.</a>..</p>
+<p>Additionally, there are many optional parameters:
+<a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#threads">threads</a>,
+<a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#resources">resources</a>,
+<a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#preemptible-jobs">preemptible-jobs</a>,
+<a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#messages">messages</a>,
+<a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#log-files">Log-Files</a> and
+<a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html">more.</a>..</p>
 <h3 id="example2-wildcards">Example2. <strong>Wildcards</strong><a class="headerlink" href="#example2-wildcards" title="Permanent link">&para;</a></h3>
-<p>In this case, we specified (hardcoded) the name of the samples (<code>['sample1_1',  'sample1_2']</code>) and the input folder (<code>data/</code>)</p>
+<p>In this case, we specified (hardcoded) the name of the samples (<code>['sample1_1',  'sample1_2']</code>) and
+the input folder (<code>data/</code>)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">#dry run</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">#snakemake --snakefile example2.snk.py --cores 1 -np</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
@@ -4513,8 +4532,9 @@
 <li><code>fastqc -o output/ -t 1 data/sample1_1.fastq.gz</code></li>
 <li><code>fastqc -o output/ -t 1 data/sample1_2.fastq.gz</code></li>
 </ul>
-<p>And it ends when the rule <code>all</code> is executed. Three rules are executed in total (<code>FASTQC</code> x2 times + <code>all</code> x 1 time).</p>
-<h3 id="to-be-continued">TO BE CONTINUED...<a class="headerlink" href="#to-be-continued" title="Permanent link">&para;</a></h3>
+<p>And it ends when the rule <code>all</code> is executed. Three rules are executed in
+total (<code>FASTQC</code> x2 times + <code>all</code> x 1 time).</p>
+<h3 id="to-be-continued">TO BE CONTINUED<a class="headerlink" href="#to-be-continued" title="Permanent link">&para;</a></h3>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://snakemake.readthedocs.io/en/stable/getting_started/installation.html">Snakemake Installation</a></li>
@@ -4545,7 +4565,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4555,7 +4575,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 16, 2023 14:49:37">March 16, 2023</span>
   </span>
 
     
@@ -4578,14 +4598,14 @@
           <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
-        <a href="https://github.com/migrau" class="md-author" title="@migrau">
-          
-          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
-        </a>
-      
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
           
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/migrau" class="md-author" title="@migrau">
+          
+          <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
         </a>
       
       
@@ -4769,10 +4789,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

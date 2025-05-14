@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4328,20 +4328,26 @@
 
 <h1 id="ensembl-vep">Ensembl-VEP<a class="headerlink" href="#ensembl-vep" title="Permanent link">&para;</a></h1>
 <div class="admonition note annotate">
-<p>VEP determines the effect of your variants (insertions, deletions and structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions.</p>
+<p>VEP determines the effect of your variants (insertions, deletions and structural variants) on genes, transcripts,
+and protein sequence, as well as regulatory regions.</p>
 </div>
 <h2 id="how-and-where-to-install-a-new-version">How and where to install a new version?<a class="headerlink" href="#how-and-where-to-install-a-new-version" title="Permanent link">&para;</a></h2>
-<p>There is a shared folder in datasets where there are several vep cache versions and docker containers. If you are planning to download one, make sure to store it in this location.</p>
+<p>There is a shared folder in datasets where there are several vep cache versions and docker containers. If you are
+planning to download one, make sure to store it in this location.</p>
 <p><code>/data/bbg/datasets/vep</code></p>
-<p>The easiest way to use a new version of vep is downloading the <a href="https://hub.docker.com/r/ensemblorg/ensembl-vep/tags?page=1">docker container</a>. Most popular versions are already downloaded in <code>/data/bbg/datasets/vep/homo_sapiens</code> (or <code>/data/bbg/datasets/vep/mus_musculus</code> for mice).</p>
+<p>The easiest way to use a new version of vep is downloading the
+<a href="https://hub.docker.com/r/ensemblorg/ensembl-vep/tags?page=1">docker container</a>. Most popular versions are already
+downloaded in <code>/data/bbg/datasets/vep/homo_sapiens</code> (or <code>/data/bbg/datasets/vep/mus_musculus</code> for mice).</p>
 <p>An example for downloading a new version:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>singularity<span class="w"> </span>pull<span class="w"> </span>docker://ensemblorg/ensembl-vep:release_109.0
 </code></pre></div>
 <p>Once the container is ready, we can download the vep-cache required:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ensembl-vep_109.sif<span class="w"> </span>INSTALL.pl<span class="w"> </span>-c<span class="w"> </span>109_GRCh38/<span class="w"> </span>-a<span class="w"> </span>cf<span class="w"> </span>-s<span class="w"> </span>homo_sapiens<span class="w"> </span>--ASSEMBLY<span class="w"> </span>GRCh38
 </code></pre></div>
-<p><em>IMPORTANT</em>. Each database only works with the specific ensembl-vep version used to download the database. In the previous example, the <code>109_GRCh38/</code> will work only with the ensembl-vep_109 version.</p>
-<p>For more details, you can follow the <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html">installation guide</a>.</p>
+<p><em>IMPORTANT</em>. Each database only works with the specific ensembl-vep version used to download the database. In the
+previous example, the <code>109_GRCh38/</code> will work only with the ensembl-vep_109 version.</p>
+<p>For more details, you can follow the
+<a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html">installation guide</a>.</p>
 <h2 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <p>Once you are in a working node:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mgrau@bbgn009:/data/bbg/datasets/vep/homo_sapiens$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ensembl-vep_109.sif<span class="w"> </span>vep
@@ -4386,14 +4392,18 @@
 <p>A real example command could be:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mgrau@bbgn009:/data/bbg/datasets/vep/homo_sapiens$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>vep109.sif<span class="w"> </span>vep<span class="w"> </span>--dir<span class="w"> </span>/data/bbg/datasets/vep/<span class="w"> </span>-i<span class="w"> </span>variants_ref38.vcf.gz<span class="w"> </span>--offline<span class="w"> </span>--format<span class="w"> </span>vcf<span class="w"> </span>--vcf<span class="w"> </span>--cache<span class="w"> </span>-o<span class="w"> </span>exampleout.vcf<span class="w"> </span>--species<span class="w"> </span>homo_sapiens<span class="w"> </span>--assembly<span class="w"> </span>GRCh38<span class="w"> </span>--fork<span class="w"> </span><span class="m">8</span>
 </code></pre></div>
-<p>To speed up the process, it is recommended to use the downloaded vep-cache files specifying the directory (<code>--dir</code>) and the <code>--offline</code> and <code>--cache</code> options. VEP allows multithreating using the <code>--fork</code> option.</p>
+<p>To speed up the process, it is recommended to use the downloaded vep-cache files specifying the directory
+(<code>--dir</code>) and the <code>--offline</code> and <code>--cache</code> options. VEP allows multithreating using the <code>--fork</code> option.</p>
 <p>For full option documentation see <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_options.html">here</a>.</p>
-<p>Full instructions on how to download and use cached files can be found <a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_cache.html">here</a>.</p>
+<p>Full instructions on how to download and use cached files can be found
+<a href="https://www.ensembl.org/info/docs/tools/vep/script/vep_cache.html">here</a>.</p>
 <h2 id="additional-comments">Additional comments<a class="headerlink" href="#additional-comments" title="Permanent link">&para;</a></h2>
-<p>Be careful when running VEP with the TAB output and then merging again the variants from a VCF file, some indels are reformated in VEP and you cannot pair them with the original mutations.</p>
+<p>Be careful when running VEP with the TAB output and then merging again the variants from a VCF file,
+some indels are reformated in VEP and you cannot pair them with the original mutations.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You can find another example using VEP data and google cloud -- see <a href="../../../Plots_and_scripts/minibam_hartwig_GCP/">Extract minibams from Hartwig data in googleCloud</a> section.</p>
+<p>You can find another example using VEP data and google cloud -- see
+<a href="../../../Plots_and_scripts/minibam_hartwig_GCP/">Extract minibams from Hartwig data in googleCloud</a> section.</p>
 </div>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4430,7 +4440,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4440,7 +4450,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2022 08:42:27">July 22, 2022</span>
   </span>
 
     
@@ -4458,14 +4468,19 @@
     
     <nav>
       
-        <a href="https://github.com/AxelRosendahlHuber" class="md-author" title="@AxelRosendahlHuber">
-          
-          <img src="https://avatars.githubusercontent.com/u/36924327?v=4&size=72" alt="AxelRosendahlHuber">
-        </a>
-      
         <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
           <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/AxelRosendahlHuber" class="md-author" title="@AxelRosendahlHuber">
+          
+          <img src="https://avatars.githubusercontent.com/u/36924327?v=4&size=72" alt="AxelRosendahlHuber">
         </a>
       
       
@@ -4649,10 +4664,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

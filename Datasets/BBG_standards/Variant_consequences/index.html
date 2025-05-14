@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -1051,7 +1051,7 @@
           <li class="md-nav__item">
   <a href="#step-2-from-a-single-consequence-per-variant-per-transcript-to-a-single-consequence-per-variant" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: From a single consequence per variant per transcript, to a single consequence per variant.
+      Step 2: From a single consequence per variant per transcript, to a single consequence per variant
     </span>
   </a>
   
@@ -4293,7 +4293,7 @@
           <li class="md-nav__item">
   <a href="#step-2-from-a-single-consequence-per-variant-per-transcript-to-a-single-consequence-per-variant" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: From a single consequence per variant per transcript, to a single consequence per variant.
+      Step 2: From a single consequence per variant per transcript, to a single consequence per variant
     </span>
   </a>
   
@@ -4355,7 +4355,9 @@
 
 
 <h1 id="variant-consequences">Variant consequences<a class="headerlink" href="#variant-consequences" title="Permanent link">&para;</a></h1>
-<p><strong>DISCLAIMER</strong>:  the decisions reflected in the instructions below might not be the best solution for all use cases, but are done with the best of my knowledge and with the best intention to make something useful and applicable across projects in the lab.</p>
+<p><strong>DISCLAIMER</strong>:  the decisions reflected in the instructions below might not be the best solution for all use cases,
+but are done with the best of my knowledge and with the best intention to make something
+useful and applicable across projects in the lab.</p>
 <h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h2>
 <p>The problem is here, when having multiple annotations for a given variant, how to summarize that.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>chr10:103590136_A&gt;T<span class="w">     </span>chr10:103590136<span class="w"> </span>T<span class="w">       </span>ENSG00000107954<span class="w"> </span>ENST00000369780<span class="w"> </span>Transcript<span class="w">      </span>missense_variant,splice_region_variant<span class="w">  </span><span class="m">2172</span><span class="w">    </span><span class="m">1489</span><span class="w">    </span><span class="m">497</span>
@@ -4365,16 +4367,24 @@
 <p>We could also define a way of grouping consequences into: Nonsense, Missense, Splice affecting, Synonymous.
 Since some times we might not be interested in having very detailed consequence types but more broader categories.</p>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>This document contains information on how to handle this situation to get a single consequence per variant if this is the goal of the users in some project.</p>
-<p>The first section covers how to rank the variants according to the deleteriousness, and the second section covers how to group variants into broader consequence types.</p>
-<p>So far we have been using the following ranking of Sequence Ontology terms associated with consequence types of variants: <a href="https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html">https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html</a>
-For the grouping of variants we have been using ad-hoc collections on a case by case basis -- see e.g. boostDM. I agree that it would be good to establish once and for all a consensus grouping of SO consequence types for general variant analyses.</p>
+<p>This document contains information on how to handle this situation to get a single consequence per variant if this is
+the goal of the users in some project.</p>
+<p>The first section covers how to rank the variants according to the deleteriousness, and the second section covers how
+to group variants into broader consequence types.</p>
+<p>So far we have been using the following ranking of Sequence Ontology terms associated with consequence types of
+variants: <a href="https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html">https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html</a>
+For the grouping of variants we have been using ad-hoc collections on a case by case basis -- see
+e.g. boostDM. I agree that it would be good to establish once and for all a consensus grouping of SO
+consequence types for general variant analyses.</p>
 <h2 id="reducing-to-a-single-consequence-per-variant">Reducing to a single consequence per variant<a class="headerlink" href="#reducing-to-a-single-consequence-per-variant" title="Permanent link">&para;</a></h2>
 <h3 id="step-1-choose-one-consequence-per-transcript">Step 1: Choose one consequence per transcript<a class="headerlink" href="#step-1-choose-one-consequence-per-transcript" title="Permanent link">&para;</a></h3>
 <p>In some cases you might get more than one consequence type, for the same variant in the same transcript.</p>
-<p>In these cases you want to preserve only the most deleterious one, but you might want to be careful with variants in non-coding transcripts.</p>
-<p>By applying <code>most_deleterious_within_variant()</code> function to the string of variant consequence you will get a single consequence per transcript.</p>
-<p>See the order of the consequences in the <code>CONSEQUENCES_LIST_WITHIN</code> list to understand which is the priority of consequence types when grouping.</p>
+<p>In these cases you want to preserve only the most deleterious one, but you might want to be careful
+with variants in non-coding transcripts.</p>
+<p>By applying <code>most_deleterious_within_variant()</code> function to the string of variant consequence
+you will get a single consequence per transcript.</p>
+<p>See the order of the consequences in the <code>CONSEQUENCES_LIST_WITHIN</code> list to understand which is
+the priority of consequence types when grouping.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">CONSEQUENCES_LIST_WITHIN</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="s1">&#39;NMD_transcript_variant&#39;</span><span class="p">,</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s1">&#39;non_coding_transcript_exon_variant&#39;</span><span class="p">,</span>
@@ -4437,8 +4447,9 @@ For the grouping of variants we have been using ad-hoc collections on a case by 
 <a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>    <span class="k">except</span><span class="p">:</span>
 <a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>        <span class="k">return</span> <span class="s1">&#39;-&#39;</span>
 </code></pre></div>
-<h3 id="step-2-from-a-single-consequence-per-variant-per-transcript-to-a-single-consequence-per-variant">Step 2: From a single consequence per variant per transcript, to a single consequence per variant.<a class="headerlink" href="#step-2-from-a-single-consequence-per-variant-per-transcript-to-a-single-consequence-per-variant" title="Permanent link">&para;</a></h3>
-<p>Consequence list taken from: <a href="https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html">https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html</a></p>
+<h3 id="step-2-from-a-single-consequence-per-variant-per-transcript-to-a-single-consequence-per-variant">Step 2: From a single consequence per variant per transcript, to a single consequence per variant<a class="headerlink" href="#step-2-from-a-single-consequence-per-variant-per-transcript-to-a-single-consequence-per-variant" title="Permanent link">&para;</a></h3>
+<p>Consequence list taken from:
+<a href="https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html">https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html</a> <!-- markdownlint-disable MD013 --></p>
 <p>List of consequences updated on the 2023-06-22. Ensembl 109</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">CONSEQUENCES_LIST</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="s1">&#39;transcript_ablation&#39;</span><span class="p">,</span>
@@ -4494,7 +4505,8 @@ For the grouping of variants we have been using ad-hoc collections on a case by 
 <a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>    <span class="n">all_consequences_ranks</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">consequence_rank_dict</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">all_consequences</span><span class="p">)</span>
 <a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>    <span class="n">list_of_single_annotations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rank_consequence_dict</span><span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">all_consequences_ranks</span><span class="p">)])</span>
 </code></pre></div>
-<p><code>list_of_single_annotations</code> will be a list with a single annotation per row that can be added as a new column in the dataframe that you will have.</p>
+<p><code>list_of_single_annotations</code> will be a list with a single annotation per row
+that can be added as a new column in the dataframe that you will have.</p>
 <h2 id="broader-categories-of-variants">Broader categories of variants<a class="headerlink" href="#broader-categories-of-variants" title="Permanent link">&para;</a></h2>
 <p>Going from the previous list into a more broader terms.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">GROUPING_DICT</span> <span class="o">=</span> <span class="p">{</span>
@@ -4597,8 +4609,12 @@ For the grouping of variants we have been using ad-hoc collections on a case by 
 <a id="__codelineno-3-98" name="__codelineno-3-98" href="#__codelineno-3-98"></a>    <span class="n">list_of_broad_annotations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">GROUPING_DICT</span><span class="p">[</span><span class="n">single_consequence</span><span class="p">])</span>
 <a id="__codelineno-3-99" name="__codelineno-3-99" href="#__codelineno-3-99"></a>    <span class="n">list_of_protein_affecting_annotations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PROTEIN_AFFECTING_DICT</span><span class="p">[</span><span class="n">single_consequence</span><span class="p">])</span>
 </code></pre></div>
-<p><code>list_of_single_annotations</code> will be a list with a single annotation per row that can be added as a new column in the dataframe that you will have.
-<code>list_of_broad_annotations</code> will be a list with a single broad annotation per row that can be added as a new column in the dataframe that you will have.</p>
+<ul>
+<li><code>list_of_single_annotations</code> will be a list with a single annotation per row that can be added as a new column in
+the dataframe that you will have.</li>
+<li><code>list_of_broad_annotations</code> will be a list with a single broad annotation per row that can be added as a new column
+in the dataframe that you will have.</li>
+</ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <p>For the list of variant consequences:
 <a href="http://www.ensembl.org/info/genome/variation/prediction/predicted_data.html">http://www.ensembl.org/info/genome/variation/prediction/predicted_data.html</a></p>
@@ -4628,7 +4644,7 @@ For the grouping of variants we have been using ad-hoc collections on a case by 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4638,7 +4654,7 @@ For the grouping of variants we have been using ad-hoc collections on a case by 
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 22, 2023 13:30:00">June 22, 2023</span>
   </span>
 
     
@@ -4656,14 +4672,19 @@ For the grouping of variants we have been using ad-hoc collections on a case by 
     
     <nav>
       
-        <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
-          
-          <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
-        </a>
-      
         <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
           <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
+          
+          <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
         </a>
       
       
@@ -4847,10 +4868,10 @@ For the grouping of variants we have been using ad-hoc collections on a case by 
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

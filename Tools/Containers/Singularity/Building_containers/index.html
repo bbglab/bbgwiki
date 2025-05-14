@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4507,18 +4507,25 @@
 
 
 <h1 id="building-containers">Building containers<a class="headerlink" href="#building-containers" title="Permanent link">&para;</a></h1>
-<p>Singularity containers are built from a definition file which allows the container to be built identically by anyone possessing the file.</p>
+<p>Singularity containers are built from a definition file which allows the container to be built
+identically by anyone possessing the file.</p>
 <div class="admonition note annotate">
 <p class="admonition-title">Root privileges required to build a container</p>
 <p>Note that the process of building a container requires elevated privileges</p>
 </div>
 <div class="admonition note annotate">
 <p class="admonition-title">One primary task per container</p>
-<p>HPC containers are designed to perform one primary task, and should consist of a main application and its dependencies, in a similar way to how module files are provided. Since containers are lightweight, you can use separate containers instead of general purpose containers containing a collection of applications. This improves supportability, performance and reproducibility.</p>
+<p>HPC containers are designed to perform one primary task, and should consist of a main application and its
+dependencies, in a similar way to how module files are provided. Since containers are lightweight, you can use
+separate containers instead of general purpose containers containing a collection of applications.
+This improves supportability, performance and reproducibility.</p>
 </div>
 <h2 id="building-a-singularity-container-from-scratch">Building a Singularity container from scratch<a class="headerlink" href="#building-a-singularity-container-from-scratch" title="Permanent link">&para;</a></h2>
-<p>Building from scratch gives complete control over the contents of the container, including operating system and packages. Certain packages may only be available for a specific version of Linux (i.e. compatibility issues) so being able to build a container from scratch enhances research capability.</p>
-<p>The following example demonstrates building an Ubuntu 20 (focal) container using definition file <code>ubuntu20_helloworld.def</code> that installs the <code>python3</code> package via the Ubuntu package manager:</p>
+<p>Building from scratch gives complete control over the contents of the container, including operating
+system and packages. Certain packages may only be available for a specific version of Linux (i.e. compatibility issues)
+so being able to build a container from scratch enhances research capability.</p>
+<p>The following example demonstrates building an Ubuntu 20 (focal) container using definition
+file <code>ubuntu20_helloworld.def</code> that installs the <code>python3</code> package via the Ubuntu package manager:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BootStrap: debootstrap
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>OSVersion: focal
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>MirrorURL: http://us.archive.ubuntu.com/ubuntu/
@@ -4529,21 +4536,33 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>%runscript
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  python3 &quot;${@}&quot;
 </code></pre></div>
-<p>The build process is unattended, and will not succeed if any operations require interactive input. Be sure to use <code>-y</code> or <code>--yes</code> options when installing packages.</p>
+<p>The build process is unattended, and will not succeed if any operations require interactive input.
+Be sure to use <code>-y</code> or <code>--yes</code> options when installing packages.</p>
 <p>Create the image (this step requires root privileges):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>ubuntu20_helloworld.simg<span class="w"> </span>ubuntu20_helloworld.def
 </code></pre></div>
-<p>This will result in a usable image in the current working directory. Be aware that if you want a very specific version of package from a repository, that package may not be available in future, so where possible, try to future-proof your containers.</p>
+<p>This will result in a usable image in the current working directory. Be aware that if you want a very specific version
+of package from a repository, that package may not be available in future, so where possible, try
+to future-proof your containers.</p>
 <h3 id="building-containers-for-other-linux-distributions">Building containers for other Linux distributions<a class="headerlink" href="#building-containers-for-other-linux-distributions" title="Permanent link">&para;</a></h3>
-<p>You may build Ubuntu images using CentOS and vice versa. However to bootstrap, you will need extra packages on the host OS to build the container. CentOS hosts require the <code>debootstrap</code> package to create Ubuntu containers, and Ubuntu hosts require the <code>yum</code> package to build CentOS containers. Alternatively you may create containers from an existing Singularity or Docker image, as explained in the following section. Since this method builds upon pre-built images, the <code>debootstrap</code> or <code>yum</code> packages are not required.</p>
+<p>You may build Ubuntu images using CentOS and vice versa. However to bootstrap, you will need extra packages on the host
+OS to build the container. CentOS hosts require the <code>debootstrap</code> package to create Ubuntu containers, and Ubuntu hosts
+require the <code>yum</code> package to build CentOS containers. Alternatively you may create containers from an existing
+Singularity or Docker image, as explained in the following section. Since this method builds upon pre-built images,
+the <code>debootstrap</code> or <code>yum</code> packages are not required.</p>
 <div class="admonition note annotate">
 <p class="admonition-title">Using LTS for Ubuntu definitions</p>
-<p>When building an Ubuntu container we recommend that you use a release with <a href="https://www.ubuntu.com/about/release-cycle">long term support</a> (LTS release). Non-LTS Ubuntu releases have very limited support cycles which may lead to difficulties downloading packages if used after their end-of-life date.</p>
+<p>When building an Ubuntu container we recommend that you use a release with
+<a href="https://www.ubuntu.com/about/release-cycle">long term support</a> (LTS release). Non-LTS Ubuntu releases have very
+limited support cycles which may lead to difficulties downloading packages if used after their end-of-life date.</p>
 </div>
 <h2 id="building-containers-from-an-existing-base-image">Building containers from an existing base image<a class="headerlink" href="#building-containers-from-an-existing-base-image" title="Permanent link">&para;</a></h2>
-<p>This enables you to either build or use an existing container as a base image to build other containers. Base images must be built first if part of a dependency chain and is no longer required once all dependent containers have been built.</p>
+<p>This enables you to either build or use an existing container as a base image to build other containers.
+Base images must be built first if part of a dependency chain and is no longer required once all dependent
+containers have been built.</p>
 <h3 id="singularity-local-images">Singularity local images<a class="headerlink" href="#singularity-local-images" title="Permanent link">&para;</a></h3>
-<p>The following example demonstrates the creation of a local base Ubuntu 20 (focal) image using definition file <code>ubuntu20_base.def</code>, and then creating another container with <code>python3</code> installed, using the local base image:</p>
+<p>The following example demonstrates the creation of a local base Ubuntu 20 (focal) image using definition file
+<code>ubuntu20_base.def</code>, and then creating another container with <code>python3</code> installed, using the local base image:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>BootStrap: debootstrap
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>OSVersion: focal
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>MirrorURL: http://us.archive.ubuntu.com/ubuntu/
@@ -4565,8 +4584,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>ubuntu20_python3.simg<span class="w"> </span>ubuntu20_python3.def
 </code></pre></div>
 <h3 id="docker-images">Docker images<a class="headerlink" href="#docker-images" title="Permanent link">&para;</a></h3>
-<p>You can also bootstrap from Docker containers, although if supplied by a third party, you have less visibility or control over these images, so use with caution, as this may impact the future reproducibility of results.</p>
-<p>The below example demonstrates installing the <code>python3</code> package within an Ubuntu 20 (focal) container using definition file <code>ubuntu20_docker_python3.def</code>, which imports the <code>ubuntu:20.04</code> base container available on the Docker Hub:</p>
+<p>You can also bootstrap from Docker containers, although if supplied by a third party, you have less visibility or
+control over these images, so use with caution, as this may impact the future reproducibility of results.</p>
+<p>The below example demonstrates installing the <code>python3</code> package within an Ubuntu 20 (focal) container using definition
+file <code>ubuntu20_docker_python3.def</code>, which imports the <code>ubuntu:20.04</code> base container available on the Docker Hub:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Bootstrap: docker
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>From: ubuntu:20.04
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -4577,20 +4598,26 @@
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>%runscript
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  python3 &quot;${@}&quot;
 </code></pre></div>
-<p>Build the container. This will produce a container similar to the previous examples, but may vary slightly in overall size depending on packages installed in the base docker image:</p>
+<p>Build the container. This will produce a container similar to the previous examples, but may vary slightly in
+overall size depending on packages installed in the base docker image:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>ubuntu20_docker_python3.simg<span class="w"> </span>ubuntu20_docker_python3.def
 </code></pre></div>
 <h2 id="future-proofing-your-containers">Future-proofing your containers<a class="headerlink" href="#future-proofing-your-containers" title="Permanent link">&para;</a></h2>
 <p>When building your own containers, be sure to make them portable and future-proof.</p>
 <ul>
-<li>Consider whether the container will still build and produce the same results if the OS release or application version changes.</li>
-<li>If copying files from a working directory as part of setup is unavoidable, ensure that any files copied from the working directory are are available for others to download (i.e. in a git repository if not large).</li>
-<li>Perform all setup as part of the build process. If any manual steps are performed after the container is built, they should be integrated within the definition file, and the container rebuilt.</li>
+<li>Consider whether the container will still build and produce the same results if the OS release or application version
+changes.</li>
+<li>If copying files from a working directory as part of setup is unavoidable, ensure that any files copied from the
+working directory are are available for others to download (i.e. in a git repository if not large).</li>
+<li>Perform all setup as part of the build process. If any manual steps are performed after the container is built, they
+should be integrated within the definition file, and the container rebuilt.</li>
 <li>Consider if the ability to rebuild your container will be impacted by package updates, or deprecation of old releases.</li>
 </ul>
 <div class="admonition note annotate">
 <p class="admonition-title">Legacy versions of CentOS applications</p>
-<p>Outdated minor CentOS releases are moved from the main CentOS servers to vault.centos.org. If you need to use a specific Operating System or application version other than the latest, you need to future-proof your container by using the CentOS vault.</p>
+<p>Outdated minor CentOS releases are moved from the main CentOS servers to vault.centos.org. If you need to use a
+specific Operating System or application version other than the latest, you need to future-proof your container
+by using the CentOS vault.</p>
 </div>
 <h2 id="definition-file-sections">Definition file sections<a class="headerlink" href="#definition-file-sections" title="Permanent link">&para;</a></h2>
 <p>The following example definition file demonstrates commonly used definition file sections:</p>
@@ -4602,35 +4629,44 @@
 <li><code>%runscript</code></li>
 </ul>
 <h3 id="help-section">Help section<a class="headerlink" href="#help-section" title="Permanent link">&para;</a></h3>
-<p>The <code>%help</code> section is designed to provide information about the container when singularity run-help is run on the container, for example:</p>
+<p>The <code>%help</code> section is designed to provide information about the container when singularity
+run-help is run on the container, for example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>run-help<span class="w"> </span>/data/containers/public/python3_helloworld.simg
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Purpose:<span class="w"> </span>Test<span class="w"> </span>container<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Python3.
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Author:<span class="w">  </span>ITS<span class="w"> </span>Research<span class="w"> </span>/<span class="w"> </span>QMUL.
 </code></pre></div>
 <h3 id="post-section">Post section<a class="headerlink" href="#post-section" title="Permanent link">&para;</a></h3>
-<p>The <code>%post</code> section contains the commands used to build the container, such as package installs, file downloads, compilation and software configuration.</p>
+<p>The <code>%post</code> section contains the commands used to build the container, such as package installs,
+file downloads, compilation and software configuration.</p>
 <h3 id="environment-section">Environment section<a class="headerlink" href="#environment-section" title="Permanent link">&para;</a></h3>
-<p>Environment settings supplied at build-time in the <code>%post</code> section are only set during build-time and are not available at run-time. Environment settings which need to be available at run-time should be added to the <code>%environment</code> section.</p>
+<p>Environment settings supplied at build-time in the <code>%post</code> section are only set during build-time and are not available
+at run-time. Environment settings which need to be available at run-time should be added to the <code>%environment</code> section.</p>
 <h3 id="test-section">Test section<a class="headerlink" href="#test-section" title="Permanent link">&para;</a></h3>
-<p>The <code>%test</code> section defines a set of commands or tests which should be run to validate the container has been built successfully. Some example tests include:</p>
+<p>The <code>%test</code> section defines a set of commands or tests which should be run to validate the container has been built
+successfully. Some example tests include:</p>
 <ul>
 <li>installed binaries are available on the <code>PATH</code> variable</li>
 <li><code>--help</code> or <code>--version</code> parameter for binaries (if supported)</li>
 <li>libraries, header files and man pages exist</li>
 </ul>
-<p>All tests will be run during the build process, after <code>%post</code> has completed. To build a container without running the tests, pass the <code>-T</code> or <code>--notest</code> option to the singularity build command.</p>
+<p>All tests will be run during the build process, after <code>%post</code> has completed. To build a container without running the
+tests, pass the <code>-T</code> or <code>--notest</code> option to the singularity build command.</p>
 <p>To run the tests for an existing container, run the singularity test command, for example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$ singularity test /data/containers/public/python3_helloworld.simg
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">test</span><span class="w"> </span>/data/containers/public/python3_helloworld.simg
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>/usr/bin/python3
 </code></pre></div>
 <h3 id="runscript-section">Runscript section<a class="headerlink" href="#runscript-section" title="Permanent link">&para;</a></h3>
-<p>The <code>%runscript</code> section defines the default action a container will perform when ran as an executable or with <code>singularity run</code>. This is configured during the build process.</p>
+<p>The <code>%runscript</code> section defines the default action a container will perform when ran as an executable or with
+<code>singularity run</code>. This is configured during the build process.</p>
 <div class="admonition note annotate">
 <p class="admonition-title">Application parameters or arguments</p>
-<p>If the runscript calls an application which takes parameters or arguments, include "${@}" after the application otherwise anything passed after the container name will be ignored by Singularity.</p>
+<p>If the runscript calls an application which takes parameters or arguments, include "${@}" after the application
+otherwise anything passed after the container name will be ignored by Singularity.</p>
 </div>
 <h3 id="inspecting-a-container">Inspecting a container<a class="headerlink" href="#inspecting-a-container" title="Permanent link">&para;</a></h3>
-<p>To display information about how a container was build, use the <code>singularity inspect</code> command. The <code>-d</code> option to this command will print the definition file used to built the container and the <code>-r</code> option will print the runscript (if added during build-time). For example:</p>
+<p>To display information about how a container was build, use the <code>singularity inspect</code> command. The <code>-d</code> option to this
+command will print the definition file used to built the container and the <code>-r</code> option will print the runscript
+(if added during build-time). For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>inspect<span class="w"> </span>-d<span class="w"> </span>/data/containers/public/python3_helloworld.simg
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Bootstrap:<span class="w"> </span>docker
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>From:<span class="w"> </span>ubuntu:20.04
@@ -4681,7 +4717,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4691,7 +4727,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 8, 2022 12:36:20">August 8, 2022</span>
   </span>
 
     
@@ -4709,14 +4745,19 @@
     
     <nav>
       
-        <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
-          <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
           
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
+          
+          <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
         </a>
       
         <a href="https://github.com/Copilot" class="md-author" title="@Copilot">
@@ -4905,10 +4946,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

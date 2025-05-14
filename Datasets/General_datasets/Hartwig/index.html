@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4326,28 +4326,43 @@
 
 <h1 id="hartwig">Hartwig<a class="headerlink" href="#hartwig" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>The Hartwig Medical Foundation (HMF) is aiming to make whole genome sequencing WGS) the future standard of care in the Netherlands ( https://www.hartwigmedicalfoundation.nl/en/). The HMF maintains and develops a growing database with &gt;5,000 metastatic cancer patients with rich clincial and genomic data (https://www.hartwigmedicalfoundation.nl/en/data/database/) - the largest such database in the entire world. The only way to truly to understand the HMF data is to look through the very detailed provided github repos. Most of the bioinformatics pipeline in HMF is made with their own in-house tools. </p>
+<p>The Hartwig Medical Foundation (HMF) is aiming to make whole genome sequencing WGS) the future standard of care in the
+Netherlands ( <a href="https://www.hartwigmedicalfoundation.nl/en/">https://www.hartwigmedicalfoundation.nl/en/</a>). The HMF maintains and develops a growing database
+with &gt;5,000 metastatic cancer patients with rich clincial and genomic data
+(<a href="https://www.hartwigmedicalfoundation.nl/en/data/database/">https://www.hartwigmedicalfoundation.nl/en/data/database/</a>) - the largest such database in the entire world.
+The only way to truly to understand the HMF data is to look through the very detailed provided github repos.
+Most of the bioinformatics pipeline in HMF is made with their own in-house tools.</p>
 <h2 id="data-access">Data access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
-<p>To use data from Hartwig Medical Foundation Database you need special permission. Contact Martina or Paula if you need to use this data. </p>
-<p>Once you obtains permissions, you can find the data from Hartwig Medical Foundation Database on bbgcluster here:
+<p>To use data from Hartwig Medical Foundation Database you need special permission. Contact Martina or
+Paula if you need to use this data.</p>
+<p>Once you obtains permissions, you can find the data from Hartwig Medical Foundation Database on bbgcluster here:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/data/bbg/datasets/hartwig
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="processed-data">Processed data<a class="headerlink" href="#processed-data" title="Permanent link">&para;</a></h2>
-<p>In our lab several projects have used HMF data. From these projects the HMF data was pre-processed in away that could be re-used for other projects.  </p>
-<p>For one such project (immunobiomarkers) a pipeline to extract and format HMF biomarkers was created (https://bitbucket.org/bbglab/hartwig_biomarkers/src/master/). This pipeline creates pre-processed data files of different data types. The HMF processed clinical data is output on our cluster here:
+<p>In our lab several projects have used HMF data. From these projects the HMF data was pre-processed in away that
+could be re-used for other projects.  </p>
+<p>For one such project (immunobiomarkers) a pipeline to extract and format HMF biomarkers was created
+(<a href="https://bitbucket.org/bbglab/hartwig_biomarkers/src/master/">https://bitbucket.org/bbglab/hartwig_biomarkers/src/master/</a>). This pipeline creates pre-processed data files of
+different data types. The HMF processed clinical data is output on our cluster here:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/data/bbg/datasets/hartwig/20220809/biomarkers/tmp/clinical_ready.csv
 </code></pre></div>
-The full output from the biomarkers pipline collects more than 60,000 curated columns of biomarkers into a table ready for analysis (located in folder below):
+<p>The full output from the biomarkers pipline collects more than 60,000 curated columns of biomarkers into a table
+ready for analysis (located in folder below):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/data/bbg/datasets/hartwig/20220809/biomarkers/clean/biomarkers_AdjTPM.csv
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="exhaustive-study">Exhaustive Study<a class="headerlink" href="#exhaustive-study" title="Permanent link">&para;</a></h2>
-<p>For the immunobiomarkers project an exhaustive study of biomarkers was run. The exhaustive analysis is found within this repo - https://bitbucket.org/bbglab/immune_biomarkers/src/main/ - and the code could be re-purposed in the future to study other classes of treatmetns (e.g. Chemo, Targeted, Hormonal therapies).</p>
+<p>For the immunobiomarkers project an exhaustive study of biomarkers was run. The exhaustive analysis is found
+within this repo - <a href="https://bitbucket.org/bbglab/immune_biomarkers/src/main/">https://bitbucket.org/bbglab/immune_biomarkers/src/main/</a> - and the code could be re-purposed in
+the future to study other classes of treatmetns (e.g. Chemo, Targeted, Hormonal therapies).</p>
 <h2 id="citing-in-publications-and-presentations">Citing in Publications and Presentations<a class="headerlink" href="#citing-in-publications-and-presentations" title="Permanent link">&para;</a></h2>
-<p>Researchers making use of data provided by Hartwig Medical Foundation must acknowledge this in every publication, by using at least the text below:</p>
+<p>Researchers making use of data provided by Hartwig Medical Foundation must acknowledge this in every publication,
+by using at least the text below:</p>
 <blockquote>
-<p>This publication and the underlying research are partly facilitated by Hartwig Medical Foundation and the Center for Personalized Cancer Treatment (CPCT) which have generated, analysed and made available data for this research.</p>
+<p>This publication and the underlying research are partly facilitated by Hartwig Medical Foundation and the Center
+for Personalized Cancer Treatment (CPCT) which have generated, analysed and made available data for this research.</p>
 </blockquote>
-<p>Read this <a href="https://www.hartwigmedicalfoundation.nl/wp-content/uploads/2022/01/Publication-Policy-Annex-IV-License-Agreement-EN.pdf" target="_blank">document</a> to learn more about how to cite Hartwig Medical Foundation Database.</p>
+<p>Read this <a href="https://www.hartwigmedicalfoundation.nl/wp-content/uploads/2022/01/Publication-Policy-Annex-IV-License-Agreement-EN.pdf" target="_blank">document</a> <!-- markdownlint-disable MD013 -->
+to learn more about how to cite Hartwig Medical Foundation Database.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Paula Gomis</li>
@@ -4376,7 +4391,7 @@ The full output from the biomarkers pipline collects more than 60,000 curated co
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4386,7 +4401,7 @@ The full output from the biomarkers pipline collects more than 60,000 curated co
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2022 08:42:27">July 22, 2022</span>
   </span>
 
     
@@ -4404,6 +4419,16 @@ The full output from the biomarkers pipline collects more than 60,000 curated co
     
     <nav>
       
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
+          
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
         <a href="https://github.com/AxelRosendahlHuber" class="md-author" title="@AxelRosendahlHuber">
           
           <img src="https://avatars.githubusercontent.com/u/36924327?v=4&size=72" alt="AxelRosendahlHuber">
@@ -4414,17 +4439,13 @@ The full output from the biomarkers pipline collects more than 60,000 curated co
           <img src="https://avatars.githubusercontent.com/u/89388688?v=4&size=72" alt="joe-usset">
         </a>
       
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-        <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
-          
-          <img src="https://avatars.githubusercontent.com/u/107858804?v=4&size=72" alt="CarlosLopezElorduy">
-        </a>
       
       
+        
+          <a href="https://github.com/bbglab/bbgwiki/blob/main/docs/Datasets/General_datasets/Hartwig.md" class="md-author md-author--more">
+            +1
+          </a>
+        
       
     </nav>
   </span>
@@ -4605,10 +4626,10 @@ The full output from the biomarkers pipline collects more than 60,000 curated co
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

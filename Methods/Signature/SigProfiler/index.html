@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -2747,7 +2747,7 @@
         <li class="md-nav__item">
   <a href="#scripts-that-may-be-used-if-interested" class="md-nav__link">
     <span class="md-ellipsis">
-      Scripts that may be used if interested:
+      Scripts that may be used if interested
     </span>
   </a>
   
@@ -4271,7 +4271,7 @@
         <li class="md-nav__item">
   <a href="#scripts-that-may-be-used-if-interested" class="md-nav__link">
     <span class="md-ellipsis">
-      Scripts that may be used if interested:
+      Scripts that may be used if interested
     </span>
   </a>
   
@@ -4319,31 +4319,41 @@
 
 
 <h1 id="sigprofiler">SigProfiler<a class="headerlink" href="#sigprofiler" title="Permanent link">&para;</a></h1>
-<p>SigProfiler is a suite of tools for extracting mutational signatures developed mostly by people at the Ludmil Alexandrov's lab (see https://github.com/AlexandrovLab).</p>
+<p>SigProfiler is a suite of tools for extracting mutational signatures developed mostly by people at the Ludmil
+Alexandrov's lab (see <a href="https://github.com/AlexandrovLab">https://github.com/AlexandrovLab</a>).</p>
 <p>You can check for detailed information and documentation here:
-https://osf.io/t6j7u/wiki/home/</p>
-<p>I will proceed to discuss some details on specific recommended usage that is probably not documented but that can make a difference for the final results.</p>
+<a href="https://osf.io/t6j7u/wiki/home/">https://osf.io/t6j7u/wiki/home/</a></p>
+<p>I will proceed to discuss some details on specific recommended usage that is probably not documented but
+that can make a difference for the final results.</p>
 <h2 id="running-sigprofilerextractor">Running SigProfilerExtractor<a class="headerlink" href="#running-sigprofilerextractor" title="Permanent link">&para;</a></h2>
-<p>There are instructions on how to run it here: 
-https://github.com/AlexandrovLab/SigProfilerExtractor</p>
+<p>There are instructions on how to run it here:
+<a href="https://github.com/AlexandrovLab/SigProfilerExtractor">https://github.com/AlexandrovLab/SigProfilerExtractor</a></p>
 <h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
 <p>You can provide your VCFs or mutation matrices to SigProfilerExtractor.</p>
-<p>Note that if you want to get a decomposition of the extracted signatures into known COSMIC signatures, you need to make sure that the regions you sequenced have a trinucleotide composition similar to that of the whole-genome or whole-exome, since this two are the options that the tool can assume for normalization of the counts for the posterior. Otherwise it makes no sense to use this automatic decomposition.</p>
+<p>Note that if you want to get a decomposition of the extracted signatures into known COSMIC signatures, you need
+to make sure that the regions you sequenced have a trinucleotide composition similar to that of the whole-genome
+or whole-exome, since this two are the options that the tool can assume for normalization of the counts for
+the posterior. Otherwise it makes no sense to use this automatic decomposition.</p>
 <h2 id="how-it-works-and-what-to-take-into-account">How it works and what to take into account?<a class="headerlink" href="#how-it-works-and-what-to-take-into-account" title="Permanent link">&para;</a></h2>
 <ul>
-<li>When you run SigProfilerExtractor you get multiple different sets of extracted signatures based on the different range that you asked for.</li>
+<li>When you run SigProfilerExtractor you get multiple different sets of extracted signatures based on the different</li>
+<li>range that you asked for.</li>
 <li>Then it automatically selects one of those sets based on its internal criteria.</li>
-<li>It then takes the signatures and the mutational profile of each of the provided samples and it assigns the extracted signatures to the samples.</li>
+<li>It then takes the signatures and the mutational profile of each of the provided samples and it assigns the</li>
+<li>extracted signatures to the samples.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">this assignment of the extracted signatures is of low quality and it should not be trusted</p>
-<div class="highlight"><pre><span></span><code>Once you get the set of extracted signatures that you trust, you should use them through [SigProfilerAssignment](https://github.com/AlexandrovLab/SigProfilerAssignment) to get the proportion of mutations of each sample that correspond to each signature. Doing this in these two steps increases the accuracy of the result. To be more specific you should provide the extracted set of signatures as the [signature_database](https://github.com/AlexandrovLab/SigProfilerAssignment#:~:text=will%20be%20used.-,signature_database,-String) option of this second tool.
-</code></pre></div>
+<p>Once you get the set of extracted signatures that you trust, you should use them through
+<a href="https://github.com/AlexandrovLab/SigProfilerAssignment">SigProfilerAssignment</a> to get the proportion of
+mutations of each sample that correspond to each signature. Doing this in these two steps increases the
+accuracy of the result. To be more specific you should provide the extracted set of signatures as the
+<a href="https://github.com/AlexandrovLab/SigProfilerAssignment#:~:text=will%20be%20used.-,signature_database,-String">signature_database</a> option of this second tool. <!-- markdownlint-disable MD013 --></p>
 </div>
 <ul>
 <li>Another output that the tool provides is to do a deconstruction of those extracted signatures into the known COSMIC signatures if you asked for that. But there is no magic trick here, or at least not that I know. (look at the comment for the input in case you are interested in getting this)</li>
 </ul>
-<h2 id="scripts-that-may-be-used-if-interested">Scripts that may be used if interested:<a class="headerlink" href="#scripts-that-may-be-used-if-interested" title="Permanent link">&para;</a></h2>
+<h2 id="scripts-that-may-be-used-if-interested">Scripts that may be used if interested<a class="headerlink" href="#scripts-that-may-be-used-if-interested" title="Permanent link">&para;</a></h2>
 <p>Full credit to @efigb for the script</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/usr/bin/env python3</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -4376,7 +4386,7 @@ https://github.com/AlexandrovLab/SigProfilerExtractor</p>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="n">minimum_signatures</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        <span class="n">maximum_signatures</span><span class="o">=</span><span class="n">max_sig</span><span class="p">,</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="n">nmf_replicates</span><span class="o">=</span><span class="n">nmf_replicates</span><span class="p">,</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="n">cpu</span><span class="o">=</span><span class="n">cpu</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>     <span class="n">cpu</span><span class="o">=</span><span class="n">cpu</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="p">)</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
 <a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -4385,12 +4395,16 @@ https://github.com/AlexandrovLab/SigProfilerExtractor</p>
 <a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="c1">### EXAMPLE OF COMMAND: python3 sigprofiler_extractor2.py matrix ./output_dir count_matrix_wgs_20240821.txt --ref_genome GRCh38 --max_sig 10 --nmf_replicates 100 --cpu 10</span>
 </code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<p>Sources:
-- Informal discussions with people that knows.
-- Rocio Chamorro (did some tests and confirmed this)
-- Elisabet Figuerola (provided the script)</p>
-<p>Contributors:
-- Ferriol Calvet</p>
+<p>Sources:</p>
+<ul>
+<li>Informal discussions with people that knows.</li>
+<li>Rocio Chamorro (did some tests and confirmed this)</li>
+<li>Elisabet Figuerola (provided the script)</li>
+</ul>
+<p>Contributors:</p>
+<ul>
+<li>Ferriol Calvet</li>
+</ul>
 
 
 
@@ -4413,7 +4427,7 @@ https://github.com/AlexandrovLab/SigProfilerExtractor</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4423,7 +4437,7 @@ https://github.com/AlexandrovLab/SigProfilerExtractor</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2022 08:42:27">July 22, 2022</span>
   </span>
 
     
@@ -4441,9 +4455,9 @@ https://github.com/AlexandrovLab/SigProfilerExtractor</p>
     
     <nav>
       
-        <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
-          <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
@@ -4451,9 +4465,9 @@ https://github.com/AlexandrovLab/SigProfilerExtractor</p>
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
-        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
+        <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
           
-          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+          <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
         </a>
       
       
@@ -4637,10 +4651,10 @@ https://github.com/AlexandrovLab/SigProfilerExtractor</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

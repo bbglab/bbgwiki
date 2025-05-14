@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -291,7 +291,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4390,8 +4390,9 @@
 <!-- 
 TODO: Brief introduction on what is intogen - its website and its purpose, use webs and repo as reference.
 -->
-<p><a href="https://github.com/bbglab/intogen-plus-dsl2/"><img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&amp;logo=github&amp;logoColor=white" /></a></p>
-<p>It's a framework for automatic and comprehensive knowledge extraction based on mutational data from sequenced tumor samples from patients.</p>
+<p><a href="https://github.com/bbglab/intogen-plus-dsl2/"><img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&amp;logo=github&amp;logoColor=white" /></a><!-- markdownlint-disable MD013 --></p>
+<p>It's a framework for automatic and comprehensive knowledge extraction based on mutational data from
+sequenced tumor samples from patients.</p>
 <h2 id="run-intogen-dsl2">Run IntOGen DSL2<a class="headerlink" href="#run-intogen-dsl2" title="Permanent link">&para;</a></h2>
 <p>Great effort was put to migrate IntOGen from nextflow DSL1 to nextflow DSL2. This effort allowed to be able to run the
 pipeline within our seqera platform dashboard.</p>
@@ -4404,24 +4405,25 @@ you can access the pipelines available in our workspace.</p>
 <p>By clicking on <a href="https://cloud.seqera.io/orgs/bbglabirb/workspaces/bbglab/launchpad/217132460501467">intogen-dsl2-beta</a>
 you'll be able to launch the pipeline.</p>
 <p><img alt="alt text" src="../../assets/images/intogen-dsl2/intogen_seqera.png" /></p>
-<p>Before launching the pipeline, some parameters need to be configured. Here a simple but complete list of useful parameters is explained.</p>
+<p>Before launching the pipeline, some parameters need to be configured. Here a simple but complete list of
+useful parameters is explained.</p>
 <div class="admonition warning">
 <p class="admonition-title">We highly recommend to keep the defaults for those parameters not discussed in this page.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">General config section</label><label for="__tabbed_1_2">Run parameters section</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<h4 id="revision-number"><strong>Revision number</strong><a class="headerlink" href="#revision-number" title="Permanent link">&para;</a></h4>
+<h4 id="revision-number"><strong>Revision number</strong><!-- markdownlint-disable MD046 --><a class="headerlink" href="#revision-number" title="Permanent link">&para;</a></h4>
 <p><img alt="Revision number" height="300" src="../../assets/images/intogen-dsl2/revision_number.png" style="display: block; margin: 0 auto" /></p>
 <p>By default, the <strong>revision number</strong> is linked to the stable tag of the pipeline. As of now - it's <code>2024.11-dsl2</code>. 
-This can eventually be changed if a run is resumed or relaunched from the run section. </p>
+This can eventually be changed if a run is resumed or relaunched from the run section.</p>
 <div class="admonition note">
 <p class="admonition-title">Please be aware that changing this section may affect the <code>resume</code> option</p>
 </div>
 <h4 id="config-profile"><strong>Config profile</strong><a class="headerlink" href="#config-profile" title="Permanent link">&para;</a></h4>
 <p><img alt="Config profile" height="300" src="../../assets/images/intogen-dsl2/config_profile.png" style="display: block; margin: 0 auto" /></p>
 <ul>
-<li><code>test</code> --&gt; this is using the <a href="https://github.com/bbglab/intogen-plus-dsl2/blob/dev/DSL2/tests/data/pipeline/input/cbioportal_prad_broad/data_mutations_extended.txt">CBIOP cohort</a> in the repo [optional]</li>
+<li><code>test</code> --&gt; this is using the <a href="https://github.com/bbglab/intogen-plus-dsl2/blob/dev/DSL2/tests/data/pipeline/input/cbioportal_prad_broad/data_mutations_extended.txt">CBIOP cohort</a> in the repo [optional]<!-- markdownlint-disable MD013 --></li>
 <li><code>test_full</code> --&gt; this is using the full datasets of intogen [optional].</li>
 <li><code>singularity</code> --&gt; this is allowing the use of singularity for using the containers</li>
 <li><code>irb</code> --&gt; this is allocating the right resources and queue for the slurm executor in the IRBCluster</li>
@@ -4437,23 +4439,26 @@ This can eventually be changed if a run is resumed or relaunched from the run se
 </ul>
 <h4 id="work-directory"><strong>Work directory</strong><a class="headerlink" href="#work-directory" title="Permanent link">&para;</a></h4>
 <p><img alt="work directory" height="300" src="../../assets/images/intogen-dsl2/work_dir.png" style="display: block; margin: 0 auto" /></p>
-<p>By default, the work directory is <code>/data/bbg/nobackup2/work/IntOGenDSL2/v2024/</code>. You should create a subfolder using e.g. the same name as the <code>Outdir</code> from the next section.</p>
+<p>By default, the work directory is <code>/data/bbg/nobackup2/work/IntOGenDSL2/v2024/</code>. 
+You should create a subfolder using e.g. the same name as the <code>Outdir</code> from the next section.</p>
 <div class="admonition warning">
 <p class="admonition-title">Delete the work folder once the intogen run finishes successfully.</p>
 </div>
 </div>
 <div class="tabbed-block">
-<h4 id="input"><strong>Input</strong><a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
+<h4 id="input"><strong>Input</strong><!-- markdownlint-disable MD046 --><a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
 <p>This parameter is read as a string, and it should be the absolute paths of the folder that openvariant will iterate
 separated by a space. Here it follows an example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/path/to/datasets/for/intogen/input1<span class="w"> </span>/path/to/datasets/for/intogen/input2<span class="w"> </span>/path/to/datasets/for/intogen/input3
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">How do I prepare the input for IntOGen?</p>
-<p>Great question! Here the documentation where everything is explained: <a href="https://intogen-plus.readthedocs.io/en/v2024/usage.html#input">intogen-plus.readthedocs</a></p>
+<p>Great question! Here the documentation where everything is explained: 
+<a href="https://intogen-plus.readthedocs.io/en/v2024/usage.html#input">intogen-plus.readthedocs</a></p>
 </div>
 <h4 id="outdir"><strong>Outdir</strong><a class="headerlink" href="#outdir" title="Permanent link">&para;</a></h4>
-<p>This parameter is where the output of intogen will be stored. By default we store intermediate runs that might fail here:</p>
+<p>This parameter is where the output of intogen will be stored. By default we store
+intermediate runs that might fail here:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/data/bbg/nobackup2/scratch/intogen_dev_tests/dev-DSL2/v2024/&lt;MeaningfulName&gt;
 </code></pre></div>
 <div class="admonition note">
@@ -4463,7 +4468,8 @@ requires an higher level of specificity in the top folder.</p>
 <p>e.g. If I am running an external collab for LUNG data, I will add as an <code>outdir</code> parameter:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/data/bbg/nobackup2/scratch/intogen_dev_tests/dev-DSL2/v2024/Lung_external_collab
 </code></pre></div></p>
-<p>The IntOGen pipeline will by default create a subdirectory with the date of the launch where it will store all the files:
+<p>The IntOGen pipeline will by default create a subdirectory with the date of the
+launch where it will store all the files:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/data/bbg/nobackup2/scratch/intogen_dev_tests/dev-DSL2/v2024/Lung_external_collab/20250423/
 </code></pre></div></p>
 </div>
@@ -4477,8 +4483,8 @@ requires an higher level of specificity in the top folder.</p>
 <h3 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h3>
 <div class="admonition question">
 <p class="admonition-title">The pipeline failed. How do I resume?</p>
-<p>In the <a href="https://cloud.seqera.io/orgs/bbglabirb/workspaces/bbglab/watch">run tab</a> click on the three dots on the right of your run
-and click <code>Resume</code>.</p>
+<p>In the <a href="https://cloud.seqera.io/orgs/bbglabirb/workspaces/bbglab/watch">run tab</a> click on the three
+dots on the right of your run and click <code>Resume</code>.</p>
 </div>
 <ul>
 <li>TBC</li>
@@ -4510,7 +4516,7 @@ and click <code>Resume</code>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4520,7 +4526,7 @@ and click <code>Resume</code>.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 24, 2025 08:40:44">April 24, 2025</span>
   </span>
 
     
@@ -4739,10 +4745,10 @@ and click <code>Resume</code>.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

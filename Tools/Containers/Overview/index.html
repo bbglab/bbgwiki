@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4344,14 +4344,23 @@
 
 <!-- # Overview -->
 <h1 id="linux-containers">Linux Containers<a class="headerlink" href="#linux-containers" title="Permanent link">&para;</a></h1>
-<p>Linux containers are lightweight, portable execution environments that package up software and all its dependencies so it can run reliably across different computing environments. Unlike virtual machines, containers share the host operating system kernel while isolating the user space — meaning they can run different Linux distributions and applications in a self-contained way, with minimal overhead.</p>
-<p>Popular container technologies include <a href="https://docker.com/">Docker</a> and <a href="https://apptainer.org/">Singularity (Apptainer)</a>. Docker is widely used in software development, CI/CD pipelines, and cloud environments, while Singularity is tailored for High Performance Computing (HPC) and multi-user systems where security and integration with shared filesystems and hardware (e.g., GPUs) are critical.</p>
+<p>Linux containers are lightweight, portable execution environments that package up software and all its dependencies so
+it can run reliably across different computing environments. Unlike virtual machines, containers share the host
+operating system kernel while isolating the user space — meaning they can run different Linux distributions and
+applications in a self-contained way, with minimal overhead.</p>
+<p>Popular container technologies include <a href="https://docker.com/">Docker</a> and
+<a href="https://apptainer.org/">Singularity (Apptainer)</a>. Docker is widely used in software development, CI/CD pipelines, and
+cloud environments, while Singularity is tailored for High Performance Computing (HPC) and multi-user systems where
+security and integration with shared filesystems and hardware (e.g., GPUs) are critical.</p>
 <h2 id="benefits-of-containers">Benefits of Containers<a class="headerlink" href="#benefits-of-containers" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Reproducible science</strong> – Containers encapsulate software and dependencies, ensuring consistency across different systems and over time.</li>
-<li><strong>Version independence</strong> – Run software compiled for one Linux distribution (e.g., Ubuntu) on another (e.g., CentOS), without modification.</li>
+<li><strong>Reproducible science</strong> – Containers encapsulate software and dependencies, ensuring consistency
+across different systems and over time.</li>
+<li><strong>Version independence</strong> – Run software compiled for one Linux distribution (e.g., Ubuntu) on another
+(e.g., CentOS), without modification.</li>
 <li><strong>Portability</strong> – Containers can be built once and deployed anywhere a compatible container runtime is available.</li>
-<li><strong>Self-contained environments</strong> – Avoid conflicts with system-installed software and simplify the setup of complex applications.</li>
+<li><strong>Self-contained environments</strong> – Avoid conflicts with system-installed software and simplify the setup of
+complex applications.</li>
 </ul>
 <h2 id="comparing-docker-and-singularity">Comparing Docker and Singularity<a class="headerlink" href="#comparing-docker-and-singularity" title="Permanent link">&para;</a></h2>
 <table>
@@ -4396,34 +4405,50 @@
 </tbody>
 </table>
 <h2 id="singularity">Singularity<a class="headerlink" href="#singularity" title="Permanent link">&para;</a></h2>
-<p><img src="/docs/assets/images/singularity_logo.png"  width="100" height="100"></p>
-<p><a href="https://sylabs.io/guides/latest/user-guide/introduction.html">Singularity</a> (also known as Apptainer in newer releases) is a secure, Open Source container platform designed for HPC environments. Compared to Docker, Singularity offers several advantages for scientific computing:</p>
+<p><img alt="singulairity logo" src="../../assets/images/singularity_logo.png"  width="100" height="100"></p>
+<p><a href="https://sylabs.io/guides/latest/user-guide/introduction.html">Singularity</a> (also known as Apptainer in newer releases)
+is a secure, Open Source container platform designed for HPC environments. Compared to Docker,
+Singularity offers several advantages for scientific computing:</p>
 <ul>
 <li>Runs without requiring root privileges, enhancing security in shared environments.</li>
 <li>Supports integration with high-performance hardware such as GPUs and Infiniband networks.</li>
-<li>Can directly use Docker container images, allowing users to leverage the extensive Docker ecosystem while benefiting from Singularity’s HPC compatibility.</li>
+<li>Can directly use Docker container images, allowing users to leverage the extensive Docker ecosystem while benefiting
+from Singularity’s HPC compatibility.</li>
 </ul>
 <h2 id="using-containers-in-the-cluster">Using containers in the cluster<a class="headerlink" href="#using-containers-in-the-cluster" title="Permanent link">&para;</a></h2>
-<p><strong>Singularity is the only container technology that works in HPC systems, thus in our cluster we can only use Singularity</strong></p>
-<p>Even if a container was built using Docker, and/or it is hosted in <a href="https://hub.docker.com">dockerhub</a> you can still use it from Singularity.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Singularity is the only container technology that works in HPC systems, thus in our cluster
+we can only use Singularity</p>
+</div>
+<p>Even if a container was built using Docker, and/or it is hosted in <a href="https://hub.docker.com">dockerhub</a> you can still use
+it from Singularity.</p>
 <p>For more information on how to use it check the <code>Using_containers</code> section in the Singularity folder.</p>
 <h2 id="container-sources">Container sources<a class="headerlink" href="#container-sources" title="Permanent link">&para;</a></h2>
-<p>There are different places where you can find containers that are ready to use:
-* Our cluster: <code>/data/bbg/datasets/pipelines/nextflow_containers</code> here there are several containers that are used by different people in the lab, mainly for running Nextflow pipelines.</p>
+<p>There are different places where you can find containers that are ready to use:</p>
 <ul>
 <li>
-<p><a href="https://hub.docker.com/u/bbglab">BBGLab dockerhub</a> here you can find the containers that have been built and shared by the lab. This is in general synchronized with the Dockerfile recipes here: <a href="https://github.com/bbglab/containers">GitHub bbglab/containers</a>. So whenever you need to build a new container with BBGLab tools make sure that you keep this good work and add the container recipe in this GitHub repository and then ask someone with permission to push the container to the collective dockerhub account.</p>
+<p>Our cluster: <code>/data/bbg/datasets/pipelines/nextflow_containers</code> here there are several containers that are used by
+different people in the lab, mainly for running Nextflow pipelines.</p>
 </li>
 <li>
-<p><a href="https://hub.docker.com">dockerhub</a> this is a public repository of containers where you can push your own containers and also use other people's containers.</p>
+<p><a href="https://hub.docker.com/u/bbglab">BBGLab dockerhub</a> here you can find the containers that have been built and shared
+by the lab. This is in general synchronized with the Dockerfile recipes here:
+<a href="https://github.com/bbglab/containers">GitHub bbglab/containers</a>. So whenever you need to build a new container with
+BBGLab tools make sure that you keep this good work and add the container recipe in this GitHub repository and then ask
+someone with permission to push the container to the collective dockerhub account.</p>
+</li>
+<li>
+<p><a href="https://hub.docker.com">dockerhub</a> this is a public repository of containers where you can push your own containers
+and also use other people's containers.</p>
 </li>
 </ul>
 <h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://sylabs.io/guides/latest/user-guide/index.html">Singularity website</a></li>
 <li><a href="https://www.docker.com/resources/what-container">Docker website</a></li>
-<li><a href="https://docs.google.com/presentation/d/1D4ExctFpb2kiSGMQ5rOQ4ctw6lktloey1Ak6xD9ZQ38/edit#slide=id.p">BBGcloud presentation on Singularity</a>  </li>
-<li><a href="https://docs.google.com/presentation/d/1FRRg5Rml8sIPgm6KLEIK-Avr7vAyE_0yIRVUFug0U3s/edit#slide=id.p">BBGcloud presentation on Linux and containers</a>  </li>
+<li><a href="https://docs.google.com/presentation/d/1D4ExctFpb2kiSGMQ5rOQ4ctw6lktloey1Ak6xD9ZQ38/edit#slide=id.p">BBGcloud presentation on Singularity</a> <!--markdownlint-disable MD013--></li>
+<li><a href="https://docs.google.com/presentation/d/1FRRg5Rml8sIPgm6KLEIK-Avr7vAyE_0yIRVUFug0U3s/edit#slide=id.p">BBGcloud presentation on Linux and containers</a> <!--markdownlint-disable MD013--></li>
 <li>Use <code>singularity help</code> and <code>singularity CMD help</code> (replace <code>CMD</code> with a Singularity command, such as <code>run</code>)  </li>
 <li>View the system manual page: <code>man singularity</code></li>
 </ul>
@@ -4431,11 +4456,13 @@
 <ul>
 <li>Reorganized and updated by Ferriol Calvet</li>
 </ul>
-<p>Previous explanation by:
-- Jordi Deu-Pons
-- Miguel Grau
-- Axel Rosendahl Huber
-- Carlos López-Elorduy</p>
+<p>Previous explanation by:</p>
+<ul>
+<li>Jordi Deu-Pons</li>
+<li>Miguel Grau</li>
+<li>Axel Rosendahl Huber</li>
+<li>Carlos López-Elorduy</li>
+</ul>
 
 
 
@@ -4458,7 +4485,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4468,7 +4495,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 10:36:48">May 9, 2025</span>
   </span>
 
     
@@ -4486,14 +4513,19 @@
     
     <nav>
       
-        <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
           
-          <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
           
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+        <a href="https://github.com/FerriolCalvet" class="md-author" title="@FerriolCalvet">
+          
+          <img src="https://avatars.githubusercontent.com/u/38539786?v=4&size=72" alt="FerriolCalvet">
         </a>
       
         <a href="https://github.com/Copilot" class="md-author" title="@Copilot">
@@ -4682,10 +4714,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

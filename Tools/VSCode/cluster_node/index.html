@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -293,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to the BBG Lab!
+    Welcome to the BBG Lab
     
   </span>
   
@@ -4422,10 +4422,12 @@
 
 <h1 id="vscode-in-interactive-node">VSCode in interactive node<a class="headerlink" href="#vscode-in-interactive-node" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>These are the instructions to use Visual Studio Code to run and debug scripts/notebooks within an <strong>interactive node</strong> from the cluster.</p>
+<p>These are the instructions to use Visual Studio Code to run and debug scripts/notebooks
+within an <strong>interactive node</strong> from the cluster.</p>
 <h2 id="using-vscode-app">Using VSCode App<a class="headerlink" href="#using-vscode-app" title="Permanent link">&para;</a></h2>
 <h3 id="step-1-cluster-open-interactive-session">Step 1: [CLUSTER] Open interactive session<a class="headerlink" href="#step-1-cluster-open-interactive-session" title="Permanent link">&para;</a></h3>
-<p>The first step is to allocate the resources you will need for your executions. We can do this with the <code>interactive</code> command.</p>
+<p>The first step is to allocate the resources you will need for your executions.
+We can do this with the <code>interactive</code> command.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip: Use <code>screen</code></p>
 <p>Consider launching the interactive session in a screen so that it doesn't get killed when the terminal is closed.</p>
@@ -4445,7 +4447,8 @@
 <h3 id="step-2-cluster-execute-job-vscode-interactive-jobsh">Step 2: [CLUSTER] Execute job vscode-interactive-job.sh<a class="headerlink" href="#step-2-cluster-execute-job-vscode-interactive-jobsh" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">First time setup</p>
-<p>If it is the first time you are using this method, copy the following lines into a file called <code>vscode-interactive-job.sh</code> in your home directory.</p>
+<p>If it is the first time you are using this method, copy the following lines into a
+file called <code>vscode-interactive-job.sh</code> in your home directory.</p>
 <p><strong>File: <code>vscode-interactive-job.sh</code></strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">#SBATCH --job-name=&quot;tunnel&quot;</span>
@@ -4464,7 +4467,8 @@
 </code></pre></div>
 <p>It will prompt you several times to confirm the generation of the key. You can just press <code>Enter</code> to accept the default values.</p>
 </div>
-<p>The terminal will look like it got stuck, but what is happening is that it is waiting for the SSH tunnel to be established.</p>
+<p>The terminal will look like it got stuck, but what is happening is that it is waiting for
+the SSH tunnel to be established.</p>
 <h3 id="step-3-local-open-ssh-tunnel">Step 3: [LOCAL] Open SSH tunnel<a class="headerlink" href="#step-3-local-open-ssh-tunnel" title="Permanent link">&para;</a></h3>
 <p>In your local machine, you need to open the SSH tunnel with the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">2222</span>:&lt;interactive_hostname&gt;:22<span class="w"> </span>&lt;user&gt;@irblogin01.irbbarcelona.pcb.ub.es
@@ -4489,11 +4493,13 @@
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Node change</p>
-<p>This is marked as a "<em>ONE-TIME-STEP</em>", but in reality it depends on the node you are allocated. If you need to change the node or add a new node, <strong>the configuration will need to be updated</strong>.</p>
+<p>This is marked as a "<em>ONE-TIME-STEP</em>", but in reality it depends on the node you are allocated.
+If you need to change the node or add a new node, <strong>the configuration will need to be updated</strong>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip (Optional): Helper function to add SSH configuration</p>
-<p>Here is a helper function that you can add to your <code>.bashrc</code> file to make it easier to setup the node and the tunnel.</p>
+<p>Here is a helper function that you can add to your <code>.bashrc</code> file to make it easier to
+setup the node and the tunnel.</p>
 <p>Steps the function does:</p>
 <ol>
 <li>Prompts only for the <strong>host alias</strong>.</li>
@@ -4546,14 +4552,17 @@
 <p>This is needed the first time you connect to a new node, so that the node is added to the known hosts.</p>
 <h3 id="step-5-vscode-connect-vscode-to-the-interactive-node">Step 5: [VSCODE] Connect VSCode to the interactive node<a class="headerlink" href="#step-5-vscode-connect-vscode-to-the-interactive-node" title="Permanent link">&para;</a></h3>
 <p>Open Visual Studio Code and make sure you have installed the <code>Remote - SSH</code> extension.</p>
-<p>Open the side bar at the "Remote - SSH" panel, and then click the <code>irbccn*</code> option. A new window will open with the terminal connected to the interactive node. All the execution of notebooks and debuggers will be done from this node.</p>
+<p>Open the side bar at the "Remote - SSH" panel, and then click the <code>irbccn*</code> option. A new window will open with the
+terminal connected to the interactive node. All the execution of notebooks and debuggers will be done from this node.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip: Create a 'Profile' to keep the VSCode settings and extensions</p>
-<p>You can create a profile in VSCode to keep the settings and extensions for the connection to the cluster. This works similar to the idea of conda environments, but for the VSCode settings.</p>
+<p>You can create a profile in VSCode to keep the settings and extensions for the connection to the cluster.
+This works similar to the idea of conda environments, but for the VSCode settings.</p>
 <p>To create a profile, click on the gear icon in the bottom left corner of VSCode, and then click on Profiles and create a new profile.</p>
 </div>
 <h2 id="from-browser-code-server">From Browser (<em>code-server</em>)<a class="headerlink" href="#from-browser-code-server" title="Permanent link">&para;</a></h2>
-<p>This approach doesn't use the VSCode app, but instead uses the code-server package to run a VSCode instance in the cluster. This will result in launching VSCode from the browser.</p>
+<p>This approach doesn't use the VSCode app, but instead uses the code-server package to run a VSCode instance in the
+cluster. This will result in launching VSCode from the browser.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Setup 1: Code-Server</label><label for="__tabbed_1_2">Setup 2: PyNgrok</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4735,7 +4744,7 @@ are supposed to be already generated by the user.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15">May 14, 2025</span>
   </span>
 
     
@@ -4745,7 +4754,7 @@ are supposed to be already generated by the user.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 17:40:32">May 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 22, 2022 11:38:53">November 22, 2022</span>
   </span>
 
     
@@ -4762,6 +4771,16 @@ are supposed to be already generated by the user.</p>
 
     
     <nav>
+      
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
+          
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
       
         <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
           
@@ -4949,10 +4968,10 @@ are supposed to be already generated by the user.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
