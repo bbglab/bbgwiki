@@ -6,9 +6,11 @@ hide:
 
 ## Description
 
-HMFtools is a pipeline that can be run on the BBGlab cluster to perform variant calling and analysis. It resembles the exact pipeline that it is used in Google Cloud Platform (see [Platinum](Platinum.md)) but it **does not** run in parallel and it is not optimized for HPC computing.
+HMFtools is a pipeline that can be run on the BBGlab cluster to perform variant calling and analysis. It resembles the
+exact pipeline that it is used in Google Cloud Platform (see [Platinum](Platinum.md)) but it **does not** run in
+parallel and it is not optimized for HPC computing.
 
-The scripts, the tools and the reference data are provided by HMF on their [GitHub](https://github.com/hartwigmedical/hmftools/tree/master/pipeline) and Google Cloud.
+The scripts, the tools and the reference data are provided by HMF on their [GitHub](https://github.com/hartwigmedical/hmftools/tree/master/pipeline) and Google Cloud.<!--markdownlint-disable MD013-->
 
 ## Installation
 
@@ -33,7 +35,8 @@ conda activate hmftpipe
 ```
 
 !!! warning Data Access
-    You need specific permission to access the `/data/bbg/projects/hartwig/` following folder. Please contact Martina or Paula if you need to use this data. More info [here](../../../Datasets/General_datasets/Hartwig.md).
+    You need specific permission to access the `/data/bbg/projects/hartwig/` following folder. Please contact Martina
+    or Paula if you need to use this data. More info [here](../../../Datasets/General_datasets/Hartwig.md).
 
 ## Run
 

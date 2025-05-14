@@ -1,17 +1,19 @@
 # Tapestri pipeline
 
 !!! note annotate ""
-    Tapestri pipeline is designed for processing single-cell DNA and DNA+protein sequencing data generated on the Tapestri Platform
+    Tapestri pipeline is designed for processing single-cell DNA and DNA+protein
+    sequencing data generated on the Tapestri Platform
 
 ## Accessing the platform
 
-The pipeline is currently used online, accessible from the [personal user portal](https://portal.missionbio.com/) on their website.
+The pipeline is currently used online, accessible from the [personal user portal](https://portal.missionbio.com/) on
+their website.
 
 ## Usage
 
 Clicking on the `Start Run` button here initializes the Run set-up.
 
-![buttons to upload or start run](../../../assets/images/MissionBio-Start_Run.png#center){ width="300" height="200" style="display: block; margin: 0 auto" }
+![buttons to upload or start run](../../../assets/images/MissionBio-Start_Run.png#center){ width="300" height="200" style="display: block; margin: 0 auto" }<!-- markdownlint-disable MD013 -->
 
 ### Options and files
 
@@ -48,9 +50,9 @@ MissionBio provided a personal training course, the video lesson on Tapestri Pip
 
 ## Links
 
-- [Tapestri Pipeline user guide](https://support.missionbio.com/hc/en-us/articles/360055980994-Tapestri-Pipeline-User-Guide)
-- [Pipeline output files overview](https://support.missionbio.com/hc/en-us/articles/360045939853-Pipeline-output-files-overview)
-- [Video - Tapestri Pipeline: Processing DNA + Protein sequencing data](https://support.missionbio.com/hc/en-us/articles/1500008569581-Tapestri-Pipeline-Processing-DNA-Protein-sequencing-data)
+- [Tapestri Pipeline user guide](https://support.missionbio.com/hc/en-us/articles/360055980994-Tapestri-Pipeline-User-Guide) <!-- markdownlint-disable MD013 -->
+- [Pipeline output files overview](https://support.missionbio.com/hc/en-us/articles/360045939853-Pipeline-output-files-overview) <!-- markdownlint-disable MD013 -->
+- [Video - Tapestri Pipeline: Processing DNA + Protein sequencing data](https://support.missionbio.com/hc/en-us/articles/1500008569581-Tapestri-Pipeline-Processing-DNA-Protein-sequencing-data)<!-- markdownlint-disable MD013 -->
 - [FAQs](https://support.missionbio.com/hc/en-us/sections/360006996673-FAQs)
 
 ## Reference

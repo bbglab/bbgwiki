@@ -3,10 +3,10 @@
 <!-- 
 TODO: Brief introduction on what is intogen - its website and its purpose, use webs and repo as reference.
 -->
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bbglab/intogen-plus-dsl2/)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bbglab/intogen-plus-dsl2/)<!-- markdownlint-disable MD013 -->
 
-It's a framework for automatic and comprehensive knowledge extraction based on mutational data from sequenced tumor samples from patients.
-
+It's a framework for automatic and comprehensive knowledge extraction based on mutational data from
+sequenced tumor samples from patients.
 
 ## Run IntOGen DSL2
 
@@ -24,24 +24,27 @@ you'll be able to launch the pipeline.
 
 ![alt text](../assets/images/intogen-dsl2/intogen_seqera.png)
 
-Before launching the pipeline, some parameters need to be configured. Here a simple but complete list of useful parameters is explained.
+Before launching the pipeline, some parameters need to be configured. Here a simple but complete list of
+useful parameters is explained.
+
 !!! warning "We highly recommend to keep the defaults for those parameters not discussed in this page."
 
 === "General config section"
 
-    #### **Revision number**
+    #### **Revision number**<!-- markdownlint-disable MD046 -->
     
     ![Revision number](../assets/images/intogen-dsl2/revision_number.png){ height="300" style="display: block; margin: 0 auto" }
 
     By default, the **revision number** is linked to the stable tag of the pipeline. As of now - it's `2024.11-dsl2`. 
-    This can eventually be changed if a run is resumed or relaunched from the run section. 
+    This can eventually be changed if a run is resumed or relaunched from the run section.
+
     !!! note "Please be aware that changing this section may affect the `resume` option"
 
     #### **Config profile**
 
     ![Config profile](../assets/images/intogen-dsl2/config_profile.png){ height="300" style="display: block; margin: 0 auto" }
 
-    - `test` --> this is using the [CBIOP cohort](https://github.com/bbglab/intogen-plus-dsl2/blob/dev/DSL2/tests/data/pipeline/input/cbioportal_prad_broad/data_mutations_extended.txt) in the repo [optional]
+    - `test` --> this is using the [CBIOP cohort](https://github.com/bbglab/intogen-plus-dsl2/blob/dev/DSL2/tests/data/pipeline/input/cbioportal_prad_broad/data_mutations_extended.txt) in the repo [optional]<!-- markdownlint-disable MD013 -->
     - `test_full` --> this is using the full datasets of intogen [optional].
     - `singularity` --> this is allowing the use of singularity for using the containers
     - `irb` --> this is allocating the right resources and queue for the slurm executor in the IRBCluster
@@ -61,14 +64,15 @@ Before launching the pipeline, some parameters need to be configured. Here a sim
 
     ![work directory](../assets/images/intogen-dsl2/work_dir.png){ height="300" style="display: block; margin: 0 auto" }
     
-    By default, the work directory is `/data/bbg/nobackup2/work/IntOGenDSL2/v2024/`. You should create a subfolder using e.g. the same name as the `Outdir` from the next section.
+    By default, the work directory is `/data/bbg/nobackup2/work/IntOGenDSL2/v2024/`. 
+    You should create a subfolder using e.g. the same name as the `Outdir` from the next section.
     
     !!! warning "Delete the work folder once the intogen run finishes successfully."
     
 
 === "Run parameters section"
 
-    #### **Input**
+    #### **Input**<!-- markdownlint-disable MD046 -->
 
     This parameter is read as a string, and it should be the absolute paths of the folder that openvariant will iterate
     separated by a space. Here it follows an example:
@@ -78,11 +82,13 @@ Before launching the pipeline, some parameters need to be configured. Here a sim
     ```
 
     !!! question "How do I prepare the input for IntOGen?"
-        Great question! Here the documentation where everything is explained: [intogen-plus.readthedocs](https://intogen-plus.readthedocs.io/en/v2024/usage.html#input)
+        Great question! Here the documentation where everything is explained: 
+        [intogen-plus.readthedocs](https://intogen-plus.readthedocs.io/en/v2024/usage.html#input)
 
     #### **Outdir**
 
-    This parameter is where the output of intogen will be stored. By default we store intermediate runs that might fail here:
+    This parameter is where the output of intogen will be stored. By default we store
+    intermediate runs that might fail here:
 
     ```sh
     /data/bbg/nobackup2/scratch/intogen_dev_tests/dev-DSL2/v2024/<MeaningfulName>
@@ -97,7 +103,8 @@ Before launching the pipeline, some parameters need to be configured. Here a sim
         /data/bbg/nobackup2/scratch/intogen_dev_tests/dev-DSL2/v2024/Lung_external_collab
         ```
         
-        The IntOGen pipeline will by default create a subdirectory with the date of the launch where it will store all the files:
+        The IntOGen pipeline will by default create a subdirectory with the date of the
+        launch where it will store all the files:
         ```sh
         /data/bbg/nobackup2/scratch/intogen_dev_tests/dev-DSL2/v2024/Lung_external_collab/20250423/
         ```
@@ -113,8 +120,8 @@ Once both those sections are completed we are safe to run the pipeline.
 ### FAQs
 
 !!! question "The pipeline failed. How do I resume?"
-    In the [run tab](https://cloud.seqera.io/orgs/bbglabirb/workspaces/bbglab/watch) click on the three dots on the right of your run
-    and click `Resume`.
+    In the [run tab](https://cloud.seqera.io/orgs/bbglabirb/workspaces/bbglab/watch) click on the three
+    dots on the right of your run and click `Resume`.
 
 - TBC
 

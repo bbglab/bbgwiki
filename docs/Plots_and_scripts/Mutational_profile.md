@@ -1,6 +1,7 @@
 # Mutational profile
 
-The function `plot_signature`  will allow you to plot the mutational profile of a sample given the vector of 96 channels (see y axis in the example figure) with the frequencies of each nucleotide change.
+The function `plot_signature`  will allow you to plot the mutational profile of a sample given the vector of 96 channels
+(see y axis in the example figure) with the frequencies of each nucleotide change.
 It takes as input the the vector with the mutations frequency  (`profile`) and the title of the plot (`title`).
 
 The function `minor_tick_labels`  is needed to generate the labels of the plot.
@@ -74,13 +75,19 @@ def plot_signature(profile, title=None):
 
 !!! note
     - The function normalizes the vector so that the sum of all the frequencies is equal to 1.
-    - If you want to normalize the frequencies so that the trinucleotide composition of the genomic regions from which the mutations have been obtained, you need to normalize the vector taking into account the trinucleotide composition before using the function plot_signature.
+    - If you want to normalize the frequencies so that the trinucleotide composition of the genomic regions from which
+    - the mutations have been obtained, you need to normalize the vector taking into account the trinucleotide
+    - composition before using the function plot_signature.
 
 ## Normalization of the vector
 
-In order to normalize the vector you will need to import from [bgreference](https://bbglab.github.io/bbgwiki/Tools/BBG-tools/BGreference/){:target="_blank"} the reference genome in which the data has been sequenced.
+In order to normalize the vector you will need to import from
+[bgreference](https://bbglab.github.io/bbgwiki/Tools/BBG-tools/BGreference/){:target="_blank"} the reference genome in
+which the data has been sequenced.
 
-You will also need the vector with the mutations frequency (`profile`) and the directory of a file with the genomic regions from which the mutations have been obtained (`regions_file_dir`), with at least the columns: `CHROMOSOME`, `START`, `END`.
+You will also need the vector with the mutations frequency (`profile`) and the directory of a file with the genomic
+regions from which the mutations have been obtained (`regions_file_dir`),
+with at least the columns: `CHROMOSOME`, `START`, `END`.
 
 ### Needed functions
 

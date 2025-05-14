@@ -3,7 +3,8 @@
 ## Description
 
 !!! note annotate ""
-    Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.
+    Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your
+    high-throughput sequencing reads.
 
 ---
 

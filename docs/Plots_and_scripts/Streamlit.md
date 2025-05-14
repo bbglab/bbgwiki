@@ -2,7 +2,8 @@
 
 ## Description
 
-Streamlit is an open-source Python library that makes it easy to create and share beautiful, custom web apps for machine learning and data science. In just a few minutes you can build and deploy powerful data apps.
+Streamlit is an open-source Python library that makes it easy to create and share beautiful, custom web apps for
+machine learning and data science. In just a few minutes you can build and deploy powerful data apps.
 
 ### Installation
 
@@ -10,7 +11,7 @@ Streamlit can be installed with `conda` (or `[micro]mamba`) and `pip`, as follow
 
 ===+ "Conda"
 
-    Create environment and activate:
+    Create environment and activate: <!-- markdownlint-disable MD046 -->
     
     ```sh
     # Create ENV
@@ -22,7 +23,7 @@ Streamlit can be installed with `conda` (or `[micro]mamba`) and `pip`, as follow
 
 === "Mamba"
 
-    Create environment and activate:
+    Create environment and activate: <!-- markdownlint-disable MD046 -->
     
     ```sh
     # Create ENV
@@ -40,7 +41,7 @@ Download package:
 
     streamlit hello
 
-<iframe loading="lazy" src="https://doc-mpa-hello.streamlit.app/?embed=true" height="500" width=100% class="cloud_Iframe__xSBvF" allow="camera;clipboard-read;clipboard-write;"></iframe>
+<iframe loading="lazy" src="https://doc-mpa-hello.streamlit.app/?embed=true" height="500" width=100% class="cloud_Iframe__xSBvF" allow="camera;clipboard-read;clipboard-write;"></iframe> <!-- markdownlint-disable MD033 MD013-->
 
 ## Key concepts
 
@@ -143,7 +144,8 @@ Let's imagine that your_script.py is like a canvas. In this canvas you can build
 
     === "Data and Charts"
 
-        Streamlit is optimize for visualize Data quickly, interactively, and from multiple different angles. You can use several functions:
+        Streamlit is optimize for visualize Data quickly, interactively, and from multiple different angles. 
+        You can use several functions:
 
         - *Data*
             - `st.dataframe` : it reads and renders a Pandas dataframe
@@ -161,16 +163,19 @@ Let's imagine that your_script.py is like a canvas. In this canvas you can build
 
     === "Input"
 
-        Streamlit let you go through your data dynamically. This can be done through the use of button, selectors, several types of inputs or via file uploader. 
+        Streamlit let you go through your data dynamically. This can be done through the use of button,
+        selectors, several types of inputs or via file uploader. 
 
-        - `st.button`: Simple button that return a Boolean (False, True) if clicked or not - can be used as a condition in if statements.
+        - `st.button`: Simple button that return a Boolean (False, True) if clicked or not - can be used as a
+        condition in if statements.
         - `st.selectbox`: Dropdown menu that can be selected. Returns the string of the option selected.
         - `st.slider`, `st.checkbox`.
 
 
     === "Message status"
 
-        Streamlit allows to return messages to the user in some specific cases. i.e. if the user needs to produce a plot by selecting some data, the message should appear only if the selection is not made.
+        Streamlit allows to return messages to the user in some specific cases. i.e. if the user needs to produce a
+        plot by selecting some data, the message should appear only if the selection is not made.
 
         ```py
         import streamlit as st

@@ -2,7 +2,8 @@
 
 ## Description
 
-**bgdata** is a simple data package manager. What it gives is essentially a path to a certain data package. The package is specified by 4 layers: *project*, *dataset*, *version* and *build*.
+**bgdata** is a simple data package manager. What it gives is essentially a path to a certain data package.
+The package is specified by 4 layers: *project*, *dataset*, *version* and *build*.
 **Installation**
 
 **bgdata** is written in Python and requires Python>=3.4.
@@ -20,7 +21,9 @@ conda install -c conda-forge -c bbglab bgdata
 
 ## How it works
 
-**bgdata** is configured to have a remote and a local repository where to look for data packages. When **bgdata** is asked to get a certain package it checks whether it is in the local repo. If not present, it is downloaded from the remote.
+**bgdata** is configured to have a remote and a local repository where to look for data packages.
+When **bgdata** is asked to get a certain package it checks whether it is in the local repo. If not present,
+it is downloaded from the remote.
 
 If the build is not specified, **bgdata** returns the master.
 

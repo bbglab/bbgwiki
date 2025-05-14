@@ -1,13 +1,18 @@
 # Extract minibams from Hartwig data in googleCloud
 
-## 1. Create the VM and the storage bucket.
+## 1. Create the VM and the storage bucket
+
 (This tutorial assumes that you already have the credentials to access the data and use the GCP)
 
-First, from [Google Cloud Platform website](https://console.cloud.google.com/), you create a VM (_Compute Engine -> VM instances. Create Instance_). In this case we choose an __e2-highmem8 (8vCPU, 4 core, 64GB RAM__). Region: _europe-west3 (Frankfurt)_ . In _Availability policies - VM_,  _Provisioning model_: SPOT. Attach a disk of 250GB, persistent (_Advanced options - Disks - Add new disk - Edit Name and Size_). Then, we can connect using a ssh web terminal or a local one. 
+First, from [Google Cloud Platform website](https://console.cloud.google.com/), you create a VM (_Compute Engine ->
+VM instances. Create Instance_). In this case we choose an __e2-highmem8 (8vCPU, 4 core, 64GB RAM__).
+Region: _europe-west3 (Frankfurt)_ . In _Availability policies - VM_,  _Provisioning model_: SPOT.
+Attach a disk of 250GB, persistent (_Advanced options - Disks - Add new disk - Edit Name and Size_).
+Then, we can connect using a ssh web terminal or a local one.
 
-    !!! info
-        It's important to create the VM in the same region where the data is, so we avoid charges for moving data between regions, if any. 
-
+!!! important "Same region VM"
+    It's important to create the VM in the same region where the data is, so we avoid charges for moving data between
+    regions, if any.
 
 Next, prepare the VM:
 
@@ -35,26 +40,25 @@ sudo mount -o discard,defaults /dev/disk/by-id/google-disk-1 /ext/ssd/
 sudo chmod a+w /ext/ssd/
 ```
 
-Next, create a bucket where the results will be copied during the minibam generation (_Cloud Storage - Buckets_). _Location type: Region, europe-west4 (Netherlands)_
-
+Next, create a bucket where the results will be copied during the minibam generation (_Cloud Storage - Buckets_).
+_Location type: Region, europe-west4 (Netherlands)_
 
 ## 2. Prepare the input file
 
 Our input file is a ~bed file with samples IDs and regions (IDs_regions.csv), e.g.:
-```
+
+```tsv
 CPCT02010702    3:43228348-43228748
 CPCT02010702    14:101303564-101303964
 CPCT02010702    19:18451144-18451544
 CPCT02010728    2:176568493-176568893
 ```
 
-    !!! info
-        The regions file must be sort by sampleID.
-
+!!! info "The regions file must be sort by sampleID."
 
 We need to extract the CRAM URLs from the _manifest.json_ of the hartwig release of interest, in this case _20230914v_:
 
-```
+```py
 #/data/bbg/datasets/hartwig/20230914/scripts/minibam/extract_urls.py
 
 import json
@@ -95,17 +99,20 @@ if __name__ == "__main__":
 ```
 
 So the output is a file including the urls:
-```
+
+```tsv
 SampleID        GenomicRegion   Tumor_CRAM_URL
 CPCT02010702T   3:43228348-43228748     gs://example_url/CPCT02010702T/cram/CPCT02010702T_dedup.realigned.cram
 CPCT02010702T   14:101303564-101303964  gs://example_url/CPCT02010702T/cram/CPCT02010702T_dedup.realigned.cram
 CPCT02010702T   19:18451144-18451544    gs://example_url/CPCT02010702T/cram/CPCT02010702T_dedup.realigned.cram
 ```
+
 ## 3. Create minibams
 
-For each line, it extracts the regions in a minibam. If the next region is from the same sample, it keeps the cram. If not, it deletes the cram and downloads the next one.
+For each line, it extracts the regions in a minibam. If the next region is from the same sample, it keeps the cram.
+If not, it deletes the cram and downloads the next one.
 
-```
+```py
 #/data/bbg/datasets/hartwig/20230914/scripts/minibam/dwnRunMiniBam_multi.py
 
 import subprocess
@@ -186,8 +193,9 @@ if __name__ == "__main__":
 
 ```
 
-The script extracts the minibams one by one, deleting a cram before download a new one (that's why our persistent disk is only 250GB). It process ~100 samples per day, so this approach is only valid for small datasets. If you plan to do it for thousands of samples, contact us.
-
+The script extracts the minibams one by one, deleting a cram before download a new one (that's why our persistent disk
+is only 250GB). It process ~100 samples per day, so this approach is only valid for small datasets.
+If you plan to do it for thousands of samples, contact us.
 
 ## Reference
 
