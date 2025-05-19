@@ -8,7 +8,7 @@ This guide will help you set up a local **SonarQube server** and use **SonarScan
 
 - [SonarQube Local Setup for Python Projects](#sonarqube-local-setup-for-python-projects)
   - [Table of Contents](#table-of-contents)
-  - [1. Installation and Set up](#1-installation-and-set-up)
+  - [1. Installation and Setup](#1-installation-and-setup)
     - [Running SonarQube with Docker](#running-sonarqube-with-docker)
     - [Manual Installation](#manual-installation)
   - [2. Installing and Configuring SonarScanner CLI (for Python)](#2-installing-and-configuring-sonarscanner-cli-for-python)
@@ -18,7 +18,7 @@ This guide will help you set up a local **SonarQube server** and use **SonarScan
   - [Sources](#sources)
   - [References](#references)
 
-## 1. Installation and Set up
+## 1. Installation and Setup
 
 ### Running SonarQube with Docker
 
@@ -95,7 +95,7 @@ With SonarQube running and the scanner installed, you can analyze your Python pr
    sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.login=<YOUR_TOKEN>
    ```
 
-   Replace `<YOUR_TOKEN>` with the token you generated (a long alphanumeric string). The `sonar.host.url` should point to your SonarQube server (default is http://localhost:9000). We specify it here to be explicit, but if you didn’t change it, the default URL is already `localhost:9000`. The `sonar.login property` is used to pass your token for authentication this is more secure than using username/password. (If you didn’t create a token, you can use `-Dsonar.login=admin -Dsonar.password=admin` with the admin credentials, but using a token is the preferred method.)
+   Replace `<YOUR_TOKEN>` with the token you generated (a long alphanumeric string). The `sonar.host.url` should point to your SonarQube server (default is http://localhost:9000). We specify it here to be explicit, but if you didn’t change it, the default URL is already `localhost:9000`. The `sonar.login` property is used to pass your token for authentication this is more secure than using username/password. (If you didn’t create a token, you can use `-Dsonar.login=admin -Dsonar.password=admin` with the admin credentials, but using a token is the preferred method.)
 
    **Tip**: *If you added the scanner to your PATH (or to your `.bashrc`), you can run sonar-scanner from anywhere. If not, you might need to specify the full path to the sonar-scanner executable.*
 
