@@ -11,7 +11,8 @@ Original FASTQ files can be found at:
 s3://bbg/datasets/tumor/sjd_seq/[date_of_download]/
 
 ```
-`platinum` results (Hartwig pipeline in google cloud), including bam files, can be found at:
+`platinum` results (Hartwig pipeline in google cloud), can be found at:
+
 ```
 s3://bbg/datasets/tumor/sjd_seq/platinum_results/20210201/
 s3://bbg/datasets/tumor/sjd_seq/platinum_results/20220528/
@@ -19,6 +20,8 @@ s3://bbg/datasets/tumor/sjd_seq/platinum_results/20220528/
 /data/bbg/datasets/sjd_melos/sjd_patient/vcf/run_tfm/20240223_oncoanalyser_results/
 
 ```
+The first third also include the bam files.
+
 
 The `20220809` run is the one used in the second tumors paper (DOI:10.1158/2159-8290.CD-23-1186).
 `sarek`results can be found at:
@@ -27,7 +30,7 @@ The `20220809` run is the one used in the second tumors paper (DOI:10.1158/2159-
 /data/bbg/datasets/sjd_melos/sjd_patient/vcf/run_tfm/20240219_sarek_results/
 
 ```
-The `20240223_` and `20240219_` runs are from the patient with XPC germline mutation. 
+The `20240223_` and `20240219_` runs are from the patient with XPC germline mutation and bam files can be found together with FASTQ. 
 
 ## Reference
 Mònica Sánchez Guixé  
