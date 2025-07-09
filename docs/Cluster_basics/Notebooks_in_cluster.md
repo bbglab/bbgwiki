@@ -19,7 +19,11 @@ You will need to follow the next steps:
 1. Connect to the cluster:
 
     ```bash
+    # bbgcluster
     ssh -p 22022 <username>@bbgcluster
+
+    #irb cluster
+    ssh -p 22022 <username>@irblogin02.irbbarcelona.pcb.ub.es
     ```
 
 2. Open a screen:
@@ -80,8 +84,13 @@ In order to open an already existing notebook, you'll need to know the **port** 
 the cluster (_e.g bbgn005_) where you created it in the previous step.
 
 ```bash
+# bbgcluster example
 ssh -L <port>:<node>:<port> -p 22022 <username>@bbgcluster
 # For example: ssh -L 8888:bbgn005:8888 -p 22022 clopeze@bbgcluster
+
+# IRB cluster example. No port required
+ssh -L <port>:<node>:<port> <username>@irblogin02.irbbarcelona.pcb.ub.es
+# For example: ssh -L 8888:irbccn39:8888 mgrau@irblogin02.irbbarcelona.pcb.ub.es
 ```
 
 !!! note
