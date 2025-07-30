@@ -4277,7 +4277,30 @@
 
 <h1 id="pediatric-secondary-neoplasms">Pediatric Secondary neoplasms<a class="headerlink" href="#pediatric-secondary-neoplasms" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>This dataset is a collection of WGS of normal-matched tumors from 12 patients with secondary tumors.
+There are 2 tumor samples per case, except for one case with XPC germline mutation, with 3 tumoral samples
+(1 for the first tumor -melanoma- and 2 for the second tumor -undifferentiated pleomorfic sarcoma-).</p>
+<p>This is a collaboration with Jaume Mora and Cinzia Lavarino from Sant Joan de Déu Hospital.</p>
+<p>Original FASTQ files can be found at:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>s3://bbg/datasets/tumor/sjd_seq/[date_of_download]/
+</code></pre></div>
+<p><code>platinum</code> results (Hartwig pipeline in google cloud), can be found at:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>s3://bbg/datasets/tumor/sjd_seq/platinum_results/20210201/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>s3://bbg/datasets/tumor/sjd_seq/platinum_results/20220528/
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>/data/bbg/datasafe/sjd_seq/platinum_results/20220809/
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>/data/bbg/datasets/sjd_melos/sjd_patient/vcf/run_tfm/20240223_oncoanalyser_results/
+</code></pre></div>
+<p>The first third also include the bam files.</p>
+<p>The <code>20220809</code> run is the one used in the second tumors paper (DOI:10.1158/2159-8290.CD-23-1186).
+<code>sarek</code>results can be found at:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/data/bbg/datasets/tumor/sjd_seq/platinum_results/20220809/[sample_id]/sarek_results/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/data/bbg/datasets/sjd_melos/sjd_patient/vcf/run_tfm/20240219_sarek_results/
+</code></pre></div>
+<p>The <code>20240223_</code> and <code>20240219_</code> runs are from the patient with XPC germline mutation and bam files
+can be found together with FASTQ.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<p>Mònica Sánchez Guixé<br />
+Bet Figuerola Bou</p>
 
 
 
@@ -4300,7 +4323,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 14, 2025 13:39:15 UTC">May 14, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 30, 2025 10:40:56 UTC">July 30, 2025</span>
   </span>
 
     
@@ -4328,9 +4351,9 @@
     
     <nav>
       
-        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
+        <a href="https://github.com/msguixe" class="md-author" title="@msguixe">
           
-          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
+          <img src="https://avatars.githubusercontent.com/u/56801139?v=4&size=72" alt="msguixe">
         </a>
       
         <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
@@ -4338,12 +4361,23 @@
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
-        <a href="https://github.com/CarlosLopezElorduy" class="md-author" title="@CarlosLopezElorduy">
+        <a href="https://github.com/efigb" class="md-author" title="@efigb">
           
-          <img src="https://avatars.githubusercontent.com/u/107858804?v=4&size=72" alt="CarlosLopezElorduy">
+          <img src="https://avatars.githubusercontent.com/u/154223352?v=4&size=72" alt="efigb">
+        </a>
+      
+        <a href="https://github.com/FedericaBrando" class="md-author" title="@FedericaBrando">
+          
+          <img src="https://avatars.githubusercontent.com/u/52486325?v=4&size=72" alt="FedericaBrando">
         </a>
       
       
+      
+        
+          <a href="https://github.com/bbglab/bbgwiki/blob/main/docs/Datasets/Inhouse_datasets/Pediatric Secondary neoplasms.md" class="md-author md-author--more">
+            +2
+          </a>
+        
       
     </nav>
   </span>
