@@ -1,6 +1,0 @@
-# mSigHDP
-
-## Description
-
-
-## Reference

@@ -21,7 +21,6 @@ Data includes:
 - `lncrna_splice_sites`
 - `splice_sites`
 
-
 ## Releases
 
 - **Release 2 (30-09-2020)**: The coordinates are extracted from the `gtf3` annotation file.
@@ -36,7 +35,7 @@ Data includes:
 
 ## Description
 
-You can find the data in the folder: `/workspace/projects/genomic_regions/`
+You can find the data in the folder: `/data/bbg/projects/genomic_regions/`
 
 - `./raw_data`: contains databases from which raw data has been downloaded
 - `./scripts`: contains code to parse raw data
@@ -47,4 +46,4 @@ You can find the data in the folder: `/workspace/projects/genomic_regions/`
 
 - Joan Enric
 
-Created on 2019-07-08 by claudia.arnedo@irbbarcelona.org
+Created on 2019-07-08 by <claudia.arnedo@irbbarcelona.org>

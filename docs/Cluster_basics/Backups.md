@@ -1,24 +1,33 @@
 # Backups
 
-As explained in the [Structure section](https://bbglab.github.io/bbgwiki/Cluster_basics/Structure/), there are different partitions with different levels of backups. Basically, there are two options of backup:  
+As explained in the [Structure section](https://bbglab.github.io/bbgwiki/Cluster_basics/Structure/), there are different
+partitions with different levels of backups. Basically, there are two options of backup:  
 
-- **Snapshots** : It is the state of the system at a particular point in time. It is usefull for human mistakes, ie. if you delete or edit the wrong file. For HW errors or big catastrophes (e.g. a fire) (unlikely) is not useful, because the backup data is stored in the same disk/location. We can recover the data by ourselves.
-- **Standard backup** : Useful for human mistakes and HW/catastrophes. To recover the data from a backup, we need to contact IT and it could take a few days for recovering.
+- **Snapshots** : It is the state of the system at a particular point in time. It is usefull for human mistakes, ie. if
+you delete or edit the wrong file. For HW errors or big catastrophes (e.g. a fire) (unlikely) is not useful, because the
+backup data is stored in the same disk/location. We can recover the data by ourselves.
+- **Standard backup** : Useful for human mistakes and HW/catastrophes. To recover the data from a backup, we need to
+contact IT and it could take a few days for recovering.
 
 Depending the partition, the safety level is different:
 
-- **`home/`** : Snapshots: 3 per day last 1.5 days, one for each of the last 5 days and one for each of the last 4 weeks. **medium-high** safe.
-- **`projects/`** : Standard backups and snapshots. Backup: every day during the last 15 days and every week during the last 12 weeks. Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. **high** safe.
+- **`home/`** : Snapshots: 3 per day last 1.5 days, one for each of the last 5 days and one for each of
+the last 4 weeks. **medium-high** safe.
+- **`projects/`** : Standard backups and snapshots. Backup: every day during the last 15 days and every week during the
+last 12 weeks. Snapshots: 3 per day last 5 days, one for each of the last 15 days and one
+for each of the last 12 weeks. **high** safe.
 - **`datasets/`** : Standard backups. Backup: every Sunday, replaced every week. **medium** safe.
-- **`datasafe/`** : Snapshots: 3 per day last 5 days, one for each of the last 15 days and one for each of the last 12 weeks. **medium-high** safe.
+- **`datasafe/`** : Snapshots: 3 per day last 5 days, one for each of the last 15 days and one
+for each of the last 12 weeks. **medium-high** safe.
 - **`nobackup/`**/ **`nobackup2/`** : No backup at all...
 
 ## Example of recovering data
 
-Let's say we have deleted or edited by mistake a file in a partition with snapshots (e.g. `/workspace/projects/`). If we check the content of the `.snapshot/` folder:
+Let's say we have deleted or edited by mistake a file in a partition with snapshots (e.g. `/data/bbg/projects/`).
+If we check the content of the `.snapshot/` folder:
 
 ```sh
-mgrau@login01:/workspace/projects$ ls /workspace/projects/.snapshot/
+mgrau@login01:/data/bbg/projects$ ls /data/bbg/projects/.snapshot/
 daily_at_23_noSun.2023-06-05_2300  daily_at_23_noSun.2023-06-15_2300        hourly_mon2fri_11_15_19.2023-06-16_1900  hourly_mon2fri_11_15_19.2023-06-21_1900  Sun_at_23.2023-05-14_2300
 daily_at_23_noSun.2023-06-06_2300  daily_at_23_noSun.2023-06-16_2300        hourly_mon2fri_11_15_19.2023-06-19_1100  hourly_mon2fri_11_15_19.2023-06-22_1100  Sun_at_23.2023-05-21_2300
 daily_at_23_noSun.2023-06-07_2300  daily_at_23_noSun.2023-06-17_2300        hourly_mon2fri_11_15_19.2023-06-19_1500  hourly_mon2fri_11_15_19.2023-06-22_1500  Sun_at_23.2023-05-28_2300
@@ -30,12 +39,14 @@ daily_at_23_noSun.2023-06-13_2300  hourly_mon2fri_11_15_19.2023-06-16_1100  hour
 daily_at_23_noSun.2023-06-14_2300  hourly_mon2fri_11_15_19.2023-06-16_1500  hourly_mon2fri_11_15_19.2023-06-21_1500  Sun_at_23.2023-05-07_2300
 ```
 
-We can see a daily snapshot at 23.00h during the last 15 days (`daily_at_23_noSun.2023-06-XX_2300`). Then we have 3 snapshots per day (at 11h,15h and 19h) during the last 5 working-days (`hourly_mon2fri_11_15_19.2023-06-XX_XX00`) and then we have one snapshot weekly (sunday at 23h) during the last 12 weeks (`Sun_at_23.2023-0X-XX_2300`).
+We can see a daily snapshot at 23.00h during the last 15 days (`daily_at_23_noSun.2023-06-XX_2300`). Then we have 3
+snapshots per day (at 11h,15h and 19h) during the last 5 working-days (`hourly_mon2fri_11_15_19.2023-06-XX_XX00`) and
+then we have one snapshot weekly (sunday at 23h) during the last 12 weeks (`Sun_at_23.2023-0X-XX_2300`).
 
 Inside every snapshot, we can see the same file structure of `projects`:
 
 ```sh
-mgrau@login01:/workspace/projects$ ls /workspace/projects/.snapshot/daily_at_23_noSun.2023-06-05_2300
+mgrau@login01:/data/bbg/projects$ ls /data/bbg/projects/.snapshot/daily_at_23_noSun.2023-06-05_2300
 all_aecc                      clustering_3d          diskusage20200511.txt   healthy_chemo              nanopore              regulatory_regions        small_collaborations_ines
 all_aecc_pediatric            cndrivers              diskusage20200619.txt   hotmaps_signatures         neoantigen            repair_states             stjude
 alphafold_features            colorectal_apoe        diskusage20200725.txt   immune_biomarkers          new_oncodrivemut      replication_timing        st_jude_life

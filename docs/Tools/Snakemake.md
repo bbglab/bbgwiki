@@ -1,6 +1,9 @@
 # Snakemake
 
-The Snakemake workflow management system is a tool to create **reproducible and scalable** data analyses. Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition. Finally, Snakemake workflows can entail a description of required software, which will be automatically deployed to any execution environment.
+The Snakemake workflow management system is a tool to create **reproducible and scalable** data analyses.
+Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster,
+grid and cloud environments, without the need to modify the workflow definition. Finally, Snakemake workflows
+can entail a description of required software, which will be automatically deployed to any execution environment.
 
 ## Installation
 
@@ -24,16 +27,17 @@ More details [here](https://snakemake.readthedocs.io/en/stable/getting_started/i
 
 ## Usage
 
-Before actually running a snakemake pipeline, you can try the ``dry mode (-np)``, which do not execute anything, and display what would be done. This is a good way to check that all the commands/inputs/output are as expected:
+Before actually running a snakemake pipeline, you can try the ``dry mode (-np)``, which do not execute anything,
+and display what would be done. This is a good way to check that all the commands/inputs/output are as expected:
 
 ```bash
-$ snakemake --snakefile example.snk.py --cores 1 -np
+snakemake --snakefile example.snk.py --cores 1 -np
 ```
 
 And if you want to run it:
 
 ```bash
-$ snakemake --snakefile example.snk.py --cores 1
+snakemake --snakefile example.snk.py --cores 1
 ```
 
 For usage documentation, run `snakemake --help`.
@@ -70,21 +74,35 @@ rule FASTQC:
 ```
 
 !!! warning annotate " Snakemake starts at the end. "
+    By default snakemake executes the first rule in the snakefile. It is possible to overwrite this behavior by
+    explicitly marking a rule as being the default target via the default_target directive.
 
-    By default snakemake executes the first rule in the snakefile. It is possible to overwrite this behavior by explicitly marking a rule as being the default target via the default_target directive. 
-
-    As you can see, there are two rules, ``all`` and ``FASTQC`` but actually only one of them (``FASTQC``) is a proper rule. Our first rule, ``all``, requires as an input the final output of the pipeline, the ``fastqc.html`` files. We only define it as a final-rule, to explicity define what we want as a final pipeline ouput. To obtain the rule ``all`` input (and finish the pipeline's execution), snakemake checks which rule needs to be executed to obtain it (``FASTQC``, in this case). Then it checks again the input of ``FASTQC``, in case it is the output from another rule, and so on, until it reaches the beggining of the pipeline. In this example, there is only one rule, so the final output (``fastqc.html`` files) is the output of the unique rule (``FASTQC``).
+    As you can see, there are two rules, ``all`` and ``FASTQC`` but actually only one of them (``FASTQC``) is a  <!-- markdownlint-disable MD046-->
+    proper rule. Our first rule, ``all``, requires as an input the final output of the pipeline, the ``fastqc.html`` 
+    files. We only define it as a final-rule, to explicity define what we want as a final pipeline ouput. To obtain 
+    the rule ``all`` input (and finish the pipeline's execution), snakemake checks which rule needs to be executed to 
+    obtain it (``FASTQC``, in this case). Then it checks again the input of ``FASTQC``, in case it is the output from 
+    another rule, and so on, until it reaches the beggining of the pipeline. In this example, there is only one rule, 
+    so the final output (``fastqc.html`` files) is the output of the unique rule (``FASTQC``).
 
 Every step from the pipeline is defined within a rule. Every rule has some basic parameters:
 
 - **Input/output** where we define the input and expected output of our rule.
-- **Shell/run/script**: A rule can be a bash command (``shell``), a python script (``run``) or a script in almost any language (``script``).
+- **Shell/run/script**: A rule can be a bash command (``shell``), a python script (``run``) or a script in
+- almost any language (``script``).
 
-Additionally, there are many optional parameters: [threads](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#threads), [resources](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#resources) , [preemptible-jobs](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#preemptible-jobs), [messages](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#messages), [Log-Files](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#log-files) and [more.](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html)..
+Additionally, there are many optional parameters:
+[threads](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#threads),
+[resources](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#resources),
+[preemptible-jobs](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#preemptible-jobs),
+[messages](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#messages),
+[Log-Files](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#log-files) and
+[more.](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html)..
 
 ### Example2. **Wildcards**
   
-In this case, we specified (hardcoded) the name of the samples (``['sample1_1',  'sample1_2']``) and the input folder (``data/``)
+In this case, we specified (hardcoded) the name of the samples (``['sample1_1',  'sample1_2']``) and
+the input folder (``data/``)
   
 ```python
 #dry run
@@ -173,9 +191,10 @@ For every sample defined in the ``SAMPLES = ['sample1_1', 'sample1_2']``, it exe
 - ``fastqc -o output/ -t 1 data/sample1_1.fastq.gz``
 - ``fastqc -o output/ -t 1 data/sample1_2.fastq.gz``
 
-And it ends when the rule ``all`` is executed. Three rules are executed in total (``FASTQC`` x2 times + ``all`` x 1 time).
+And it ends when the rule ``all`` is executed. Three rules are executed in
+total (``FASTQC`` x2 times + ``all`` x 1 time).
 
-### TO BE CONTINUED...
+### TO BE CONTINUED
 
 ## Links
 

@@ -2,7 +2,8 @@
 
 ## Function to compute the type of variant starting from the REF and ALT columns
 
-Function used in PROMINENT and in the outputs of the deepUMIcaller pipeline by consensus, to determine the variant type. (Designed for variants from VarDict and Ensembl-like format).
+Function used in PROMINENT and in the outputs of the deepUMIcaller pipeline by consensus, to determine the variant type.
+(Designed for variants from VarDict and Ensembl-like format).
 
 ```python
 def vartype(x, letters = ['A', 'T', 'C', 'G'], len_SV_lim = 100):

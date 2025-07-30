@@ -1,7 +1,14 @@
 # GridSpec for dummies
-When we want to create a figure that includes more than one plot, while having the possibility to manage each of these individually, we can normally achieve this by using the `pyplot.subplots` command. However, there are complex cases that `pyplot.subplots` cannot handle. In these cases, we should use the `GridSpec` function, also from `matplotlib`.  
 
-It can be difficult to generate the desired grid and trying to allocate each of the plot to its correct coordinates, specially, when the plot spans multiple rows or columns. I recommend to first draw a draft of the desired plot layout. And then divide the figure in rows (red lines) and columns (blue lines) as the example. Like this, you know the particular coordinates for a plot. Then, the coding is really easy. 
+When we want to create a figure that includes more than one plot, while having the possibility to manage each of
+these individually, we can normally achieve this by using the `pyplot.subplots` command. However,
+there are complex cases that `pyplot.subplots` cannot handle. In these cases, we should use the `GridSpec` function,
+also from `matplotlib`.  
+
+It can be difficult to generate the desired grid and trying to allocate each of the plot to its correct coordinates,
+specially, when the plot spans multiple rows or columns. I recommend to first draw a draft of the desired plot layout.
+And then divide the figure in rows (red lines) and columns (blue lines) as the example. Like this, you know the
+particular coordinates for a plot. Then, the coding is really easy.
 
 ![Draft_gridspec](../assets/images/gridspec1.png)
 
