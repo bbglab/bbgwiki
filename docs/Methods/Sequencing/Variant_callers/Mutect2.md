@@ -3,7 +3,8 @@
 ## Description
 
 Mutect2 is a variant caller that calls somatic SNVs and indels via local assembly of haplotypes.
-It is included into [Genome Analysis Toolkit](https://gatk.broadinstitute.org/hc/en-us/) a collection of command-line tools for analyzing high-throughput sequencing data with a primary focus on variant discovery.
+It is included into [Genome Analysis Toolkit](https://gatk.broadinstitute.org/hc/en-us/) a collection of command-line
+tools for analyzing high-throughput sequencing data with a primary focus on variant discovery.
 
 It can be used with two modes:
 
@@ -20,7 +21,8 @@ To run Mutect2, the program required the following files:
 
 Mutect2 does not require a germline resource nor a panel of normals (PoN) to run, although both are recommended.
 -germline resource:
--panel of normals vcf file. To create a PoN, call on each normal sample in this mode, then use [CreateSomaticPanelOfNormals](https://gatk.broadinstitute.org/hc/en-us/articles/360037227652-CreateSomaticPanelOfNormals-BETA-) to generate the PoN.
+-panel of normals vcf file. To create a PoN, call on each normal sample in this mode, then use
+[CreateSomaticPanelOfNormals](https://gatk.broadinstitute.org/hc/en-us/articles/360037227652-CreateSomaticPanelOfNormals-BETA-) to generate the PoN. <!--markdownlint-disable MD013-->
 
 ## Usage
 
@@ -51,7 +53,7 @@ Mutect2 does not require a germline resource nor a panel of normals (PoN) to run
 ## Best Practises
 
 Mutect2 can be also used together with other GATK tools for complete workflows.
-Check for [Best Practices Workflows](https://gatk.broadinstitute.org/hc/en-us/articles/360035894731-Somatic-short-variant-discovery-SNVs-Indels-)
+Check for [Best Practices Workflows](https://gatk.broadinstitute.org/hc/en-us/articles/360035894731-Somatic-short-variant-discovery-SNVs-Indels-)<!--markdownlint-disable MD013-->
 
 Somatic short variant discovery workflow includes the following steps:
 

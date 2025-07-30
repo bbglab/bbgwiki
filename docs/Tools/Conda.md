@@ -1,8 +1,58 @@
-# Conda
+# Conda and mamba
 
 ## Description
 
-Conda is an open source package management system and environment management system that runs on Windows, macOS, Linux and z/OS. Conda quickly installs, runs and updates packages and their dependencies.
+Conda and mamba are open source **package manager** and **environment management** systems for Python and other
+languages. They run on Windows, macOS, Linux and z/OS. These tools automate the process of installing, updating,
+configuring and removing software packages. They manage dependencies, ensuring that all required libraries and
+components are correctly installed and compatible. In our case, using package managers is specially useful because:
+
+- They provide a way to ensure **reproducibility** in our code
+- They allow a project's software tools to be **portable**
+- They allow user-level installation (*i.e.* **do not require sudo** permissions)
+
+The difference between the two is that **mamba** is a fast, drop-in replacement for conda that highly improves package
+resolution speed and efficiency (and we recommend you use it instead of conda to make your life happier :)).
+
+!!! info
+    The majority of the commands shown below are also supported by mamba
+
+## Installation
+
+### Conda
+
+Conda has two possible installers:
+
+- Anaconda: already comes with installed packages for data science and Anaconda Navigator (GUI application).
+Follow the instructions.
+- **Miniconda** (recommended): minimal installer provided by Anaconda  
+
+Download any of the two installers and in your terminal run:
+
+```bash
+bash <conda-installer-name>-latest-Linux-x86_64.sh>
+```
+
+Detailed instructions [here](https://docs.conda.io/projects/conda/en/stable/user-guide/install/linux.html#installing-on-linux).<!-- markdownlint-disable MD013-->
+To update conda, run:
+
+```bash
+conda update conda
+```
+
+### Mamba
+
+The installer for mamba is **micromamba**. To install it run:
+
+```bash
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+```
+
+To update mamba:
+
+```bash
+micromamba self-update
+```
 
 ## Get started
 
@@ -40,7 +90,7 @@ conda env list
 conda info --envs
 ```
 
-**Create** a new virtual environment with <packages>
+**Create** a new virtual environment with `<packages>`
 
 ```bash
 conda create --name <environment name> [<packages[=<version>]>]
@@ -105,7 +155,7 @@ conda list --revisions
 
 ### Packages
 
-**Install** a package (_use `-f` to force the installation_)
+**Install** a package (*use `-f` to force the installation*)
 
 ```bash
 conda install <package>
@@ -211,3 +261,4 @@ conda index <channel folder>/<platform>
 - Miguel Grau
 - Federica Brando
 - Carlos López-Elorduy
+- Raquel Blanco

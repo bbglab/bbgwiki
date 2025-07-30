@@ -92,7 +92,7 @@ bowtie2-inspect <outputDir>
 ## Links
 
 - [Bowtie2 GitHub](https://github.com/BenLangmead/bowtie2)
-- [Bowtie2 example](https://github.com/BenLangmead/bowtie2/blob/master/MANUAL.markdown#getting-started-with-bowtie-2-lambda-phage-example)
+- [Bowtie2 example](https://github.com/BenLangmead/bowtie2/blob/master/MANUAL.markdown#getting-started-with-bowtie-2-lambda-phage-example)<!--markdownlint-disable MD013-->
 
 ---
 

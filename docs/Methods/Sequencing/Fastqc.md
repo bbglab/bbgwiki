@@ -1,7 +1,8 @@
 # Fastqc
 
 !!! note annotate ""
-    FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines.
+    FastQC aims to provide a simple way to do some quality control checks on raw sequence
+    data coming from high throughput sequencing pipelines.
 
 ## Installation
 
@@ -55,7 +56,9 @@ fastqc raw_data.fastq.gz raw_data2.fastq.gz
 ```
 
 !!! note annotate "Viewing the Fastqc results"
-    To view the Fastqc results, you may open the fastqc_report.html file in a web browser or the summary.txt file (located in the zipped output archive) on the command line. For assistance copying files to your local machine, please see the Moving Data page.
+    To view the Fastqc results, you may open the fastqc_report.html file in a web browser or the
+    `summary.txt` file (located in the zipped output archive) on the command line.
+    For assistance copying files to your local machine, please see the Moving Data page.
 
 ---
 

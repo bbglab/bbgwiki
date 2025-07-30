@@ -4,7 +4,7 @@
 
 How to submit jobs to the Cluster using **Qmap**.
 
-**Qmap** documentation: https://qmap.readthedocs.io
+**Qmap** documentation: <https://qmap.readthedocs.io>
 
 ## Howto
 
@@ -28,16 +28,18 @@ Rscript run.R ../data/vafs.dat binomial.bmm 3 ./results.binomial.3
 ### 2. Run "qmap submit" from the login node
 
 ```bash
-$ qmap submit filename.qmap
+qmap submit filename.qmap
 
 ```
 
-## Aditional info 
+## Aditional info
 
 ### Extra parameters
 
-If you need to provide any [extra parameter](https://qmap.readthedocs.io/en/latest/concepts.html#parameters) directly to SLURM, you can do it defining a new profile.config file. E.g.
-```
+If you need to provide any [extra parameter](https://qmap.readthedocs.io/en/latest/concepts.html#parameters) directly to
+SLURM, you can do it defining a new profile.config file. E.g.
+
+```toml
 executor = slurm
 
 [params]
@@ -45,8 +47,6 @@ extra = -p bigmem
 ```
 
 By default, the queue used is `bigrun`.
-
-
 
 ## Reference
 

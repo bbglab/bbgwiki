@@ -1,7 +1,8 @@
 # SAMtools
 
 !!! note annotate ""
-    SAMtools implements various utilities for post-processing alignments in the SAM format, such as indexing, variant caller and alignment viewer, and thus provides universal tools for processing read alignments.
+    SAMtools implements various utilities for post-processing alignments in the SAM format, such as indexing, variant
+    caller and alignment viewer, and thus provides universal tools for processing read alignments.
 
 ## Installation
 
@@ -13,7 +14,8 @@ conda install -c bioconda samtools
 
 ### Manual
 
-For the manual installation, you can find the instructions [here](http://www.sthda.com/english/wiki/install-samtools-on-unix-system).
+For the manual installation, you can find the instructions
+[here](http://www.sthda.com/english/wiki/install-samtools-on-unix-system).
 
 ## Usage
 
@@ -22,7 +24,8 @@ samtools view -b -S -o genome_reads_aligned.bam genome_reads_aligned.sam
 ```
 
 !!! note annotate "Core Usage"
-    To ensure that SAMtools uses the correct number of cores, the `-@ ${NSLOTS}` option should be used on commands that support it.
+    To ensure that SAMtools uses the correct number of cores, the `-@ ${NSLOTS}` option
+    should be used on commands that support it.
 
 ## Example job
 
