@@ -13,13 +13,13 @@ sequenced tumor samples from patients.
 Great effort was put to migrate IntOGen from nextflow DSL1 to nextflow DSL2. This effort allowed to be able to run the
 pipeline within our seqera platform dashboard.
 
-From the bbglabirb/bbglab workspace [launchpad](https://cloud.seqera.io/orgs/bbglabirb/workspaces/bbglab/launchpad),
+From the bbglabirb/ALP_pipelines workspace [launchpad](https://cloud.seqera.io/orgs/bbglabirb/workspaces/ALP_pipelines/launchpad),
 you can access the pipelines available in our workspace.
 
 !!! question "I can't see the workspace, what should I do?"
     Please refer to Miguel or to Federica to solve this issue
 
-By clicking on [intogen-dsl2-beta](https://cloud.seqera.io/orgs/bbglabirb/workspaces/bbglab/launchpad/217132460501467)
+By clicking on [intOGen-plus-dsl2](https://cloud.seqera.io/orgs/bbglabirb/workspaces/ALP_pipelines/launchpad/217132460501467?sourceWorkspaceId=97012242959019)
 you'll be able to launch the pipeline.
 
 ![alt text](../assets/images/intogen-dsl2/intogen_seqera.png)
@@ -64,8 +64,9 @@ useful parameters is explained.
 
     ![work directory](../assets/images/intogen-dsl2/work_dir.png){ height="300" style="display: block; margin: 0 auto" }
     
-    By default, the work directory is `/data/bbg/nobackup2/work/IntOGenDSL2/v2024/`. 
-    You should create a subfolder using e.g. the same name as the `Outdir` from the next section.
+    By default, the work directory is `/data/bbg/nobackup2/work/IntOGenDSL2/v2024/`.
+    For faster execution you can use the scratch partition in the cluster: `/scratch/bbg/work/IntOGenDSL2/v2025/<your-subfolder>`.
+    Replace `<your-subfolder>` with a meaningful name, such as the `Outdir` value from the next section, to avoid conflicts.
     
     !!! warning "Delete the work folder once the intogen run finishes successfully."
     
