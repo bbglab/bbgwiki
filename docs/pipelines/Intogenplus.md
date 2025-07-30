@@ -65,8 +65,8 @@ useful parameters is explained.
     ![work directory](../assets/images/intogen-dsl2/work_dir.png){ height="300" style="display: block; margin: 0 auto" }
     
     By default, the work directory is `/data/bbg/nobackup2/work/IntOGenDSL2/v2024/`.
-    For faster execution you can use the scratch partition in the cluster: `/scratch/bbg/work/IntOGenDSL2/v2025/o3d`.
-    You should create a subfolder using e.g. the same name as the `Outdir` from the next section.
+    For faster execution you can use the scratch partition in the cluster: `/scratch/bbg/work/IntOGenDSL2/v2025/<your-subfolder>`.
+    Replace `<your-subfolder>` with a meaningful name, such as the `Outdir` value from the next section, to avoid conflicts.
     
     !!! warning "Delete the work folder once the intogen run finishes successfully."
     
