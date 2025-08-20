@@ -70,15 +70,10 @@ from scipy.stats import norm
 import matplotlib as mpl
 import os
 
-### PFAM info
-PFAM_files = "/data/bbg/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_biomart.tsv.gz"
-PFAM_info = "/data/bbg/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/pfam_names.info.csv"
-
-
 ### CDS coordinates
-path_coord =  "/data/bbg/datasets/intogen/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/cds_biomart.tsv"
+path_cds =  "/data/bbg/projects/genomic_regions/hg38/release_3/cds/hg38_cds.txt.gz"
 
-BOOSTDM_DATASETS = "/workspace/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/"
+BOOSTDM_DATASETS = "/data/bbg/projects/intogen_plus/intogen-plus-v2024/datasets/boostdm/"
 PFAM_file_path = os.path.join(BOOSTDM_DATASETS, 'pfam_biomart.tsv.gz')
 PFAM_info_path = os.path.join(BOOSTDM_DATASETS, 'pfam_info.name.tsv')
 df_pfam = pd.read_csv(PFAM_file_path, sep="\t", names=["ENSEMBL_GENE", "TRANSCRIPT_ID", "START", "END", "DOMAIN"])
@@ -117,12 +112,9 @@ def plot_gene_full_nucleotide(subset_data_pfam, df, gene, transcript, ax1, ax2):
     ax2.set_yticks([])
 
     # get the max_aa
-    path_coord =  "/workspace/datasets/intogen/output/runs/v2020/20200703_oriolRun/CH_IMPACT_out/intogen_merge_20220325/cds_biomart.tsv"
-    path_coord_gene = pd.read_csv(path_coord, sep='\t', low_memory=False,
-                         names=['gene', 'gene_symbol', 'prot', 'chr', 's', 'e', 'aa', 'cds', 'genpos',
-                                'strand', 'transcript'])
-    path_coord_gene = path_coord_gene[path_coord_gene['transcript'] == transcript].sort_values(by='aa').reset_index(drop=True)
-    max_aa = int(path_coord_gene.loc[0,'genpos']/3)
+    cds_df = pd.read_csv(path_cds, sep='\t')
+    cds_gene = cds_df[cds_df['Transcript stable ID'] == transcript]
+    max_aa = int(cds_gene['CDS Length']/3)
     ax1.set_xlim(0, max_aa)
 
     # plot observed mutations
@@ -147,10 +139,10 @@ def plot_gene_full_nucleotide(subset_data_pfam, df, gene, transcript, ax1, ax2):
 
     size = 12
     ax1.scatter(x_axis, y_axis, s=size, c='red', alpha=0.7)
-    
+
     ax2.set_ylim(0, 1)
 
-                      
+
     for i, r in subset_data_pfam.iterrows():
         start_base = r['START']
         size_base = r['SIZE']
@@ -162,7 +154,7 @@ def plot_gene_full_nucleotide(subset_data_pfam, df, gene, transcript, ax1, ax2):
         ax2.set_xlim(0, max_aa)
         ax2.set_yticks([])
         ax2.tick_params(axis='x', which='major', pad=3)
-            
+
     ax1.tick_params(axis='x', labelsize=0, color='w')
 
     ax2.set_xlabel('CDS base position')
