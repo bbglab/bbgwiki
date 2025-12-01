@@ -18,3 +18,9 @@ You can also follow the [BBGlab best practices](https://bbglab.github.io/bbgwiki
 
 ## Track changes in Git
 You should have a Github account to track all your code in terms of version control and collaboration. You can create a github account if you don't have one yet. Check the [Git guidelines](https://bbglab.github.io/bbgwiki/Tools/Programming/git/). 
+
+
+## Reference
+
+- Elisabet Figuerola
+- Mònica Sánchez
