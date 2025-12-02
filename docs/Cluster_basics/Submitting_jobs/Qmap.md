@@ -18,7 +18,7 @@ How to submit jobs to the Cluster using **Qmap**.
     memory=50G
 
     [pre]
-    ml load anaconda3
+    ml load anaconda3  #OR . "/home/$USER/miniconda3/etc/profile.d/conda.sh"
     conda activate sciclone-env
 
     [jobs]
@@ -43,11 +43,12 @@ How to submit jobs to the Cluster using **Qmap**.
     Rscript run.R ../data/vafs.dat binomial.bmm 3 ./results.binomial.3
     ```
 
-The only difference is how you load Conda. On the IRB cluster, you can use either of the following options:
+The only difference is how you load conda. On the IRB cluster, you can use either of the following options:
 
- 1) Use the pre-installed conda module (`ml load anaconda3`), or
+ 1) Use the pre-installed conda module (`ml load anaconda3`)
 
- 2) If you use mamba, load it the same way you do with conda on the BBG cluster:
+ 2) If you use mamba or prefer to use your own conda installation,
+  load it the same way you do on the BBG cluster:
 
   `. "/home/$USER/miniforge3/etc/profile.d/conda.sh"`
 
@@ -86,7 +87,7 @@ SLURM, you can do it defining a new profile.config file. E.g.
     [params]
     extra = -G 1
     ```
-    
+
 === "BBG cluster"
 
     ```bash
