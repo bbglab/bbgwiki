@@ -19,7 +19,7 @@ Remember to add the dataset to the **BBG Datasets spreadsheet**, either if it is
 Please find further information about the BBG Datasets
 [here](https://bbglab.github.io/bbgwiki/Datasets/Datasets_BBGLAB/).
 
-To create these foldes, follow
+To create these folders, follow
 [these instrucions](https://bbglab.github.io/bbgwiki/Cluster_basics/NewFolders/).
 
 ## Properly organize your project folder
