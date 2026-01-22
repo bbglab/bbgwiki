@@ -1,6 +1,0 @@
-# MosaicForecast
-
-## Description
-
-
-## Reference

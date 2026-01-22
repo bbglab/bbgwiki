@@ -2,7 +2,10 @@
 
 Example of how to generate heatmaps (or clustermaps) with multiple annotations (rows and/or columns) using Seaborn.  
 
-Heatmaps are pretty easy to generate, however if we are interested in adding more than two annotations (column/s and/or row/s) the process might not be so trivial (especially to add the legends). If this is your objective, here you could find a couple of useful tips. Please check [Seaborn](https://seaborn.pydata.org) documentation if you didn't do so.
+Heatmaps are pretty easy to generate, however if we are interested in adding more than two annotations
+(column/s and/or row/s) the process might not be so trivial (especially to add the legends).
+If this is your objective, here you could find a couple of useful tips. Please check
+[Seaborn](https://seaborn.pydata.org) documentation if you didn't do so.
 
 ## Import packages and load toy data
 
@@ -41,7 +44,8 @@ plt.show()
 
 ## Heatmap with individual annotations
 
-We can add the first two annotation legends (rows and/or cols) using customized handles (custom artist objects that can be added to a legend in a Seaborn plot), `g.ax_col_dendrogram` and `g.ax_row_dendrogram`.
+We can add the first two annotation legends (rows and/or cols) using customized handles (custom artist objects
+that can be added to a legend in a Seaborn plot), `g.ax_col_dendrogram` and `g.ax_row_dendrogram`.
 
 ``` py
 def get_annotation_colors(series, cmap):
@@ -99,7 +103,9 @@ plt.show()
 
 ## Heatmap with multiple annotations
 
-As shown in the following example, it is possible to assign to `row_colors` or `col_colors` (parameters of `sns.clustermap`) a dataframe including all annotations we want. Furthremore, the legend of any extra annotation other than the first two can be added using the following function.
+As shown in the following example, it is possible to assign to `row_colors` or `col_colors` (parameters of
+`sns.clustermap`) a dataframe including all annotations we want. Furthremore, the legend of any extra annotation
+other than the first two can be added using the following function.
 
 ``` py
 def add_extra_legend(g, series, lut, title, bbox_to_anchor=(.01, 0.5)):
@@ -176,5 +182,6 @@ plt.show()
 
 ![Clustermap_02](../assets/images/clustermap_02.png)
 
-# Reference
+## Reference
+
 * Stefano Pellegrini

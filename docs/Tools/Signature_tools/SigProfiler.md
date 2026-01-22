@@ -1,6 +1,0 @@
-# SigProfiler
-
-## Description
-
-
-## Reference

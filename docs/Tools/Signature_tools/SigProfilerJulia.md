@@ -1,6 +1,0 @@
-# SigProfilerJulia
-
-## Description
-
-
-## Reference

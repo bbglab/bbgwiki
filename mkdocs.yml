@@ -1,15 +1,50 @@
 site_name: BBG-Wiki
 
+repo_url: https://github.com/bbglab/bbgwiki
+repo_name: bbgwiki
+edit_uri: edit/main/docs/
+
 theme:
   name: material
   palette:
-    primary: orange
-    accent: orange
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: orange
+      accent: deep_orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: orange
+      accent: deep_orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   logo: assets/images/bbglabLOGO_small.png
   favicon: assets/images/bbglabLOGO_small.png
+  icon:
+    repo: fontawesome/brands/git-alt
+    edit: material/pencil
+    view: material/eye
   features:
     - navigation.top
     - content.code.annotate
+    - search.suggest
+    - content.action.edit
+    - content.action.view
+
+plugins:
+  - search
+  - tags
+  - git-committers:
+      repository: bbglab/bbgwiki
+      branch: main
+  - git-revision-date-localized:
+      enable_creation_date: true
+
 
 markdown_extensions:
   - admonition
@@ -23,9 +58,37 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.details
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tilde
+
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX # Replace with Google Analytics tracking ID
+    feedback:
+      title: How Can We Make This Better??
+      ratings:
+        - icon: material/thumb-up
+          name: Helpful!
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: octicons/bug-16
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://github.com/bbglab/bbgwiki/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">feedback form</a>.

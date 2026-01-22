@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
@@ -25,6 +27,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: MkDocs gh-deploy
+        env:
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
         run: |
           git pull
           mkdocs gh-deploy --force

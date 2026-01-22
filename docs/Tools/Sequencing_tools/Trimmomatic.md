@@ -1,6 +1,0 @@
-# Trimmomatic
-
-## Description
-
-
-## Reference

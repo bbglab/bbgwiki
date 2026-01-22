@@ -1,6 +1,0 @@
-# Cutadapt
-
-## Description
-
-
-## Reference

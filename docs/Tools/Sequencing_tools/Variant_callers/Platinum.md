@@ -1,6 +1,0 @@
-# Platinum
-
-## Description
-
-
-## Reference
