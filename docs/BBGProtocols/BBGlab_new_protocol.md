@@ -28,13 +28,13 @@ Remember to follow the **[BBGlab best practices](https://bbglab.github.io/bbgwik
 
 Additionally, you should fill the **Project Compilation spreadsheet** that indicates all the paths in the cluster that you have been working in across all your projects. For that:
 
-1. Download the **[Project Compilation template](https://drive.google.com/drive/u/0/folders/1vGfO8B-vU-QRRf4ho4B5_Tnfe4neS7Y9)**
-2. Change the name of the document as follow:
+1. Create a copy of the **[Project Compilation template](https://docs.google.com/spreadsheets/d/1jJleTek9eP4S6CCe5fO8_M4-vLuKhumgKjlQ58jP_rc/edit?gid=0#gid=0)**
+2. Change the name of the document with your information as follow:
  `ProjectCompilation-202X-NameSurename` 
 3. Store it in your Google drive folder (to be updated once the bbglab shared drive is available to store it accordingly)
 4. Modify the document by removing the rows showing the examples, and adding our own entries.
 
-Remember to keep updating the file regularly so that information is available for everyone at any time. Note that this file will be needed once you do the **[BBGlab Exit Protocol](https://drive.google.com/drive/folders/1veXAAucPqNQ2KIVFLyEJqPVjEeDcqsR-)**.
+Remember to keep updating the file regularly so that information is available for everyone at any time. Note that this file will be needed once you do the **[BBGlab Exit Protocol](https://drive.google.com/file/d/1BnhLZCygroJ-dfamuZw8YvDgndIFmzzP/view?usp=drive_link)**.
 
 ## Properly organize your google drive
 
@@ -48,4 +48,5 @@ You can create a github account if you don't have one yet. Check the [Git guidel
 ## Reference
 
 - Elisabet Figuerola
+- Ferriol Calvet
 - Mònica Sánchez
