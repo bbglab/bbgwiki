@@ -1,7 +1,7 @@
 # BBGlab best practices
 
 We present some best practices to make your life easier and more efficient and when day comes to be able to set up
-the **[BBGlab Exit protocol](https://drive.google.com/file/d/1wdozeWRVyvnE1G7sXxMzVED-XGBzeh8L/view?usp=drive_link)**. 
+the **[BBGlab Exit protocol](https://drive.google.com/file/d/1wdozeWRVyvnE1G7sXxMzVED-XGBzeh8L/view?usp=drive_link)**.
 
 ## Organizing the data
 
