@@ -1,6 +1,6 @@
 # Docker
 
-Docker **Desktop** is free for educational, personal use, research, and non-commercial use, but check the [Docker Subscription Service Agreement overview](https://www.docker.com/legal/docker-subscription-service-agreement/) in case any of this applies to your intended use.
+Docker is a containerization software.
 
 ## Licensing (Docker Engine vs Docker Desktop)
 
@@ -9,13 +9,13 @@ The *Docker Engine* (the runtime/daemon `dockerd` and related components) is ope
 - Docker Engine licensing: https://docs.docker.com/engine/#licensing
 - Docker Engine upstream license (Moby project): https://github.com/moby/moby/blob/master/LICENSE
 
-Note: Docker Desktop is a separate product with its own subscription/license terms; Docker also notes that the licensing terms for the Docker/Moby open-source projects (such as Docker Engine) aren’t changing:
+Note: Docker Desktop is a separate product with its own subscription/license terms; the Docker Desktop is licensed under the [Docker Subscription Service Agreement overview](https://www.docker.com/legal/docker-subscription-service-agreement/). Docker also notes that the licensing terms for the Docker/Moby open-source projects (such as Docker Engine) aren’t changing:
 
 - Docker Desktop license agreement note: https://docs.docker.com/subscription/desktop-license/
 
 ## Description
 
-* You cannot use Docker in the cluster.
+* You cannot use Docker in the cluster (the engine is not intalled there and requires root privileges).
 
 * But you can use Docker to create your custom containers locally.
 
