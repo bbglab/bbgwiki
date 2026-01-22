@@ -1,16 +1,18 @@
 # Advice/Tips data visualization
 
-## Points of view presentation: [link](https://docs.google.com/presentation/d/1HvGeGT9NBhVc0SKlyTx5Fae_4aTbyyfjVA7LIUvFBZA/edit#slide=id.p) <!-- markdownlint-disable MD013-->
+## Points of view presentation
 
-Covering
+This [presentation](https://docs.google.com/presentation/d/1HvGeGT9NBhVc0SKlyTx5Fae_4aTbyyfjVA7LIUvFBZA/edit#slide=id.p) covers: 
 
-- Layout
-- Gestalt principles (how people organize visual information)
-- Color usage
-- Plot specific parts
-    - Heatmaps
-    - Networks
+- Composition and layout (includes gestalt principles, negative space...)
+- Elements of a figure (typograhy, axis-ticks-grids, labels and callouts, plotting symbols...)
+- Colour usage
+- Tips for specific plot types (bar charts and box plots, venn diagrams, heatmaps, pathways...)
+- Improving figure clarity
+- Multidimensional data
 - Plot horrors
+
+## Plot galleries
 
 ### BBGallery of plots (legacy from BBGcloud)
 
@@ -18,7 +20,7 @@ Covering
 - [Matplotlib](https://bbgcloud.irbbarcelona.org/dashboard/bggallery/examples_mpl/index.html)
 - [Bokeh](https://bbgcloud.irbbarcelona.org/dashboard/bggallery/examples_bkh/index.html)
 
-#### Other galleries
+### Other galleries
 
 - [The R Graph Gallery:](https://r-graph-gallery.com/) A collection of charts made with R, including reproducible code.
 
@@ -27,9 +29,9 @@ Covering
 - [awesome-genome-visualization](https://cmdcolin.github.io/awesome-genome-visualization/?latest=true): A curated list
   of tools and libraries for genome visualization, including interactive and static visualization options.
 
-### Color usage
+## Colour usage
 
-#### Perception of color
+### Perception of color
 
 Some important considerations when selecting a color palette include:
 
@@ -39,14 +41,29 @@ this criteria, e.g. the `viridis` palettes.
 [Color blindness simulators](https://www.color-blindness.com/coblis-color-blindness-simulator/). Can help with that.
 Also, the `colorblindr` R package can simulate color blindness to ggplot objects.
 
-#### Color palettes
+### Colour resources for plots
 
-- [ColoRBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3): Classic tool for picking colorblind-safe and print-friendly palettes.
-- [Viridis](https://search.r-project.org/CRAN/refmans/viridisLite/html/viridis.html): Perceptually uniform and colorblind-friendly.
-- [Color Palette Finder](https://r-graph-gallery.com/color-palette-finder) (Also accessible with the `paletteer` R package).
-- [Coolors](https://coolors.co/): Nice tool to explore and create palettes (but limited to ~5 colors).
+- Predefined color names
+    - [Matplotlib](https://matplotlib.org/stable/gallery/color/named_colors.html)
+- Predefined color palettes
+    - [Seaborn palettes](https://www.practicalpythonfordatascience.com/ap_seaborn_palette)
+    - [Seaborn palettes tutorial](https://seaborn.pydata.org/tutorial/color_palettes.html)
+    - [Matplotlib palettes](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
+    - [Viridis](https://search.r-project.org/CRAN/refmans/viridisLite/html/viridis.html): Perceptually uniform and colorblind-friendly.
+    - [Color Palette Finder](https://r-graph-gallery.com/color-palette-finder) (Also accessible with the `paletteer` R package).
+    - [ColoRBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3): Classic tool for picking colorblind-safe and print-friendly palettes.
 
-### Creating reusable themes in R
+- Generate customized palettes
+    - [iWantHue](https://medialab.github.io/iwanthue/): generate and refine palettes of 1 to more than 30 optimally
+  distinct colors, with option to set up the number of colours and hue. Option to export the colour IDs from your
+  palettes as json or lists in different formats (rgb, hex...) and save your own palettes when registered.
+    - [Coolors](https://coolors.co/palettes/palettes): this tool allows you to generate a palette from scratch and also search for preexisting palettes (you can search by colours, topics, styles, popularity, hex values...). Possible to save your own palettes when registered.
+
+
+
+## Creating reusable themes
+
+### Creating resuable themes in R
 
 Creating reusable themes in R is a great way to ensure consistency and save time across visualizations.
 
@@ -97,21 +114,6 @@ Use your theme across all plots in a session:
 ```R
 theme_set(theme_tidy())
 ```
-
-### Colour resources for plots
-
-- Predefined color names
-    - [Matplotlib](https://matplotlib.org/stable/gallery/color/named_colors.html)
-- Predefined color palettes
-    - [Seaborn palettes](https://www.practicalpythonfordatascience.com/ap_seaborn_palette)
-    - [Seaborn palettes tutorial](https://seaborn.pydata.org/tutorial/color_palettes.html)
-    - [Matplotlib palettes](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
-- Generate customized palettes
-    - [iWantHue](https://medialab.github.io/iwanthue/): generate and refine palettes of 1 to more than 30 optimally
-  distinct colors, with option to set up the number of colours and hue. Option to export the colour IDs from your
-  palettes as json or lists in different formats (rgb, hex...) and save your own palettes when registered.
-    - [coolors](https://coolors.co/palettes/palettes): set up from 1 to 10 colour palettes searching for colours, topics,
-  styles, popularity, hex values... Possible to save your own palettes when registered.
 
 ## Reference
 
