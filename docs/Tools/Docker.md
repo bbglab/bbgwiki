@@ -13,8 +13,8 @@ Docker is a containerization software.
 Internally we have this GitHub repository with the receipes for many of the custom containers that we are generating and
  hosting in our dockerhub.
 
-If you need/want to create a new container, you can follow guidelines on how is the most appropriate way of doing it, and
- once you have a working version of it, you must:
+If you need/want to create a new container, you can follow guidelines on how is the most appropriate way of doing it,
+and once you have a working version of it, you must:
 
 * Add your Dockerfile and associated files required for generating the container to our
  [GitHub repository of containers](https://github.com/bbglab/containers-recipes). Make sure that your container is fully
