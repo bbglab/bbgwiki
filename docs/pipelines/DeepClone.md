@@ -33,6 +33,22 @@ check the [S3 entry](https://bbglab.github.io/bbgwiki/Cluster_basics/s3/#termina
 
 ## Metrics
 
+These are a set of metrics that help us understand two key aspects: whether our duplex libraries have properly worked and importantly to estimate how much sequencing output should be requested to avoid undersequencing but most importantly oversequencing.  
+
+*When should I run metrics*
+
+Everytime you do a new deepUMIcaller run and before running deepCSA. 
+
+*Why?* 
+
+1. To validate you have included all GBs of data available for that library (all lanes and reseqs)
+2. To check whether you library has been sequenced to optimal or additional reseq needs to be requested 
+3. To continue the effort of compiling these metrics to keep improving our understanding of the duplex protocol
+
+*How*
+
+You can find the instructions on how to run them and additional documentation on metrics in our internal duplex documentation.
+
 ## deepCSA
 
 We use the code available in [deepCSA](https://github.com/bbglab/deepCSA.git), we generally use the dev branch
