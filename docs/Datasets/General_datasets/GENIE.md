@@ -18,7 +18,7 @@ Take into account that some IMPACT panel data could be duplicated in the cbiopor
 ```/data/bbg/datasets/intogen/input/data/cancer/panels/cbioportal/```.
 The IMPACT panels from cbioportal have more clinical data.   
 
-**Important note**
+### Important note
 > This dataset has synonymous mutations filtered. It cannot be used for intOGen.
 
 
