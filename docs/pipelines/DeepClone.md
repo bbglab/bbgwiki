@@ -28,6 +28,9 @@ We run it via Seqera platform so that we have full record of the runs and coordi
 
 We always put the work directory in /scratch and the outputs can either go to the s3 or to nobackup or nobackup2.
 
+If you have to access the s3 either for saving concats or for storing the output of deepUMIcaller there,
+check the [S3 entry](https://bbglab.github.io/bbgwiki/Cluster_basics/s3/#terminal) in this wiki.
+
 ## Metrics
 
 ## deepCSA
