@@ -1,6 +1,17 @@
 # Docker
 
-It's free for educational, personal use, research, non commercial use but check this for [an overview of the Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/) in case any of this applies to the use that you want to make out of it.
+Docker **Desktop** is free for educational, personal use, research, and non-commercial use, but check the [Docker Subscription Service Agreement overview](https://www.docker.com/legal/docker-subscription-service-agreement/) in case any of this applies to your intended use.
+
+## Licensing (Docker Engine vs Docker Desktop)
+
+The *Docker Engine* (the runtime/daemon `dockerd` and related components) is open source and distributed under the **Apache License 2.0** (a permissive license). Docker explicitly documents this in the Docker Engine manual:
+
+- Docker Engine licensing: https://docs.docker.com/engine/#licensing
+- Docker Engine upstream license (Moby project): https://github.com/moby/moby/blob/master/LICENSE
+
+Note: Docker Desktop is a separate product with its own subscription/license terms; Docker also notes that the licensing terms for the Docker/Moby open-source projects (such as Docker Engine) aren’t changing:
+
+- Docker Desktop license agreement note: https://docs.docker.com/subscription/desktop-license/
 
 ## Description
 
