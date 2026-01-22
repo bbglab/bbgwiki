@@ -1,7 +1,7 @@
 # BBGlab best practices
 
 We present some best practices to make your life easier and more efficient and when day comes to be able to set up
-the **[BBGlab Exit protocol](https://drive.google.com/drive/folders/1veXAAucPqNQ2KIVFLyEJqPVjEeDcqsR-)**.
+the **[BBGlab Exit protocol](https://drive.google.com/file/d/1wdozeWRVyvnE1G7sXxMzVED-XGBzeh8L/view?usp=drive_link)**. 
 
 ## Organizing the data
 
@@ -87,7 +87,7 @@ Everywhere where you store files (Cluster, Drive, Cloud, Computer)
 
 **Store** only essential files in the cluster by ensuring you **erase** **intermediate or temporary** files
 that are no longer needed. **Archive** the essential files from completed projects to keep the cluster clean and
-manageable (ask Miguel). Instructions on how to archive files in the BBGcluster here.
+manageable. Check how to archive files [here](https://bbglab.github.io/bbgwiki/Datasets/Archive_data/).
 
 ## Track and Manage Your Code with GitHub
 
