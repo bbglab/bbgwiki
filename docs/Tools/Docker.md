@@ -1,6 +1,6 @@
 # Docker
 
-It's free for educational, personal use, research, non commercial use.
+It's free for educational, personal use, research, non commercial use but check this for [an overview of the Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/) in case any of this applies to the use that you want to make out of it.
 
 ## Description
 
