@@ -4,7 +4,7 @@
 
 ### What is Model Context Protocol?
 
-Model Context Protocol (MCP) is an open-source standard that enables AI applications like GitHub Copilot to connect to external systems and data sources. Think of it as a universal adapter that allows your AI coding assistant to access and interact with various tools, databases, file systems, and services directly from within your development environment.
+Model Context Protocol (MCP) is an open-source standard that enables AI applications like GitHub Copilot to connect to external systems and data sources. Think of it as a universal adapter that allows your AI coding assistant to access and interact with various tools, databases, file systems, and services directly from within your development environment. You can check the documentation in [MCP Documentation](https://modelcontextprotocol.io/docs/getting-started/intro)
 
 ![mcp intro](../../assets/images/mcps_intro.png)
 
@@ -32,7 +32,7 @@ Before setting up MCP with GitHub Copilot, ensure you have:
 
 ### Finding MCP Servers
 
-1. Browse the [MCP servers registry](https://github.com/modelcontextprotocol/servers)
+You can browse the [MCP servers registry](https://github.com/modelcontextprotocol/servers)
 
 
 ### Installation
