@@ -1,7 +1,7 @@
 # BBGlab best practices
 
 We present some best practices to make your life easier and more efficient and when day comes to be able to set up
-the **[BBGlab Exit protocol](https://drive.google.com/drive/folders/1veXAAucPqNQ2KIVFLyEJqPVjEeDcqsR-)**.
+the **[BBGlab Exit protocol](https://drive.google.com/drive/folders/1J4g41r7yjrfcWTpiV5dvY_5e6UDgOIJz)**.
 
 ## Organizing the data
 
@@ -9,7 +9,7 @@ the **[BBGlab Exit protocol](https://drive.google.com/drive/folders/1veXAAucPqNQ
 
 You MUST add all the relevant information about your finished or ongoing project in:
 
-1. [ProjectCompilation](https://docs.google.com/spreadsheets/d/1jJleTek9eP4S6CCe5fO8_M4-vLuKhumgKjlQ58jP_rc/edit?gid=0#gid=0) <!-- markdownlint-disable MD013 -->
+1. [ProjectCompilation](https://docs.google.com/spreadsheets/d/1jJleTek9eP4S6CCe5fO8_M4-vLuKhumgKjlQ58jP_rc) <!-- markdownlint-disable MD013 -->
 google spreadsheet. It should be one file per BBGlab member.
 2. [BBGlab datasets](https://bbglab.github.io/bbgwiki/Datasets/Datasets_BBGLAB/) google spreadsheet.
 

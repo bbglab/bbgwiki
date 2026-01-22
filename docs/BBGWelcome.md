@@ -11,7 +11,7 @@ Here you can find some resources to help you start smoothly.
 ## Files
 
 - [NextCloud](https://bbgcloud.irbbarcelona.org/)
-- [Google Drive](https://drive.google.com/)
+- [BBGLab Google Drive](https://drive.google.com/drive/folders/0APa234db0TwuUk9PVA)
 
 ## Social
 

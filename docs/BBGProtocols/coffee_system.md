@@ -3,9 +3,8 @@
 ## System for the coffee
 
 - Every week there is one person responsible for cleaning the coffee machine.
-- The list is
-[here](https://docs.google.com/spreadsheets/d/1fA5wBTpkHbuZXG3J1i39s_XP5k__pzl_qwYGCRwjgvI/edit#gid=2079108469) in the
-same group meetings & agora sheet, on the right side.
+- The list is on the [drive](https://docs.google.com/spreadsheets/d/1fA5wBTpkHbuZXG3J1i39s_XP5k__pzl_qwYGCRwjgvI/) in
+the same group meetings & agora sheet, on the right side.
 - The same list works for cleaning the coffee machine (weekly, our names are on it) and buying coffee (every time we
 buy we write our name).
 - Anytime there is one package left of coffee, we tell the next person in the list, and once this person buys coffee we

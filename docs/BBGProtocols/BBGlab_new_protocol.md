@@ -29,8 +29,8 @@ Remember to follow the
 when organizing your project directory.
 In addition, you should create a copy of the **Project Compilation spreadsheet** with your name,
 fill it up with the information of your project/s and keep updating it whenever needed.
-Please find the Project Compilation files
-[here](https://drive.google.com/drive/u/0/folders/1vGfO8B-vU-QRRf4ho4B5_Tnfe4neS7Y9).
+Please find here the
+[Project Compilation files](https://drive.google.com/drive/folders/14SS8kvBcCrPsdwg3ETbTn-c9Erwu702a).
 
 ## Properly organize your google drive
 
