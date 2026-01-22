@@ -4,7 +4,7 @@ Docker is a containerization software.
 
 ## Description
 
-* You cannot use Docker in the cluster (the engine is not intalled there and requires root privileges).
+* You cannot use Docker in the cluster (the engine is not installed there and requires root privileges).
 
 * But you can use Docker to create your custom containers locally.
 
