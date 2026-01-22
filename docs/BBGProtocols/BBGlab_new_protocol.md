@@ -15,7 +15,7 @@ This folder should contain all the original data (or mildly processed data) of y
 (fastq files, bam files, vcf files, maf files, etc.).
 
 To create these folders in the cluster,
-follow [these instrucions](https://bbglab.github.io/bbgwiki/Cluster_basics/NewFolders/).
+follow [these instructions](https://bbglab.github.io/bbgwiki/Cluster_basics/NewFolders/).
 
 Remember to add the dataset to the **BBG Datasets spreadsheet**, either if it is external
 (downloaded from a repository, from a collaborator) or internal (in house sequenced).
