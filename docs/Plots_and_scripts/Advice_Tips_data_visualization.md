@@ -2,10 +2,11 @@
 
 ## Points of view presentation
 
-This [presentation](https://docs.google.com/presentation/d/1HvGeGT9NBhVc0SKlyTx5Fae_4aTbyyfjVA7LIUvFBZA/edit#slide=id.p) covers: 
+This [presentation](https://docs.google.com/presentation/d/1HvGeGT9NBhVc0SKlyTx5Fae_4aTbyyfjVA7LIUvFBZA/edit#slide=id.p)
+covers:
 
 - Composition and layout (includes gestalt principles, negative space...)
-- Elements of a figure (typograhy, axis-ticks-grids, labels and callouts, plotting symbols...)
+- Elements of a figure (typography, axis-ticks-grids, labels and callouts, plotting symbols...)
 - Colour usage
 - Tips for specific plot types (bar charts and box plots, venn diagrams, heatmaps, pathways...)
 - Improving figure clarity
@@ -49,21 +50,24 @@ Also, the `colorblindr` R package can simulate color blindness to ggplot objects
     - [Seaborn palettes](https://www.practicalpythonfordatascience.com/ap_seaborn_palette)
     - [Seaborn palettes tutorial](https://seaborn.pydata.org/tutorial/color_palettes.html)
     - [Matplotlib palettes](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
-    - [Viridis](https://search.r-project.org/CRAN/refmans/viridisLite/html/viridis.html): Perceptually uniform and colorblind-friendly.
-    - [Color Palette Finder](https://r-graph-gallery.com/color-palette-finder) (Also accessible with the `paletteer` R package).
-    - [ColoRBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3): Classic tool for picking colorblind-safe and print-friendly palettes.
+    - [Viridis](https://search.r-project.org/CRAN/refmans/viridisLite/html/viridis.html): Perceptually uniform and
+      colorblind-friendly.
+    - [Color Palette Finder](https://r-graph-gallery.com/color-palette-finder) (Also accessible with the
+      `paletteer` R package).
+    - [ColoRBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3): Classic tool for picking
+      colorblind-safe and print-friendly palettes.
 
 - Generate customized palettes
     - [iWantHue](https://medialab.github.io/iwanthue/): generate and refine palettes of 1 to more than 30 optimally
   distinct colors, with option to set up the number of colours and hue. Option to export the colour IDs from your
   palettes as json or lists in different formats (rgb, hex...) and save your own palettes when registered.
-    - [Coolors](https://coolors.co/palettes/palettes): this tool allows you to generate a palette from scratch and also search for preexisting palettes (you can search by colours, topics, styles, popularity, hex values...). Possible to save your own palettes when registered.
-
-
+    - [Coolors](https://coolors.co/palettes/palettes): this tool allows you to generate a palette from scratch
+      and also search for preexisting palettes (you can search by colours, topics, styles, popularity, hex
+      values...). Possible to save your own palettes when registered.
 
 ## Creating reusable themes
 
-### Creating resuable themes in R
+### Creating reusable themes in R
 
 Creating reusable themes in R is a great way to ensure consistency and save time across visualizations.
 
