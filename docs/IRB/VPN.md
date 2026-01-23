@@ -41,11 +41,11 @@ as the cluster.
 7. In the "Add a new connection" window, click the "XML" tab, then click the "+ Import XML Configuration" button,
    and finally click "Save".
    !!! note "Important"
-       **Don't introduce your password here**. This will be done in the next steps.
+       **Don't enter your password here**. This will be done in the next steps.
 
 8. Now, back in the initial FortiClient VPN window, you should see "VPN-Nexica". Click the three-bar menu icon again
    and select "Edit the selected connection".
-9. Here, you can optionally click on the option "Save login", and then introduce your cluster username and then your
+9. Here, you can optionally click on the option "Save login", and then enter your cluster username and then your
    password. Click "Save".
 
     !!! warning "Security Notice"
