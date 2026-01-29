@@ -30,6 +30,8 @@ as the cluster.
 
     ```sh
     sudo su
+    ```
+    ```sh
     mkdir -p /etc/systemd/resolved.conf.d && echo -e "[Resolve]\nDNS=10.10.16.4\nDomains=~sc.irbbarcelona.org" >  /etc/systemd/resolved.conf.d/vpn.conf && systemctl restart systemd-resolved
     ```
 
@@ -43,7 +45,7 @@ as the cluster.
    !!! note "Important"
        **Don't enter your password here**. This will be done in the next steps.
 
-8. Now, back in the initial FortiClient VPN window, you should see "VPN-Nexica". Click the three-bar menu icon again
+8. Now, back in the initial FortiClient VPN window, you should see "VPN-nexica". Click the three-bar menu icon again
    and select "Edit the selected connection".
 9. Here, you can optionally click on the option "Save login", and then enter your cluster username and then your
    password. Click "Save".
@@ -58,8 +60,8 @@ as the cluster.
 
 | Description         | Command                                 |
 | ------------------- | --------------------------------------- |
-| Connect to VPN      | `forticlient vpn connect VPN-Nexica`    |
-| Disconnect from VPN | `forticlient vpn disconnect VPN-Nexica` |
+| Connect to VPN      | `forticlient vpn connect VPN-nexica`    |
+| Disconnect from VPN | `forticlient vpn disconnect VPN-nexica` |
 | Check VPN status    | `forticlient vpn status`                |
 
 ## References
