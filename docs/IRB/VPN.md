@@ -31,6 +31,7 @@ as the cluster.
     ```sh
     sudo su
     ```
+
     ```sh
     mkdir -p /etc/systemd/resolved.conf.d && echo -e "[Resolve]\nDNS=10.10.16.4\nDomains=~sc.irbbarcelona.org" >  /etc/systemd/resolved.conf.d/vpn.conf && systemctl restart systemd-resolved
     ```
