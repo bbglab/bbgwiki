@@ -65,6 +65,10 @@ as the cluster.
 | Disconnect from VPN | `forticlient vpn disconnect VPN-nexica` |
 | Check VPN status    | `forticlient vpn status`                |
 
+> [!NOTE]  
+> If the VPN remains in a 'Connecting' state after following these steps, try restarting your device.
+> If this does not solve the issue, contact ITN.
+
 ## References
 
 - Carlos López-Elorduy
