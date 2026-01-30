@@ -1,47 +1,74 @@
 # VPN
 
-When working from home or outside the PCB, connecting to the VPN is neeeded in order to have access to resources such
+When working from home or outside the PCB, connecting to the VPN is needed in order to have access to resources such
 as the cluster.
 
-Since December 2023, the setup for setting up the VPN has changed. Now, it is required to have a Two Factor
-Authentication using an Authenticator app.
+## First Things First - Install the FortiClient
 
-## First Things First - Setting Up
+1. Go to
+   [https://www.fortinet.com/support/product-downloads#vpn](https://www.fortinet.com/support/product-downloads#vpn)
+2. Download the FortiClient VPN
+   ![forticlient_web](../assets/images/forticlient_web.png)
 
-After you changed your initial password to your preferred password, as explained in the letter, you are ready to
-set up your two-factor authentication needed for the VPN.
+3. Install the FortiClient VPN on your system.
+    - On Ubuntu/Debian, run:
 
-[Two Factor Authentication PDF](https://www.pcb.ub.edu/wp-content/uploads/2023/11/two-factor_authentication.pdf)
+        ```sh
+        sudo apt-get install ./<your-downloaded-forticlient-file>.deb
+        ```
 
-Once your two-factor authentication is set up, you are ready to connect to the VPN.
+    - On other operating systems, double-click the downloaded installer and follow the on-screen instructions.
 
-## Connecting on Linux
+4. Once FortiClient is installed, if you are on Ubuntu, run:
 
-### Ubuntu 20.04 / 22.04
+    !!! warning "DNS Configuration Warning"
+        The following commands require administrator privileges and permanently change your system-wide DNS
+        configuration. This will force DNS queries to use the server `10.10.16.4` and the domain
+        `sc.irbbarcelona.org` even when you are not connected to the VPN. To revert this change later, remove the
+        file and restart systemd-resolved:
+        `sudo rm /etc/systemd/resolved.conf.d/vpn.conf && sudo systemctl restart systemd-resolved`
 
-[Openconnect-Client Setup - pdf](https://www.pcb.ub.edu/wp-content/uploads/Configuracio-VPN-Linux-Ubuntu-catala_EN_RR.pdf)<!--markdownlint-disable MD013-->
+    ```sh
+    sudo su
+    ```
 
-## Possible Errors
+    ```sh
+    mkdir -p /etc/systemd/resolved.conf.d && echo -e "[Resolve]\nDNS=10.10.16.4\nDomains=~sc.irbbarcelona.org" >  /etc/systemd/resolved.conf.d/vpn.conf && systemctl restart systemd-resolved
+    ```
 
-### VPN stuck on Login successful
+5. Download
+   [this configuration file](https://drive.google.com/file/d/11XyRfBM4eGn08a3qsiKY1PLBa7DIBTuS/view?usp=drive_link)
+   to your computer. Keep this configuration file; you will import it into FortiClient in the following steps.
+6. In the FortiClient VPN main window, click the three-bar menu icon (usually in the top-right corner) and select
+   "Add a new connection".
+7. In the "Add a new connection" window, click the "XML" tab, then click the "+ Import XML Configuration" button,
+   and finally click "Save".
+   !!! note "Important"
+       **Don't enter your password here**. This will be done in the next steps.
 
-With Ubuntu 22, if you keep getting stuck on "Login Successful", here is a fix:
+8. Now, back in the initial FortiClient VPN window, you should see "VPN-nexica". Click the three-bar menu icon again
+   and select "Edit the selected connection".
+9. Here, you can optionally click on the option "Save login", and then enter your cluster username and then your
+   password. Click "Save".
 
-In your terminal do:
+    !!! warning "Security Notice"
+        Only use **Save login** on your own trusted, non-shared computer. On shared or public machines, or in
+        high-security environments, leave **Save login** disabled and enter your password manually each time.
 
-```sh
-sudo add-apt-repository ppa:dwmw2/openconnect
-sudo apt update
-sudo apt-get install openconnect
-```
+10. Now you are ready. Click connect!
 
-This should fix the default way to connect to the VPN.
+## Connecting from the terminal
 
-## Full instructions
+| Description         | Command                                 |
+| ------------------- | --------------------------------------- |
+| Connect to VPN      | `forticlient vpn connect VPN-nexica`    |
+| Disconnect from VPN | `forticlient vpn disconnect VPN-nexica` |
+| Check VPN status    | `forticlient vpn status`                |
 
-[VPN tutorial - pdf](https://drive.google.com/file/d/1-YJJEQLtHlNQ6EX1x1cLLRB6zQdLXrn4/view)
+> [!NOTE]  
+> If the VPN remains in a 'Connecting' state after following these steps, try restarting your device.
+> If this does not solve the issue, contact ITN.
 
 ## References
 
-- Miguel Grau
 - Carlos López-Elorduy
