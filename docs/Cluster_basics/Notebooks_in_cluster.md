@@ -89,8 +89,8 @@ ssh -L <port>:<node>:<port> -p 22022 <username>@bbgcluster
 # For example: ssh -L 8888:bbgn005:8888 -p 22022 clopeze@bbgcluster
 
 # IRB cluster example. No port required
-ssh -L <port>:<node>:<port> <username>@irblogin02.irbbarcelona.pcb.ub.es
-# For example: ssh -L 8888:irbccn39:8888 mgrau@irblogin02.irbbarcelona.pcb.ub.es
+ssh -L <port>:<node>:<port> <username>@irblogin02.sc.irbbarcelona.org
+# For example: ssh -L 8888:irbccn39:8888 mgrau@irblogin02.sc.irbbarcelona.org
 ```
 
 !!! note
