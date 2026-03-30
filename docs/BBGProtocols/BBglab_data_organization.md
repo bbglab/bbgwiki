@@ -9,12 +9,16 @@ the **[BBGlab Exit protocol](https://drive.google.com/file/d/1BnhLZCygroJ-dfamuZ
 
 You MUST add all the relevant information about your finished or ongoing project in:
 
-1. **Project Compilation file**: this file indicates all the paths in the cluster that you have been working in across all your projects. For that:
-    1. Copy the **[Project Compilation template](https://docs.google.com/spreadsheets/d/1jJleTek9eP4S6CCe5fO8_M4-vLuKhumgKjlQ58jP_rc/edit?gid=0#gid=0)** and store it in the [Projects Personal Spreadsheet folder](https://drive.google.com/drive/folders/14SS8kvBcCrPsdwg3ETbTn-c9Erwu702a?usp=drive_link). It should be one file per BBGlab member stored.
-    2. Change the name of the document with your information as follow: `ProjectCompilation-202X-NameSurname`
-    3. Modify the document by removing the rows showing the examples and add your own entries.
+1. **Project Compilation file**: this file indicates all the paths in the cluster that you have been
+   working in across all your projects. For that:
+     1. Copy the **[Project Compilation template](https://docs.google.com/spreadsheets/d/1jJleTek9eP4S6CCe5fO8_M4-vLuKhumgKjlQ58jP_rc/edit?gid=0#gid=0)**
+         and store it in the [Projects Personal Spreadsheet folder](https://drive.google.com/drive/folders/14SS8kvBcCrPsdwg3ETbTn-c9Erwu702a?usp=drive_link).
+         It should be one file per BBGlab member stored.
+     2. Change the name of the document with your information as follow: `ProjectCompilation-202X-NameSurname`
+     3. Modify the document by removing the rows showing the examples and add your own entries.
 
-2. **[BBGlab datasets file](https://bbglab.github.io/bbgwiki/Datasets/Datasets_BBGLAB/)**: includes all the information about the datasets we use (both internal or external).
+2. **[BBGlab datasets file](https://bbglab.github.io/bbgwiki/Datasets/Datasets_BBGLAB/)**: includes all the
+   information about the datasets we use (both internal or external).
 
 > **It is essential to fill all these files so that all your project data is updated and stored. It is the
 > responsibility of ALL the users involved in the project to keep it updated!**
@@ -90,13 +94,13 @@ Everywhere where you store files (Cluster, Drive, Cloud, Computer)
 
 **Store** only essential files in the cluster by ensuring you **erase** **intermediate or temporary** files
 that are no longer needed. **Archive** the essential files from completed projects to keep the cluster clean and
-manageable, find how to archive files [here](https://bbglab.github.io/bbgwiki/Datasets/Archive_data/).
+manageable, find how to archive files [in our archiving guide](https://bbglab.github.io/bbgwiki/Datasets/Archive_data/).
 
 ## Track and Manage Your Code with GitHub
 
 It is highly recommended to **create a GitHub repository** for your project code and regularly update it to track
 changes, share it with others, review it... Find all documentation on how to work with GitHub repositories
-[here](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories).
+[in the GitHub documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories).
 
 ## Be environmentally friendly
 
@@ -115,7 +119,7 @@ make it more efficiently with many tools like:
     - [nf-co2footprint](https://github.com/nextflow-io/nf-co2footprint)
     - [CodeCarbon](https://codecarbon.io/)
     - [carbontracker](https://github.com/lfwa/carbontracker)
-    - Check out more [here](https://github.com/GreenAlgorithms/GreenAlgorithms4HPC)
+    - Check out more [green algorithms resources](https://github.com/GreenAlgorithms/GreenAlgorithms4HPC)
 
 Check Loïc Lannealongue [talk](<https://summit.nextflow.io/2024/barcelona/agenda/10-30--towards-environmentally-sustainable-computational-science/>) <!-- markdownlint-disable MD013 -->
 in Nextflow Submit 2024 in Barcelona to learn more about this.
