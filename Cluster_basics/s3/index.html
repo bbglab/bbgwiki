@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1076,8 +1076,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#samtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Samtools
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5411,8 +5433,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#samtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Samtools
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5469,6 +5513,7 @@
 <li><a href="#dask">dask</a></li>
 </ul>
 </li>
+<li><a href="#samtools">Samtools</a></li>
 </ul>
 </li>
 </ul>
@@ -5587,6 +5632,8 @@ download files, but you cannot modify existing objects or upload new ones from t
 </li>
 <li>
 <p>Verify that your credentials are valid, or create new ones if they have expired.
+    The credentials created will be <code>~/.config/rclone/rclone.conf</code><br />
+    (the same if using <a href="#terminal-from-irb-cluster">the terminal</a>)
     <img alt="s3 open onDemand credentials" src="../../assets/images/s3-ooo-credentials.png" /></p>
 </li>
 <li>
@@ -5711,6 +5758,40 @@ that can handle massive datasets seamlessly.</p>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># Display the first few rows</span>
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
+<h3 id="samtools">Samtools<a class="headerlink" href="#samtools" title="Permanent link">&para;</a></h3>
+<p>First, you need to have your s3 credentials ready, as explained in the <a href="#how-to-access">How to access</a> section.</p>
+<p>Create a conda env:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>samtools-s3<span class="w"> </span>-c<span class="w"> </span>bioconda<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>samtools
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>samtools-s3
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">#Check if samtools is compiled with the s3 options:</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>$<span class="w"> </span>samtools<span class="w"> </span>--version<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;S3=yes|Amazon S3:&quot;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Features:<span class="w">       </span><span class="nv">build</span><span class="o">=</span>configure<span class="w"> </span><span class="nv">libcurl</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">S3</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">GCS</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">libdeflate</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">lzma</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">bzip2</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">plugins</span><span class="o">=</span>yes<span class="w"> </span>plugin-path<span class="o">=</span>/home/bbg/mgrau/apps/miniconda3.7/envs/samtools-s3/libexec/htslib:<span class="w"> </span><span class="nv">htscodecs</span><span class="o">=</span><span class="m">1</span>.6.6
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span>Amazon<span class="w"> </span>S3:<span class="w"> </span>s3+https,<span class="w"> </span>s3,<span class="w"> </span>s3+http
+</code></pre></div>
+<p>Create a config file (replace access_key/secret_key/access_token with your <code>~/.config/rclone/rclone.conf</code> values):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>cat<span class="w"> </span>~/.hts/s3cfg_minio
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">[</span>default<span class="o">]</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nv">access_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>XXX
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nv">secret_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>YYYY
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nv">access_token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ZZZZ
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nv">host_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>irbminio.irbbarcelona.pcb.ub.es:9000
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nv">host_bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>irbminio.irbbarcelona.pcb.ub.es:9000
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nv">use_https</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>False
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nv">signature_v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>False
+</code></pre></div>
+<p>Include two new entries in your .basrhrc</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">#Para samtools s3</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HTS_S3_S3CFG</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.hts/s3cfg_minio&quot;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HTS_S3_ADDRESS_STYLE</span><span class="o">=</span><span class="s2">&quot;path&quot;</span>
+</code></pre></div>
+<p>And test:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>samtools<span class="w"> </span>view<span class="w"> </span>-H<span class="w"> </span>s3+http://bbg-scratch/test/test.bam
+</code></pre></div>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Miguel Grau</li>
+<li>Federica Brando</li>
+</ul>
 
 
 
@@ -5733,7 +5814,7 @@ that can handle massive datasets seamlessly.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 5, 2026 15:05:58 UTC">March 5, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 30, 2026 10:07:55 UTC">March 30, 2026</span>
   </span>
 
     
