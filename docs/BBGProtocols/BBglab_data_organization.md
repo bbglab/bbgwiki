@@ -98,13 +98,13 @@ Everywhere where you store files (Cluster, Drive, Cloud, Computer)
 
 **Store** only essential files in the cluster by ensuring you **erase** **intermediate or temporary** files
 that are no longer needed. **Archive** the essential files from completed projects to keep the cluster clean and
-manageable, find how to archive files [here](https://bbglab.github.io/bbgwiki/Datasets/Archive_data/).
+manageable, find how to archive files [in our archiving guide](https://bbglab.github.io/bbgwiki/Datasets/Archive_data/).
 
 ## Track and Manage Your Code with GitHub
 
 It is highly recommended to **create a GitHub repository** for your project code and regularly update it to track
 changes, share it with others, review it... Find all documentation on how to work with GitHub repositories
-[here](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories).
+[in the GitHub documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories).
 
 ## Be environmentally friendly
 
@@ -123,7 +123,7 @@ make it more efficiently with many tools like:
     - [nf-co2footprint](https://github.com/nextflow-io/nf-co2footprint)
     - [CodeCarbon](https://codecarbon.io/)
     - [carbontracker](https://github.com/lfwa/carbontracker)
-    - Check out more [here](https://github.com/GreenAlgorithms/GreenAlgorithms4HPC)
+    - Check out more [green algorithms resources](https://github.com/GreenAlgorithms/GreenAlgorithms4HPC)
 
 Check Loïc Lannealongue [talk](<https://summit.nextflow.io/2024/barcelona/agenda/10-30--towards-environmentally-sustainable-computational-science/>) <!-- markdownlint-disable MD013 -->
 in Nextflow Submit 2024 in Barcelona to learn more about this.
