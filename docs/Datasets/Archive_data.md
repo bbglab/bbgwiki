@@ -5,7 +5,7 @@ Any folder in the cluster that we think should be archived we have to communicat
 ## Description
 
 We have [this google form](
-https://docs.google.com/forms/d/e/1FAIpQLSdAGooKCttwBWhTyfplFby8aRI1G4qAGepZKBZ-8RHxLM-kjA/viewform?usp=dialo
+https://docs.google.com/forms/d/e/1FAIpQLSdAGooKCttwBWhTyfplFby8aRI1G4qAGepZKBZ-8RHxLM-kjA/viewform?usp=dialog
 )
 to annotate any folder/dataset we want to archive.  
 This way Miguel has a follow up table with all the listed data pending to archive.
