@@ -9,15 +9,23 @@ the **[BBGlab Exit protocol](https://drive.google.com/file/d/1BnhLZCygroJ-dfamuZ
 
 You MUST add all the relevant information about your finished or ongoing project in:
 
-1. **Project Compilation file**: this file indicates all the paths in the cluster that you have been working in across all your projects. For that:
-    1. Copy the **[Project Compilation template](https://docs.google.com/spreadsheets/d/1jJleTek9eP4S6CCe5fO8_M4-vLuKhumgKjlQ58jP_rc/edit?gid=0#gid=0)** and store it in the [Projects Personal Spreadsheet folder](https://drive.google.com/drive/folders/14SS8kvBcCrPsdwg3ETbTn-c9Erwu702a?usp=drive_link). It should be one file per BBGlab member stored.
+1. **Project Compilation file**: this file indicates all the paths in the cluster that you have been working in
+    across all your projects. For that:
+    1. Copy the
+**[Project Compilation template](
+    https://docs.google.com/spreadsheets/d/1jJleTek9eP4S6CCe5fO8_M4-vLuKhumgKjlQ58jP_rc/edit?gid=0#gid=0)**
+     and store it in the
+     [Projects Personal Spreadsheet folder](
+        https://drive.google.com/drive/folders/14SS8kvBcCrPsdwg3ETbTn-c9Erwu702a?usp=drive_link)
+     . It should be one file per BBGlab member stored.
     2. Change the name of the document with your information as follow: `ProjectCompilation-202X-NameSurname`
     3. Modify the document by removing the rows showing the examples and add your own entries.
 
-2. **[BBGlab datasets file](https://bbglab.github.io/bbgwiki/Datasets/Datasets_BBGLAB/)**: includes all the information about the datasets we use (both internal or external).
+2. **[BBGlab datasets file](https://bbglab.github.io/bbgwiki/Datasets/Datasets_BBGLAB/)**: includes all the information
+    about the datasets we use (both internal or external).
 
-> **It is essential to fill all these files so that all your project data is updated and stored. It is the
-> responsibility of ALL the users involved in the project to keep it updated!**
+> **It is essential to fill all these files so that all your project data is updated and stored.
+> It is the responsibility of ALL the users involved in the project to keep it updated!**
 
 Organize your project directories with this basic structure:
 
