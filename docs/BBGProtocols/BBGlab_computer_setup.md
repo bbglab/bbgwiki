@@ -1,6 +1,6 @@
 # New member computer setup
 
-Welcome to the BBG lab! Here's a checklist that will guide you through getting your computer set up. 
+Welcome to the BBG lab! Here's a checklist that will guide you through getting your computer set up.
 
 1. Download or set up:
     - forticlient VPN
@@ -8,7 +8,7 @@ Welcome to the BBG lab! Here's a checklist that will guide you through getting y
     - .bashrc
     - LibreOffice (open access version of Microsoft Office)
 2. Engineering team will give you access to:
-    - Slack 
+    - Slack
     - BBGlab organization on Github (make your account if you don't have one already)
     - bbgcloud (Nextcloud)
     - Google group: ITS-BBG
@@ -18,7 +18,7 @@ Welcome to the BBG lab! Here's a checklist that will guide you through getting y
           intranet documentation from IRB ITS
 3. You'll also get an introduction to the cluster, with regards to accessing it and the
    file structure that's relevant for your project. You'll need to be given access and
-   permissions for the following things: 
+   permissions for the following things:
     - slurm (apply for account via IT)
     - write permissions in the cluster directories you work with
     - Seqera BBG group
