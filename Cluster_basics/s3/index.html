@@ -5567,15 +5567,15 @@ further setup is needed. Credentials are already configured in the pipelines; yo
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Generate credentials</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># -r -&gt; creates the ~/.config/rclone/rclone.conf file</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># -d -&gt; duration in days for credentials validity</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>$<span class="w"> </span>python3<span class="w"> </span>/apps/scripts/irb-storage-public-scripts/minio/minio-sts-credentials-request.py<span class="w"> </span>-u<span class="w"> </span>mgrau<span class="w"> </span>-r<span class="w"> </span>-d<span class="w"> </span><span class="m">365</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>$<span class="w"> </span>python3<span class="w"> </span>/apps/scripts/irb-storage-public-scripts/minio-sts-credentials-request.py<span class="w"> </span>-u<span class="w"> </span>mgrau<span class="w"> </span>-r<span class="w"> </span>-d<span class="w"> </span><span class="m">365</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># test</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>$<span class="w"> </span>rclone<span class="w"> </span>lsf<span class="w"> </span>irb-minio://bbg
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>$<span class="w"> </span>rclone<span class="w"> </span>lsf<span class="w"> </span>irbminio:bbg
 </code></pre></div>
 <p>This script (<em>minio-sts-credentials-request.py</em>) generates the config file used by rclone:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>cat<span class="w"> </span>~/.config/rclone/rclone.conf
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">[</span>irb-minio<span class="o">]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">[</span>irbminio<span class="o">]</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>s3
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Minio
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nv">endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>http://irbminio.irbbarcelona.pcb.ub.es:9000
@@ -5603,13 +5603,13 @@ read-only and it is <strong>not recommended</strong> for high-performance or hea
 </div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>ls<span class="w"> </span>/home/mgrau/s3/bbg-scratch/
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Mount</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$<span class="w"> </span>rclone<span class="w"> </span>mount<span class="w"> </span>irb-minio:bbg-scratch<span class="w"> </span>/home/mgrau/s3/bbg-scratch<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>off<span class="w"> </span>--read-only<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$<span class="w"> </span>rclone<span class="w"> </span>mount<span class="w"> </span>irbminio:bbg-scratch<span class="w"> </span>/home/mgrau/s3/bbg-scratch<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>off<span class="w"> </span>--read-only<span class="w"> </span><span class="p">&amp;</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">636085</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$<span class="w"> </span>ls<span class="w"> </span>/home/mgrau/s3/bbg-scratch/
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>work
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Unmount</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>$<span class="w"> </span>fusermount<span class="w"> </span>-u<span class="w"> </span>/home/mgrau/s3/bbg-scratch
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Done<span class="w">                    </span>rclone<span class="w"> </span>mount<span class="w"> </span>irb-minio:bbg-scratch<span class="w"> </span>/home/mgrau/s3/bbg-scratch
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Done<span class="w">                    </span>rclone<span class="w"> </span>mount<span class="w"> </span>irbminio:bbg-scratch<span class="w"> </span>/home/mgrau/s3/bbg-scratch
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>--vfs-cache-mode<span class="w"> </span>off<span class="w"> </span>--read-only
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>$<span class="w"> </span>ls<span class="w"> </span>/home/mgrau/s3/bbg-scratch/
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>$
@@ -5814,7 +5814,7 @@ that can handle massive datasets seamlessly.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 30, 2026 10:07:55 UTC">March 30, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 20, 2026 08:39:35 UTC">April 20, 2026</span>
   </span>
 
     
@@ -5842,6 +5842,11 @@ that can handle massive datasets seamlessly.</p>
     
     <nav>
       
+        <a href="https://github.com/m-huertasp" class="md-author" title="@m-huertasp">
+          
+          <img src="https://avatars.githubusercontent.com/u/97596516?v=4&size=72" alt="m-huertasp">
+        </a>
+      
         <a href="https://github.com/migrau" class="md-author" title="@migrau">
           
           <img src="https://avatars.githubusercontent.com/u/6456499?v=4&size=72" alt="migrau">
@@ -5857,12 +5862,13 @@ that can handle massive datasets seamlessly.</p>
           <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
-        <a href="https://github.com/Copilot" class="md-author" title="@Copilot">
-          
-          <img src="https://avatars.githubusercontent.com/in/946600?v=4&size=72" alt="GitHub user">
-        </a>
       
       
+        
+          <a href="https://github.com/bbglab/bbgwiki/blob/main/docs/Cluster_basics/s3.md" class="md-author md-author--more">
+            +1
+          </a>
+        
       
     </nav>
   </span>
