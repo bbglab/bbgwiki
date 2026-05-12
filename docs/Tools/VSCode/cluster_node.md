@@ -1,13 +1,29 @@
-# VSCode in interactive node
+# VSCode in IRB Cluster
+
+!!! warning "VPN Required"
+    For any case, you need to activate the VPN.
 
 ## Description
 
 These are the instructions to use Visual Studio Code to run and debug scripts/notebooks
-within an **interactive node** from the cluster.
+within the IRB cluster. Two approaches are documented:
 
-## Using VSCode App
+- **Login Node**: For non-computationally expensive tasks
+- **Interactive Node**: For computationally expensive tasks requiring dedicated resources
+
+## Not Computationally Expensive Tasks - Login Node
+
+1. Open VSCode in your local computer
+2. On the sidebar, click the icon that looks like a screen
+3. Click on the option that says `irbcluster02`, either the right arrow (open in current window) or the
+other icon (new window).
+
+## Computationally Expensive Tasks - Interactive Node
 
 ### Step 1: [CLUSTER] Open interactive session
+
+!!! note "Existing screen session"
+    If you already have a screen session opened in the cluster with the interactive session, go directly to step 5.
 
 The first step is to allocate the resources you will need for your executions.
 We can do this with the `interactive` command.
@@ -22,7 +38,7 @@ We can do this with the `interactive` command.
 Launch an interactive session within a given node, allocating some computing resources:
 
 ```bash
-interactive -c 6 -m 20
+interactive -c 4 -m 16
 ```
 
 Then, check on which node you are. You can look at the prompt, or use the `hostname` command.
@@ -35,7 +51,7 @@ Example:
 
 ```bash
 $ hostname
-irbccn43.hpc.irbbarcelona.pcb.ub.es
+irbccn39.hpc.irbbarcelona.pcb.ub.es
 ```
 
 ### Step 2: [CLUSTER] Execute job vscode-interactive-job.sh
@@ -50,7 +66,7 @@ irbccn43.hpc.irbbarcelona.pcb.ub.es
     #!/bin/bash
     #SBATCH --job-name="tunnel"
     #SBATCH --time=8:00:00     # walltime
-    
+
     /usr/sbin/sshd -D -p 2222 -f /dev/null -h ${HOME}/.ssh/id_ecdsa # uses the user key as the host key
     ```
 
@@ -72,20 +88,6 @@ bash vscode-interactive-job.sh
 The terminal will look like it got stuck, but what is happening is that it is waiting for
 the SSH tunnel to be established.
 
-### Step 3: [LOCAL] Open SSH tunnel
-
-In your local machine, you need to open the SSH tunnel with the following command:
-
-```bash
-ssh -L 2222:<interactive_hostname>:22 <user>@irblogin01.irbbarcelona.pcb.ub.es
-```
-
-Example:
-
-```bash
-ssh -L 2222:irbccn43.hpc.irbbarcelona.pcb.ub.es:22 clopeze@irblogin01.irbbarcelona.pcb.ub.es
-```
-
 ### Step 4: [LOCAL] [ONE-TIME-STEP] Add the SSH configuration
 
 Modify the file `~/.ssh/config` in your local machine to include the following configuration:
@@ -93,19 +95,19 @@ Modify the file `~/.ssh/config` in your local machine to include the following c
 ```bash
 Host irbccn*
     HostName %h
-    ProxyJump irblogin01.irbbarcelona.pcb.ub.es
+    ProxyJump irblogin02.sc.irbbarcelona.org
     User <user>
-    Port 2222
+    Port 22
 ```
 
 Example:
 
 ```bash
-Host irbccn43
+Host irbccn39
     HostName %h
-    ProxyJump irblogin01.irbbarcelona.pcb.ub.es
+    ProxyJump irblogin02.sc.irbbarcelona.org
     User clopeze
-    Port 2222
+    Port 22
 ```
 
 !!! warning "Node change"
@@ -120,12 +122,12 @@ Host irbccn43
 
     1. Prompts only for the **host alias**.
     2. Checks if a config entry for that **host already exists** in `~/.ssh/config` (and skips adding it if so).
-    3. Uses the fixed configuration values (with HostName as "%h", the fixed ProxyJump, port 2222, and the current computer user).
+    3. Uses the fixed configuration values (with HostName as "%h", the fixed ProxyJump, port 22, and the current computer user).
     4. Computes the full hostname for the tunnel (by appending ".hpc.irbbarcelona.pcb.ub.es" to the alias) and creates the SSH tunnel (running in the background).
 
     ```bash
     add_cluster_ssh_host_with_tunnel() {
-        read -p "Enter host alias (e.g., irbccn43): " host_alias
+        read -p "Enter host alias (e.g., irbccn39): " host_alias
         current_user=$(whoami)
 
         # Check if SSH config for this host already exists
@@ -134,9 +136,9 @@ Host irbccn43
         else
             new_entry="Host ${host_alias}
         HostName %h
-        ProxyJump irblogin01.irbbarcelona.pcb.ub.es
+        ProxyJump irblogin02.sc.irbbarcelona.org
         User ${current_user}
-        Port 2222
+        Port 22
         "
             echo -e "\n${new_entry}" >> ~/.ssh/config
             echo "SSH configuration added for host '${host_alias}'."
@@ -145,7 +147,7 @@ Host irbccn43
         # Create the SSH tunnel.
         # Assuming the full hostname is <host_alias>.hpc.irbbarcelona.pcb.ub.es
         computed_hostname="${host_alias}.hpc.irbbarcelona.pcb.ub.es"
-        tunnel_cmd="ssh -f -N -L 2222:${computed_hostname}:22 ${current_user}@irblogin01.irbbarcelona.pcb.ub.es"
+        tunnel_cmd="ssh -f -N -L 2222:${computed_hostname}:22 ${current_user}@irblogin02.sc.irbbarcelona.org"
         echo "Establishing SSH tunnel with command:"
         echo "${tunnel_cmd}"
         eval ${tunnel_cmd}
@@ -179,14 +181,36 @@ This is needed the first time you connect to a new node, so that the node is add
 
 Open Visual Studio Code and make sure you have installed the `Remote - SSH` extension.
 
-Open the side bar at the "Remote - SSH" panel, and then click the `irbccn*` option. A new window will open with the
+Open the side bar at the "Remote - SSH" panel, and then click the `irbccn*` option (e.g., `irbccn39`), either the right
+arrow (open in current window) or the other icon (new window). A new window will open with the
 terminal connected to the interactive node. All the execution of notebooks and debuggers will be done from this node.
+
+!!! note "Connection retry"
+    You might have to click **Retry** a few times, as sometimes it doesn't connect at the first try.
 
 !!! tip "Tip: Create a 'Profile' to keep the VSCode settings and extensions"
     You can create a profile in VSCode to keep the settings and extensions for the connection to the cluster.
     This works similar to the idea of conda environments, but for the VSCode settings.
 
     To create a profile, click on the gear icon in the bottom left corner of VSCode, and then click on Profiles and create a new profile.
+
+### Step : [LOCAL] [OPTIONAL] Open SSH tunnel - Only if the connection from VSCode doesn't work
+
+!!! note "If VSCode connection fails"
+    If opening VSCode on the local computer and trying to connect to the cluster doesn't work (Steps 3 and 4), run the
+    following command in a new terminal on your local machine:
+
+    ```bash
+    ssh -L 2222:<interactive_hostname>:22 <user>@irblogin02.sc.irbbarcelona.org
+    ```
+
+    Example:
+
+    ```bash
+    ssh -L 2222:irbccn39.hpc.irbbarcelona.pcb.ub.es:22 clopeze@irblogin02.sc.irbbarcelona.org
+    ```
+
+    Replace `<interactive_hostname>` with your allocated node (e.g., `irbccn39.hpc.irbbarcelona.pcb.ub.es`) and `<user>` with your username.
 
 ## From Browser (*code-server*)
 
