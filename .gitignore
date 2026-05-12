@@ -3,3 +3,5 @@
 /docs/basic_skeleton.sh
 /.vscode
 .cache
+.claude/
+.opencode/
