@@ -23,8 +23,10 @@ other icon (new window).
 
 Both methods below run VSCode connected to a compute node via SSH. Choose based on your workflow:
 
-- **Method A (Dynamic Node)**: Allocates a new node each time via the `interactive` command. Better for one-off jobs with flexible resource needs.
-- **Method B (Fixed Node)**: Always submits to the same node via `sbatch`. Better for ongoing work where you want to preserve your VSCode session history (recently opened files, workspace state).
+- **Method A (Dynamic Node)**: Allocates a new node each time via the `interactive` command.
+Better for one-off jobs with flexible resource needs.
+- **Method B (Fixed Node)**: Always submits to the same node via `sbatch`.
+Better for ongoing work where you want to preserve your VSCode session history (recently opened files, workspace state).
 
 ===+ "Method A: Dynamic Node (interactive)"
 
