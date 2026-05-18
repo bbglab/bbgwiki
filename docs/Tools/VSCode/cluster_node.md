@@ -250,12 +250,12 @@ Better for ongoing work where you want to preserve your VSCode session history (
     #!/bin/bash
 
     #SBATCH --job-name="code-client"
-    #SBATCH --cpus-per-task=16
-    #SBATCH --nodelist=irbccn25
+    #SBATCH --cpus-per-task=4
+    #SBATCH --nodelist=<IBCLUSTER_NODE>
     #SBATCH --partition=bbg_cpu_zen4
-    #SBATCH --mem=32G
+    #SBATCH --mem=16G
     #SBATCH --qos=interactive
-    #SBATCH --time=30-00:00:00     # walltime
+    #SBATCH --time=7-00:00:00     # walltime
 
     set -xe
 
