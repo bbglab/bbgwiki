@@ -259,7 +259,7 @@ Better for ongoing work where you want to preserve your VSCode session history (
 
     set -xe
 
-    /usr/sbin/sshd -D -p 3131 -f /dev/null -h ${HOME}/.ssh/id_ecdsa
+    /usr/sbin/sshd -D -p 2222 -f /dev/null -h ${HOME}/.ssh/id_ecdsa
     ```
 
     !!! warning "Adjust resources to your needs"
@@ -300,7 +300,7 @@ Better for ongoing work where you want to preserve your VSCode session history (
         HostName %h
         ProxyJump irblogin02.sc.irbbarcelona.org
         User <user>
-        Port 3131
+        Port 2222
     ```
 
     Example (using the same node as the `--nodelist` in the script):
