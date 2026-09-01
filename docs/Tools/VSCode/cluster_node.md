@@ -48,7 +48,8 @@ irbccn43.sc.irbbarcelona.org
 
     ```bash
     #!/bin/bash
-    # The job name and walltime come from the interactive command in Step 1.
+    #SBATCH --job-name="tunnel"
+    #SBATCH --time=8:00:00     # walltime
     
     /usr/sbin/sshd -D -p 2222 -f /dev/null -h ${HOME}/.ssh/id_ecdsa # uses the user key as the host key
     ```
