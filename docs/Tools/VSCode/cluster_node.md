@@ -35,7 +35,7 @@ Example:
 
 ```bash
 $ hostname
-irbccn43.hpc.irbbarcelona.pcb.ub.es
+irbccn43.sc.irbbarcelona.org
 ```
 
 ### Step 2: [CLUSTER] Execute job vscode-interactive-job.sh
@@ -48,8 +48,7 @@ irbccn43.hpc.irbbarcelona.pcb.ub.es
 
     ```bash
     #!/bin/bash
-    #SBATCH --job-name="tunnel"
-    #SBATCH --time=8:00:00     # walltime
+    # The job name and walltime come from the interactive command in Step 1.
     
     /usr/sbin/sshd -D -p 2222 -f /dev/null -h ${HOME}/.ssh/id_ecdsa # uses the user key as the host key
     ```
@@ -69,31 +68,17 @@ bash vscode-interactive-job.sh
 
     It will prompt you several times to confirm the generation of the key. You can just press `Enter` to accept the default values.
 
-The terminal will look like it got stuck, but what is happening is that it is waiting for
-the SSH tunnel to be established.
+The terminal will look like it got stuck. The `-D` flag keeps sshd running in the
+foreground on port 2222. Leave it running and open a new terminal for the next steps.
 
-### Step 3: [LOCAL] Open SSH tunnel
-
-In your local machine, you need to open the SSH tunnel with the following command:
-
-```bash
-ssh -L 2222:<interactive_hostname>:22 <user>@irblogin01.irbbarcelona.pcb.ub.es
-```
-
-Example:
-
-```bash
-ssh -L 2222:irbccn43.hpc.irbbarcelona.pcb.ub.es:22 clopeze@irblogin01.irbbarcelona.pcb.ub.es
-```
-
-### Step 4: [LOCAL] [ONE-TIME-STEP] Add the SSH configuration
+### Step 3: [LOCAL] [ONE-TIME-STEP] Add the SSH configuration
 
 Modify the file `~/.ssh/config` in your local machine to include the following configuration:
 
 ```bash
 Host irbccn*
     HostName %h
-    ProxyJump irblogin01.irbbarcelona.pcb.ub.es
+    ProxyJump irblogin02.sc.irbbarcelona.org
     User <user>
     Port 2222
 ```
@@ -103,7 +88,7 @@ Example:
 ```bash
 Host irbccn43
     HostName %h
-    ProxyJump irblogin01.irbbarcelona.pcb.ub.es
+    ProxyJump irblogin02.sc.irbbarcelona.org
     User clopeze
     Port 2222
 ```
@@ -114,52 +99,34 @@ Host irbccn43
 
 !!! tip "Tip (Optional): Helper function to add SSH configuration"
     Here is a helper function that you can add to your `.bashrc` file to make it easier to
-    setup the node and the tunnel.
+    add a node to your SSH config.
 
-    Steps the function does:
-
-    1. Prompts only for the **host alias**.
-    2. Checks if a config entry for that **host already exists** in `~/.ssh/config` (and skips adding it if so).
-    3. Uses the fixed configuration values (with HostName as "%h", the fixed ProxyJump, port 2222, and the current computer user).
-    4. Computes the full hostname for the tunnel (by appending ".hpc.irbbarcelona.pcb.ub.es" to the alias) and creates the SSH tunnel (running in the background).
+    It prompts for the host alias, checks if an entry already exists, and appends the
+    config block if not.
 
     ```bash
-    add_cluster_ssh_host_with_tunnel() {
+    add_cluster_ssh_host() {
         read -p "Enter host alias (e.g., irbccn43): " host_alias
         current_user=$(whoami)
 
-        # Check if SSH config for this host already exists
-        if grep -qE "^Host[[:space:]]+${host_alias}\$" ~/.ssh/config; then
-            echo "SSH configuration for host '${host_alias}' already exists. Skipping configuration update."
+        if grep -qE "^Host[[:space:]]+${host_alias}$" ~/.ssh/config; then
+            echo "SSH configuration for host '${host_alias}' already exists. Skipping."
         else
             new_entry="Host ${host_alias}
         HostName %h
-        ProxyJump irblogin01.irbbarcelona.pcb.ub.es
+        ProxyJump irblogin02.sc.irbbarcelona.org
         User ${current_user}
         Port 2222
         "
             echo -e "\n${new_entry}" >> ~/.ssh/config
             echo "SSH configuration added for host '${host_alias}'."
         fi
-
-        # Create the SSH tunnel.
-        # Assuming the full hostname is <host_alias>.hpc.irbbarcelona.pcb.ub.es
-        computed_hostname="${host_alias}.hpc.irbbarcelona.pcb.ub.es"
-        tunnel_cmd="ssh -f -N -L 2222:${computed_hostname}:22 ${current_user}@irblogin01.irbbarcelona.pcb.ub.es"
-        echo "Establishing SSH tunnel with command:"
-        echo "${tunnel_cmd}"
-        eval ${tunnel_cmd}
-        if [ $? -eq 0 ]; then
-            echo "SSH tunnel established for host '${host_alias}'."
-        else
-            echo "Failed to establish SSH tunnel."
-        fi
     }
 
-    alias addsshcluster='add_cluster_ssh_host_with_tunnel'
+    alias addsshcluster='add_cluster_ssh_host'
     ```
 
-#### Step 4.1: [LOCAL] [ONE-TIME-STEP] Access though the terminal to the node
+#### Step 3.1: [LOCAL] [ONE-TIME-STEP] Access through the terminal to the node
 
 To make sure the configuration is working, you can access the node through the terminal with the following command:
 
@@ -175,7 +142,7 @@ ssh irbccn43
 
 This is needed the first time you connect to a new node, so that the node is added to the known hosts.
 
-### Step 5: [VSCODE] Connect VSCode to the interactive node
+### Step 4: [VSCODE] Connect VSCode to the interactive node
 
 Open Visual Studio Code and make sure you have installed the `Remote - SSH` extension.
 
