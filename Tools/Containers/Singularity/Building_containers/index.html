@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -5155,7 +5155,7 @@
   <span class="md-ellipsis">
     
   
-    VSCode in interactive node
+    VSCode in IRB Cluster
   
 
     
@@ -5525,7 +5525,7 @@ file <code>ubuntu20_helloworld.def</code> that installs the <code>python3</code>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  apt-get install --yes python3
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>%runscript
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  python3 &quot;${@}&quot;
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  python3 "${@}"
 </code></pre></div>
 <p>The build process is unattended, and will not succeed if any operations require interactive input.
 Be sure to use <code>-y</code> or <code>--yes</code> options when installing packages.</p>
@@ -5569,7 +5569,7 @@ containers have been built.</p>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  apt-get install --yes python3
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>%runscript
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  python3 &quot;${@}&quot;
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  python3 "${@}"
 </code></pre></div>
 <p>The result will be a container almost identical to the one created from scratch.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>ubuntu20_python3.simg<span class="w"> </span>ubuntu20_python3.def
@@ -5587,7 +5587,7 @@ file <code>ubuntu20_docker_python3.def</code>, which imports the <code>ubuntu:20
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  apt-get install --yes python3
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>%runscript
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  python3 &quot;${@}&quot;
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  python3 "${@}"
 </code></pre></div>
 <p>Build the container. This will produce a container similar to the previous examples, but may vary slightly in
 overall size depending on packages installed in the base docker image:</p>
@@ -5623,7 +5623,7 @@ by using the CentOS vault.</p>
 <p>The <code>%help</code> section is designed to provide information about the container when singularity
 run-help is run on the container, for example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>run-help<span class="w"> </span>/data/containers/public/python3_helloworld.simg
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Purpose:<span class="w"> </span>Test<span class="w"> </span>container<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Python3.
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Purpose:<span class="w"> </span>Test<span class="w"> </span>container<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span><span class="s2">"Hello, World!"</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Python3.
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Author:<span class="w">  </span>ITS<span class="w"> </span>Research<span class="w"> </span>/<span class="w"> </span>QMUL.
 </code></pre></div>
 <h3 id="post-section">Post section<a class="headerlink" href="#post-section" title="Permanent link">&para;</a></h3>
@@ -5663,7 +5663,7 @@ command will print the definition file used to built the container and the <code
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>From:<span class="w"> </span>ubuntu:20.04
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>%help
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span>Purpose:<span class="w"> </span>Test<span class="w"> </span>container<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Python3.
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span>Purpose:<span class="w"> </span>Test<span class="w"> </span>container<span class="w"> </span>to<span class="w"> </span>print<span class="w"> </span><span class="s2">"Hello, World!"</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>Python3.
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span>Author:<span class="w">  </span>ITS<span class="w"> </span>Research<span class="w"> </span>/<span class="w"> </span>QMUL.
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>%post
@@ -5677,7 +5677,7 @@ command will print the definition file used to built the container and the <code
 <a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span>which<span class="w"> </span>python3
 <a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
 <a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>%runscript
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">  </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print(&quot;Hello, World!&quot;)&#39;</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">  </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">'print("Hello, World!")'</span>
 </code></pre></div>
 <p>The <code>singularity help inspect</code> command provides additional options for inspecting the container.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
@@ -5941,7 +5941,7 @@ command will print the definition file used to built the container and the <code
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

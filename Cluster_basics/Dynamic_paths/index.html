@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -5029,7 +5029,7 @@
   <span class="md-ellipsis">
     
   
-    VSCode in interactive node
+    VSCode in IRB Cluster
   
 
     
@@ -5254,7 +5254,7 @@
 following Python line to dynamically set the working directory based on the machine hostname:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">WORKSPACE</span> <span class="o">=</span> <span class="s2">&quot;/data/bbg&quot;</span> <span class="k">if</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;irb&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;/workspace&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">WORKSPACE</span> <span class="o">=</span> <span class="s2">"/data/bbg"</span> <span class="k">if</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"irb"</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"/workspace"</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -5267,22 +5267,22 @@ be using for computation in any case.</p>
 <p>Add the above line at the top of your Jupyter notebook or Python script:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">WORKSPACE</span> <span class="o">=</span> <span class="s2">&quot;/data/bbg&quot;</span> <span class="k">if</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;irb&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;/workspace&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">WORKSPACE</span> <span class="o">=</span> <span class="s2">"/data/bbg"</span> <span class="k">if</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"irb"</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"/workspace"</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">example_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">WORKSPACE</span><span class="si">}</span><span class="s2">/projects/my_project/&quot;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path: </span><span class="si">{</span><span class="n">example_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">example_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">WORKSPACE</span><span class="si">}</span><span class="s2">/projects/my_project/"</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Path: </span><span class="si">{</span><span class="n">example_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="option-2-using-a-file-including-global-variables">Option 2: Using a file including global variables<a class="headerlink" href="#option-2-using-a-file-including-global-variables" title="Permanent link">&para;</a></h3>
 <p>For better reusability, define this variable in a separate Python file (e.g., <code>global_variables.py</code>):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">WORKSPACE</span> <span class="o">=</span> <span class="s2">&quot;/data/bbg&quot;</span> <span class="k">if</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;irb&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;/workspace&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">WORKSPACE</span> <span class="o">=</span> <span class="s2">"/data/bbg"</span> <span class="k">if</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"irb"</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"/workspace"</span>
 </code></pre></div>
 <p>Then, import it in your notebook or script:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">global_variables</span><span class="w"> </span><span class="kn">import</span> <span class="n">WORKSPACE</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">example_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">WORKSPACE</span><span class="si">}</span><span class="s2">/projects/my_project/&quot;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path: </span><span class="si">{</span><span class="n">example_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">example_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">WORKSPACE</span><span class="si">}</span><span class="s2">/projects/my_project/"</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Path: </span><span class="si">{</span><span class="n">example_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <p>This way, you only need to define the path logic once and can reuse it throughout your codebase.</p>
 <div class="admonition info">
@@ -5545,7 +5545,7 @@ forgetting to update paths or values across multiple files.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

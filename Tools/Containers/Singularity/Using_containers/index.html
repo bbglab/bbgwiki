@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/bbglabLOGO_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -5077,7 +5077,7 @@
   <span class="md-ellipsis">
     
   
-    VSCode in interactive node
+    VSCode in IRB Cluster
   
 
     
@@ -5351,7 +5351,7 @@ the following demonstrates how to inspect the runscript and execute
 the <code>/data/containers/public/python3_helloworld.simg</code> container:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>singularity<span class="w"> </span>inspect<span class="w"> </span>-r<span class="w"> </span>/data/containers/public/python3_helloworld.simg
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#!/bin/sh</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;print(&quot;Hello, World!&quot;)&#39;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">'print("Hello, World!")'</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$<span class="w"> </span>/data/containers/public/python3_helloworld.simg
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Hello,<span class="w"> </span>World!
@@ -5372,8 +5372,8 @@ the <code>/data/containers/public/python3_helloworld.simg</code> container:</p>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Hello,<span class="w"> </span>World<span class="w"> </span><span class="o">(</span>again<span class="o">)</span>!
 </code></pre></div>
 <p>The file hello_world2.py contains the following code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World (again)!&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, World (again)!"</span><span class="p">)</span>
 </code></pre></div>
 <p>If command <code>singularity exec</code> was replaced by <code>singularity run</code>, the runscript would be called,
 ignoring any parameters after the container name.</p>
@@ -5421,7 +5421,7 @@ the <code>/data/containers/public/python3_helloworld.simg</code> container using
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Singularity&gt;<span class="w"> </span>python3
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Python<span class="w"> </span><span class="m">3</span>.8.10<span class="w"> </span><span class="o">(</span>default,<span class="w"> </span>Sep<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">2021</span>,<span class="w"> </span><span class="m">16</span>:10:42<span class="o">)</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="o">[</span>GCC<span class="w"> </span><span class="m">9</span>.3.0<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>linux
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class="w"> </span><span class="s2">&quot;copyright&quot;</span>,<span class="w"> </span><span class="s2">&quot;credits&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;license&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Type<span class="w"> </span><span class="s2">"help"</span>,<span class="w"> </span><span class="s2">"copyright"</span>,<span class="w"> </span><span class="s2">"credits"</span><span class="w"> </span>or<span class="w"> </span><span class="s2">"license"</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>&gt;&gt;&gt;
 </code></pre></div>
 <p>Documentation is available on the
@@ -5441,7 +5441,7 @@ how to import and run the latest Ubuntu official image stored in the <a href="ht
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nv">DISTRIB_ID</span><span class="o">=</span>Ubuntu
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">DISTRIB_RELEASE</span><span class="o">=</span><span class="m">20</span>.04
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">DISTRIB_CODENAME</span><span class="o">=</span>focal
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">DISTRIB_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;Ubuntu 20.04.3 LTS&quot;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">DISTRIB_DESCRIPTION</span><span class="o">=</span><span class="s2">"Ubuntu 20.04.3 LTS"</span>
 </code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5704,7 +5704,7 @@ how to import and run the latest Ubuntu official image stored in the <a href="ht
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.top", "content.code.annotate", "search.suggest", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
